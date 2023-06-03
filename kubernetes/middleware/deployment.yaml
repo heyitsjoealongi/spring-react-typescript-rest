@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: middleware-deployment
+  namespace: middleware-namespace
+  labels:
+    app: middleware-application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: middleware-application
+  template:
+    metadata:
+      name: middleware-pod
+      labels:
+        app: middleware-application
+    spec:
+      containers:
+        - name: middleware-container
+          image: <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/middleware:latest
+          imagePullPolicy: Always
+          restartPolicy: Always
+          ports:
+            - containerPort: 4040
+          resources:
+            requests:
+              memory: "60Mi"
+              cpu: "300m"
+            limits:
+              memory: "120Mi"
+              cpu: "600m"

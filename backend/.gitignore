@@ -1,0 +1,139 @@
+###### Ultimate Git Ignore // See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+###### Frontend ######
+
+### Dependencies ###
+node_modules/
+node_modules
+*/node_modules
+/.pnp
+.pnp.js
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+
+### Testing ###
+/coverage
+
+### Production ###
+/build
+web-build/
+
+### Misc ###
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+yarn.lock
+*/yarn.lock
+package-lock.json
+.eslintcache
+prepros.config
+.yarn
+*/.yarn
+.yarnrc.yml
+.pnp.cjs
+.pnp.loader.mjs
+*.pem
+deno.lock
+
+### Debug ###
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+### Local Env Files ###
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+### Server Env Files ###
+/nodemon.json
+
+### Next.js ###
+.next
+/.next/
+*/.next
+/out/
+
+### Vercel ###
+.vercel
+
+### Firebase ###
+/firebase
+.firebase
+.firebaserc
+firebase.json
+
+### Expo ###
+.expo/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+###### Backend ######
+
+### Gradle ###
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+.vscode
+*/.vscode
+
+### Python ###
+venv/
+venv
+*/venv
+.venv/
+.venv
+*/.venv
+__pycache__/
+__pycache__
+*/__pycache__
+db.sqlite3/
+db.sqlite3
+*/db.sqlite3
+*.pyc/
+*.pyc
+*/*.pyc
