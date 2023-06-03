@@ -1,0 +1,236 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -khtml-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -khtml-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-font-display: auto;
+    -moz-font-display: auto;
+    -ms-font-display: auto;
+    -o-font-display: auto;
+    -khtml-font-display: auto;
+    font-display: auto;
+    -webkit-font-style: normal;
+    -moz-font-style: normal;
+    -ms-font-style: normal;
+    -o-font-style: normal;
+    -khtml-font-style: normal;
+    font-style: normal;
+    -webkit-font-smoothing: auto;
+    -webkit-font-smooth: auto;
+    -moz-font-smooth: auto;
+    -ms-font-smooth: auto;
+    -o-font-smooth: auto;
+    -khtml-font-smooth: auto;
+    font-smooth: auto;
+    -webkit-font-size: 18px;
+    -moz-font-size: 18px;
+    -ms-font-size: 18px;
+    -o-font-size: 18px;
+    -khtml-font-size: 18px;
+    font-size: 18px;
+    -webkit-line-height: 1;
+    -moz-line-height: 1;
+    -ms-line-height: 1;
+    -o-line-height: 1;
+    -khtml-line-height: 1;
+    line-height: 1;
+    -webkit-font-family: 'Overpass', sans-serif;
+    -moz-font-family: 'Overpass', sans-serif;
+    -ms-font-family: 'Overpass', sans-serif;
+    -o-font-family: 'Overpass', sans-serif;
+    -khtml-font-family: 'Overpass', sans-serif;
+    font-family: 'Overpass', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    -webkit-padding: 0;
+    -moz-padding: 0;
+    -ms-padding: 0;
+    -o-padding: 0;
+    -khtml-padding: 0;
+    padding: 0;
+    -webkit-overflow-x: hidden;
+    -moz-overflow-x: hidden;
+    -ms-overflow-x: hidden;
+    -o-overflow-x: hidden;
+    -khtml-overflow-x: hidden;
+    overflow-x: hidden;
+}
+
+html,
+body {
+    -webkit-scroll-behavior: smooth;
+    -moz-scroll-behavior: smooth;
+    -ms-scroll-behavior: smooth;
+    -o-scroll-behavior: smooth;
+    -khtml-scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    -webkit-scrollbar-width: thin;
+    -moz-scrollbar-width: thin;
+    -ms-scrollbar-width: thin;
+    -o-scrollbar-width: thin;
+    -khtml-scrollbar-width: thin;
+    scrollbar-width: thin;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    -khtml-appearance: none;
+    appearance: none;
+    -webkit-background-color: #f5f5f5;
+    -moz-background-color: #f5f5f5;
+    -ms-background-color: #f5f5f5;
+    -o-background-color: #f5f5f5;
+    -khtml-background-color: #f5f5f5;
+    background-color: #f5f5f5;
+}
+
+::selection {
+    -webkit-background: #cddc39;
+    -moz-background: #cddc39;
+    -ms-background: #cddc39;
+    -o-background: #cddc39;
+    -khtml-background: #cddc39;
+    background: #cddc39;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+b,
+strong {
+    -webkit-color: #212121;
+    -moz-color: #212121;
+    -ms-color: #212121;
+    -o-color: #212121;
+    -khtml-color: #212121;
+    color: #212121;
+}
+
+h1 {
+    -webkit-font-size: 63px !important;
+    -moz-font-size: 63px !important;
+    -ms-font-size: 63px !important;
+    -o-font-size: 63px !important;
+    -khtml-font-size: 63px !important;
+    font-size: 63px !important;
+}
+
+h2 {
+    -webkit-font-size: 54px !important;
+    -moz-font-size: 54px !important;
+    -ms-font-size: 54px !important;
+    -o-font-size: 54px !important;
+    -khtml-font-size: 54px !important;
+    font-size: 54px !important;
+}
+
+h3 {
+    -webkit-font-size: 45px !important;
+    -moz-font-size: 45px !important;
+    -ms-font-size: 45px !important;
+    -o-font-size: 45px !important;
+    -khtml-font-size: 45px !important;
+    font-size: 45px !important;
+}
+
+h4 {
+    -webkit-font-size: 36px !important;
+    -moz-font-size: 36px !important;
+    -ms-font-size: 36px !important;
+    -o-font-size: 36px !important;
+    -khtml-font-size: 36px !important;
+    font-size: 36px !important;
+}
+
+p {
+    -webkit-font-size: 18px !important;
+    -moz-font-size: 18px !important;
+    -ms-font-size: 18px !important;
+    -o-font-size: 18px !important;
+    -khtml-font-size: 18px !important;
+    font-size: 18px !important;
+}
+
+hr {
+    -webkit-color: #bdbdbd !important;
+    -moz-color: #bdbdbd !important;
+    -ms-color: #bdbdbd !important;
+    -o-color: #bdbdbd !important;
+    -khtml-color: #bdbdbd !important;
+    color: #bdbdbd !important;
+    -webkit-border-color: #bdbdbd !important;
+    -moz-border-color: #bdbdbd !important;
+    -ms-border-color: #bdbdbd !important;
+    -o-border-color: #bdbdbd !important;
+    -khtml-border-color: #bdbdbd !important;
+    border-color: #bdbdbd !important;
+    -webkit-border-width: thin;
+    -moz-border-width: thin;
+    -ms-border-width: thin;
+    -o-border-width: thin;
+    -khtml-border-width: thin;
+    border-width: thin;
+    -webkit-border-width: thin;
+    -moz-border-width: thin;
+    -ms-border-width: thin;
+    -o-border-width: thin;
+    -khtml-border-width: thin;
+}
+
+a {
+    -webkit-text-decoration: none;
+    -moz-text-decoration: none;
+    -ms-text-decoration: none;
+    -o-text-decoration: none;
+    -khtml-text-decoration: none;
+    text-decoration: none;
+}
+
+a:hover {
+    -webkit-color: #212121;
+    -moz-color: #212121;
+    -ms-color: #212121;
+    -o-color: #212121;
+    -khtml-color: #212121;
+    color: #212121;
+}
+
+img {
+    -webkit-max-width: 100%;
+    -moz-max-width: 100%;
+    -ms-max-width: 100%;
+    -o-max-width: 100%;
+    -khtml-max-width: 100%;
+    max-width: 100%;
+    -webkit-height: auto;
+    -moz-height: auto;
+    -ms-height: auto;
+    -o-height: auto;
+    -khtml-height: auto;
+    height: auto;
+}
