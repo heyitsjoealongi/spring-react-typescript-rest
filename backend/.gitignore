@@ -1,0 +1,139 @@
+###### collectedview - Git Ignore // See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+###### Frontend ######
+
+### Dependencies ###
+/node_modules
+/.pnp
+.pnp.js
+yarn.lock
+.yarn
+/.yarn
+*/.yarn
+package-lock.json
+/package-lock.json
+*/package-lock.json
+.eslintcache
+prepros.config
+pnp.cjs
+/pnp.cjs
+*/pnp.cjs
+.pnp.loader.mjs
+/.pnp.loader.mjs
+*/.pnp.loader.mjs
+
+### Testing ###
+/coverage
+
+### Production ###
+/build
+web-build/
+
+### Misc ###
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+### Debug ###
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+### Local Env Files ###
+/.env
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+### Server Env Files ###
+/nodemon.json
+
+### Next.js ###
+/.next/
+/out/
+
+### Vercel ###
+.vercel
+
+### Firebase ###
+/firebase
+.firebase
+.firebaserc
+firebase.json
+
+### Expo ###
+.expo/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+###### Backend ######
+
+### Gradle ###
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+#amplify-do-not-edit-begin
+amplify/\#current-cloud-backend
+amplify/.config/local-*
+amplify/logs
+amplify/mock-data
+amplify/mock-api-resources
+amplify/backend/amplify-meta.json
+amplify/backend/.temp
+build/
+dist/
+node_modules/
+aws-exports.js
+awsconfiguration.json
+amplifyconfiguration.json
+amplifyconfiguration.dart
+amplify-build-config.json
+amplify-gradle-config.json
+amplifytools.xcconfig
+.secret-*
+**.sample
+#amplify-do-not-edit-end

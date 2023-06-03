@@ -1,0 +1,12 @@
+{
+  "name": "collectedview-middleware",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "eslint": "^8.25.0",
+    "prettier": "2.8.3"
+  }
+}
