@@ -1,0 +1,5 @@
+Scan files for secrets
+
+```zsh
+ggshield secret scan repo C:\Users\colle\OneDrive\Documents\GitHub\collectedview2024
+```
