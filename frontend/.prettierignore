@@ -1,0 +1,9 @@
+
+# Ignore artifacts:
+build
+coverage
+pnp.cjs
+.pnp.loader.mjs
+node_modules
+.prettierrc.json
+/.prettierrc.json

@@ -2,10 +2,26 @@
 
 ###### Frontend ######
 
+
 ### Dependencies ###
 /node_modules
 /.pnp
 .pnp.js
+yarn.lock
+.yarn
+/.yarn
+*/.yarn
+package-lock.json
+/package-lock.json
+*/package-lock.json
+.eslintcache
+prepros.config
+pnp.cjs
+/pnp.cjs
+*/pnp.cjs
+.pnp.loader.mjs
+/.pnp.loader.mjs
+*/.pnp.loader.mjs
 
 ### Testing ###
 /coverage
@@ -20,14 +36,7 @@ web-build/
 .env.development.local
 .env.test.local
 .env.production.local
-yarn.lock
-.yarn
-/.yarn
-package-lock.json
-/package-lock.json
-*/package-lock.json
-.eslintcache
-prepros.config
+
 
 ### Debug ###
 npm-debug.log*
