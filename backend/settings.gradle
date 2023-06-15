@@ -1,12 +1,1 @@
-pluginManagement {
-	repositories {
-		maven { url 'https://repo.spring.io/milestone' }
-		maven { url 'https://repo.spring.io/snapshot' }
-		gradlePluginPortal()
-	}
-	dependencies {
-        implementation 'org.springframework.boot:spring-boot-starter-web:2.2.5.RELEASE'
-        implementation 'io.sentry:sentry-spring-boot-starter-jakarta:6.21.0'
-    }
-}
 rootProject.name = 'demo'
