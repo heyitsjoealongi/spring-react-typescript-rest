@@ -1,14 +1,7 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-}
-
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.0'
 	id 'io.spring.dependency-management' version '1.1.0'
-	id "io.sentry.jvm.gradle" version "3.11.0"
 }
 
 group = 'com.example'
@@ -25,21 +18,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    implementation 'io.sentry:sentry-spring-boot-starter-jakarta:6.23.0'
-    implementation 'io.sentry:sentry-logback:6.23.0'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
-}
-
-sentry {
-    // Generates a JVM (Java, Kotlin, etc.) source bundle and uploads your source code to Sentry.
-    // This enables source context, allowing you to see your source
-    // code as part of your stack traces in Sentry.
-    includeSourceContext = true
-
-    org = "___ORG_SLUG___"
-    projectName = "___PROJECT_SLUG___"
-    authToken = "your-sentry-auth-token"
 }
