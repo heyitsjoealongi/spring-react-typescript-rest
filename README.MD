@@ -1,6 +1,6 @@
 # Spring React Typescript REST
 
-Fullstack Application — React (Typescript) Frontend, Spring Boot Java Backend, OkHttp Server, and MySQL (Vitess) Service.
+Fullstack Application — React (TypeScript) Frontend, Spring Boot Java Backend, OkHttp Server, and MySQL (Vitess) Service.
 
 - Frontend Image via [Docker Hub](https://hub.docker.com/r/collectedview/spring-react-typescript-rest-frontend)
 
@@ -31,7 +31,7 @@ yarn prettier --write .
 
 ## Frontend
 
-Access the frontend code by opening a command line in the root of this project and changing to the frontend folder
+Access the frontend code by opening a command line in the root of this project and changing to the frontend folder.
 
 ```zsh
 cd frontend
@@ -81,7 +81,7 @@ cd frontend
 
 #### Build Backend Docker Image
 
-For more examples and information on Node JavaScript Docker builds, reference the [Node JavaScript Documentation](https://nodejs.org/en/docs/guides/nodejs-docker-webapp).
+For more examples and information on Node JavaScript Docker builds, reference the [Node JavaScript Documentation](https://nodejs.org/en/docs/guides/nodejs-docker-webapp)
 
 - Docker [build](https://docs.docker.com/engine/reference/commandline/build/) command
 
@@ -127,7 +127,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
 
 ## Backend
 
-Access the backend code by opening a command line in the root of this project and changing to the frontend folder
+Access the backend code by opening a command line in the root of this project and changing to the backend folder.
 
 ```zsh
 cd backend
@@ -155,9 +155,9 @@ cd backend
   wsl --install Ubuntu-22.04
   ```
 
-- Install (Hyper)[https://hyper.is/] terminal
+- Install [Hyper](https://hyper.is/) terminal
 
-- In [Hyper](https://hyper.is/) click the hamburger menu -> edit -> preferences -> update the two lines by pasting or typing so they reflect `shell: 'C:\\Windows\\System32\\wsl.exe'` and `shellArgs: [~]`.
+- In [Hyper](https://hyper.is/) click the hamburger menu -> edit -> preferences -> update the two lines by pasting or typing so they reflect `shell: 'C:\\Windows\\System32\\wsl.exe'` and `shellArgs: [~]`
 
 - In Hyper terminal upgrade WSL (Ubuntu)
 
@@ -261,10 +261,22 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   docker push collectedview/spring-react-typescript-rest-backend:latest
   ```
 
+## Vitess
+
+### MySQL
+
+- Install [MySQL Community Server](https://dev.mysql.com/downloads/windows/installer/8.0.html)
+
 ## Helm
 
 - Install [Helm](https://helm.sh/) with chocolatey
 
   ```zsh
   choco install kubernetes-helm
+  ```
+
+- Create Helm chart with chocolatey
+
+  ```zsh
+  helm create <chart name>
   ```
