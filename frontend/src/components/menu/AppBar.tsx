@@ -74,9 +74,8 @@ function ResponsiveAppBar(props: AppBarProps) {
             component="a"
             href="/"
             sx={{
-              mr: 2,
+              mt:.4,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
               fontWeight: 700,
               color: 'inherit',
               textDecoration: 'none',
@@ -115,7 +114,7 @@ function ResponsiveAppBar(props: AppBarProps) {
               }}
             >
               {props?.app_bar_menu.map((data) => (
-                <MenuItem key={data?.id} onClick={() => handleCloseNavMenu(data?.basic_item_link)}>
+                <MenuItem key={data?.id} onClick={() => handleCloseNavMenu(data?.basic_item_link ? data?.basic_item_link : '/')}>
                   <Typography textAlign="center">{data?.basic_menu_title ? data?.basic_menu_title : ""}</Typography>
                 </MenuItem>
               ))}

@@ -5,7 +5,6 @@ import * as React from 'react';
 import styled from "@emotion/styled";
 
 // Components -%- ////
-import Box from '@mui/material/Box';
 import AppBar from "../menu/AppBar"
 import BasicMenu from "../../components/menu/items/BasicMenu";
 
