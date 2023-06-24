@@ -2,11 +2,26 @@
 
 Fullstack Application — React (TypeScript) Frontend, Spring Boot Java Backend, OkHttp Server, and MySQL (Vitess) Service.
 
+- Frontend Demo via [Vercel](https://spring-react-typescript-rest.vercel.app/)
+
 - Frontend Image via [Docker Hub](https://hub.docker.com/r/collectedview/spring-react-typescript-rest-frontend)
 
 - Backend Image via [Docker Hub](https://hub.docker.com/r/collectedview/spring-react-typescript-rest-backend)
 
 Docker's example of this stack using [React, Java, and MySQL](https://github.com/docker/awesome-compose/tree/master/react-java-mysql)
+
+## Frameworks
+
+### Frontend
+
+- [Create React App (TypeScript)](https://create-react-app.dev/)
+- [React Router](https://reactrouter.com/en/main)
+- [Material UI](https://mui.com/)
+- [Styled Components](https://emotion.sh/docs/introduction)
+
+### Backend
+
+- [Spring Initializr](https://start.spring.io/)
 
 ## Stack
 
@@ -295,5 +310,5 @@ For more examples and information on Spring Boot Docker builds, reference the [S
 
 #### Acknowledgements
 
-[Logo](https://thenounproject.com/icon/spring-14717/)
-[User Icon](https://thenounproject.com/icon/user-5818176/)
+- [Logo](https://thenounproject.com/icon/spring-14717/)
+- [User Icon](https://thenounproject.com/icon/user-5818176/)
