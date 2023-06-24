@@ -1,37 +1,47 @@
 // React -%- ////
-import React from "react";
+import * as React from 'react';
 
 // Packages -%- ////
 import styled from "@emotion/styled";
 
 // Components -%- ////
+import AppBar from "../menu/AppBar"
 import BasicMenu from "../../components/menu/items/BasicMenu";
 
 // Integrations -%- ////
-const menuItems = [
+const appBar = {
+  app_bar_title: "Frontend",
+}
+const basicMenus = [
   {
     id: 0,
-    menu_item_title: "Title",
+    basic_menu_title: "BM One",
+    basic_item_link: "/",
   },
   {
     id: 1,
-    menu_item_title: "Title Two",
+    basic_menu_title: "BM Two",
+    basic_item_link: "/",
   },
   {
     id: 2,
-    menu_item_title: "Title Three",
+    basic_menu_title: "BM Three",
+    basic_item_link: "/",
   },
   {
     id: 3,
-    menu_item_title: "Title Four",
+    basic_menu_title: "BM Four",
+    basic_item_link: "/",
   },
   {
     id: 4,
-    menu_item_title: "Title Five",
+    basic_menu_title: "BM Five",
+    basic_item_link: "/",
   },
   {
     id: 6,
-    menu_item_title: "Title Six",
+    basic_menu_title: "BM Six",
+    basic_item_link: "/",
   },
 ];
 
@@ -49,7 +59,7 @@ const MenuFlex = styled.div`
   alignItems: flex-start;
   alignContent: flex-start;
   height: auto;
-  width: 100%;
+  width: 60%;
   margin: 10px auto;
   padding: 0;
   gap: 10px;
@@ -73,10 +83,11 @@ const MenuFlexItem = styled.div`
 export default function Menu() {
   return (
     <>
+    <AppBar app_bar_title={appBar?.app_bar_title} app_bar_menu={basicMenus}/>
       <MenuFlex>
-        {menuItems.map((data) => (
+        {basicMenus.map((data) => (
           <MenuFlexItem key={data?.id}>
-            <BasicMenu menu_item_title={data?.menu_item_title} />
+            <BasicMenu basic_menu_title={data?.basic_menu_title} basic_item_link={data?.basic_item_link} />
           </MenuFlexItem>
         ))}
       </MenuFlex>

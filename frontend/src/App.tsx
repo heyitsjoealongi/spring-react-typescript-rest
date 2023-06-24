@@ -1,5 +1,5 @@
 // React -%- ////
-import React from "react";
+import * as React from 'react';
 
 // Packages -%- ////
 import { createBrowserRouter, RouterProvider } from "react-router-dom";

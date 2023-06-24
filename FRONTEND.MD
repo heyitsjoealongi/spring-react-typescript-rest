@@ -30,7 +30,7 @@
 const items = [
     {
         "id": 0,
-        "example": "example",
+        "example": 'example',
     },
 ]
 
@@ -46,6 +46,8 @@ const items = [
 - [Documentation](https://emotion.sh/docs/object-styles)
 
 ```bash
+import { css } from '@emotion/react'
+
 return(
     <div
         css={{
@@ -62,6 +64,8 @@ return(
 - [Documentation](https://emotion.sh/docs/styled)
 
 ```bash
+import styled from "@emotion/styled";
+
 const Button = styled.button`
   color: yellow;
 `
@@ -115,4 +119,23 @@ type Props = {
 }
 
 export default function Function(props: Props) {}
+```
+
+## Mapping Prop Types
+
+- [Documentation](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
+- [Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example/)
+
+```bash
+type Props = {
+ prop: string;
+}
+
+type Props = {
+  props: {
+    prop: string;
+  }[];
+};
+
+{props?.prop.map((data) => ({data?.prop ? data?.prop : ''}))}
 ```

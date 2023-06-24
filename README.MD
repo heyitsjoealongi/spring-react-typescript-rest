@@ -292,3 +292,8 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   ```bash
   helm create <chart name>
   ```
+
+#### Acknowledgements
+
+[Logo](https://thenounproject.com/icon/spring-14717/)
+[User Icon](https://thenounproject.com/icon/user-5818176/)

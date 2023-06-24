@@ -1,9 +1,10 @@
-// https://mui.com/material-ui/react-menu/
+// Documentation - https://mui.com/material-ui/react-menu/
 
 // React -%- ////
 import * as React from "react";
 
 // Packages -%- ////
+import { useNavigate } from "react-router-dom";
 
 // Components -%- ////
 import Button from "@mui/material/Button";
@@ -20,14 +21,17 @@ import Button from "@mui/material/Button";
 
 // Application -%- ////
 type BasicMenuProps = {
-  menu_item_title: string;
+  basic_menu_title: string;
+  basic_item_link: string;
 };
 
 export default function BasicMenu(props: BasicMenuProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const navigate = useNavigate();
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
+    navigate(props?.basic_item_link ? props?.basic_item_link : "/");
   };
   // const handleClose = () => {
   //   setAnchorEl(null);
@@ -42,7 +46,7 @@ export default function BasicMenu(props: BasicMenuProps) {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        {props?.menu_item_title}
+        {props?.basic_menu_title ? props?.basic_menu_title : "Basic Menu"}
       </Button>
       {/* <Menu
         id="basic-menu"
