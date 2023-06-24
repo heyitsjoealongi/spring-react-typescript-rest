@@ -40,6 +40,13 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6,p,a,li,b,strong  {
-color:#616161;
-color:#212121;
+  color:#212121;
+}
+
+hr{
+  color: #BDBDBD;
+}
+
+a{
+  color: #212121;
 }

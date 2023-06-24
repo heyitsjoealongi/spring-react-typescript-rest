@@ -70,7 +70,7 @@ function ResponsiveAppBar(props: AppBarProps) {
         backgroundColor: 'transparent',
         boxShadow: 'none',
         borderStyle:'none none solid none',
-        borderWidth: "2px",
+        borderWidth: "3px",
         borderColor:"#BDBDBD",
       }}>
       <Container maxWidth="xl">
@@ -142,7 +142,7 @@ function ResponsiveAppBar(props: AppBarProps) {
               mt:.4,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontWeight: 700,
+              fontWeight: 600,
               color: '#212121',
               textDecoration: 'none',
             }}
@@ -168,7 +168,7 @@ function ResponsiveAppBar(props: AppBarProps) {
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: '60px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{

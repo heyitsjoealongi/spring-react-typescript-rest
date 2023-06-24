@@ -35,14 +35,6 @@ const basicMenus = [
   },
 ];
 
-// const CardWrapper = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   @media (max-width: 768px) {
-//     flex-direction: column;
-//   }
-// `;
-
 // Middleware -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
@@ -59,11 +51,10 @@ const MenuFlex = styled.div`
     alignItems: flex-start;
     alignContent: flex-start;
     height: auto;
-    width: 50%;
-    maxWidth: 50%;
-    margin: 10px auto;
+    width: 50vw;
+    margin: 1.5em auto;
     padding: 0;
-    gap: 10px;
+    gap: 1.5em;
     background: none;
     border: none;
   }
