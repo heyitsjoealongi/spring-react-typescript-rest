@@ -4,6 +4,7 @@
 import * as React from 'react';
 
 // Packages -%- ////
+import { useNavigate } from "react-router-dom";
 
 // Components -%- ////
 import AppBar from '@mui/material/AppBar';
@@ -19,7 +20,7 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 // import AdbIcon from '@mui/icons-material/Adb';
-import { ReactComponent as SpringReactTypeScriptREST } from '../../static/svg/spring-react-typescript-rest.svg';
+import { ReactComponent as SpringReactTypeScriptREST } from '../../assets/svg/spring-react-typescript-rest.svg';
 
 // Integrations -%- ////
 
@@ -45,18 +46,17 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 function ResponsiveAppBar(props: AppBarProps) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
-
+  const navigate = useNavigate();
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
-
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (basic_item_link: string) => {
     setAnchorElNav(null);
+    navigate(basic_item_link ? basic_item_link : "/");
   };
-
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
@@ -115,7 +115,7 @@ function ResponsiveAppBar(props: AppBarProps) {
               }}
             >
               {props?.app_bar_menu.map((data) => (
-                <MenuItem key={data?.id} onClick={handleCloseNavMenu}>
+                <MenuItem key={data?.id} onClick={() => handleCloseNavMenu(data?.basic_item_link)}>
                   <Typography textAlign="center">{data?.basic_menu_title ? data?.basic_menu_title : ""}</Typography>
                 </MenuItem>
               ))}
