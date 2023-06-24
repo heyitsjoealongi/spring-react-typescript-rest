@@ -19,5 +19,5 @@ node_modules
 /.pnp.cjs
 .pnp.loader.mjs
 /.pnp.loader.mjs
-frontend
-/frontend
+frontend-helm-chart
+/frontend-helm-chart
