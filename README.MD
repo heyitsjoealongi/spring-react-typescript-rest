@@ -12,28 +12,40 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 
 ### Clear git cache (Frontend/Backend)
 
-```zsh
+```bash
 git rm -r --cached .
 ```
 
 ### Scan files for secrets (Frontend/Backend)
 
-```zsh
+```bash
 gshield secret scan repo C:\Users\colle\OneDrive\Documents\GitHub\collectedview2024
 ```
 
 ### Clean up code (Frontend)
 
-```zsh
+```bash
 cd frontend
 yarn prettier --write .
+```
+
+### Upgrade Packages (Frontend)
+
+```bash
+cd frontend
+yarn plugin import interactive-tools
+```
+
+```bash
+cd frontend
+yarn upgrade-interactive
 ```
 
 ## Frontend
 
 Access the frontend code by opening a command line in the root of this project and changing to the frontend folder.
 
-```zsh
+```bash
 cd frontend
 ```
 
@@ -45,25 +57,25 @@ cd frontend
 
 - Enable [Corepack](https://yarnpkg.com/getting-started/install#nodejs-1610) for installing Yarn
 
-  ```zsh
+  ```bash
   corepack enable
   ```
 
 - Install [Yarn](corepack prepare yarn@stable --activate) for installing and managing `package.json` dependencies
 
-  ```zsh
+  ```bash
   corepack prepare yarn@stable --activate
   ```
 
 - Upgrade [Yarn](https://yarnpkg.com/getting-started/install#updating-to-the-latest-versions) to the latest stable version
 
-  ```zsh
+  ```bash
   yarn set version stable
   ```
 
 - Install `package.json` dependencies for project
 
-  ```zsh
+  ```bash
   yarn install
   ```
 
@@ -73,7 +85,7 @@ cd frontend
 
 - In [Visual Studio Code](https://code.visualstudio.com/) terminal build the React TypeScript application into a bundle
 
-  ```zsh
+  ```bash
   yarn build
   ```
 
@@ -85,7 +97,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
 
 - Docker [build](https://docs.docker.com/engine/reference/commandline/build/) command
 
-  ```zsh
+  ```bash
   docker build -t spring-react-typescript-rest/frontend .
   ```
 
@@ -95,7 +107,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
 
   Start Container (Publish):
 
-  ```zsh
+  ```bash
   docker run -p 3000:3000 spring-react-typescript-rest/frontend
   ```
 
@@ -105,7 +117,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
 
   Login:
 
-  ```zsh
+  ```bash
   docker login
   ```
 
@@ -113,7 +125,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
 
   Tag:
 
-  ```zsh
+  ```bash
   docker tag spring-react-typescript-rest/frontend:latest collectedview/spring-react-typescript-rest-frontend:latest
   ```
 
@@ -121,7 +133,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
 
   Push:
 
-  ```zsh
+  ```bash
   docker push collectedview/spring-react-typescript-rest-frontend:latest
   ```
 
@@ -129,7 +141,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
 
 Access the backend code by opening a command line in the root of this project and changing to the backend folder.
 
-```zsh
+```bash
 cd backend
 ```
 
@@ -139,19 +151,19 @@ cd backend
 
 - In Powershell running as admin, enable [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-1---enable-the-windows-subsystem-for-linux)
 
-  ```zsh
+  ```bash
   dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
   ```
 
 - In Powershell running as admin, enable [Virtual Machine feature](https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-3---enable-virtual-machine-feature)
 
-  ```zsh
+  ```bash
   dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
   ```
 
 - In Powershell running as admin, install [WSL](https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command) to the second version
 
-  ```zsh
+  ```bash
   wsl --install Ubuntu-22.04
   ```
 
@@ -161,19 +173,19 @@ cd backend
 
 - In Hyper terminal upgrade WSL (Ubuntu)
 
-  ```zsh
+  ```ubuntu
   sudo apt update && sudo apt upgrade -y
   ```
 
 - Install [Unzip](https://linuxize.com/post/how-to-unzip-files-in-linux/) in WSL (Ubuntu)
 
-  ```bash
+  ```ubuntu
   sudo apt-get install unzip -y
   ```
 
 - Install [Zip](https://linuxize.com/post/how-to-unzip-files-in-linux/) in WSL (Ubuntu)
 
-  ```bash
+  ```ubuntu
   sudo apt-get install zip -y
   ```
 
@@ -203,7 +215,7 @@ cd backend
 
 - In [IntelliJ IDEA](https://www.jetbrains.com/idea/) terminal build the Spring Boot application into a JAR
 
-  ```zsh
+  ```bash
   ./gradlew build
   ```
 
@@ -215,7 +227,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
 
 - Docker [build](https://docs.docker.com/engine/reference/commandline/build/) command
 
-  ```zsh
+  ```bash
   docker build -t spring-react-typescript-rest/backend .
   ```
 
@@ -225,13 +237,13 @@ For more examples and information on Spring Boot Docker builds, reference the [S
 
   Start Container (Publish):
 
-  ```zsh
+  ```bash
   docker run -p 80:80 spring-react-typescript-rest/backend
   ```
 
   Start Container (Interactively & pseudo-TTY) :
 
-  ```zsh
+  ```bash
   docker run spring-react-typescript-rest/backend -it 80:80
   ```
 
@@ -241,7 +253,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
 
   Login:
 
-  ```zsh
+  ```bash
   docker login
   ```
 
@@ -249,7 +261,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
 
   Tag:
 
-  ```zsh
+  ```bash
   docker tag spring-react-typescript-rest/backend:latest collectedview/spring-react-typescript-rest-backend:latest
   ```
 
@@ -257,7 +269,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
 
   Push:
 
-  ```zsh
+  ```bash
   docker push collectedview/spring-react-typescript-rest-backend:latest
   ```
 
@@ -271,12 +283,17 @@ For more examples and information on Spring Boot Docker builds, reference the [S
 
 - Install [Helm](https://helm.sh/) with chocolatey
 
-  ```zsh
+  ```bash
   choco install kubernetes-helm
   ```
 
 - Create Helm chart with chocolatey
 
-  ```zsh
+  ```bash
   helm create <chart name>
   ```
+
+#### Acknowledgements
+
+[Logo](https://thenounproject.com/icon/spring-14717/)
+[User Icon](https://thenounproject.com/icon/user-5818176/)
