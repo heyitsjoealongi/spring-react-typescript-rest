@@ -55,14 +55,24 @@ function ResponsiveAppBar(props: AppBarProps) {
   };
   const handleCloseNavMenu = (basic_item_link: string) => {
     setAnchorElNav(null);
-    navigate(basic_item_link ? basic_item_link : "/");
+    if(basic_item_link){
+      navigate(`${basic_item_link}`);
+    }
   };
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static"
+      sx={{
+        background:'none',
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
+        borderStyle:'none none solid none',
+        borderWidth: "2px",
+        borderColor:"#BDBDBD",
+      }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
@@ -77,7 +87,7 @@ function ResponsiveAppBar(props: AppBarProps) {
               mt:.4,
               display: { xs: 'none', md: 'flex' },
               fontWeight: 700,
-              color: 'inherit',
+              color: '#212121',
               textDecoration: 'none',
             }}
           >
@@ -91,7 +101,7 @@ function ResponsiveAppBar(props: AppBarProps) {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              sx={{color: '#BDBDBD'}}
             >
               <MenuIcon />
             </IconButton>
@@ -114,7 +124,7 @@ function ResponsiveAppBar(props: AppBarProps) {
               }}
             >
               {props?.app_bar_menu.map((data) => (
-                <MenuItem key={data?.id} onClick={() => handleCloseNavMenu(data?.basic_item_link ? data?.basic_item_link : '/')}>
+                <MenuItem key={data?.id} onClick={() => handleCloseNavMenu(data?.basic_item_link)}>
                   <Typography textAlign="center">{data?.basic_menu_title ? data?.basic_menu_title : ""}</Typography>
                 </MenuItem>
               ))}
@@ -129,12 +139,11 @@ function ResponsiveAppBar(props: AppBarProps) {
             component="a"
             href=""
             sx={{
-              mr: 2,
+              mt:.4,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
               fontWeight: 700,
-              color: 'inherit',
+              color: '#212121',
               textDecoration: 'none',
             }}
           >
@@ -154,7 +163,7 @@ function ResponsiveAppBar(props: AppBarProps) {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, color: '#BDBDBD' }}>
                 <Avatar alt="Frontend" src="http://localhost:3000/spring-react-typescript-rest-user.png" />
               </IconButton>
             </Tooltip>

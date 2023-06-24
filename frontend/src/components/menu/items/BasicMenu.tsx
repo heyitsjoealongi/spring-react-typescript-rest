@@ -31,7 +31,9 @@ export default function BasicMenu(props: BasicMenuProps) {
   const navigate = useNavigate();
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
-    navigate(props?.basic_item_link ? props?.basic_item_link : "/");
+    if(props?.basic_item_link){
+      navigate(`${props?.basic_item_link}`);
+    }
   };
   // const handleClose = () => {
   //   setAnchorEl(null);
@@ -45,6 +47,9 @@ export default function BasicMenu(props: BasicMenuProps) {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
+        sx={{
+              color: '#757575',
+        }}
       >
         {props?.basic_menu_title ? props?.basic_menu_title : "Basic Menu"}
       </Button>

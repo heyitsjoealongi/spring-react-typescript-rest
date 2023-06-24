@@ -15,32 +15,22 @@ const appBar = {
 const basicMenus = [
   {
     id: 0,
-    basic_menu_title: "BM One",
+    basic_menu_title: "Menu One",
     basic_item_link: "/",
   },
   {
     id: 1,
-    basic_menu_title: "BM Two",
+    basic_menu_title: "Menu Two",
     basic_item_link: "/",
   },
   {
     id: 2,
-    basic_menu_title: "BM Three",
+    basic_menu_title: "Menu Three",
     basic_item_link: "/",
   },
   {
     id: 3,
-    basic_menu_title: "BM Four",
-    basic_item_link: "/",
-  },
-  {
-    id: 4,
-    basic_menu_title: "BM Five",
-    basic_item_link: "/",
-  },
-  {
-    id: 6,
-    basic_menu_title: "BM Six",
+    basic_menu_title: "Menu Four",
     basic_item_link: "/",
   },
 ];
@@ -69,7 +59,8 @@ const MenuFlex = styled.div`
     alignItems: flex-start;
     alignContent: flex-start;
     height: auto;
-    width: 60%;
+    width: 50%;
+    maxWidth: 50%;
     margin: 10px auto;
     padding: 0;
     gap: 10px;
@@ -84,7 +75,7 @@ const MenuFlexItem = styled.div`
     align-self: flex-start;
     height: auto;
     width: auto;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     background: none;
     border: none;
@@ -98,7 +89,10 @@ export default function Menu() {
     <MenuFlex>
       {basicMenus.map((data) => (
         <MenuFlexItem key={data?.id}>
-          <BasicMenu basic_menu_title={data?.basic_menu_title} basic_item_link={data?.basic_item_link} />
+          <BasicMenu 
+          basic_menu_title={data?.basic_menu_title} 
+          basic_item_link={data?.basic_item_link}
+           />
         </MenuFlexItem>
       ))}
     </MenuFlex>
