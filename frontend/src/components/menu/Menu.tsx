@@ -15,29 +15,29 @@ const appBar = {
 const basicMenus = [
   {
     id: 0,
-    basic_menu_title: "Menu One",
+    basic_menu_title: "Menu one",
     basic_menu_link: "/",
   },
   {
     id: 1,
-    basic_menu_title: "Menu Two",
+    basic_menu_title: "Menu two",
     basic_menu_link: "/",
   },
   {
     id: 2,
-    basic_menu_title: "Menu Three",
+    basic_menu_title: "Menu three",
     basic_menu_link: "/",
   },
   {
     id: 3,
-    basic_menu_title: "Menu Four",
+    basic_menu_title: "Menu four",
     basic_menu_link: "/",
   },
 ];
 const userMenus = [
   {
     id: 0,
-    user_menu_title: "Access",
+    user_menu_title: "Access account",
     user_menu_link: "/access-account",
   },
 ];
