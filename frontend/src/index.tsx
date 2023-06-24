@@ -5,7 +5,7 @@ import ReactDOM from "react-dom/client";
 // Packages -%- ////
 
 // Components -%- ////
-import App from "./App"
+import App from "./App";
 
 // Integrations -%- ////
 import reportWebVitals from "./reportWebVitals";
@@ -30,8 +30,9 @@ Sentry.init({
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Application -%- ////
+// Styled Components -%- ////
 
+// Application -%- ////
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -40,7 +41,7 @@ root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
-)
+);
 
 // System -%- ////
 

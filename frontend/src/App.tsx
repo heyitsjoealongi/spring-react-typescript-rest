@@ -2,11 +2,7 @@
 import React from "react";
 
 // Packages -%- ////
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Components -%- ////
 import Error from "./views/general/Error";
@@ -19,12 +15,14 @@ import Default from "./views/general/Default";
 // Cascading Style Sheets (CSS) -%- ////
 import "./App.css";
 
-// Component -%- ////
+// Styled Components -%- ////
+
+// Application -%- ////
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Default />,
-    errorElement: <Error/>,
+    errorElement: <Error />,
   },
 ]);
 

@@ -1,13 +1,28 @@
-import React from 'react'
+// React -%- ////
+import React from "react";
 
-import Menu from "../../components/menu/Menu"
+// Packages -%- ////
 
+// Components -%- ////
+import Menu from "../../components/menu/Menu";
+
+// Integrations -%- ////
+
+// Middleware -%- ////
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Styled Components -%- ////
+
+// Application -%- ////
 export default function Default() {
-    return (
-        <>
-            <main>
-              <Menu />
-            </main>
-        </>
-    )
+  return (
+    <>
+      <main>
+        <Menu />
+      </main>
+    </>
+  );
 }
+
+// System -%- ////

@@ -1,32 +1,50 @@
 // https://mui.com/material-ui/react-menu/
 
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+// React -%- ////
+import * as React from "react";
 
-export default function BasicMenu() {
+// Packages -%- ////
+
+// Components -%- ////
+import Button from "@mui/material/Button";
+// import Menu from '@mui/material/Menu';
+// import MenuItem from '@mui/material/MenuItem';
+
+// Integrations -%- ////
+
+// Middleware -%- ////
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Styled Components -%- ////
+
+// Application -%- ////
+type BasicMenuProps = {
+  menu_item_title: string;
+};
+
+export default function BasicMenu(props: BasicMenuProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  // };
 
   return (
     <div>
       <Button
         id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
+        aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
+        aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        Dashboard
+        {props?.menu_item_title}
       </Button>
-      <Menu
+      {/* <Menu
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
@@ -38,7 +56,9 @@ export default function BasicMenu() {
         <MenuItem onClick={handleClose}>Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
+      </Menu> */}
     </div>
   );
 }
+
+// System -%- ////
