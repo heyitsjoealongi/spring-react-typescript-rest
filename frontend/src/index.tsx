@@ -1,10 +1,17 @@
+// React -%- ////
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
+
+// Packages -%- ////
+
+// Components -%- ////
+import App from "./App"
+
+// Integrations -%- ////
 import reportWebVitals from "./reportWebVitals";
 import * as Sentry from "@sentry/react";
 
+// Middleware -%- ////
 Sentry.init({
   dsn: "https://11e48bcec0b54c81a38319fca65bebab@o536418.ingest.sentry.io/4505298496454656",
   integrations: [
@@ -21,14 +28,21 @@ Sentry.init({
   replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
 });
 
+// Cascading Style Sheets (CSS) -%- ////
+
+// Application -%- ////
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
-);
+)
+
+// System -%- ////
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
