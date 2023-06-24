@@ -1,12 +1,12 @@
 import React from 'react'
 
-import Nav from "../../components/menu/BasicMenu"
+import Menu from "../../components/menu/Menu"
 
 export default function Default() {
     return (
         <>
             <main>
-              <Nav />
+              <Menu />
             </main>
         </>
     )
