@@ -36,12 +36,17 @@ type AppBarProps = {
   app_bar_menu: {
     id: number;
     basic_menu_title: string;
-    basic_item_link: string;
+    basic_menu_link: string;
+  }[];
+  app_bar_user_menu:{
+    id: number;
+    user_menu_title: string;
+    user_menu_link: string;
   }[];
 };
 
 // const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar(props: AppBarProps) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -124,8 +129,8 @@ function ResponsiveAppBar(props: AppBarProps) {
               }}
             >
               {props?.app_bar_menu.map((data) => (
-                <MenuItem key={data?.id} onClick={() => handleCloseNavMenu(data?.basic_item_link)}>
-                  <Typography textAlign="center">{data?.basic_menu_title ? data?.basic_menu_title : ""}</Typography>
+                <MenuItem key={data?.id} onClick={() => handleCloseNavMenu(data?.basic_menu_link)}>
+                  <Typography textAlign="center">{data?.basic_menu_title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -162,7 +167,7 @@ function ResponsiveAppBar(props: AppBarProps) {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="User Settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, color: '#BDBDBD' }}>
                 <Avatar alt="Frontend" src="http://localhost:3000/spring-react-typescript-rest-user.png" />
               </IconButton>
@@ -183,9 +188,9 @@ function ResponsiveAppBar(props: AppBarProps) {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+              {props?.app_bar_user_menu.map((data) => (
+                <MenuItem key={data?.id} onClick={() => handleCloseNavMenu(data?.user_menu_link)}>
+                  <Typography textAlign="center">{data?.user_menu_title}</Typography>
                 </MenuItem>
               ))}
             </Menu>

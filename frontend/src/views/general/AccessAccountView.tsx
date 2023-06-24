@@ -2,12 +2,11 @@
 import React from "react";
 
 // Packages -%- ////
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // Components -%- ////
 import Box from '@mui/material/Box';
 import Menu from "../../components/menu/Menu";
-import Login from "../../components/login/Login"
+import AccessAccount from "../../components/account/AccessAccount"
 
 // Integrations -%- ////
 
@@ -17,20 +16,10 @@ import Login from "../../components/login/Login"
 
 // Styled Components -%- ////
 
-const theme = createTheme({
-  typography: {
-    fontFamily: [
-      'Overpass',
-    ].join(','),
-  },
-});
-
 // Application -%- ////
-export default function Default() {
+export default function AccessAccountView() {
   return (
     <>
-    <ThemeProvider theme={theme}>
-      <main>
                 <Menu />
             <Box
       component="form"
@@ -54,10 +43,8 @@ export default function Default() {
       autoComplete="off"
     >
 
-        <Login />
+        <AccessAccount />
         </Box>
-      </main>
-      </ThemeProvider>
     </>
   );
 }

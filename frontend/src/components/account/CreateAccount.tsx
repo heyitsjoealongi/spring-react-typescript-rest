@@ -27,7 +27,7 @@ import Button from '@mui/material/Button';
 // Styled Components -%- ////
 
 // Application -%- ////
-export default function Login() {
+export default function CreateAccount() {
   return (
     <>
     <Box
@@ -55,7 +55,7 @@ export default function Login() {
       autoComplete="off"
     >
       <Typography variant="h4" gutterBottom>
-        Access Point
+        Create account
       </Typography>
       <TextField 
       sx={{
@@ -84,6 +84,18 @@ export default function Login() {
        borderColor: '#9E9E9E',
     },
     }} id="outlined-basic" label="Password" type="password" variant="outlined" required={true}/>
+          <TextField fullWidth sx={{
+        order:2,
+        flex: "none",
+        alignSelf: "flexStart",
+        margin: "0 auto",
+        padding: 0,
+        background: 'none',
+        border: 'none',
+        '&:hover': {
+       borderColor: '#9E9E9E',
+    },
+    }} id="outlined-basic" label="Confirm Password" type="password" variant="outlined" required={true}/>
  <Button fullWidth sx={{
         order:2,
         flex: "none",
@@ -96,7 +108,7 @@ export default function Login() {
         '&:hover': {
        background: '#9E9E9E',
     },
-    }} startIcon={<LoginIcon />} variant="contained" size="large">Login</Button>
+    }} startIcon={<LoginIcon />} variant="contained" size="large">Create account</Button>
     </Box>
     </>
   );

@@ -3,7 +3,9 @@ import React from "react";
 
 // Packages -%- ////
 
+
 // Components -%- ////
+import Menu from "../../components/menu/Menu";
 
 // Integrations -%- ////
 
@@ -14,10 +16,10 @@ import React from "react";
 // Styled Components -%- ////
 
 // Application -%- ////
-export default function Default() {
+export default function DefaultView() {
   return (
     <>
-      <p>Error</p>
+      <Menu />
     </>
   );
 }
