@@ -1,11 +1,10 @@
 // React -%- ////
-import React from "react";
+import React from 'react'
 
 // Packages -%- ////
 
-
 // Components -%- ////
-import Menu from "../../components/menu/Menu";
+import Menu from '../../components/menu/Menu'
 
 // Integrations -%- ////
 
@@ -17,11 +16,11 @@ import Menu from "../../components/menu/Menu";
 
 // Application -%- ////
 export default function DefaultView() {
-  return (
-    <>
-      <Menu />
-    </>
-  );
+    return (
+        <>
+            <Menu />
+        </>
+    )
 }
 
 // System -%- ////

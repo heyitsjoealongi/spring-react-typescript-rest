@@ -1,5 +1,5 @@
 // React -%- ////
-import React from "react";
+import React from 'react'
 
 // Packages -%- ////
 
@@ -15,11 +15,11 @@ import React from "react";
 
 // Application -%- ////
 export default function Default() {
-  return (
-    <>
-      <p>Error</p>
-    </>
-  );
+    return (
+        <>
+            <p>Error</p>
+        </>
+    )
 }
 
 // System -%- ////
