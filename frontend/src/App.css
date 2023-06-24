@@ -1,45 +1,62 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *:before,
 *:after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  font-display: auto;
-  font-style: normal;
-  font-smooth: auto;
-  font-size: 18px;
-  line-height: 1;
+    font-display: auto;
+    font-style: normal;
+    font-smooth: auto;
+    font-size: 18px;
+    line-height: 1;
 }
 
 body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 html,
 body {
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  -khtml-appearance: none;
-  appearance: none;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    -khtml-appearance: none;
+    appearance: none;
 }
 
 ::selection {
-  background: yellow;
+    background: #cddc39;
 }
 
-h1,h2,h3,h4,h5,h6,p,a,li,b,strong  {
-color:#616161;
-color:#212121;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+b,
+strong {
+    color: #212121;
+}
+
+hr {
+    color: #bdbdbd;
+}
+
+a {
+    color: #212121;
 }
