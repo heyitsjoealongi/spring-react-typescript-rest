@@ -152,6 +152,26 @@ For more examples and information on Node JavaScript Docker builds, reference th
   docker push collectedview/spring-react-typescript-rest-frontend:latest
   ```
 
+### Amplify
+
+#### Install Amplify CLI
+
+- Install [AWS Amplify CLI](https://docs.amplify.aws/cli/) to setup backend functionality
+
+```bash
+npm install -g @aws-amplify/cli
+```
+
+- Create a CLI based Access Id and Secret Key for an AWS [IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
+
+- Configure the [AWS Amplify](https://aws.amazon.com/amplify/) configuration
+
+```bash
+amplify configure
+```
+
+- Initialize the [AWS Amplify](https://aws.amazon.com/amplify/) project configuration
+
 ## Backend
 
 Access the backend code by opening a command line in the root of this project and changing to the backend folder.
