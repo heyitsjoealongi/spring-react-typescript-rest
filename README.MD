@@ -172,6 +172,8 @@ amplify configure
 
 - Initialize the [AWS Amplify](https://aws.amazon.com/amplify/) project configuration
 
+- If the initialization does not complete, rename the `.gitignore`, make sure to copy the contents of the initial `.gitignore`, into the file Amplify generates
+
 ## Backend
 
 Access the backend code by opening a command line in the root of this project and changing to the backend folder.

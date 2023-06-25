@@ -7,7 +7,9 @@
 import * as React from 'react'
 
 // Packages -%- ////
-// import styled from "@emotion/styled";
+import { useFormik } from 'formik'
+import * as yup from 'yup'
+// import { Auth } from 'aws-amplify'
 
 // Components -%- ////
 import Box from '@mui/material/Box'
@@ -17,6 +19,20 @@ import LoginIcon from '@mui/icons-material/Login'
 import Button from '@mui/material/Button'
 
 // Integrations -%- ////
+const validationSchema = yup.object({
+    username: yup
+        .string()
+        .email('Enter a valid email')
+        .required('Email is required'),
+    password: yup
+        .string()
+        .min(8, 'Password should be of minimum 8 characters length')
+        .required('Password is required'),
+    confirmPassword: yup
+        .string()
+        .min(8, 'Password should be of minimum 8 characters length')
+        .required('Password is required'),
+})
 
 // Middleware -%- ////
 
@@ -25,7 +41,26 @@ import Button from '@mui/material/Button'
 // Styled Components -%- ////
 
 // Application -%- ////
+
+type CreateAccountProps = {
+    username: string;
+    password: string;
+    confirmPassword: string;
+}
+
 export default function CreateAccount() {
+    const formik = useFormik({
+        initialValues: {
+            username: '',
+            password: '',
+            confirmPassword: '',
+        },
+        validationSchema: validationSchema,
+        onSubmit: (values: CreateAccountProps) => {
+            console.log('---values', JSON.stringify(values, null, 2))
+        },
+    })
+
     return (
         <>
             <Box
@@ -51,91 +86,127 @@ export default function CreateAccount() {
                 }}
                 noValidate
                 autoComplete="off"
+                onSubmit={formik?.handleSubmit}
             >
-                <Typography variant="h4" gutterBottom>
-                    Create account
-                </Typography>
-                <TextField
-                    sx={{
-                        order: 1,
-                        flex: 'none',
-                        alignSelf: 'flexStart',
-                        height: 'auto',
-                        width: '100%',
-                        margin: '0 auto',
-                        padding: 0,
-                        background: 'none',
-                        border: 'none',
-                        '&:hover': {
-                            borderColor: '#9E9E9E',
-                        },
-                    }}
-                    id="outlined-basic"
-                    label="User Name"
-                    variant="outlined"
-                    required={true}
-                />
-                <TextField
-                    fullWidth
-                    sx={{
-                        order: 2,
-                        flex: 'none',
-                        alignSelf: 'flexStart',
-                        margin: '0 auto',
-                        padding: 0,
-                        background: 'none',
-                        border: 'none',
-                        '&:hover': {
-                            borderColor: '#9E9E9E',
-                        },
-                    }}
-                    id="outlined-basic"
-                    label="Password"
-                    type="password"
-                    variant="outlined"
-                    required={true}
-                />
-                <TextField
-                    fullWidth
-                    sx={{
-                        order: 2,
-                        flex: 'none',
-                        alignSelf: 'flexStart',
-                        margin: '0 auto',
-                        padding: 0,
-                        background: 'none',
-                        border: 'none',
-                        '&:hover': {
-                            borderColor: '#9E9E9E',
-                        },
-                    }}
-                    id="outlined-basic"
-                    label="Confirm Password"
-                    type="password"
-                    variant="outlined"
-                    required={true}
-                />
-                <Button
-                    fullWidth
-                    sx={{
-                        order: 2,
-                        flex: 'none',
-                        alignSelf: 'flexStart',
-                        margin: '0 auto',
-                        padding: '0.5em 1.5em',
-                        color: '#212121',
-                        background: '#CDDC39',
-                        boxShadow: 'none',
-                        '&:hover': {
-                            background: '#9E9E9E',
-                        },
-                    }}
-                    startIcon={<LoginIcon />}
-                    variant="contained"
-                    size="large"
-                >
-                    Create account
-                </Button>
+           
+                    <Typography variant="h4" gutterBottom>
+                        Create account
+                    </Typography>
+                    <TextField
+                        sx={{
+                            order: 1,
+                            flex: 'none',
+                            alignSelf: 'flexStart',
+                            height: 'auto',
+                            width: '100%',
+                            margin: '0 auto',
+                            padding: 0,
+                            background: 'none',
+                            border: 'none',
+                            '&:hover': {
+                                borderColor: '#9E9E9E',
+                            },
+                        }}
+                        id="username"
+                        name="username"
+                        label="User Name"
+                        variant="outlined"
+                        required={true}
+                        value={formik?.values?.username}
+                        onChange={formik?.handleChange}
+                        error={
+                            formik?.touched?.username &&
+                            Boolean(formik?.errors?.username)
+                        }
+                        helperText={
+                            formik?.touched?.username &&
+                            formik?.errors?.username
+                        }
+                    />
+                    <TextField
+                        fullWidth
+                        sx={{
+                            order: 2,
+                            flex: 'none',
+                            alignSelf: 'flexStart',
+                            margin: '0 auto',
+                            padding: 0,
+                            background: 'none',
+                            border: 'none',
+                            '&:hover': {
+                                borderColor: '#9E9E9E',
+                            },
+                        }}
+                        id="password"
+                        name="password"
+                        label="Password"
+                        type="password"
+                        variant="outlined"
+                        required={true}
+                        value={formik?.values?.password}
+                        onChange={formik?.handleChange}
+                        error={
+                            formik?.touched?.password &&
+                            Boolean(formik?.errors?.password)
+                        }
+                        helperText={
+                            formik?.touched?.password &&
+                            formik?.errors?.password
+                        }
+                    />
+                    <TextField
+                        fullWidth
+                        sx={{
+                            order: 2,
+                            flex: 'none',
+                            alignSelf: 'flexStart',
+                            margin: '0 auto',
+                            padding: 0,
+                            background: 'none',
+                            border: 'none',
+                            '&:hover': {
+                                borderColor: '#9E9E9E',
+                            },
+                        }}
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        label="Confirm Password"
+                        type="password"
+                        variant="outlined"
+                        required={true}
+                        value={formik?.values?.confirmPassword}
+                        onChange={formik?.handleChange}
+                        error={
+                            formik?.touched?.confirmPassword &&
+                            Boolean(formik?.errors?.confirmPassword)
+                        }
+                        helperText={
+                            formik?.touched?.confirmPassword &&
+                            formik?.errors?.confirmPassword
+                        }
+                    />
+                    <Button
+                        fullWidth
+                        sx={{
+                            order: 2,
+                            flex: 'none',
+                            alignSelf: 'flexStart',
+                            margin: '0 auto',
+                            padding: '0.5em 1.5em',
+                            color: '#212121',
+                            background: '#CDDC39',
+                            boxShadow: 'none',
+                            '&:hover': {
+                                background: '#9E9E9E',
+                            },
+                        }}
+                        startIcon={<LoginIcon />}
+                        type="submit"
+                        variant="contained"
+                        size="large"
+                    >
+                        Create account
+                    </Button>
             </Box>
         </>
     )
