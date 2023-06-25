@@ -22,7 +22,6 @@ export default function AccessAccountView() {
         <>
             <Menu />
             <Box
-                component="form"
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -33,14 +32,12 @@ export default function AccessAccountView() {
                     alignContent: 'center',
                     height: 'auto',
                     width: '100%',
-                    margin: '25vh auto',
+                    margin: '18vh auto',
                     padding: '0',
                     gap: '0',
                     background: 'none',
                     border: 'none',
                 }}
-                noValidate
-                autoComplete="off"
             >
                 <AccessAccount />
             </Box>
