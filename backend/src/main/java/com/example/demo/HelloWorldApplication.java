@@ -1,12 +1,13 @@
 package com.example.demo;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class HelloWorldApplication {
 
 	public static void main(String[] args) {
-		System.out.println("Spring Boot TypeScript REST");
+		SpringApplication.run(HelloWorldApplication.class, args);
 	}
 
 }
