@@ -139,8 +139,21 @@ export default function CreateAccount() {
                         variant="contained"
                         fullWidth
                         type="submit"
+                        sx={{
+                            order: 2,
+                            flex: 'none',
+                            alignSelf: 'flexStart',
+                            margin: '0 auto',
+                            padding: '0.5em 1.5em',
+                            color: '#212121',
+                            background: '#CDDC39',
+                            boxShadow: 'none',
+                            '&:hover': {
+                                background: '#9E9E9E',
+                            },
+                        }}
                     >
-                        Submit
+                        Create account
                     </Button>
                 </Box>
             </form>
