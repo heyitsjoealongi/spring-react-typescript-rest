@@ -2,9 +2,10 @@
 // https://mui.com/material-ui/react-text-field/
 // https://mui.com/material-ui/material-icons/?query=login
 // https://mui.com/material-ui/react-button/
+// https://formik.org/docs/examples/with-material-ui
 
 // React -%- ////
-import * as React from 'react'
+import React from 'react'
 
 // Packages -%- ////
 import { useFormik } from 'formik'
@@ -14,13 +15,20 @@ import * as yup from 'yup'
 // Components -%- ////
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import TextField from '@mui/material/TextField'
-import LoginIcon from '@mui/icons-material/Login'
 import Button from '@mui/material/Button'
+import TextField from '@mui/material/TextField'
 
 // Integrations -%- ////
 const validationSchema = yup.object({
+    name: yup
+        .string()
+        .min(8, 'Password should be of minimum 8 characters length')
+        .required('Email is required'),
     username: yup
+        .string()
+        .min(8, 'Password should be of minimum 8 characters length')
+        .required('Email is required'),
+    email: yup
         .string()
         .email('Enter a valid email')
         .required('Email is required'),
@@ -28,43 +36,25 @@ const validationSchema = yup.object({
         .string()
         .min(8, 'Password should be of minimum 8 characters length')
         .required('Password is required'),
-    confirmPassword: yup
-        .string()
-        .min(8, 'Password should be of minimum 8 characters length')
-        .required('Password is required'),
 })
-
-// Middleware -%- ////
-
-// Cascading Style Sheets (CSS) -%- ////
-
-// Styled Components -%- ////
-
-// Application -%- ////
-
-type CreateAccountProps = {
-    username: string;
-    password: string;
-    confirmPassword: string;
-}
 
 export default function CreateAccount() {
     const formik = useFormik({
         initialValues: {
+            name: '',
             username: '',
+            email: '',
             password: '',
-            confirmPassword: '',
         },
         validationSchema: validationSchema,
-        onSubmit: (values: CreateAccountProps) => {
-            console.log('---values', JSON.stringify(values, null, 2))
+        onSubmit: (values) => {
+            alert(JSON.stringify(values, null, 2))
         },
     })
 
     return (
         <>
             <Box
-                component="form"
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -84,132 +74,76 @@ export default function CreateAccount() {
                     borderColor: '#BDBDBD',
                     borderRadius: '3px',
                 }}
-                noValidate
-                autoComplete="off"
-                onSubmit={formik?.handleSubmit}
             >
-           
-                    <Typography variant="h4" gutterBottom>
-                        Create account
-                    </Typography>
+                <Typography variant="h4" gutterBottom>
+                    Create account
+                </Typography>
+                <form onSubmit={formik.handleSubmit}>
                     <TextField
-                        sx={{
-                            order: 1,
-                            flex: 'none',
-                            alignSelf: 'flexStart',
-                            height: 'auto',
-                            width: '100%',
-                            margin: '0 auto',
-                            padding: 0,
-                            background: 'none',
-                            border: 'none',
-                            '&:hover': {
-                                borderColor: '#9E9E9E',
-                            },
-                        }}
+                        fullWidth
+                        id="name"
+                        name="name"
+                        label="Name"
+                        value={formik.values.name}
+                        onChange={formik.handleChange}
+                        error={
+                            formik.touched.name && Boolean(formik.errors.name)
+                        }
+                        helperText={formik.touched.name && formik.errors.name}
+                    />
+                    <TextField
+                        fullWidth
                         id="username"
                         name="username"
-                        label="User Name"
-                        variant="outlined"
-                        required={true}
-                        value={formik?.values?.username}
-                        onChange={formik?.handleChange}
+                        label="Username"
+                        value={formik.values.username}
+                        onChange={formik.handleChange}
                         error={
-                            formik?.touched?.username &&
-                            Boolean(formik?.errors?.username)
+                            formik.touched.username &&
+                            Boolean(formik.errors.username)
                         }
                         helperText={
-                            formik?.touched?.username &&
-                            formik?.errors?.username
+                            formik.touched.username && formik.errors.username
                         }
                     />
                     <TextField
                         fullWidth
-                        sx={{
-                            order: 2,
-                            flex: 'none',
-                            alignSelf: 'flexStart',
-                            margin: '0 auto',
-                            padding: 0,
-                            background: 'none',
-                            border: 'none',
-                            '&:hover': {
-                                borderColor: '#9E9E9E',
-                            },
-                        }}
+                        id="email"
+                        name="email"
+                        label="Email"
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
+                        error={
+                            formik.touched.email && Boolean(formik.errors.email)
+                        }
+                        helperText={formik.touched.email && formik.errors.email}
+                    />
+                    <TextField
+                        fullWidth
                         id="password"
                         name="password"
                         label="Password"
                         type="password"
-                        variant="outlined"
-                        required={true}
-                        value={formik?.values?.password}
-                        onChange={formik?.handleChange}
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
                         error={
-                            formik?.touched?.password &&
-                            Boolean(formik?.errors?.password)
+                            formik.touched.password &&
+                            Boolean(formik.errors.password)
                         }
                         helperText={
-                            formik?.touched?.password &&
-                            formik?.errors?.password
-                        }
-                    />
-                    <TextField
-                        fullWidth
-                        sx={{
-                            order: 2,
-                            flex: 'none',
-                            alignSelf: 'flexStart',
-                            margin: '0 auto',
-                            padding: 0,
-                            background: 'none',
-                            border: 'none',
-                            '&:hover': {
-                                borderColor: '#9E9E9E',
-                            },
-                        }}
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        label="Confirm Password"
-                        type="password"
-                        variant="outlined"
-                        required={true}
-                        value={formik?.values?.confirmPassword}
-                        onChange={formik?.handleChange}
-                        error={
-                            formik?.touched?.confirmPassword &&
-                            Boolean(formik?.errors?.confirmPassword)
-                        }
-                        helperText={
-                            formik?.touched?.confirmPassword &&
-                            formik?.errors?.confirmPassword
+                            formik.touched.password && formik.errors.password
                         }
                     />
                     <Button
-                        fullWidth
-                        sx={{
-                            order: 2,
-                            flex: 'none',
-                            alignSelf: 'flexStart',
-                            margin: '0 auto',
-                            padding: '0.5em 1.5em',
-                            color: '#212121',
-                            background: '#CDDC39',
-                            boxShadow: 'none',
-                            '&:hover': {
-                                background: '#9E9E9E',
-                            },
-                        }}
-                        startIcon={<LoginIcon />}
-                        type="submit"
+                        color="primary"
                         variant="contained"
-                        size="large"
+                        fullWidth
+                        type="submit"
                     >
-                        Create account
+                        Submit
                     </Button>
+                </form>
             </Box>
         </>
     )
 }
-
-// System -%- ////

@@ -22,7 +22,6 @@ export default function CreateAccountView() {
         <>
             <Menu />
             <Box
-                component="form"
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -39,8 +38,6 @@ export default function CreateAccountView() {
                     background: 'none',
                     border: 'none',
                 }}
-                noValidate
-                autoComplete="off"
             >
                 <CreateAccount />
             </Box>

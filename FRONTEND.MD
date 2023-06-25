@@ -33,6 +33,22 @@ DIVIDER COLOR #BDBDBD
 // System -%- ////
 ```
 
+## Emotion Styled Classes ``
+
+```bash
+flexDirection
+flexWrap
+flexFlow
+justifyContent
+alignItems
+alignContent
+alignSelf
+borderStyle
+borderWidth
+borderColor
+borderRadius
+```
+
 ## Mapping Components
 
 - [Documentation](https://react.dev/learn/rendering-lists)
@@ -52,7 +68,7 @@ const items = [
 ))}
 ```
 
-## Styled Objects
+## Emotion Styled Objects
 
 - [Documentation](https://emotion.sh/docs/object-styles)
 
@@ -70,7 +86,7 @@ return(
 )
 ```
 
-## Styled Components
+## Emotion Styled Components
 
 - [Documentation](https://emotion.sh/docs/styled)
 
@@ -84,7 +100,7 @@ const Button = styled.button`
 return(<Button>Click me</Button>)
 ```
 
-## Flex (Styled Components)
+## Emotion Flex (Styled Components)
 
 - [Documentation](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 

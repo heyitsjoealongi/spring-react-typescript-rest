@@ -70,7 +70,7 @@ const MenuFlex = styled.div`
 const MenuFlexItem = styled.div`
     order: 0;
     flex: none;
-    align-self: flex-start;
+    alignself: flex-start;
     height: auto;
     width: auto;
     margin: 0 auto;

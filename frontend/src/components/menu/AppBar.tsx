@@ -16,10 +16,8 @@ import Menu from '@mui/material/Menu'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import Avatar from '@mui/material/Avatar'
-// import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
-// import AdbIcon from '@mui/icons-material/Adb';
 import { ReactComponent as SpringReactTypeScriptREST } from '../../assets/svg/spring-react-typescript-rest.svg'
 
 // Integrations -%- ////
@@ -45,10 +43,7 @@ type AppBarProps = {
     }[]
 }
 
-// const pages = ['Products', 'Pricing', 'Blog'];
-// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
-function ResponsiveAppBar(props: AppBarProps) {
+export default function ResponsiveAppBar(props: AppBarProps) {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
         null
     )
@@ -106,7 +101,6 @@ function ResponsiveAppBar(props: AppBarProps) {
                             ? props?.app_bar_title
                             : 'Basic Menu'}
                     </Typography>
-
                     <Box
                         sx={{
                             flexGrow: 1,
@@ -183,18 +177,7 @@ function ResponsiveAppBar(props: AppBarProps) {
                             flexGrow: 1,
                             display: { xs: 'none', md: 'flex' },
                         }}
-                    >
-                        {/* {props?.app_bar_menu.map((data) => (
-              <Button
-                key={data?.id}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {data?.basic_menu_title ? data?.basic_menu_title : ""}
-              </Button>
-            ))} */}
-                    </Box>
-
+                    ></Box>
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="User Settings">
                             <IconButton
@@ -242,4 +225,3 @@ function ResponsiveAppBar(props: AppBarProps) {
         </AppBar>
     )
 }
-export default ResponsiveAppBar
