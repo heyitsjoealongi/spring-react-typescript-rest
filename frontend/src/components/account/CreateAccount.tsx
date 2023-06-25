@@ -54,31 +54,31 @@ export default function CreateAccount() {
 
     return (
         <>
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    flexWrap: 'wrap',
-                    flexFlow: 'column wrap',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    alignContent: 'center',
-                    height: 'auto',
-                    width: '33.33%',
-                    margin: '3em auto',
-                    padding: '3em 1.5em',
-                    gap: '1.5em',
-                    background: 'none',
-                    borderStyle: 'solid',
-                    borderWidth: '3px',
-                    borderColor: '#BDBDBD',
-                    borderRadius: '3px',
-                }}
-            >
-                <Typography variant="h4" gutterBottom>
-                    Create account
-                </Typography>
-                <form onSubmit={formik.handleSubmit}>
+            <form onSubmit={formik.handleSubmit}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        flexWrap: 'nowrap',
+                        flexFlow: 'column nowrap',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        alignContent: 'center',
+                        height: 'auto',
+                        width: '50vw',
+                        margin: '3em auto',
+                        padding: '3em 1.5em',
+                        gap: '1.5em',
+                        background: 'none',
+                        borderStyle: 'solid',
+                        borderWidth: '3px',
+                        borderColor: '#BDBDBD',
+                        borderRadius: '3px',
+                    }}
+                >
+                    <Typography variant="h4" gutterBottom>
+                        Create account
+                    </Typography>
                     <TextField
                         fullWidth
                         id="name"
@@ -142,8 +142,8 @@ export default function CreateAccount() {
                     >
                         Submit
                     </Button>
-                </form>
-            </Box>
+                </Box>
+            </form>
         </>
     )
 }

@@ -51,12 +51,12 @@ const MenuFlex = styled.div`
     display: none;
     @media (min-width: 1000px) {
         display: flex;
-        flexdirection: row;
-        flexwrap: nowrap;
-        flexflow: row nowrap;
-        justifycontent: flex-start;
-        alignitems: flex-start;
-        aligncontent: flex-start;
+        flexDirection: row;
+        flexWrap: nowrap;
+        flexFlow: row nowrap;
+        justifyContent: flex-start;
+        alignItems: flex-start;
+        alignContent: flex-start;
         height: auto;
         width: 50vw;
         margin: 1.5em auto;
@@ -70,7 +70,7 @@ const MenuFlex = styled.div`
 const MenuFlexItem = styled.div`
     order: 0;
     flex: none;
-    alignself: flex-start;
+    alignSelf: flex-start;
     height: auto;
     width: auto;
     margin: 0 auto;
