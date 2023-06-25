@@ -22,20 +22,20 @@ import TextField from '@mui/material/TextField'
 const validationSchema = yup.object({
     name: yup
         .string()
-        .min(8, 'Password should be of minimum 8 characters length')
-        .required('Email is required'),
+        .min(8)
+        .required(),
     username: yup
         .string()
-        .min(8, 'Password should be of minimum 8 characters length')
-        .required('Email is required'),
+        .min(8)
+        .required(),
     email: yup
         .string()
-        .email('Enter a valid email')
-        .required('Email is required'),
+        .email()
+        .required(),
     password: yup
         .string()
-        .min(8, 'Password should be of minimum 8 characters length')
-        .required('Password is required'),
+        .min(8)
+        .required(),
 })
 
 export default function CreateAccount() {
@@ -65,7 +65,7 @@ export default function CreateAccount() {
                         alignItems: 'center',
                         alignContent: 'center',
                         height: 'auto',
-                        width: '50vw',
+                        width: '30vw',
                         margin: '3em auto',
                         padding: '3em 1.5em',
                         gap: '1.5em',
