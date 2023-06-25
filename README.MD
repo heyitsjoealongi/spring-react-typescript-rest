@@ -1,6 +1,6 @@
 # Spring React TypeScript REST
 
-Fullstack Application — React (TypeScript) Frontend, Spring Boot Java Backend, OkHttp Server, and MySQL (Vitess) Service.
+Fullstack Application — React (TypeScript) Frontend, Spring Boot Java Backend, OkHttp Client, and MySQL (Vitess) Service.
 
 - Frontend Demo via [Vercel](https://spring-react-typescript-rest.vercel.app/)
 
