@@ -275,13 +275,13 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Start Container (Publish):
 
   ```bash
-  docker run -p 80:80 spring-react-typescript-rest/backend
+  docker run -p 9000:9000 spring-react-typescript-rest/backend
   ```
 
   Start Container (Interactively & pseudo-TTY) :
 
   ```bash
-  docker run spring-react-typescript-rest/backend -it 80:80
+  docker run spring-react-typescript-rest/backend -it 9000:9000
   ```
 
 #### Push Docker Image

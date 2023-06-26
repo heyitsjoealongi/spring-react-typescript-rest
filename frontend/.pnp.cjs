@@ -6978,7 +6978,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["core-js-pure", "npm:3.31.0"],\
             ["error-stack-parser", "npm:2.1.4"],\
             ["find-up", "npm:5.0.0"],\
-            ["html-entities", "npm:2.3.6"],\
+            ["html-entities", "npm:2.4.0"],\
             ["loader-utils", "npm:2.0.4"],\
             ["react-refresh", "npm:0.11.0"],\
             ["schema-utils", "npm:3.3.0"],\
@@ -7467,7 +7467,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@adobe/css-tools", "npm:4.2.0"],\
             ["@babel/runtime", "npm:7.22.5"],\
             ["@types/testing-library__jest-dom", "npm:5.14.6"],\
-            ["aria-query", "npm:5.2.1"],\
+            ["aria-query", "npm:5.3.0"],\
             ["chalk", "npm:3.0.0"],\
             ["css.escape", "npm:1.5.1"],\
             ["dom-accessibility-api", "npm:0.5.16"],\
@@ -8952,10 +8952,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:5.2.1", {\
-          "packageLocation": "./.yarn/cache/aria-query-npm-5.2.1-ead5426e72-fdb7a337d9.zip/node_modules/aria-query/",\
+        ["npm:5.3.0", {\
+          "packageLocation": "./.yarn/cache/aria-query-npm-5.3.0-76575ac83b-305bd73c76.zip/node_modules/aria-query/",\
           "packageDependencies": [\
-            ["aria-query", "npm:5.2.1"],\
+            ["aria-query", "npm:5.3.0"],\
             ["dequal", "npm:2.0.3"]\
           ],\
           "linkType": "HARD"\
@@ -9124,7 +9124,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["autoprefixer", "virtual:fbe44114a93f4663e16caa7bdf1b737b40ff92bd0aba1fe6281e160aa518c6cd7a17d024ebf8f0b27e01eea8f6c735b57c81b0c4cc1862390c18fd408c179820#npm:10.4.14"],\
             ["@types/postcss", null],\
             ["browserslist", "npm:4.21.9"],\
-            ["caniuse-lite", "npm:1.0.30001507"],\
+            ["caniuse-lite", "npm:1.0.30001508"],\
             ["fraction.js", "npm:4.2.0"],\
             ["normalize-range", "npm:0.1.2"],\
             ["picocolors", "npm:1.0.0"],\
@@ -9678,7 +9678,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/browserslist-npm-4.21.9-f6128308c1-80d3820584.zip/node_modules/browserslist/",\
           "packageDependencies": [\
             ["browserslist", "npm:4.21.9"],\
-            ["caniuse-lite", "npm:1.0.30001507"],\
+            ["caniuse-lite", "npm:1.0.30001508"],\
             ["electron-to-chromium", "npm:1.4.440"],\
             ["node-releases", "npm:2.0.12"],\
             ["update-browserslist-db", "virtual:f6128308c12e2b37fe427262226a88e213eb66128b3445db14a7af8a6dafb815a9c4562e232b574e216fb796ee19313d71844b195e41ad82170480289a6b575c#npm:1.0.11"]\
@@ -9846,7 +9846,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["caniuse-api", "npm:3.0.0"],\
             ["browserslist", "npm:4.21.9"],\
-            ["caniuse-lite", "npm:1.0.30001507"],\
+            ["caniuse-lite", "npm:1.0.30001508"],\
             ["lodash.memoize", "npm:4.1.2"],\
             ["lodash.uniq", "npm:4.5.0"]\
           ],\
@@ -9854,10 +9854,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["caniuse-lite", [\
-        ["npm:1.0.30001507", {\
-          "packageLocation": "./.yarn/cache/caniuse-lite-npm-1.0.30001507-b3531bb98e-7044172bdf.zip/node_modules/caniuse-lite/",\
+        ["npm:1.0.30001508", {\
+          "packageLocation": "./.yarn/cache/caniuse-lite-npm-1.0.30001508-67aad9bd1b-0a083ed921.zip/node_modules/caniuse-lite/",\
           "packageDependencies": [\
-            ["caniuse-lite", "npm:1.0.30001507"]\
+            ["caniuse-lite", "npm:1.0.30001508"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -11854,7 +11854,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-jsx-a11y", "virtual:597e314e4070dd2cbfda20c7d9801f6e82c1a45984fc382a7d678db54c4026a23ebc5dfcc242081f8f8cb3d9d9e89967e285ce0416383d8450b738b9d40666df#npm:6.7.1"],\
             ["@babel/runtime", "npm:7.22.5"],\
             ["@types/eslint", null],\
-            ["aria-query", "npm:5.2.1"],\
+            ["aria-query", "npm:5.3.0"],\
             ["array-includes", "npm:3.1.6"],\
             ["array.prototype.flatmap", "npm:1.3.1"],\
             ["ast-types-flow", "npm:0.0.7"],\
@@ -13158,10 +13158,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["html-entities", [\
-        ["npm:2.3.6", {\
-          "packageLocation": "./.yarn/cache/html-entities-npm-2.3.6-a45c21cb36-559a88dc3a.zip/node_modules/html-entities/",\
+        ["npm:2.4.0", {\
+          "packageLocation": "./.yarn/cache/html-entities-npm-2.4.0-510164c624-25bea32642.zip/node_modules/html-entities/",\
           "packageDependencies": [\
-            ["html-entities", "npm:2.3.6"]\
+            ["html-entities", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -21099,7 +21099,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["default-gateway", "npm:6.0.3"],\
             ["express", "npm:4.18.2"],\
             ["graceful-fs", "npm:4.2.11"],\
-            ["html-entities", "npm:2.3.6"],\
+            ["html-entities", "npm:2.4.0"],\
             ["http-proxy-middleware", "virtual:3ecc280b76c58ab6d2c504fe69ad5da7d7a0531a85f70e247a01d89f74dca3902d796e5b5336baf561625af514d42fdf36f34f150c5e883cd1bcace455058a2b#npm:2.0.6"],\
             ["ipaddr.js", "npm:2.1.0"],\
             ["launch-editor", "npm:2.6.0"],\

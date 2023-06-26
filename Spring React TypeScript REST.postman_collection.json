@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "beb36e33-bba7-4964-925d-69ff73466991",
+		"name": "Spring React TypeScript REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14039447"
+	},
+	"item": [
+		{
+			"name": "Backend",
+			"item": [
+				{
+					"name": "Hello World",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/hello-world",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
