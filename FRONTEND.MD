@@ -166,3 +166,33 @@ type Props = {
 
 {props?.prop.map((data) => ({data?.prop ? data?.prop : ''}))}
 ```
+
+
+## Amplify Configuration (amplify.yaml)
+
+```bash
+version: 1
+applications:
+  - backend:
+      phases:
+        build:
+          commands:
+            - '# Execute Amplify CLI with the helper script'
+            - amplifyPush --simple
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - yarn install --production --force --legacy-peer-deps
+        build:
+          commands:
+            - yarn build
+      artifacts:
+        baseDirectory: build
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+    appRoot: frontend
+```

@@ -2,7 +2,7 @@
 
 Fullstack Application — React (TypeScript) Frontend, Spring Boot Java Backend, OkHttp Client, and MySQL (Vitess) Service.
 
-- Frontend Demo via [Vercel](https://spring-react-typescript-rest.vercel.app/)
+- Frontend Demo via [Amplify](https://main.dh06uvvwsg3un.amplifyapp.com/)
 
 - Frontend Image via [Docker Hub](https://hub.docker.com/r/collectedview/spring-react-typescript-rest-frontend)
 
