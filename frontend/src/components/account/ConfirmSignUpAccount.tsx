@@ -3,7 +3,7 @@
 // https://mui.com/material-ui/material-icons/?query=login
 // https://mui.com/material-ui/react-button/
 // https://formik.org/docs/examples/with-material-ui
-// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#sign-up
+// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#confirm-sign-up
 
 // React -%- ////
 import React from 'react'
@@ -20,52 +20,35 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
 // Integrations -%- ////
-type SignUpProps = {
+type ConfirmSignUpAccountProps = {
     username: string,
-    password: string,
-    email: string,
-    name: string,
+    code: string,
 }
 
-async function signUp(values: SignUpProps) {
+async function confirmSignUp(values: ConfirmSignUpAccountProps) {
   try {
-    const {username, password, email, name} = values
-    const { user } = await Auth.signUp({
-      username,
-      password,
-      attributes: {
-       email,
-       name,
-      },
-      autoSignIn: {
-        enabled: true,
-      }
-    });
-    console.log(user);
+    const {username, code} = values
+    await Auth.confirmSignUp(username, code);
   } catch (error) {
-    console.log('error signing up:', error);
+    console.log('error confirming sign up', error);
   }
 }
 
 const validationSchema = yup.object({
-    name: yup.string().min(8).required(),
     username: yup.string().min(8).required(),
-    email: yup.string().email().required(),
-    password: yup.string().min(8).required(),
+    code: yup.string().min(6).required(),
 })
 
-export default function CreateAccount() {
+export default function ConfirmSignUpAccount() {
     const formik = useFormik({
         initialValues: {
-            name: '',
             username: '',
-            email: '',
-            password: '',
+            code: '',
         },
         validationSchema: validationSchema,
         onSubmit: async (values) => {
             // alert(JSON.stringify(values, null, 2))
-            return await signUp(values)
+            return await confirmSignUp(values)
         },
     })
 
@@ -94,20 +77,8 @@ export default function CreateAccount() {
                     }}
                 >
                     <Typography variant="h4" gutterBottom>
-                        Create account
+                        Confirm sign up
                     </Typography>
-                    <TextField
-                        fullWidth
-                        id="name"
-                        name="name"
-                        label="Name"
-                        value={formik.values.name}
-                        onChange={formik.handleChange}
-                        error={
-                            formik.touched.name && Boolean(formik.errors.name)
-                        }
-                        helperText={formik.touched.name && formik.errors.name}
-                    />
                     <TextField
                         fullWidth
                         id="username"
@@ -125,30 +96,17 @@ export default function CreateAccount() {
                     />
                     <TextField
                         fullWidth
-                        id="email"
-                        name="email"
-                        label="Email"
-                        value={formik.values.email}
+                        id="code"
+                        name="code"
+                        label="Code"
+                        value={formik.values.code}
                         onChange={formik.handleChange}
                         error={
-                            formik.touched.email && Boolean(formik.errors.email)
-                        }
-                        helperText={formik.touched.email && formik.errors.email}
-                    />
-                    <TextField
-                        fullWidth
-                        id="password"
-                        name="password"
-                        label="Password"
-                        type="password"
-                        value={formik.values.password}
-                        onChange={formik.handleChange}
-                        error={
-                            formik.touched.password &&
-                            Boolean(formik.errors.password)
+                            formik.touched.code &&
+                            Boolean(formik.errors.code)
                         }
                         helperText={
-                            formik.touched.password && formik.errors.password
+                            formik.touched.code && formik.errors.code
                         }
                     />
                     <Button
@@ -170,7 +128,7 @@ export default function CreateAccount() {
                             },
                         }}
                     >
-                        Create account
+                        Confirm sign up
                     </Button>
                 </Box>
             </form>

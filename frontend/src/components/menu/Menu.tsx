@@ -37,13 +37,13 @@ const basicMenus = [
 const userMenus = [
     {
         id: 0,
-        user_menu_title: 'Create account',
-        user_menu_link: '/create-account',
+        user_menu_title: 'Sign up',
+        user_menu_link: '/sign-up',
     },
     {
         id: 1,
-        user_menu_title: 'Confirm account',
-        user_menu_link: '/confirm-account',
+        user_menu_title: 'Confirm sign up',
+        user_menu_link: '/confirm-sign-up',
     },
     {
         id: 2,
@@ -52,8 +52,8 @@ const userMenus = [
     },
     {
         id: 3,
-        user_menu_title: 'Access account',
-        user_menu_link: '/access-account',
+        user_menu_title: 'Sign in',
+        user_menu_link: '/sign-in',
     },
 ]
 

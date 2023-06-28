@@ -3,7 +3,6 @@
 // https://mui.com/material-ui/material-icons/?query=login
 // https://mui.com/material-ui/react-button/
 // https://formik.org/docs/examples/with-material-ui
-// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#confirm-sign-up
 
 // React -%- ////
 import React from 'react'
@@ -20,35 +19,36 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
 // Integrations -%- ////
-type ConfirmSignUpProps = {
+type SignInAccountProps = {
     username: string,
-    code: string,
+    password: string,
 }
 
-async function confirmSignUp(values: ConfirmSignUpProps) {
+async function signIn(values: SignInAccountProps) {
   try {
-    const {username, code} = values
-    await Auth.confirmSignUp(username, code);
+    const {username, password} = values
+    const user = await Auth.signIn(username, password);
+    console.log('user', user)
   } catch (error) {
-    console.log('error confirming sign up', error);
+    console.log('error signing in', error);
   }
 }
 
 const validationSchema = yup.object({
     username: yup.string().min(8).required(),
-    code: yup.string().min(6).required(),
+    password: yup.string().min(8).required(),
 })
 
-export default function ConfirmAccount() {
+export default function SignInAccount() {
     const formik = useFormik({
         initialValues: {
             username: '',
-            code: '',
+            password: '',
         },
         validationSchema: validationSchema,
         onSubmit: async (values) => {
             // alert(JSON.stringify(values, null, 2))
-            return await confirmSignUp(values)
+            return await signIn(values)
         },
     })
 
@@ -77,7 +77,7 @@ export default function ConfirmAccount() {
                     }}
                 >
                     <Typography variant="h4" gutterBottom>
-                        Confirm account
+                        Sign in
                     </Typography>
                     <TextField
                         fullWidth
@@ -96,17 +96,18 @@ export default function ConfirmAccount() {
                     />
                     <TextField
                         fullWidth
-                        id="code"
-                        name="code"
-                        label="Code"
-                        value={formik.values.code}
+                        id="password"
+                        name="password"
+                        label="Password"
+                        type="password"
+                        value={formik.values.password}
                         onChange={formik.handleChange}
                         error={
-                            formik.touched.code &&
-                            Boolean(formik.errors.code)
+                            formik.touched.password &&
+                            Boolean(formik.errors.password)
                         }
                         helperText={
-                            formik.touched.code && formik.errors.code
+                            formik.touched.password && formik.errors.password
                         }
                     />
                     <Button
@@ -128,7 +129,7 @@ export default function ConfirmAccount() {
                             },
                         }}
                     >
-                        Confirm account
+                        Sign in
                     </Button>
                 </Box>
             </form>

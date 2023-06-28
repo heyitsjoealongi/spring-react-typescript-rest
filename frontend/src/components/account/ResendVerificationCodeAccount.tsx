@@ -20,11 +20,11 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
 // Integrations -%- ////
-type ResendVerificationCodeProps = {
+type ResendVerificationCodeAccountProps = {
     username: string,
 }
 
-async function resendConfirmationCode(values: ResendVerificationCodeProps) {
+async function resendConfirmationCode(values: ResendVerificationCodeAccountProps) {
   try {
     const {username} = values
     await Auth.resendSignUp(username);

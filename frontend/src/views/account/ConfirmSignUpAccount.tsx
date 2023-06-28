@@ -6,7 +6,7 @@ import React from 'react'
 // Components -%- ////
 import Box from '@mui/material/Box'
 import Menu from '../../components/menu/Menu'
-import ConfirmAccount from '../../components/account/ConfirmAccount'
+import ConfirmSignUpAccount from '../../components/account/ConfirmSignUpAccount'
 
 // Integrations -%- ////
 
@@ -17,7 +17,7 @@ import ConfirmAccount from '../../components/account/ConfirmAccount'
 // Styled Components -%- ////
 
 // Application -%- ////
-export default function ConfirmAccountView() {
+export default function ConfirmSignUpAccountView() {
     return (
         <>
             <Menu />
@@ -39,7 +39,7 @@ export default function ConfirmAccountView() {
                     border: 'none',
                 }}
             >
-                <ConfirmAccount />
+                <ConfirmSignUpAccount />
             </Box>
         </>
     )

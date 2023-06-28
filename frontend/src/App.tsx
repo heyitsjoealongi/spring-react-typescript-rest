@@ -8,10 +8,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 // Components -%- ////
 import ErrorView from './views/general/ErrorView'
 import DefaultView from './views/general/DefaultView'
-import CreateAccountView from './views/account/CreateAccountView'
-import ConfirmAccountView from './views/account/ConfirmAccountView'
+import SignUpAccountView from './views/account/SignUpAccountView'
+import ConfirmSignUpAccount from './views/account/ConfirmSignUpAccount'
 import ResendVerificationCodeAccountView from './views/account/ResendVerificationCodeAccountView'
-import AccessAccountView from './views/account/AccessAccountView'
+import SignInAccountView from './views/account/SignInAccountView'
 
 // Integrations -%- ////
 
@@ -35,13 +35,13 @@ const router = createBrowserRouter([
         errorElement: <ErrorView />,
     },
     {
-        path: '/create-account',
-        element: <CreateAccountView />,
+        path: '/sign-up',
+        element: <SignUpAccountView />,
         errorElement: <ErrorView />,
     },
     {
-        path: '/confirm-account',
-        element: <ConfirmAccountView />,
+        path: '/confirm-sign-up',
+        element: <ConfirmSignUpAccount />,
         errorElement: <ErrorView />,
     },
     {
@@ -50,8 +50,8 @@ const router = createBrowserRouter([
         errorElement: <ErrorView />,
     },
     {
-        path: '/access-account',
-        element: <AccessAccountView />,
+        path: '/sign-in',
+        element: <SignInAccountView />,
         errorElement: <ErrorView />,
     }
 ])

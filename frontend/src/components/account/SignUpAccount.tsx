@@ -3,6 +3,7 @@
 // https://mui.com/material-ui/material-icons/?query=login
 // https://mui.com/material-ui/react-button/
 // https://formik.org/docs/examples/with-material-ui
+// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#sign-up
 
 // React -%- ////
 import React from 'react'
@@ -10,7 +11,7 @@ import React from 'react'
 // Packages -%- ////
 import { useFormik } from 'formik'
 import * as yup from 'yup'
-// import { Auth } from 'aws-amplify'
+import { Auth } from 'aws-amplify';
 
 // Components -%- ////
 import Box from '@mui/material/Box'
@@ -19,26 +20,52 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
 // Integrations -%- ////
+type SignUpAccountProps = {
+    username: string,
+    password: string,
+    email: string,
+    name: string,
+}
+
+async function signUp(values: SignUpAccountProps) {
+  try {
+    const {username, password, email, name} = values
+    const { user } = await Auth.signUp({
+      username,
+      password,
+      attributes: {
+       email,
+       name,
+      },
+      autoSignIn: {
+        enabled: true,
+      }
+    });
+    console.log(user);
+  } catch (error) {
+    console.log('error signing up:', error);
+  }
+}
+
 const validationSchema = yup.object({
-    username: yup
-        .string()
-        .min(8)
-        .required(),
-    password: yup
-        .string()
-        .min(8)
-        .required(),
+    name: yup.string().min(8).required(),
+    username: yup.string().min(8).required(),
+    email: yup.string().email().required(),
+    password: yup.string().min(8).required(),
 })
 
-export default function AccessAccount() {
+export default function SignUpAccount() {
     const formik = useFormik({
         initialValues: {
+            name: '',
             username: '',
+            email: '',
             password: '',
         },
         validationSchema: validationSchema,
-        onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2))
+        onSubmit: async (values) => {
+            // alert(JSON.stringify(values, null, 2))
+            return await signUp(values)
         },
     })
 
@@ -67,8 +94,20 @@ export default function AccessAccount() {
                     }}
                 >
                     <Typography variant="h4" gutterBottom>
-                        Access account
+                        Sign up
                     </Typography>
+                    <TextField
+                        fullWidth
+                        id="name"
+                        name="name"
+                        label="Name"
+                        value={formik.values.name}
+                        onChange={formik.handleChange}
+                        error={
+                            formik.touched.name && Boolean(formik.errors.name)
+                        }
+                        helperText={formik.touched.name && formik.errors.name}
+                    />
                     <TextField
                         fullWidth
                         id="username"
@@ -83,6 +122,18 @@ export default function AccessAccount() {
                         helperText={
                             formik.touched.username && formik.errors.username
                         }
+                    />
+                    <TextField
+                        fullWidth
+                        id="email"
+                        name="email"
+                        label="Email"
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
+                        error={
+                            formik.touched.email && Boolean(formik.errors.email)
+                        }
+                        helperText={formik.touched.email && formik.errors.email}
                     />
                     <TextField
                         fullWidth
@@ -119,7 +170,7 @@ export default function AccessAccount() {
                             },
                         }}
                     >
-                        Access account
+                        Sign up
                     </Button>
                 </Box>
             </form>
