@@ -28,8 +28,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@aws-amplify/api-graphql", "npm:3.4.1"],\
-            ["@aws-amplify/auth", "npm:5.5.1"],\
+            ["@aws-amplify/api-graphql", "npm:3.4.2"],\
+            ["@aws-amplify/auth", "npm:5.5.2"],\
             ["@aws-amplify/cache", "npm:5.1.2"],\
             ["@aws-amplify/core", "npm:5.5.1"],\
             ["@aws-crypto/sha256-js", "npm:4.0.0"],\
@@ -51,7 +51,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/yup", "npm:0.32.0"],\
             ["@typescript-eslint/eslint-plugin", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:5.60.1"],\
             ["@typescript-eslint/parser", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:5.60.1"],\
-            ["aws-amplify", "npm:5.3.1"],\
+            ["aws-amplify", "npm:5.3.2"],\
             ["buffer", "npm:6.0.3"],\
             ["eslint", "npm:8.43.0"],\
             ["eslint-plugin-react", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:7.32.2"],\
@@ -62,7 +62,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-router-dom", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:6.14.0"],\
             ["react-scripts", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:5.0.1"],\
             ["tslib", "npm:2.6.0"],\
-            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"],\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"],\
             ["web-vitals", "npm:3.3.2"],\
             ["yup", "npm:1.2.0"]\
           ],\
@@ -142,11 +142,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-amplify/api", [\
-        ["npm:5.3.1", {\
-          "packageLocation": "./.yarn/cache/@aws-amplify-api-npm-5.3.1-f2b121b058-4d271f69b7.zip/node_modules/@aws-amplify/api/",\
+        ["npm:5.3.2", {\
+          "packageLocation": "./.yarn/cache/@aws-amplify-api-npm-5.3.2-44ec619d3e-88758756de.zip/node_modules/@aws-amplify/api/",\
           "packageDependencies": [\
-            ["@aws-amplify/api", "npm:5.3.1"],\
-            ["@aws-amplify/api-graphql", "npm:3.4.1"],\
+            ["@aws-amplify/api", "npm:5.3.2"],\
+            ["@aws-amplify/api-graphql", "npm:3.4.2"],\
             ["@aws-amplify/api-rest", "npm:3.3.1"],\
             ["tslib", "npm:1.14.1"]\
           ],\
@@ -154,15 +154,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-amplify/api-graphql", [\
-        ["npm:3.4.1", {\
-          "packageLocation": "./.yarn/cache/@aws-amplify-api-graphql-npm-3.4.1-a1e239ad72-15bd42dae0.zip/node_modules/@aws-amplify/api-graphql/",\
+        ["npm:3.4.2", {\
+          "packageLocation": "./.yarn/cache/@aws-amplify-api-graphql-npm-3.4.2-57556ce8ce-fe064c1a46.zip/node_modules/@aws-amplify/api-graphql/",\
           "packageDependencies": [\
-            ["@aws-amplify/api-graphql", "npm:3.4.1"],\
+            ["@aws-amplify/api-graphql", "npm:3.4.2"],\
             ["@aws-amplify/api-rest", "npm:3.3.1"],\
-            ["@aws-amplify/auth", "npm:5.5.1"],\
+            ["@aws-amplify/auth", "npm:5.5.2"],\
             ["@aws-amplify/cache", "npm:5.1.2"],\
             ["@aws-amplify/core", "npm:5.5.1"],\
-            ["@aws-amplify/pubsub", "npm:5.3.1"],\
+            ["@aws-amplify/pubsub", "npm:5.3.2"],\
             ["graphql", "npm:15.8.0"],\
             ["tslib", "npm:1.14.1"],\
             ["uuid", "npm:3.4.0"],\
@@ -185,10 +185,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-amplify/auth", [\
-        ["npm:5.5.1", {\
-          "packageLocation": "./.yarn/cache/@aws-amplify-auth-npm-5.5.1-e9ba95dbed-e3e7491e10.zip/node_modules/@aws-amplify/auth/",\
+        ["npm:5.5.2", {\
+          "packageLocation": "./.yarn/cache/@aws-amplify-auth-npm-5.5.2-07722e94c4-55f73271dd.zip/node_modules/@aws-amplify/auth/",\
           "packageDependencies": [\
-            ["@aws-amplify/auth", "npm:5.5.1"],\
+            ["@aws-amplify/auth", "npm:5.5.2"],\
             ["@aws-amplify/core", "npm:5.5.1"],\
             ["amazon-cognito-identity-js", "npm:6.3.1"],\
             ["tslib", "npm:1.14.1"],\
@@ -227,14 +227,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-amplify/datastore", [\
-        ["npm:4.6.1", {\
-          "packageLocation": "./.yarn/cache/@aws-amplify-datastore-npm-4.6.1-53487ab956-28b8e78eeb.zip/node_modules/@aws-amplify/datastore/",\
+        ["npm:4.6.2", {\
+          "packageLocation": "./.yarn/cache/@aws-amplify-datastore-npm-4.6.2-5320c9158f-b2136821d2.zip/node_modules/@aws-amplify/datastore/",\
           "packageDependencies": [\
-            ["@aws-amplify/datastore", "npm:4.6.1"],\
-            ["@aws-amplify/api", "npm:5.3.1"],\
-            ["@aws-amplify/auth", "npm:5.5.1"],\
+            ["@aws-amplify/datastore", "npm:4.6.2"],\
+            ["@aws-amplify/api", "npm:5.3.2"],\
+            ["@aws-amplify/auth", "npm:5.5.2"],\
             ["@aws-amplify/core", "npm:5.5.1"],\
-            ["@aws-amplify/pubsub", "npm:5.3.1"],\
+            ["@aws-amplify/pubsub", "npm:5.3.2"],\
             ["amazon-cognito-identity-js", "npm:6.3.1"],\
             ["idb", "npm:5.0.6"],\
             ["immer", "npm:9.0.6"],\
@@ -247,12 +247,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-amplify/geo", [\
-        ["npm:2.1.1", {\
-          "packageLocation": "./.yarn/cache/@aws-amplify-geo-npm-2.1.1-cde27d5891-33fed328e0.zip/node_modules/@aws-amplify/geo/",\
+        ["npm:2.1.2", {\
+          "packageLocation": "./.yarn/cache/@aws-amplify-geo-npm-2.1.2-7d64c29eca-f15a6f0600.zip/node_modules/@aws-amplify/geo/",\
           "packageDependencies": [\
-            ["@aws-amplify/geo", "npm:2.1.1"],\
+            ["@aws-amplify/geo", "npm:2.1.2"],\
             ["@aws-amplify/core", "npm:5.5.1"],\
-            ["@aws-sdk/client-location", "npm:3.186.2"],\
+            ["@aws-sdk/client-location", "npm:3.186.3"],\
             ["@turf/boolean-clockwise", "npm:6.5.0"],\
             ["camelcase-keys", "npm:6.2.2"],\
             ["tslib", "npm:1.14.1"]\
@@ -261,13 +261,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-amplify/interactions", [\
-        ["npm:5.2.1", {\
-          "packageLocation": "./.yarn/cache/@aws-amplify-interactions-npm-5.2.1-8e298a8149-5f67dda33d.zip/node_modules/@aws-amplify/interactions/",\
+        ["npm:5.2.2", {\
+          "packageLocation": "./.yarn/cache/@aws-amplify-interactions-npm-5.2.2-b8c8c6aca6-e5fab83cfc.zip/node_modules/@aws-amplify/interactions/",\
           "packageDependencies": [\
-            ["@aws-amplify/interactions", "npm:5.2.1"],\
+            ["@aws-amplify/interactions", "npm:5.2.2"],\
             ["@aws-amplify/core", "npm:5.5.1"],\
-            ["@aws-sdk/client-lex-runtime-service", "npm:3.186.2"],\
-            ["@aws-sdk/client-lex-runtime-v2", "npm:3.186.2"],\
+            ["@aws-sdk/client-lex-runtime-service", "npm:3.186.3"],\
+            ["@aws-sdk/client-lex-runtime-v2", "npm:3.186.3"],\
             ["base-64", "npm:1.0.0"],\
             ["fflate", "npm:0.7.3"],\
             ["pako", "npm:2.0.4"],\
@@ -291,12 +291,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-amplify/predictions", [\
-        ["npm:5.4.1", {\
-          "packageLocation": "./.yarn/cache/@aws-amplify-predictions-npm-5.4.1-01de112b7f-5338536377.zip/node_modules/@aws-amplify/predictions/",\
+        ["npm:5.4.2", {\
+          "packageLocation": "./.yarn/cache/@aws-amplify-predictions-npm-5.4.2-478c020f51-851545dea8.zip/node_modules/@aws-amplify/predictions/",\
           "packageDependencies": [\
-            ["@aws-amplify/predictions", "npm:5.4.1"],\
+            ["@aws-amplify/predictions", "npm:5.4.2"],\
             ["@aws-amplify/core", "npm:5.5.1"],\
-            ["@aws-amplify/storage", "npm:5.6.1"],\
+            ["@aws-amplify/storage", "npm:5.6.2"],\
             ["@aws-sdk/client-comprehend", "npm:3.6.1"],\
             ["@aws-sdk/client-polly", "npm:3.6.1"],\
             ["@aws-sdk/client-rekognition", "npm:3.6.1"],\
@@ -312,11 +312,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-amplify/pubsub", [\
-        ["npm:5.3.1", {\
-          "packageLocation": "./.yarn/cache/@aws-amplify-pubsub-npm-5.3.1-0d2462cf52-3307eedd01.zip/node_modules/@aws-amplify/pubsub/",\
+        ["npm:5.3.2", {\
+          "packageLocation": "./.yarn/cache/@aws-amplify-pubsub-npm-5.3.2-61f203ec50-96b50b47d7.zip/node_modules/@aws-amplify/pubsub/",\
           "packageDependencies": [\
-            ["@aws-amplify/pubsub", "npm:5.3.1"],\
-            ["@aws-amplify/auth", "npm:5.5.1"],\
+            ["@aws-amplify/pubsub", "npm:5.3.2"],\
+            ["@aws-amplify/auth", "npm:5.5.2"],\
             ["@aws-amplify/cache", "npm:5.1.2"],\
             ["@aws-amplify/core", "npm:5.5.1"],\
             ["graphql", "npm:15.8.0"],\
@@ -338,12 +338,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-amplify/storage", [\
-        ["npm:5.6.1", {\
-          "packageLocation": "./.yarn/cache/@aws-amplify-storage-npm-5.6.1-e94f734b1f-571ba5e618.zip/node_modules/@aws-amplify/storage/",\
+        ["npm:5.6.2", {\
+          "packageLocation": "./.yarn/cache/@aws-amplify-storage-npm-5.6.2-f5a7b3e091-d0475a844e.zip/node_modules/@aws-amplify/storage/",\
           "packageDependencies": [\
-            ["@aws-amplify/storage", "npm:5.6.1"],\
+            ["@aws-amplify/storage", "npm:5.6.2"],\
             ["@aws-amplify/core", "npm:5.5.1"],\
-            ["@aws-sdk/client-s3", "npm:3.6.3"],\
+            ["@aws-sdk/client-s3", "npm:3.6.4"],\
             ["@aws-sdk/s3-request-presigner", "npm:3.6.1"],\
             ["@aws-sdk/util-create-request", "npm:3.6.1"],\
             ["@aws-sdk/util-format-url", "npm:3.6.1"],\
@@ -724,13 +724,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/client-lex-runtime-service", [\
-        ["npm:3.186.2", {\
-          "packageLocation": "./.yarn/cache/@aws-sdk-client-lex-runtime-service-npm-3.186.2-848de6eaa3-2786394d87.zip/node_modules/@aws-sdk/client-lex-runtime-service/",\
+        ["npm:3.186.3", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-client-lex-runtime-service-npm-3.186.3-ff01375813-0f3e691ac6.zip/node_modules/@aws-sdk/client-lex-runtime-service/",\
           "packageDependencies": [\
-            ["@aws-sdk/client-lex-runtime-service", "npm:3.186.2"],\
+            ["@aws-sdk/client-lex-runtime-service", "npm:3.186.3"],\
             ["@aws-crypto/sha256-browser", "npm:2.0.0"],\
             ["@aws-crypto/sha256-js", "npm:2.0.0"],\
-            ["@aws-sdk/client-sts", "npm:3.186.2"],\
+            ["@aws-sdk/client-sts", "npm:3.186.3"],\
             ["@aws-sdk/config-resolver", "npm:3.186.0"],\
             ["@aws-sdk/credential-provider-node", "npm:3.186.0"],\
             ["@aws-sdk/fetch-http-handler", "npm:3.186.0"],\
@@ -767,13 +767,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/client-lex-runtime-v2", [\
-        ["npm:3.186.2", {\
-          "packageLocation": "./.yarn/cache/@aws-sdk-client-lex-runtime-v2-npm-3.186.2-68892e3fdb-9df77f4964.zip/node_modules/@aws-sdk/client-lex-runtime-v2/",\
+        ["npm:3.186.3", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-client-lex-runtime-v2-npm-3.186.3-e35c2f6373-3c5bc4fc93.zip/node_modules/@aws-sdk/client-lex-runtime-v2/",\
           "packageDependencies": [\
-            ["@aws-sdk/client-lex-runtime-v2", "npm:3.186.2"],\
+            ["@aws-sdk/client-lex-runtime-v2", "npm:3.186.3"],\
             ["@aws-crypto/sha256-browser", "npm:2.0.0"],\
             ["@aws-crypto/sha256-js", "npm:2.0.0"],\
-            ["@aws-sdk/client-sts", "npm:3.186.2"],\
+            ["@aws-sdk/client-sts", "npm:3.186.3"],\
             ["@aws-sdk/config-resolver", "npm:3.186.0"],\
             ["@aws-sdk/credential-provider-node", "npm:3.186.0"],\
             ["@aws-sdk/eventstream-handler-node", "npm:3.186.0"],\
@@ -815,13 +815,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/client-location", [\
-        ["npm:3.186.2", {\
-          "packageLocation": "./.yarn/cache/@aws-sdk-client-location-npm-3.186.2-431fa3fc89-0b4a59f5b1.zip/node_modules/@aws-sdk/client-location/",\
+        ["npm:3.186.3", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-client-location-npm-3.186.3-72a9c3961a-32982df8f7.zip/node_modules/@aws-sdk/client-location/",\
           "packageDependencies": [\
-            ["@aws-sdk/client-location", "npm:3.186.2"],\
+            ["@aws-sdk/client-location", "npm:3.186.3"],\
             ["@aws-crypto/sha256-browser", "npm:2.0.0"],\
             ["@aws-crypto/sha256-js", "npm:2.0.0"],\
-            ["@aws-sdk/client-sts", "npm:3.186.2"],\
+            ["@aws-sdk/client-sts", "npm:3.186.3"],\
             ["@aws-sdk/config-resolver", "npm:3.186.0"],\
             ["@aws-sdk/credential-provider-node", "npm:3.186.0"],\
             ["@aws-sdk/fetch-http-handler", "npm:3.186.0"],\
@@ -979,10 +979,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/client-s3", [\
-        ["npm:3.6.3", {\
-          "packageLocation": "./.yarn/cache/@aws-sdk-client-s3-npm-3.6.3-fcb05e54e2-560b2e2617.zip/node_modules/@aws-sdk/client-s3/",\
+        ["npm:3.6.4", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-client-s3-npm-3.6.4-63e597b17e-8cc18dc632.zip/node_modules/@aws-sdk/client-s3/",\
           "packageDependencies": [\
-            ["@aws-sdk/client-s3", "npm:3.6.3"],\
+            ["@aws-sdk/client-s3", "npm:3.6.4"],\
             ["@aws-crypto/sha256-browser", "npm:1.2.2"],\
             ["@aws-crypto/sha256-js", "npm:1.2.2"],\
             ["@aws-sdk/config-resolver", "npm:3.6.1"],\
@@ -1027,7 +1027,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@aws-sdk/util-utf8-node", "npm:3.6.1"],\
             ["@aws-sdk/util-waiter", "npm:3.6.1"],\
             ["@aws-sdk/xml-builder", "npm:3.6.1"],\
-            ["fast-xml-parser", "npm:4.2.4"],\
+            ["fast-xml-parser", "npm:4.2.5"],\
             ["tslib", "npm:2.6.0"]\
           ],\
           "linkType": "HARD"\
@@ -1074,10 +1074,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/client-sts", [\
-        ["npm:3.186.2", {\
-          "packageLocation": "./.yarn/cache/@aws-sdk-client-sts-npm-3.186.2-6c546ab87d-1488564813.zip/node_modules/@aws-sdk/client-sts/",\
+        ["npm:3.186.3", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-client-sts-npm-3.186.3-a1f1841336-bce283b9f6.zip/node_modules/@aws-sdk/client-sts/",\
           "packageDependencies": [\
-            ["@aws-sdk/client-sts", "npm:3.186.2"],\
+            ["@aws-sdk/client-sts", "npm:3.186.3"],\
             ["@aws-crypto/sha256-browser", "npm:2.0.0"],\
             ["@aws-crypto/sha256-js", "npm:2.0.0"],\
             ["@aws-sdk/config-resolver", "npm:3.186.0"],\
@@ -1112,7 +1112,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@aws-sdk/util-utf8-browser", "npm:3.186.0"],\
             ["@aws-sdk/util-utf8-node", "npm:3.186.0"],\
             ["entities", "npm:2.2.0"],\
-            ["fast-xml-parser", "npm:4.2.4"],\
+            ["fast-xml-parser", "npm:4.2.5"],\
             ["tslib", "npm:2.6.0"]\
           ],\
           "linkType": "HARD"\
@@ -8207,7 +8207,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["natural-compare-lite", "npm:1.4.0"],\
             ["semver", "npm:7.5.3"],\
             ["tsutils", "virtual:a613f6d1029302e7f5566de8133b14bf640d0e153bcbdb1ff817484c7cc31423c9b46e97a24da84ee6f9e3fd105e7d8f71b2a068488b3511f063086bd379bcff#npm:3.21.0"],\
-            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"]\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"]\
           ],\
           "packagePeers": [\
             "@types/eslint",\
@@ -8262,7 +8262,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/typescript-estree", "virtual:aa822720a25e1037c824f1087855c5dda71901b9549e9be6246b06c118d30ba5843749b1a21fbd9f6088499ad5ebe17974086004522c73562b0091d344719c4d#npm:5.60.1"],\
             ["debug", "virtual:531b6e79f7bcef9fa432316ab3ce4b1417df151c8e8350181023a666d55724fcedfdfe50cba6ee7c25a5adbd4f024013f036b79fb10bed8621708e2f7d85e6c6#npm:4.3.4"],\
             ["eslint", "npm:8.43.0"],\
-            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"]\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"]\
           ],\
           "packagePeers": [\
             "@types/eslint",\
@@ -8303,7 +8303,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["debug", "virtual:531b6e79f7bcef9fa432316ab3ce4b1417df151c8e8350181023a666d55724fcedfdfe50cba6ee7c25a5adbd4f024013f036b79fb10bed8621708e2f7d85e6c6#npm:4.3.4"],\
             ["eslint", "npm:8.43.0"],\
             ["tsutils", "virtual:a613f6d1029302e7f5566de8133b14bf640d0e153bcbdb1ff817484c7cc31423c9b46e97a24da84ee6f9e3fd105e7d8f71b2a068488b3511f063086bd379bcff#npm:3.21.0"],\
-            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"]\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"]\
           ],\
           "packagePeers": [\
             "@types/eslint",\
@@ -8343,7 +8343,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["is-glob", "npm:4.0.3"],\
             ["semver", "npm:7.5.3"],\
             ["tsutils", "virtual:a613f6d1029302e7f5566de8133b14bf640d0e153bcbdb1ff817484c7cc31423c9b46e97a24da84ee6f9e3fd105e7d8f71b2a068488b3511f063086bd379bcff#npm:3.21.0"],\
-            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"]\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"]\
           ],\
           "packagePeers": [\
             "@types/typescript",\
@@ -9205,22 +9205,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["aws-amplify", [\
-        ["npm:5.3.1", {\
-          "packageLocation": "./.yarn/cache/aws-amplify-npm-5.3.1-b2ce29a077-2b57e2f30f.zip/node_modules/aws-amplify/",\
+        ["npm:5.3.2", {\
+          "packageLocation": "./.yarn/cache/aws-amplify-npm-5.3.2-8e88bd4c99-5cc1cde907.zip/node_modules/aws-amplify/",\
           "packageDependencies": [\
-            ["aws-amplify", "npm:5.3.1"],\
+            ["aws-amplify", "npm:5.3.2"],\
             ["@aws-amplify/analytics", "npm:6.3.1"],\
-            ["@aws-amplify/api", "npm:5.3.1"],\
-            ["@aws-amplify/auth", "npm:5.5.1"],\
+            ["@aws-amplify/api", "npm:5.3.2"],\
+            ["@aws-amplify/auth", "npm:5.5.2"],\
             ["@aws-amplify/cache", "npm:5.1.2"],\
             ["@aws-amplify/core", "npm:5.5.1"],\
-            ["@aws-amplify/datastore", "npm:4.6.1"],\
-            ["@aws-amplify/geo", "npm:2.1.1"],\
-            ["@aws-amplify/interactions", "npm:5.2.1"],\
+            ["@aws-amplify/datastore", "npm:4.6.2"],\
+            ["@aws-amplify/geo", "npm:2.1.2"],\
+            ["@aws-amplify/interactions", "npm:5.2.2"],\
             ["@aws-amplify/notifications", "npm:1.3.1"],\
-            ["@aws-amplify/predictions", "npm:5.4.1"],\
-            ["@aws-amplify/pubsub", "npm:5.3.1"],\
-            ["@aws-amplify/storage", "npm:5.6.1"],\
+            ["@aws-amplify/predictions", "npm:5.4.2"],\
+            ["@aws-amplify/pubsub", "npm:5.3.2"],\
+            ["@aws-amplify/storage", "npm:5.6.2"],\
             ["tslib", "npm:2.6.0"]\
           ],\
           "linkType": "HARD"\
@@ -11740,7 +11740,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:7.32.2"],\
             ["eslint-plugin-react-hooks", "virtual:597e314e4070dd2cbfda20c7d9801f6e82c1a45984fc382a7d678db54c4026a23ebc5dfcc242081f8f8cb3d9d9e89967e285ce0416383d8450b738b9d40666df#npm:4.6.0"],\
             ["eslint-plugin-testing-library", "virtual:597e314e4070dd2cbfda20c7d9801f6e82c1a45984fc382a7d678db54c4026a23ebc5dfcc242081f8f8cb3d9d9e89967e285ce0416383d8450b738b9d40666df#npm:5.11.0"],\
-            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"]\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"]\
           ],\
           "packagePeers": [\
             "@types/eslint",\
@@ -12345,10 +12345,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["fast-xml-parser", [\
-        ["npm:4.2.4", {\
-          "packageLocation": "./.yarn/cache/fast-xml-parser-npm-4.2.4-fc3c8e46cb-d3b4d0c015.zip/node_modules/fast-xml-parser/",\
+        ["npm:4.2.5", {\
+          "packageLocation": "./.yarn/cache/fast-xml-parser-npm-4.2.5-342a3689c5-d32b220055.zip/node_modules/fast-xml-parser/",\
           "packageDependencies": [\
-            ["fast-xml-parser", "npm:4.2.4"],\
+            ["fast-xml-parser", "npm:4.2.5"],\
             ["strnum", "npm:1.0.5"]\
           ],\
           "linkType": "HARD"\
@@ -12614,7 +12614,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["schema-utils", "npm:2.7.0"],\
             ["semver", "npm:7.5.3"],\
             ["tapable", "npm:1.1.3"],\
-            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"],\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"],\
             ["vue-template-compiler", null],\
             ["webpack", "virtual:930ae424ad73ec287c9f826c9a0023d3234714b389520513c247911d24b83e79d9b20e36631582b7d55f736718c14b00a407a5de6029038e7f7d23acc4b6cd03#npm:5.88.0"]\
           ],\
@@ -18482,7 +18482,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["shell-quote", "npm:1.8.1"],\
             ["strip-ansi", "npm:6.0.1"],\
             ["text-table", "npm:0.2.0"],\
-            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"],\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"],\
             ["webpack", "virtual:930ae424ad73ec287c9f826c9a0023d3234714b389520513c247911d24b83e79d9b20e36631582b7d55f736718c14b00a407a5de6029038e7f7d23acc4b6cd03#npm:5.88.0"]\
           ],\
           "packagePeers": [\
@@ -18725,7 +18725,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["style-loader", "virtual:930ae424ad73ec287c9f826c9a0023d3234714b389520513c247911d24b83e79d9b20e36631582b7d55f736718c14b00a407a5de6029038e7f7d23acc4b6cd03#npm:3.3.3"],\
             ["tailwindcss", "npm:3.3.2"],\
             ["terser-webpack-plugin", "virtual:930ae424ad73ec287c9f826c9a0023d3234714b389520513c247911d24b83e79d9b20e36631582b7d55f736718c14b00a407a5de6029038e7f7d23acc4b6cd03#npm:5.3.9"],\
-            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"],\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"],\
             ["webpack", "virtual:930ae424ad73ec287c9f826c9a0023d3234714b389520513c247911d24b83e79d9b20e36631582b7d55f736718c14b00a407a5de6029038e7f7d23acc4b6cd03#npm:5.88.0"],\
             ["webpack-dev-server", "virtual:930ae424ad73ec287c9f826c9a0023d3234714b389520513c247911d24b83e79d9b20e36631582b7d55f736718c14b00a407a5de6029038e7f7d23acc4b6cd03#npm:4.15.1"],\
             ["webpack-manifest-plugin", "virtual:930ae424ad73ec287c9f826c9a0023d3234714b389520513c247911d24b83e79d9b20e36631582b7d55f736718c14b00a407a5de6029038e7f7d23acc4b6cd03#npm:4.1.1"],\
@@ -19696,8 +19696,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["spring-react-typescript-rest", "workspace:."],\
-            ["@aws-amplify/api-graphql", "npm:3.4.1"],\
-            ["@aws-amplify/auth", "npm:5.5.1"],\
+            ["@aws-amplify/api-graphql", "npm:3.4.2"],\
+            ["@aws-amplify/auth", "npm:5.5.2"],\
             ["@aws-amplify/cache", "npm:5.1.2"],\
             ["@aws-amplify/core", "npm:5.5.1"],\
             ["@aws-crypto/sha256-js", "npm:4.0.0"],\
@@ -19719,7 +19719,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/yup", "npm:0.32.0"],\
             ["@typescript-eslint/eslint-plugin", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:5.60.1"],\
             ["@typescript-eslint/parser", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:5.60.1"],\
-            ["aws-amplify", "npm:5.3.1"],\
+            ["aws-amplify", "npm:5.3.2"],\
             ["buffer", "npm:6.0.3"],\
             ["eslint", "npm:8.43.0"],\
             ["eslint-plugin-react", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:7.32.2"],\
@@ -19730,7 +19730,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-router-dom", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:6.14.0"],\
             ["react-scripts", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:5.0.1"],\
             ["tslib", "npm:2.6.0"],\
-            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"],\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"],\
             ["web-vitals", "npm:3.3.2"],\
             ["yup", "npm:1.2.0"]\
           ],\
@@ -20565,7 +20565,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tsutils", "virtual:a613f6d1029302e7f5566de8133b14bf640d0e153bcbdb1ff817484c7cc31423c9b46e97a24da84ee6f9e3fd105e7d8f71b2a068488b3511f063086bd379bcff#npm:3.21.0"],\
             ["@types/typescript", null],\
             ["tslib", "npm:1.14.1"],\
-            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"]\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"]\
           ],\
           "packagePeers": [\
             "@types/typescript",\
@@ -20679,10 +20679,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["typescript", [\
-        ["patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071", {\
-          "packageLocation": "./.yarn/cache/typescript-patch-8d03db133e-6f0a9dca6b.zip/node_modules/typescript/",\
+        ["patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071", {\
+          "packageLocation": "./.yarn/cache/typescript-patch-a7053506ec-12ff5d1488.zip/node_modules/typescript/",\
           "packageDependencies": [\
-            ["typescript", "patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"]\
+            ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"]\
           ],\
           "linkType": "HARD"\
         }]\
