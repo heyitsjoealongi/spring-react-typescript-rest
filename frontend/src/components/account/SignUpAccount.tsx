@@ -11,40 +11,40 @@ import React from 'react'
 // Packages -%- ////
 import { useFormik } from 'formik'
 import * as yup from 'yup'
-import { Auth } from 'aws-amplify';
+import { Auth } from 'aws-amplify'
 
 // Components -%- ////
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
 
 // Integrations -%- ////
 type SignUpAccountProps = {
-    username: string,
-    password: string,
-    email: string,
-    name: string,
+    username: string
+    password: string
+    email: string
+    name: string
 }
 
 async function signUp(values: SignUpAccountProps) {
-  try {
-    const {username, password, email, name} = values
-    const { user } = await Auth.signUp({
-      username,
-      password,
-      attributes: {
-       email,
-       name,
-      },
-      autoSignIn: {
-        enabled: true,
-      }
-    });
-    console.log(user);
-  } catch (error) {
-    console.log('error signing up:', error);
-  }
+    try {
+        const { username, password, email, name } = values
+        const { user } = await Auth.signUp({
+            username,
+            password,
+            attributes: {
+                email,
+                name,
+            },
+            autoSignIn: {
+                enabled: true,
+            },
+        })
+        console.log(user)
+    } catch (error) {
+        console.log('error signing up:', error)
+    }
 }
 
 const validationSchema = yup.object({

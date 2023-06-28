@@ -12,6 +12,7 @@ import SignUpAccountView from './views/account/SignUpAccountView'
 import ConfirmSignUpAccount from './views/account/ConfirmSignUpAccount'
 import ResendVerificationCodeAccountView from './views/account/ResendVerificationCodeAccountView'
 import SignInAccountView from './views/account/SignInAccountView'
+import SignOutAccountView from './views/account/SignOutAccountView'
 
 // Integrations -%- ////
 
@@ -53,7 +54,12 @@ const router = createBrowserRouter([
         path: '/sign-in',
         element: <SignInAccountView />,
         errorElement: <ErrorView />,
-    }
+    },
+    {
+        path: '/sign-out',
+        element: <SignOutAccountView />,
+        errorElement: <ErrorView />,
+    },
 ])
 
 export default function App() {

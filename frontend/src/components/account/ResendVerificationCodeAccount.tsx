@@ -3,7 +3,7 @@
 // https://mui.com/material-ui/material-icons/?query=login
 // https://mui.com/material-ui/react-button/
 // https://formik.org/docs/examples/with-material-ui
-// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#confirm-sign-up
+// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#re-send-sign-up-confirmation-code
 
 // React -%- ////
 import React from 'react'
@@ -11,7 +11,7 @@ import React from 'react'
 // Packages -%- ////
 import { useFormik } from 'formik'
 import * as yup from 'yup'
-import { Auth } from 'aws-amplify';
+import { Auth } from 'aws-amplify'
 
 // Components -%- ////
 import Box from '@mui/material/Box'
@@ -21,17 +21,19 @@ import TextField from '@mui/material/TextField'
 
 // Integrations -%- ////
 type ResendVerificationCodeAccountProps = {
-    username: string,
+    username: string
 }
 
-async function resendConfirmationCode(values: ResendVerificationCodeAccountProps) {
-  try {
-    const {username} = values
-    await Auth.resendSignUp(username);
-    console.log('code resent successfully');
-  } catch (err) {
-    console.log('error resending code: ', err);
-  }
+async function resendConfirmationCode(
+    values: ResendVerificationCodeAccountProps
+) {
+    try {
+        const { username } = values
+        await Auth.resendSignUp(username)
+        console.log('code resent successfully')
+    } catch (err) {
+        console.log('error resending code: ', err)
+    }
 }
 
 const validationSchema = yup.object({

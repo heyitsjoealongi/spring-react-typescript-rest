@@ -3,7 +3,7 @@
 // https://mui.com/material-ui/material-icons/?query=login
 // https://mui.com/material-ui/react-button/
 // https://formik.org/docs/examples/with-material-ui
-// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#confirm-sign-up
+// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#sign-out
 
 // React -%- ////
 import React from 'react'
@@ -17,38 +17,25 @@ import { Auth } from 'aws-amplify'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
-import TextField from '@mui/material/TextField'
 
 // Integrations -%- ////
-type ConfirmSignUpAccountProps = {
-    username: string
-    code: string
-}
-
-async function confirmSignUp(values: ConfirmSignUpAccountProps) {
+async function signOut() {
     try {
-        const { username, code } = values
-        await Auth.confirmSignUp(username, code)
+        await Auth.signOut()
     } catch (error) {
-        console.log('error confirming sign up', error)
+        console.log('error signing out: ', error)
     }
 }
 
-const validationSchema = yup.object({
-    username: yup.string().min(8).required(),
-    code: yup.string().min(6).required(),
-})
+const validationSchema = yup.object({})
 
-export default function ConfirmSignUpAccount() {
+export default function SignOutAccount() {
     const formik = useFormik({
-        initialValues: {
-            username: '',
-            code: '',
-        },
+        initialValues: {},
         validationSchema: validationSchema,
-        onSubmit: async (values) => {
+        onSubmit: async () => {
             // alert(JSON.stringify(values, null, 2))
-            return await confirmSignUp(values)
+            return await signOut()
         },
     })
 
@@ -77,35 +64,8 @@ export default function ConfirmSignUpAccount() {
                     }}
                 >
                     <Typography variant="h4" gutterBottom>
-                        Confirm sign up
+                        Sign out
                     </Typography>
-                    <TextField
-                        fullWidth
-                        id="username"
-                        name="username"
-                        label="Username"
-                        value={formik.values.username}
-                        onChange={formik.handleChange}
-                        error={
-                            formik.touched.username &&
-                            Boolean(formik.errors.username)
-                        }
-                        helperText={
-                            formik.touched.username && formik.errors.username
-                        }
-                    />
-                    <TextField
-                        fullWidth
-                        id="code"
-                        name="code"
-                        label="Code"
-                        value={formik.values.code}
-                        onChange={formik.handleChange}
-                        error={
-                            formik.touched.code && Boolean(formik.errors.code)
-                        }
-                        helperText={formik.touched.code && formik.errors.code}
-                    />
                     <Button
                         color="primary"
                         variant="contained"
@@ -125,7 +85,7 @@ export default function ConfirmSignUpAccount() {
                             },
                         }}
                     >
-                        Confirm sign up
+                        Sign out
                     </Button>
                 </Box>
             </form>

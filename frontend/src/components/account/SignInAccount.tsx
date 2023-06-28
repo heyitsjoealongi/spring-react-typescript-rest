@@ -3,6 +3,7 @@
 // https://mui.com/material-ui/material-icons/?query=login
 // https://mui.com/material-ui/react-button/
 // https://formik.org/docs/examples/with-material-ui
+// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#sign-in
 
 // React -%- ////
 import React from 'react'
@@ -10,7 +11,7 @@ import React from 'react'
 // Packages -%- ////
 import { useFormik } from 'formik'
 import * as yup from 'yup'
-import { Auth } from 'aws-amplify';
+import { Auth } from 'aws-amplify'
 
 // Components -%- ////
 import Box from '@mui/material/Box'
@@ -20,18 +21,18 @@ import TextField from '@mui/material/TextField'
 
 // Integrations -%- ////
 type SignInAccountProps = {
-    username: string,
-    password: string,
+    username: string
+    password: string
 }
 
 async function signIn(values: SignInAccountProps) {
-  try {
-    const {username, password} = values
-    const user = await Auth.signIn(username, password);
-    console.log('user', user)
-  } catch (error) {
-    console.log('error signing in', error);
-  }
+    try {
+        const { username, password } = values
+        const user = await Auth.signIn(username, password)
+        console.log('user', user)
+    } catch (error) {
+        console.log('error signing in', error)
+    }
 }
 
 const validationSchema = yup.object({

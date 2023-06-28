@@ -3,10 +3,10 @@ import * as React from 'react'
 import ReactDOM from 'react-dom/client'
 
 // Packages -%- ////
-import {Amplify} from 'aws-amplify';
+import { Amplify } from 'aws-amplify'
 import * as Sentry from '@sentry/react'
 import reportWebVitals from './reportWebVitals'
-import awsconfig from "./aws-exports";
+import awsconfig from './aws-exports'
 
 // Components -%- ////
 import App from './App'
@@ -14,7 +14,7 @@ import App from './App'
 // Integrations -%- ////
 
 // Middleware -%- ////
-Amplify.configure(awsconfig);
+Amplify.configure(awsconfig)
 Sentry.init({
     dsn: 'https://11e48bcec0b54c81a38319fca65bebab@o536418.ingest.sentry.io/4505298496454656',
     integrations: [
