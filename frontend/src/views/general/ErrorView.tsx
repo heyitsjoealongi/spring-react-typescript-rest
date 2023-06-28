@@ -14,7 +14,7 @@ import React from 'react'
 // Styled Components -%- ////
 
 // Application -%- ////
-export default function Default() {
+export default function ErrorView() {
     return (
         <>
             <p>Error</p>

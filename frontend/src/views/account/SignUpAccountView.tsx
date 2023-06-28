@@ -6,7 +6,7 @@ import React from 'react'
 // Components -%- ////
 import Box from '@mui/material/Box'
 import Menu from '../../components/menu/Menu'
-import CreateAccount from '../../components/account/CreateAccount'
+import SignUpAccount from '../../components/account/SignUpAccount'
 
 // Integrations -%- ////
 
@@ -17,7 +17,7 @@ import CreateAccount from '../../components/account/CreateAccount'
 // Styled Components -%- ////
 
 // Application -%- ////
-export default function CreateAccountView() {
+export default function SignUpAccountView() {
     return (
         <>
             <Menu />
@@ -39,7 +39,7 @@ export default function CreateAccountView() {
                     border: 'none',
                 }}
             >
-                <CreateAccount />
+                <SignUpAccount />
             </Box>
         </>
     )

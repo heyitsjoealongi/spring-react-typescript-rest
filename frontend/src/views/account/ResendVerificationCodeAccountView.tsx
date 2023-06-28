@@ -6,7 +6,7 @@ import React from 'react'
 // Components -%- ////
 import Box from '@mui/material/Box'
 import Menu from '../../components/menu/Menu'
-import AccessAccount from '../../components/account/AccessAccount'
+import ResendVerificationCodeAccount from '../../components/account/ResendVerificationCodeAccount'
 
 // Integrations -%- ////
 
@@ -17,7 +17,7 @@ import AccessAccount from '../../components/account/AccessAccount'
 // Styled Components -%- ////
 
 // Application -%- ////
-export default function AccessAccountView() {
+export default function ResendVerificationCodeAccountView() {
     return (
         <>
             <Menu />
@@ -39,7 +39,7 @@ export default function AccessAccountView() {
                     border: 'none',
                 }}
             >
-                <AccessAccount />
+                <ResendVerificationCodeAccount />
             </Box>
         </>
     )

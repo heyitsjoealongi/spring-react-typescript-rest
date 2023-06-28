@@ -3,6 +3,7 @@
 // https://mui.com/material-ui/material-icons/?query=login
 // https://mui.com/material-ui/react-button/
 // https://formik.org/docs/examples/with-material-ui
+// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#re-send-sign-up-confirmation-code
 
 // React -%- ////
 import React from 'react'
@@ -10,7 +11,7 @@ import React from 'react'
 // Packages -%- ////
 import { useFormik } from 'formik'
 import * as yup from 'yup'
-// import { Auth } from 'aws-amplify'
+import { Auth } from 'aws-amplify'
 
 // Components -%- ////
 import Box from '@mui/material/Box'
@@ -19,36 +20,35 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
 // Integrations -%- ////
+type ResendVerificationCodeAccountProps = {
+    username: string
+}
+
+async function resendConfirmationCode(
+    values: ResendVerificationCodeAccountProps
+) {
+    try {
+        const { username } = values
+        await Auth.resendSignUp(username)
+        console.log('code resent successfully')
+    } catch (err) {
+        console.log('error resending code: ', err)
+    }
+}
+
 const validationSchema = yup.object({
-    name: yup
-        .string()
-        .min(8)
-        .required(),
-    username: yup
-        .string()
-        .min(8)
-        .required(),
-    email: yup
-        .string()
-        .email()
-        .required(),
-    password: yup
-        .string()
-        .min(8)
-        .required(),
+    username: yup.string().min(8).required(),
 })
 
-export default function CreateAccount() {
+export default function ResendVerificationCodeAccount() {
     const formik = useFormik({
         initialValues: {
-            name: '',
             username: '',
-            email: '',
-            password: '',
         },
         validationSchema: validationSchema,
-        onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2))
+        onSubmit: async (values) => {
+            // alert(JSON.stringify(values, null, 2))
+            return await resendConfirmationCode(values)
         },
     })
 
@@ -77,20 +77,8 @@ export default function CreateAccount() {
                     }}
                 >
                     <Typography variant="h4" gutterBottom>
-                        Create account
+                        Resend verification code
                     </Typography>
-                    <TextField
-                        fullWidth
-                        id="name"
-                        name="name"
-                        label="Name"
-                        value={formik.values.name}
-                        onChange={formik.handleChange}
-                        error={
-                            formik.touched.name && Boolean(formik.errors.name)
-                        }
-                        helperText={formik.touched.name && formik.errors.name}
-                    />
                     <TextField
                         fullWidth
                         id="username"
@@ -104,34 +92,6 @@ export default function CreateAccount() {
                         }
                         helperText={
                             formik.touched.username && formik.errors.username
-                        }
-                    />
-                    <TextField
-                        fullWidth
-                        id="email"
-                        name="email"
-                        label="Email"
-                        value={formik.values.email}
-                        onChange={formik.handleChange}
-                        error={
-                            formik.touched.email && Boolean(formik.errors.email)
-                        }
-                        helperText={formik.touched.email && formik.errors.email}
-                    />
-                    <TextField
-                        fullWidth
-                        id="password"
-                        name="password"
-                        label="Password"
-                        type="password"
-                        value={formik.values.password}
-                        onChange={formik.handleChange}
-                        error={
-                            formik.touched.password &&
-                            Boolean(formik.errors.password)
-                        }
-                        helperText={
-                            formik.touched.password && formik.errors.password
                         }
                     />
                     <Button
@@ -153,7 +113,7 @@ export default function CreateAccount() {
                             },
                         }}
                     >
-                        Create account
+                        Resend verification code
                     </Button>
                 </Box>
             </form>

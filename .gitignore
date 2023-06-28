@@ -11,6 +11,9 @@ yarn.lock
 .yarn
 /.yarn
 */.yarn
+.yarnrc.yml
+/.yarnrc.yml
+*/.yarnrc.yml
 package-lock.json
 /package-lock.json
 */package-lock.json

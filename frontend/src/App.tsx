@@ -6,10 +6,13 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 // Components -%- ////
-import Error from './views/general/Error'
+import ErrorView from './views/general/ErrorView'
 import DefaultView from './views/general/DefaultView'
-import CreateAccountView from './views/general/CreateAccountView'
-import AccessAccountView from './views/general/AccessAccountView'
+import SignUpAccountView from './views/account/SignUpAccountView'
+import ConfirmSignUpAccount from './views/account/ConfirmSignUpAccount'
+import ResendVerificationCodeAccountView from './views/account/ResendVerificationCodeAccountView'
+import SignInAccountView from './views/account/SignInAccountView'
+import SignOutAccountView from './views/account/SignOutAccountView'
 
 // Integrations -%- ////
 
@@ -30,17 +33,32 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <DefaultView />,
-        errorElement: <Error />,
+        errorElement: <ErrorView />,
     },
     {
-        path: '/create-account',
-        element: <CreateAccountView />,
-        errorElement: <Error />,
+        path: '/sign-up',
+        element: <SignUpAccountView />,
+        errorElement: <ErrorView />,
     },
     {
-        path: '/access-account',
-        element: <AccessAccountView />,
-        errorElement: <Error />,
+        path: '/confirm-sign-up',
+        element: <ConfirmSignUpAccount />,
+        errorElement: <ErrorView />,
+    },
+    {
+        path: '/resend-verification-code',
+        element: <ResendVerificationCodeAccountView />,
+        errorElement: <ErrorView />,
+    },
+    {
+        path: '/sign-in',
+        element: <SignInAccountView />,
+        errorElement: <ErrorView />,
+    },
+    {
+        path: '/sign-out',
+        element: <SignOutAccountView />,
+        errorElement: <ErrorView />,
     },
 ])
 
