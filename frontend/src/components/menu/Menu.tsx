@@ -37,6 +37,21 @@ const basicMenus = [
 const userMenus = [
     {
         id: 0,
+        user_menu_title: 'Create account',
+        user_menu_link: '/create-account',
+    },
+    {
+        id: 1,
+        user_menu_title: 'Confirm account',
+        user_menu_link: '/confirm-account',
+    },
+    {
+        id: 2,
+        user_menu_title: 'Resend verification code',
+        user_menu_link: '/resend-verification-code',
+    },
+    {
+        id: 3,
         user_menu_title: 'Access account',
         user_menu_link: '/access-account',
     },

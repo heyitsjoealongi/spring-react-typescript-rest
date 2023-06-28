@@ -6,10 +6,12 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 // Components -%- ////
-import Error from './views/general/Error'
+import ErrorView from './views/general/ErrorView'
 import DefaultView from './views/general/DefaultView'
-import CreateAccountView from './views/general/CreateAccountView'
-import AccessAccountView from './views/general/AccessAccountView'
+import CreateAccountView from './views/account/CreateAccountView'
+import ConfirmAccountView from './views/account/ConfirmAccountView'
+import ResendVerificationCodeAccountView from './views/account/ResendVerificationCodeAccountView'
+import AccessAccountView from './views/account/AccessAccountView'
 
 // Integrations -%- ////
 
@@ -30,18 +32,28 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <DefaultView />,
-        errorElement: <Error />,
+        errorElement: <ErrorView />,
     },
     {
         path: '/create-account',
         element: <CreateAccountView />,
-        errorElement: <Error />,
+        errorElement: <ErrorView />,
+    },
+    {
+        path: '/confirm-account',
+        element: <ConfirmAccountView />,
+        errorElement: <ErrorView />,
+    },
+    {
+        path: '/resend-verification-code',
+        element: <ResendVerificationCodeAccountView />,
+        errorElement: <ErrorView />,
     },
     {
         path: '/access-account',
         element: <AccessAccountView />,
-        errorElement: <Error />,
-    },
+        errorElement: <ErrorView />,
+    }
 ])
 
 export default function App() {
