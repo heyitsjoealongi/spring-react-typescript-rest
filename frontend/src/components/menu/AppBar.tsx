@@ -59,7 +59,7 @@ export default function ResponsiveAppBar(props: AppBarProps) {
     }
     const handleCloseNavMenu = (basic_item_link: string) => {
         setAnchorElNav(null)
-        if (basic_item_link) {
+        if (typeof(basic_item_link) === 'string') {
             navigate(`${basic_item_link}`)
         }
     }
@@ -71,6 +71,17 @@ export default function ResponsiveAppBar(props: AppBarProps) {
         <AppBar
             position="static"
             sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'nowrap',
+                flexFlow: 'row nowrap',
+                justifyContent: 'center',
+                alignItems: 'center',
+                alignContent: 'center',
+                height: 'auto',
+                width: '100%',
+                margin: '0 auto',
+                padding: '0',
                 background: 'none',
                 backgroundColor: 'transparent',
                 boxShadow: 'none',
@@ -81,144 +92,160 @@ export default function ResponsiveAppBar(props: AppBarProps) {
         >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-                        <SpringReactTypeScriptREST />
-                    </Box>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            mt: 0.4,
-                            display: { xs: 'none', md: 'flex' },
-                            fontWeight: 700,
-                            color: '#212121',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        {props?.app_bar_title
-                            ? props?.app_bar_title
-                            : 'Basic Menu'}
-                    </Typography>
                     <Box
                         sx={{
-                            flexGrow: 1,
-                            display: { xs: 'flex', md: 'none' },
+                            flex: 1,
+                            alignSelf: 'center',
+                            display: 'flex',
+                            flexDirection: 'row',
+                            flexWrap: 'nowrap',
+                            flexFlow: 'row nowrap',
+                            justifyContent: 'flex-start',
+                            alignItems: 'center',
+                            alignContent: 'center',
+                            height: 'auto',
+                            width: '50%',
+                            margin: '0',
+                            padding: '0',
+                            gap: '0',
                         }}
                     >
-                        <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={handleOpenNavMenu}
-                            sx={{ color: '#BDBDBD' }}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorElNav}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
-                            open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
+                        <Box
                             sx={{
-                                display: { xs: 'block', md: 'none' },
+                                display: { xs: 'flex', md: 'none' }, flex: 0, alignSelf: 'center' 
                             }}
                         >
-                            {props?.app_bar_menu.map((data) => (
-                                <MenuItem
-                                    key={data?.id}
-                                    onClick={() =>
-                                        handleCloseNavMenu(
-                                            data?.basic_menu_link
-                                        )
-                                    }
-                                >
-                                    <Typography textAlign="center">
-                                        {data?.basic_menu_title}
-                                    </Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
-                    <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}>
-                        <SpringReactTypeScriptREST />
-                    </Box>
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href=""
-                        sx={{
-                            mt: 0.4,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontWeight: 600,
-                            color: '#212121',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        {props?.app_bar_title
-                            ? props?.app_bar_title
-                            : 'Basic Menu'}
-                    </Typography>
-                    <Box
-                        sx={{
-                            flexGrow: 1,
-                            display: { xs: 'none', md: 'flex' },
-                        }}
-                    ></Box>
-                    <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="User Settings">
                             <IconButton
-                                onClick={handleOpenUserMenu}
-                                sx={{ p: 0, color: '#BDBDBD' }}
+                                size="large"
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                onClick={handleOpenNavMenu}
+                                sx={{ color: '#BDBDBD' }}
                             >
-                                <Avatar
-                                    alt="Frontend"
-                                    src="/spring-react-typescript-rest-user.png"
-                                />
+                                <MenuIcon />
                             </IconButton>
-                        </Tooltip>
-                        <Menu
-                            sx={{ mt: '60px' }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
+                            <Menu
+                                id="menu-appbar"
+                                anchorEl={anchorElNav}
+                                anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'left',
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'left',
+                                }}
+                                open={Boolean(anchorElNav)}
+                                onClose={handleCloseNavMenu}
+                                sx={{
+                                    display: { xs: 'block', md: 'none' },
+                                }}
+                            >
+                                {props?.app_bar_menu.map((data) => (
+                                    <MenuItem
+                                        key={data?.id}
+                                        onClick={() =>
+                                            handleCloseNavMenu(
+                                                data?.basic_menu_link
+                                            )
+                                        }
+                                    >
+                                        <Typography textAlign="center">
+                                            {data?.basic_menu_title}
+                                        </Typography>
+                                    </MenuItem>
+                                ))}
+                            </Menu>
+                        </Box>
+                        <Box sx={{ display: 'flex', flex: 0, alignSelf: 'center' }}>
+                            <SpringReactTypeScriptREST />
+                        </Box>
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="a"
+                            href="/"
+                            sx={{
+                                mt: 0.4,
+                                display: 'flex',
+                                fontWeight: 700,
+                                color: '#212121',
+                                textDecoration: 'none',
                             }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
                         >
-                            {props?.app_bar_user_menu.map((data) => (
-                                <MenuItem
-                                    key={data?.id}
-                                    onClick={() =>
-                                        handleCloseNavMenu(data?.user_menu_link)
-                                    }
+                            {props?.app_bar_title
+                                ? props?.app_bar_title
+                                : 'Basic Menu'}
+                        </Typography>
+
+                    </Box>
+                    <Box 
+                        sx={{ 
+                            flex: 1,
+                            alignSelf: 'center',
+                            display: 'flex',
+                            flexDirection: 'row',
+                            flexWrap: 'nowrap',
+                            flexFlow: 'row nowrap',
+                            justifyContent: 'flex-end',
+                            alignItems: 'center',
+                            alignContent: 'center',
+                            height: 'auto',
+                            width: '50%',
+                            margin: '0',
+                            padding: '0',
+                            gap: '0',
+                        }}>
+                        <Box 
+                            sx={{ 
+                                display: 'flex', 
+                                flex: 0, 
+                                alignSelf: 'center' 
+                            }}
+                        >
+                            <Tooltip title="User Settings">
+                                <IconButton
+                                    onClick={handleOpenUserMenu}
+                                    sx={{ p: 0, color: '#BDBDBD' }}
                                 >
-                                    <Typography textAlign="center">
-                                        {data?.user_menu_title}
-                                    </Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
+                                    <Avatar
+                                        alt="Frontend"
+                                        src="/spring-react-typescript-rest-user.png"
+                                    />
+                                </IconButton>
+                            </Tooltip>
+                            <Menu
+                                sx={{ mt: '60px' }}
+                                id="menu-appbar"
+                                anchorEl={anchorElUser}
+                                anchorOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                open={Boolean(anchorElUser)}
+                                onClose={handleCloseUserMenu}
+                            >
+                                {props?.app_bar_user_menu.map((data) => (
+                                    <MenuItem
+                                        key={data?.id}
+                                        onClick={() =>
+                                            handleCloseNavMenu(data?.user_menu_link)
+                                        }
+                                    >
+                                        <Typography textAlign="center">
+                                            {data?.user_menu_title}
+                                        </Typography>
+                                    </MenuItem>
+                                ))}
+                            </Menu>
+                        </Box>
                     </Box>
                 </Toolbar>
             </Container>
