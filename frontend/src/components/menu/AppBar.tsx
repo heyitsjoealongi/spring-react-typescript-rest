@@ -186,7 +186,7 @@ export default function ResponsiveAppBar(props: AppBarProps) {
                             >
                                 <Avatar
                                     alt="Frontend"
-                                    src="http://localhost:3000/spring-react-typescript-rest-user.png"
+                                    src="/spring-react-typescript-rest-user.png"
                                 />
                             </IconButton>
                         </Tooltip>
