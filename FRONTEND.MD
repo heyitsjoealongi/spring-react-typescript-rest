@@ -37,20 +37,6 @@ DIVIDER COLOR #BDBDBD
 ```bash
 REACT_APP_NOT_SECRET_CODE=react-app-not-secret-value
 ```
-## Install Packages (Yarn)
-```bash
-yarn add
-
-yarn add --dev
-```
-
-## Clean Cache (Yarn)
-```bash
-yarn cache clean
-```
-
-
-
 
 ## Emotion Styled Classes ``
 
@@ -209,6 +195,7 @@ applications:
             - yarn install --production --force --legacy-peer-deps
         build:
           commands:
+            - echo "REACT_APP_START_TIME" >> .env 
             - yarn build
       artifacts:
         baseDirectory: build

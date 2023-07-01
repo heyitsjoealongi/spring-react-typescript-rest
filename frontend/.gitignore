@@ -43,6 +43,7 @@ yarn-debug.log*
 yarn-error.log*
 
 ### Local Env Files ###
+/.env
 .env
 .env.local
 .env.development.local

@@ -45,6 +45,18 @@ cd frontend
 yarn prettier --write .
 ```
 
+## Install Packages (Frontend)
+```bash
+yarn add
+
+yarn add --dev
+```
+
+## Clean Cache (Frontend)
+```bash
+yarn cache clean
+```
+
 ### Upgrade Packages (Frontend)
 
 ```bash
