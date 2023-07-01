@@ -17,7 +17,8 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 - [Create React App (TypeScript)](https://create-react-app.dev/)
 - [React Router](https://reactrouter.com/en/main)
 - [Material UI](https://mui.com/)
-- [Styled Components](https://emotion.sh/docs/introduction)
+- [Emotion Styled Components](https://emotion.sh/docs/introduction)
+- [Recoil](https://recoiljs.org/)
 
 ### Backend
 

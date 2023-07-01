@@ -1,15 +1,18 @@
 // React -%- ////
-import * as React from 'react'
+import React from 'react'
 
 // Packages -%- ////
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {
+  RecoilRoot
+} from 'recoil';
 
 // Components -%- ////
 import ErrorView from './views/general/ErrorView'
 import DefaultView from './views/general/DefaultView'
 import SignUpAccountView from './views/account/SignUpAccountView'
-import ConfirmSignUpAccount from './views/account/ConfirmSignUpAccount'
+import ConfirmSignUpAccountView from './views/account/ConfirmSignUpAccountView'
 import ResendVerificationCodeAccountView from './views/account/ResendVerificationCodeAccountView'
 import SignInAccountView from './views/account/SignInAccountView'
 import SignOutAccountView from './views/account/SignOutAccountView'
@@ -17,6 +20,7 @@ import SignOutAccountView from './views/account/SignOutAccountView'
 // Integrations -%- ////
 
 // Middleware -%- ////
+
 
 // Cascading Style Sheets (CSS) -%- ////
 import './App.css'
@@ -42,7 +46,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/confirm-sign-up',
-        element: <ConfirmSignUpAccount />,
+        element: <ConfirmSignUpAccountView />,
         errorElement: <ErrorView />,
     },
     {
@@ -65,12 +69,14 @@ const router = createBrowserRouter([
 export default function App() {
     return (
         <>
-            <ThemeProvider theme={theme}>
-                <RouterProvider
-                    router={router}
-                    fallbackElement={<p>Loading...</p>}
-                />
-            </ThemeProvider>
+            <RecoilRoot>
+                <ThemeProvider theme={theme}>
+                    <RouterProvider
+                        router={router}
+                        fallbackElement={<ErrorView />}
+                    />
+                </ThemeProvider>
+            </RecoilRoot>
         </>
     )
 }

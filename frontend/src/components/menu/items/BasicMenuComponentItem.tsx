@@ -20,12 +20,12 @@ import Button from '@mui/material/Button'
 // Styled Components -%- ////
 
 // Application -%- ////
-type BasicMenuProps = {
+type BasicMenuComponentItemProps = {
     basic_menu_title: string
     basic_item_link: string
 }
 
-export default function BasicMenu(props: BasicMenuProps) {
+export default function BasicMenuComponentItem(props: BasicMenuComponentItemProps) {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
     const open = Boolean(anchorEl)
     const navigate = useNavigate()

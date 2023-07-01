@@ -5,8 +5,8 @@ import React from 'react'
 
 // Components -%- ////
 import Box from '@mui/material/Box'
-import Menu from '../../components/menu/Menu'
-import ResendVerificationCodeAccount from '../../components/account/ResendVerificationCodeAccount'
+import Menu from '../../components/menu/MenuComponent'
+import ResendVerificationCodeAccountComponent from '../../components/account/ResendVerificationCodeAccountComponent'
 
 // Integrations -%- ////
 
@@ -39,7 +39,7 @@ export default function ResendVerificationCodeAccountView() {
                     border: 'none',
                 }}
             >
-                <ResendVerificationCodeAccount />
+                <ResendVerificationCodeAccountComponent />
             </Box>
         </>
     )

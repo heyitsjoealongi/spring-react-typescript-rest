@@ -3,7 +3,7 @@
 // https://mui.com/material-ui/material-icons/?query=login
 // https://mui.com/material-ui/react-button/
 // https://formik.org/docs/examples/with-material-ui
-// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#re-send-sign-up-confirmation-code
+// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#sign-in
 
 // React -%- ////
 import React from 'react'
@@ -20,35 +20,36 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
 // Integrations -%- ////
-type ResendVerificationCodeAccountProps = {
+type SignInAccountComponentProps = {
     username: string
+    password: string
 }
 
-async function resendConfirmationCode(
-    values: ResendVerificationCodeAccountProps
-) {
+async function signIn(values: SignInAccountComponentProps) {
     try {
-        const { username } = values
-        await Auth.resendSignUp(username)
-        console.log('code resent successfully')
-    } catch (err) {
-        console.log('error resending code: ', err)
+        const { username, password } = values
+        const user = await Auth.signIn(username, password)
+        console.log('user', user)
+    } catch (error) {
+        console.log('error signing in', error)
     }
 }
 
 const validationSchema = yup.object({
     username: yup.string().min(8).required(),
+    password: yup.string().min(8).required(),
 })
 
-export default function ResendVerificationCodeAccount() {
+export default function SignInAccountComponent() {
     const formik = useFormik({
         initialValues: {
             username: '',
+            password: '',
         },
         validationSchema: validationSchema,
         onSubmit: async (values) => {
             // alert(JSON.stringify(values, null, 2))
-            return await resendConfirmationCode(values)
+            return await signIn(values)
         },
     })
 
@@ -65,7 +66,7 @@ export default function ResendVerificationCodeAccount() {
                         alignItems: 'center',
                         alignContent: 'center',
                         height: 'auto',
-                        width: { xs: '90vw', md: '60vw', lg: '30vw'},
+                        width: { xs: '90vw', md: '60vw', lg: '30vw' },
                         margin: 'auto',
                         padding: '3em 1.5em',
                         gap: '1.5em',
@@ -77,7 +78,7 @@ export default function ResendVerificationCodeAccount() {
                     }}
                 >
                     <Typography variant="h4" gutterBottom>
-                        Resend verification code
+                        Sign in
                     </Typography>
                     <TextField
                         fullWidth
@@ -92,6 +93,22 @@ export default function ResendVerificationCodeAccount() {
                         }
                         helperText={
                             formik.touched.username && formik.errors.username
+                        }
+                    />
+                    <TextField
+                        fullWidth
+                        id="password"
+                        name="password"
+                        label="Password"
+                        type="password"
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
+                        error={
+                            formik.touched.password &&
+                            Boolean(formik.errors.password)
+                        }
+                        helperText={
+                            formik.touched.password && formik.errors.password
                         }
                     />
                     <Button
@@ -113,7 +130,7 @@ export default function ResendVerificationCodeAccount() {
                             },
                         }}
                     >
-                        Resend verification code
+                        Sign in
                     </Button>
                 </Box>
             </form>

@@ -5,8 +5,8 @@ import React from 'react'
 
 // Components -%- ////
 import Box from '@mui/material/Box'
-import Menu from '../../components/menu/Menu'
-import SignOutAccount from '../../components/account/SignOutAccount'
+import Menu from '../../components/menu/MenuComponent'
+import SignOutAccountComponent from '../../components/account/SignOutAccountComponent'
 
 // Integrations -%- ////
 
@@ -39,7 +39,7 @@ export default function SignOutAccountView() {
                     border: 'none',
                 }}
             >
-                <SignOutAccount />
+                <SignOutAccountComponent />
             </Box>
         </>
     )

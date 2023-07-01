@@ -20,12 +20,12 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
 // Integrations -%- ////
-type ConfirmSignUpAccountProps = {
+type ConfirmSignUpAccountComponentProps = {
     username: string
     code: string
 }
 
-async function confirmSignUp(values: ConfirmSignUpAccountProps) {
+async function confirmSignUp(values: ConfirmSignUpAccountComponentProps) {
     try {
         const { username, code } = values
         await Auth.confirmSignUp(username, code)
@@ -39,7 +39,7 @@ const validationSchema = yup.object({
     code: yup.string().min(6).required(),
 })
 
-export default function ConfirmSignUpAccount() {
+export default function ConfirmSignUpAccountComponent() {
     const formik = useFormik({
         initialValues: {
             username: '',
@@ -65,7 +65,7 @@ export default function ConfirmSignUpAccount() {
                         alignItems: 'center',
                         alignContent: 'center',
                         height: 'auto',
-                        width: { xs: '90vw', md: '60vw', lg: '30vw'},
+                        width: { xs: '90vw', md: '60vw', lg: '30vw' },
                         margin: 'auto',
                         padding: '3em 1.5em',
                         gap: '1.5em',

@@ -29,7 +29,7 @@ import { ReactComponent as SpringReactTypeScriptREST } from '../../assets/svg/sp
 // Styled Components -%- ////
 
 // Application -%- ////
-type AppBarProps = {
+type AppBarMenuComponentProps = {
     app_bar_title: string
     app_bar_menu: {
         id: number
@@ -43,7 +43,7 @@ type AppBarProps = {
     }[]
 }
 
-export default function ResponsiveAppBar(props: AppBarProps) {
+export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
         null
     )
@@ -197,7 +197,8 @@ export default function ResponsiveAppBar(props: AppBarProps) {
                             margin: '0',
                             padding: '0',
                             gap: '0',
-                        }}>
+                        }}
+                    >
                         <Box 
                             sx={{ 
                                 display: 'flex', 

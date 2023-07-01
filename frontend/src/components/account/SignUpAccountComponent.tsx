@@ -20,14 +20,14 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 
 // Integrations -%- ////
-type SignUpAccountProps = {
+type SignUpAccountComponentProps = {
     username: string
     password: string
     email: string
     name: string
 }
 
-async function signUp(values: SignUpAccountProps) {
+async function signUp(values: SignUpAccountComponentProps) {
     try {
         const { username, password, email, name } = values
         const { user } = await Auth.signUp({
@@ -54,7 +54,7 @@ const validationSchema = yup.object({
     password: yup.string().min(8).required(),
 })
 
-export default function SignUpAccount() {
+export default function SignUpAccountComponent() {
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -82,7 +82,7 @@ export default function SignUpAccount() {
                         alignItems: 'center',
                         alignContent: 'center',
                         height: 'auto',
-                        width: { xs: '90vw', md: '60vw', lg: '30vw'},
+                        width: { xs: '90vw', md: '60vw', lg: '30vw' },
                         margin: 'auto',
                         padding: '3em 1.5em',
                         gap: '1.5em',

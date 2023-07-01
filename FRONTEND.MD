@@ -33,6 +33,25 @@ DIVIDER COLOR #BDBDBD
 // System -%- ////
 ```
 
+## Environment Variables
+```bash
+REACT_APP_NOT_SECRET_CODE=react-app-not-secret-value
+```
+## Install Packages (Yarn)
+```bash
+yarn add
+
+yarn add --dev
+```
+
+## Clean Cache (Yarn)
+```bash
+yarn cache clean
+```
+
+
+
+
 ## Emotion Styled Classes ``
 
 ```bash
@@ -167,6 +186,10 @@ type Props = {
 {props?.prop.map((data) => ({data?.prop ? data?.prop : ''}))}
 ```
 
+## @Types (typeRoots)
+
+- [Documentation](https://www.typescriptlang.org/tsconfig#typeRoots)
+
 
 ## Amplify Configuration (amplify.yaml)
 
@@ -195,4 +218,54 @@ applications:
         paths:
           - node_modules/**/*
     appRoot: frontend
+```
+
+## Recoil State [Object]
+
+```bash
+import {
+  atom,
+} from 'recoil';
+
+export const exampleState = atom({
+    key: 'example', // unique ID (with respect to other atoms/selectors)
+    default: false, // default value (aka initial value)
+});
+```
+
+## Recoil State [Setter]
+
+```bash
+import {
+  useRecoilState,
+} from 'recoil';
+import { exampleState } from '../../recoil/atoms/exampleAtom';
+
+const [example, setExample] = useRecoilState(exampleState);
+
+useEffect(() => {
+    setTimeout(() => {
+        setExample(true)
+    }, 1000);
+    return () => {
+        example
+    }
+}, [])
+```
+
+## Recoil State [Getter]
+
+```bash
+import {
+  useRecoilValue
+} from 'recoil';
+import { exampleState } from '../../recoil/atoms/exampleAtom';
+
+const example = useRecoilValue(exampleState);
+
+if(example){
+
+} else{
+
+}
 ```

@@ -29,7 +29,7 @@ async function signOut() {
 
 const validationSchema = yup.object({})
 
-export default function SignOutAccount() {
+export default function SignOutAccountComponent() {
     const formik = useFormik({
         initialValues: {},
         validationSchema: validationSchema,
@@ -52,7 +52,7 @@ export default function SignOutAccount() {
                         alignItems: 'center',
                         alignContent: 'center',
                         height: 'auto',
-                        width: { xs: '90vw', md: '60vw', lg: '30vw'},
+                        width: { xs: '90vw', md: '60vw', lg: '30vw' },
                         margin: 'auto',
                         padding: '3em 1.5em',
                         gap: '1.5em',

@@ -5,8 +5,8 @@ import * as React from 'react'
 import styled from '@emotion/styled'
 
 // Components -%- ////
-import AppBar from '../menu/AppBar'
-import BasicMenu from '../../components/menu/items/BasicMenu'
+import AppBarMenuComponent from './AppBarMenuComponent'
+import BasicMenuComponentItem from './items/BasicMenuComponentItem'
 
 // Integrations -%- ////
 const appBar = {
@@ -67,7 +67,7 @@ const userMenus = [
 // Cascading Style Sheets (CSS) -%- ////
 
 // Styled Components -%- ////
-const MenuFlex = styled.div`
+const MenuFlexComponent = styled.div`
     display: none;
     @media (min-width: 1000px) {
         display: flex;
@@ -87,7 +87,7 @@ const MenuFlex = styled.div`
     }
 `
 
-const MenuFlexItem = styled.div`
+const MenuFlexItemComponent = styled.div`
     order: 0;
     flex: none;
     alignSelf: flex-start;
@@ -100,24 +100,24 @@ const MenuFlexItem = styled.div`
 `
 
 // Application -%- ////
-export default function Menu() {
+export default function MenuComponent() {
     return (
         <>
-            <AppBar
+            <AppBarMenuComponent
                 app_bar_title={appBar?.app_bar_title}
                 app_bar_menu={basicMenus}
                 app_bar_user_menu={userMenus}
             />
-            <MenuFlex>
+            <MenuFlexComponent>
                 {basicMenus.map((data) => (
-                    <MenuFlexItem key={data?.id}>
-                        <BasicMenu
+                    <MenuFlexItemComponent key={data?.id}>
+                        <BasicMenuComponentItem
                             basic_menu_title={data?.basic_menu_title}
                             basic_item_link={data?.basic_menu_link}
                         />
-                    </MenuFlexItem>
+                    </MenuFlexItemComponent>
                 ))}
-            </MenuFlex>
+            </MenuFlexComponent>
         </>
     )
 }

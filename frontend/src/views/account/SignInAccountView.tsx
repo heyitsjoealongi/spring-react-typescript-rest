@@ -5,8 +5,8 @@ import React from 'react'
 
 // Components -%- ////
 import Box from '@mui/material/Box'
-import Menu from '../../components/menu/Menu'
-import SignInAccount from '../../components/account/SignInAccount'
+import Menu from '../../components/menu/MenuComponent'
+import SignInAccountComponent from '../../components/account/SignInAccountComponent'
 
 // Integrations -%- ////
 
@@ -39,7 +39,7 @@ export default function SignInAccountView() {
                     border: 'none',
                 }}
             >
-                <SignInAccount />
+                <SignInAccountComponent />
             </Box>
         </>
     )

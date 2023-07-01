@@ -45,7 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:14.0.0"],\
             ["@testing-library/user-event", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:14.4.3"],\
             ["@types/jest", "npm:29.5.2"],\
-            ["@types/node", "npm:20.3.2"],\
+            ["@types/node", "npm:20.3.3"],\
             ["@types/react", "npm:18.2.14"],\
             ["@types/react-dom", "npm:18.2.6"],\
             ["@types/yup", "npm:0.32.0"],\
@@ -61,6 +61,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:18.2.0"],\
             ["react-router-dom", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:6.14.0"],\
             ["react-scripts", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:5.0.1"],\
+            ["recoil", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:0.7.7"],\
             ["tslib", "npm:2.6.0"],\
             ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"],\
             ["web-vitals", "npm:3.3.2"],\
@@ -7927,6 +7928,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:20.3.2"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:20.3.3", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-20.3.3-aac92e0a89-7a0d008004.zip/node_modules/@types/node/",\
+          "packageDependencies": [\
+            ["@types/node", "npm:20.3.3"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@types/parse-json", [\
@@ -13068,6 +13076,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["gzip-size", "npm:6.0.0"],\
             ["duplexer", "npm:0.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["hamt_plus", [\
+        ["npm:1.0.2", {\
+          "packageLocation": "./.yarn/cache/hamt_plus-npm-1.0.2-67a52ee1df-af26ea32db.zip/node_modules/hamt_plus/",\
+          "packageDependencies": [\
+            ["hamt_plus", "npm:1.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -18818,6 +18835,37 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["recoil", [\
+        ["npm:0.7.7", {\
+          "packageLocation": "./.yarn/cache/recoil-npm-0.7.7-4452f58b67-65edecbcb8.zip/node_modules/recoil/",\
+          "packageDependencies": [\
+            ["recoil", "npm:0.7.7"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:0.7.7", {\
+          "packageLocation": "./.yarn/__virtual__/recoil-virtual-05386906f5/0/cache/recoil-npm-0.7.7-4452f58b67-65edecbcb8.zip/node_modules/recoil/",\
+          "packageDependencies": [\
+            ["recoil", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:0.7.7"],\
+            ["@types/react", "npm:18.2.14"],\
+            ["@types/react-dom", "npm:18.2.6"],\
+            ["@types/react-native", null],\
+            ["hamt_plus", "npm:1.0.2"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:18.2.0"],\
+            ["react-native", null]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react-native",\
+            "@types/react",\
+            "react-dom",\
+            "react-native",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["recursive-readdir", [\
         ["npm:2.2.3", {\
           "packageLocation": "./.yarn/cache/recursive-readdir-npm-2.2.3-3f177ebd90-88ec96e276.zip/node_modules/recursive-readdir/",\
@@ -19713,7 +19761,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:14.0.0"],\
             ["@testing-library/user-event", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:14.4.3"],\
             ["@types/jest", "npm:29.5.2"],\
-            ["@types/node", "npm:20.3.2"],\
+            ["@types/node", "npm:20.3.3"],\
             ["@types/react", "npm:18.2.14"],\
             ["@types/react-dom", "npm:18.2.6"],\
             ["@types/yup", "npm:0.32.0"],\
@@ -19729,6 +19777,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:18.2.0"],\
             ["react-router-dom", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:6.14.0"],\
             ["react-scripts", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:5.0.1"],\
+            ["recoil", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:0.7.7"],\
             ["tslib", "npm:2.6.0"],\
             ["typescript", "patch:typescript@npm%3A5.1.5#~builtin<compat/typescript>::version=5.1.5&hash=5da071"],\
             ["web-vitals", "npm:3.3.2"],\
