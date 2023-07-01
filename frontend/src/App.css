@@ -33,6 +33,7 @@ body {
     -o-appearance: none;
     -khtml-appearance: none;
     appearance: none;
+    background-color: #f5f5f5;
 }
 
 ::selection {
@@ -58,5 +59,9 @@ hr {
 }
 
 a {
+    text-decoration: none;
+}
+
+a:hover {
     color: #212121;
 }

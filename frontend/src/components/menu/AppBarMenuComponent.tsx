@@ -8,12 +8,12 @@ import { useNavigate } from 'react-router-dom'
 
 // MUI -%- ////
 import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
 import Toolbar from '@mui/material/Toolbar'
+import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import Menu from '@mui/material/Menu'
-import Container from '@mui/material/Container'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -21,7 +21,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications'
 
 // Components -%- ////
-import { ReactComponent as SpringReactTypeScriptREST } from '../../assets/svg/spring-react-typescript-rest.svg'
+import BrandMenuComponentItemComponent from './items/BrandMenuComponentItem'
 
 // Integrations -%- ////
 
@@ -98,9 +98,6 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
                 background: 'none',
                 backgroundColor: 'transparent',
                 boxShadow: 'none',
-                borderStyle: 'none none solid none',
-                borderWidth: '3px',
-                borderColor: '#BDBDBD',
             }}
         >
             <Container
@@ -190,32 +187,9 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
                                 ))}
                             </Menu>
                         </Box>
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                flex: 0,
-                                alignSelf: 'center',
-                            }}
-                        >
-                            <SpringReactTypeScriptREST />
-                        </Box>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="a"
-                            href="/"
-                            sx={{
-                                mt: 0.4,
-                                display: 'flex',
-                                fontWeight: 700,
-                                color: '#212121',
-                                textDecoration: 'none',
-                            }}
-                        >
-                            {props?.app_title
-                                ? props?.app_title
-                                : process.env.REACT_APP_DEFAULT_APP_TITLE}
-                        </Typography>
+                        <BrandMenuComponentItemComponent
+                            app_title={props?.app_title}
+                        />
                     </Box>
                     <Box
                         sx={{

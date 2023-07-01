@@ -81,9 +81,9 @@ const MenuFlexComponent = styled.div`
         aligncontent: flex-start;
         height: auto;
         width: 50vw;
-        margin: 1.5em auto;
+        margin: 3vh auto;
         padding: 0;
-        gap: 1.5em;
+        gap: 1.5vw;
         background: none;
         border: none;
     }

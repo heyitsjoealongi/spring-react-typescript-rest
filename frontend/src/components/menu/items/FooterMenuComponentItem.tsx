@@ -31,8 +31,18 @@ export default function FooterMenuComponentItem(
 ) {
     return (
         <>
-            <Link to={props?.footer_menu_item_link}>
-                <ListItem id="footer-menu-component-item">
+            <ListItem
+                id="footer-menu-component-item"
+                sx={{
+                    height: 'auto',
+                    width: '100%',
+                    margin: '0',
+                    padding: '0',
+                    gap: '0',
+                    color: '#757575',
+                }}
+            >
+                <Link to={props?.footer_menu_item_link}>
                     <ListItemText
                         primary={
                             props?.footer_menu_item_title
@@ -41,11 +51,19 @@ export default function FooterMenuComponentItem(
                         }
                         secondary={null}
                         sx={{
-                            color: '#757575',
+                            height: 'auto',
+                            width: '100%',
+                            margin: '0.18vh 0 0 0',
+                            padding: '0',
+                            gap: '0',
+                            color: '#212121',
+                            '&:hover': {
+                                color: '#757575',
+                            },
                         }}
                     />
-                </ListItem>
-            </Link>
+                </Link>
+            </ListItem>
         </>
     )
 }

@@ -45,7 +45,11 @@ export default function AppMenuComponentItem(props: AppMenuComponentItemProps) {
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
                 sx={{
-                    color: '#757575',
+                    color: '#212121',
+                    '&:hover': {
+                        color: '#757575',
+                        background: '#CDDC39',
+                    },
                 }}
             >
                 {props?.app_menu_title
