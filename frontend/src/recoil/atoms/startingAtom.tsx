@@ -1,9 +1,9 @@
 // React -%- ////
 
 // Packages -%- ////
-import {
-  atom,
-} from 'recoil';
+import { atom } from 'recoil'
+
+// MUI -%- ////
 
 // Components -%- ////
 
@@ -19,6 +19,6 @@ import {
 export const startingState = atom({
     key: 'started', // unique ID (with respect to other atoms/selectors)
     default: false, // default value (aka initial value)
-});
+})
 
 // System -%- ////

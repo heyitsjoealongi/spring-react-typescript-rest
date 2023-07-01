@@ -5,13 +5,12 @@
 import { useEffect } from 'react'
 
 // Packages -%- ////
-import {
-  useRecoilState,
-} from 'recoil';
-import { startingState } from '../../recoil/atoms/startingAtom';
+import { useRecoilState } from 'recoil'
+import { startingState } from '../../recoil/atoms/startingAtom'
+
+// MUI -%- ////
 
 // Components -%- ////
-
 
 // Integrations -%- ////
 
@@ -24,13 +23,13 @@ import { startingState } from '../../recoil/atoms/startingAtom';
 // Application -%- ////
 export default function StartedComponent() {
     const startTime = process.env.REACT_APP_START_TIME
-    const [started, setStarted] = useRecoilState(startingState);
+    const [started, setStarted] = useRecoilState(startingState)
 
     useEffect(() => {
-        if(startTime){
+        if (startTime) {
             setTimeout(() => {
                 setStarted(true)
-            }, parseInt(startTime));
+            }, parseInt(startTime))
         }
         return () => {
             started

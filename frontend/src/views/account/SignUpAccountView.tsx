@@ -3,8 +3,10 @@ import React from 'react'
 
 // Packages -%- ////
 
-// Components -%- ////
+// MUI -%- ////
 import Box from '@mui/material/Box'
+
+// Components -%- ////
 import Menu from '../../components/menu/MenuComponent'
 import SignUpAccountComponent from '../../components/account/SignUpAccountComponent'
 

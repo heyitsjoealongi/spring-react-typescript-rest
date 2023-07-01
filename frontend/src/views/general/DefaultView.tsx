@@ -5,17 +5,18 @@
 import React from 'react'
 
 // Packages -%- ////
-import {
-  useRecoilValue
-} from 'recoil';
-import { startingState } from '../../recoil/atoms/startingAtom';
+import { useRecoilValue } from 'recoil'
+import { startingState } from '../../recoil/atoms/startingAtom'
 
-// Components -%- ////
+// MUI -%- ////
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import Menu from '../../components/menu/MenuComponent'
+
+// Components -%- ////
+import MenuComponent from '../../components/menu/MenuComponent'
+import FooterMenuComponent from '../../components/menu/FooterMenuComponent'
 import CircularProgressGeneralComponent from '../../components/general/CircularProgressGeneralComponent'
-import StartedComponent from '../../components/utility/StartedComponent';
+import StartedComponent from '../../components/utility/StartedComponent'
 
 // Integrations -%- ////
 
@@ -27,12 +28,12 @@ import StartedComponent from '../../components/utility/StartedComponent';
 
 // Application -%- ////
 export default function DefaultView() {
-    const started = useRecoilValue(startingState);
+    const started = useRecoilValue(startingState)
 
-    if(started){
+    if (started) {
         return (
             <>
-                <Menu />
+                <MenuComponent />
                 <Box
                     sx={{
                         display: 'flex',
@@ -53,12 +54,13 @@ export default function DefaultView() {
                         Spring React TypeScript REST
                     </Typography>
                 </Box>
+                <FooterMenuComponent />
             </>
         )
     } else {
         return (
             <>
-                <Menu />
+                <MenuComponent />
                 <Box
                     sx={{
                         display: 'flex',
@@ -77,6 +79,7 @@ export default function DefaultView() {
                 >
                     <CircularProgressGeneralComponent />
                 </Box>
+                <FooterMenuComponent />
                 <StartedComponent />
             </>
         )

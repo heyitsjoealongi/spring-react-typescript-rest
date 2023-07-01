@@ -5,11 +5,13 @@ import React from 'react'
 
 // Packages -%- ////
 
-// Components -%- ////
+// MUI -%- ////
 import Box from '@mui/material/Box'
+
+// Components -%- ////
 import Menu from '../../components/menu/MenuComponent'
 import CircularProgressGeneralComponent from '../../components/general/CircularProgressGeneralComponent'
-import StartedComponent from '../../components/utility/StartedComponent';
+import StartedComponent from '../../components/utility/StartedComponent'
 
 // Integrations -%- ////
 

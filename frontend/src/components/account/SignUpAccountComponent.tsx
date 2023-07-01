@@ -13,11 +13,13 @@ import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { Auth } from 'aws-amplify'
 
-// Components -%- ////
+// MUI -%- ////
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
+
+// Components -%- ////
 
 // Integrations -%- ////
 type SignUpAccountComponentProps = {

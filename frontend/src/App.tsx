@@ -4,9 +4,9 @@ import React from 'react'
 // Packages -%- ////
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import {
-  RecoilRoot
-} from 'recoil';
+import { RecoilRoot } from 'recoil'
+
+// MUI -%- ////
 
 // Components -%- ////
 import ErrorView from './views/general/ErrorView'
@@ -20,7 +20,6 @@ import SignOutAccountView from './views/account/SignOutAccountView'
 // Integrations -%- ////
 
 // Middleware -%- ////
-
 
 // Cascading Style Sheets (CSS) -%- ////
 import './App.css'

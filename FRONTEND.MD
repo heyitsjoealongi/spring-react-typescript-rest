@@ -18,6 +18,8 @@ DIVIDER COLOR #BDBDBD
 
 // Packages -%- ////
 
+// MUI -%- ////
+
 // Components -%- ////
 
 // Integrations -%- ////
@@ -143,7 +145,7 @@ const ListItem = styled.div`
 ## Prop Types
 
 - [Documentation](https://www.typescriptlang.org/docs/handbook/utility-types.html)
-- [Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example/)
+- [Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/app_menu_link/getting-started/app_menu_link_type_example/)
 
 ```bash
 type Props = {
@@ -156,7 +158,7 @@ export default function Function(props: Props) {}
 ## Mapping Prop Types
 
 - [Documentation](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
-- [Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example/)
+- [Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/app_menu_link/getting-started/app_menu_link_type_example/)
 
 ```bash
 type Props = {
@@ -195,6 +197,7 @@ applications:
             - yarn install --production --force --legacy-peer-deps
         build:
           commands:
+            - echo "REACT_APP_DEFAULT_APP_TITLE" >> .env 
             - echo "REACT_APP_START_TIME" >> .env 
             - yarn build
       artifacts:
