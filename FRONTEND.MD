@@ -171,13 +171,18 @@ type Props = {
   }[];
 };
 
-{props?.prop?.map((data) => ({data?.prop ? data?.prop : ''}))}
+{props?.['prop']?.map((data) => ({data?.['prop'] ? data?.['prop'] : ''}))}
+```
+
+## Spreading Typed Arrays
+
+```bash
+const current = [...currentArray, ...newArray] as []
 ```
 
 ## @Types (typeRoots)
 
 - [Documentation](https://www.typescriptlang.org/tsconfig#typeRoots)
-
 
 ## Amplify Configuration (amplify.yaml)
 

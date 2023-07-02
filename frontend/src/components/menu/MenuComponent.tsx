@@ -112,10 +112,10 @@ export default function MenuComponent() {
             />
             <MenuFlexComponent>
                 {appMenu?.map((data) => (
-                    <MenuFlexItemComponent key={data?.id}>
+                    <MenuFlexItemComponent key={data?.['id']}>
                         <BasicMenuComponentItem
-                            app_menu_title={data?.app_menu_title}
-                            app_menu_link_item_link={data?.app_menu_link}
+                            app_menu_title={data?.['app_menu_title']}
+                            app_menu_link_item_link={data?.['app_menu_link']}
                         />
                     </MenuFlexItemComponent>
                 ))}

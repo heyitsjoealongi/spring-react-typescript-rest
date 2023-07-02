@@ -29,8 +29,8 @@ export default function AppMenuComponentItem(props: AppMenuComponentItemProps) {
     const navigate = useNavigate()
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget)
-        if (props?.app_menu_link_item_link) {
-            navigate(`${props?.app_menu_link_item_link}`)
+        if (props?.['app_menu_link_item_link']) {
+            navigate(`${props?.['app_menu_link_item_link']}`)
         }
     }
 
@@ -50,8 +50,8 @@ export default function AppMenuComponentItem(props: AppMenuComponentItemProps) {
                     },
                 }}
             >
-                {props?.app_menu_title
-                    ? props?.app_menu_title
+                {props?.['app_menu_title']
+                    ? props?.['app_menu_title']
                     : process.env.REACT_APP_DEFAULT_MENU_TITLE}
             </Button>
         </>

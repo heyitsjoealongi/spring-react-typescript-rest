@@ -21,17 +21,19 @@ import Divider from '@mui/material/Divider'
 // Styled Components -%- ////
 
 // Application -%- ////
-// type NotificationMenuComponentItemProps = {
-//     app_menu_title: string
-//     app_menu_link_item_link: string
-// }
+type NotificationMenuComponentItemProps = {
+    app_notification_timestamp: string
+    app_notification_title: string
+    app_notification_subtitle: string
+    app_notification_link: string
+}
 
-export default function NotificationMenuComponentItem() {
+export default function NotificationMenuComponentItem(props: NotificationMenuComponentItemProps) {
     return (
         <>
             <ListItem alignItems="flex-start">
                 <ListItemText
-                    primary="01/01/2023"
+                    primary={props?.['app_notification_title']}
                     secondary={
                         <React.Fragment>
                             <Typography
@@ -40,9 +42,9 @@ export default function NotificationMenuComponentItem() {
                                 variant="body2"
                                 color="text.primary"
                             >
-                                Welcome to Spring React TypeScript REST
+                                {props?.['app_notification_timestamp']}
                             </Typography>
-                            {' — Sign up to stay up to date on the latest'}
+                            {': '}{props?.['app_notification_subtitle']}
                         </React.Fragment>
                     }
                 />

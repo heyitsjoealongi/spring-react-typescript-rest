@@ -255,14 +255,14 @@ export default function FooterMenuComponent() {
                         }}
                         dense={true}
                     >
-                        {footerMenuOne?.menu_items?.map((data) => (
+                        {footerMenuOne?.['menu_items']?.map((data) => (
                             <FooterMenuComponentItem
-                                key={data?.id}
+                                key={data?.['id']}
                                 footer_menu_item_title={
-                                    data?.footer_menu_item_title
+                                    data?.['footer_menu_item_title']
                                 }
                                 footer_menu_item_link={
-                                    data?.footer_menu_item_link
+                                    data?.['footer_menu_item_link']
                                 }
                             />
                         ))}
@@ -317,14 +317,14 @@ export default function FooterMenuComponent() {
                         }}
                         dense={true}
                     >
-                        {footerMenuTwo?.menu_items?.map((data) => (
+                        {footerMenuTwo?.['menu_items']?.map((data) => (
                             <FooterMenuComponentItem
-                                key={data?.id}
+                                key={data?.['id']}
                                 footer_menu_item_title={
-                                    data?.footer_menu_item_title
+                                    data?.['footer_menu_item_title']
                                 }
                                 footer_menu_item_link={
-                                    data?.footer_menu_item_link
+                                    data?.['footer_menu_item_link']
                                 }
                             />
                         ))}
@@ -379,14 +379,14 @@ export default function FooterMenuComponent() {
                         }}
                         dense={true}
                     >
-                        {footerMenuThree?.menu_items?.map((data) => (
+                        {footerMenuThree?.['menu_items']?.map((data) => (
                             <FooterMenuComponentItem
-                                key={data?.id}
+                                key={data?.['id']}
                                 footer_menu_item_title={
-                                    data?.footer_menu_item_title
+                                    data?.['footer_menu_item_title']
                                 }
                                 footer_menu_item_link={
-                                    data?.footer_menu_item_link
+                                    data?.['footer_menu_item_link']
                                 }
                             />
                         ))}
@@ -440,14 +440,14 @@ export default function FooterMenuComponent() {
                         }}
                         dense={true}
                     >
-                        {footerMenuFour?.menu_items?.map((data) => (
+                        {footerMenuFour?.['menu_items']?.map((data) => (
                             <FooterMenuComponentItem
-                                key={data?.id}
+                                key={data?.['id']}
                                 footer_menu_item_title={
-                                    data?.footer_menu_item_title
+                                    data?.['footer_menu_item_title']
                                 }
                                 footer_menu_item_link={
-                                    data?.footer_menu_item_link
+                                    data?.['footer_menu_item_link']
                                 }
                             />
                         ))}

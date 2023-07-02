@@ -3,6 +3,8 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { useNavigate } from 'react-router-dom'
+import { useRecoilValue } from 'recoil'
+import { notificationState } from '../../recoil/atoms/notificationAtom'
 
 // MUI -%- ////
 import AppBar from '@mui/material/AppBar'
@@ -81,6 +83,8 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null)
     }
+    const notifications = useRecoilValue(notificationState)
+    console.log('notifications', notifications)
 
     return (
         <>
@@ -174,24 +178,24 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
                                         display: { xs: 'block', md: 'none' },
                                     }}
                                 >
-                                    {props?.app_menu?.map((data) => (
+                                    {props?.['app_menu']?.map((data) => (
                                         <MenuItem
-                                            key={data?.id}
+                                            key={data?.['id']}
                                             onClick={() =>
                                                 handleCloseNavMenu(
-                                                    data?.app_menu_link
+                                                    data?.['app_menu_link']
                                                 )
                                             }
                                         >
                                             <Typography textAlign="center">
-                                                {data?.app_menu_title}
+                                                {data?.['app_menu_title']}
                                             </Typography>
                                         </MenuItem>
                                     ))}
                                 </Menu>
                             </Box>
                             <BrandMenuComponentItemComponent
-                                app_title={props?.app_title}
+                                app_title={props?.['app_title']}
                             />
                         </Box>
                         <Box
@@ -253,30 +257,30 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
                                     open={Boolean(anchorElNotification)}
                                     onClose={handleCloseNotificationMenu}
                                 >
-                                    {/* {props?.user_menu?.map((data) => (
-                                        <MenuItem
-                                            key={data?.id}
-                                            onClick={() =>
-                                                handleCloseNavMenu(
-                                                    data?.user_menu_link
-                                                )
-                                            }
+                                        <List
+                                            sx={{
+                                                width: '100%',
+                                                maxWidth: 360,
+                                            }}
                                         >
-                                            <Typography textAlign="center">
-                                                {data?.user_menu_title}
-                                            </Typography>
-                                        </MenuItem>
-                                    ))} */}
-
-                                    <List
-                                        sx={{
-                                            width: '100%',
-                                            maxWidth: 360,
-                                            bgcolor: 'background.paper',
-                                        }}
-                                    >
-                                        <NotificationMenuComponentItem />
-                                    </List>
+                                             {notifications?.map((data) => (
+                                                <NotificationMenuComponentItem
+                                                    key={data?.['id']}
+                                                    app_notification_timestamp={
+                                                        data?.['app_notification_timestamp']
+                                                    }
+                                                    app_notification_title={
+                                                        data?.['app_notification_title']
+                                                    }
+                                                    app_notification_subtitle={
+                                                        data?.['app_notification_subtitle']
+                                                    }
+                                                    app_notification_link={
+                                                        data?.['app_notification_link']
+                                                    }
+                                                />
+                                            ))} 
+                                        </List>
                                 </Menu>
                             </Box>
                             <Box
@@ -314,17 +318,17 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
                                     open={Boolean(anchorElUser)}
                                     onClose={handleCloseUserMenu}
                                 >
-                                    {props?.user_menu?.map((data) => (
+                                    {props?.['user_menu']?.map((data) => (
                                         <MenuItem
-                                            key={data?.id}
+                                            key={data?.['id']}
                                             onClick={() =>
                                                 handleCloseNavMenu(
-                                                    data?.user_menu_link
+                                                    data?.['user_menu_link']
                                                 )
                                             }
                                         >
                                             <Typography textAlign="center">
-                                                {data?.user_menu_title}
+                                                {data?.['user_menu_title']}
                                             </Typography>
                                         </MenuItem>
                                     ))}

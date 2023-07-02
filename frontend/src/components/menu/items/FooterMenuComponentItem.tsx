@@ -40,11 +40,11 @@ export default function FooterMenuComponentItem(
                     color: '#757575',
                 }}
             >
-                <Link to={props?.footer_menu_item_link}>
+                <Link to={props?.['footer_menu_item_link']}>
                     <ListItemText
                         primary={
-                            props?.footer_menu_item_title
-                                ? props?.footer_menu_item_title
+                            props?.['footer_menu_item_title']
+                                ? props?.['footer_menu_item_title']
                                 : process.env.REACT_APP_DEFAULT_MENU_TITLE
                         }
                         secondary={null}

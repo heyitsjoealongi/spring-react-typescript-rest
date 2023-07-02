@@ -13,7 +13,8 @@ import Typography from '@mui/material/Typography'
 import MenuComponent from '../../components/menu/MenuComponent'
 import FooterMenuComponent from '../../components/menu/FooterMenuComponent'
 import CircularProgressGeneralComponent from '../../components/general/CircularProgressGeneralComponent'
-import StartedComponent from '../../components/utility/StartedComponent'
+import NotificationUtilityComponent from '../../components/utility/NotificationUtilityComponent'
+import StartedUtilityComponent from '../../components/utility/StartedUtilityComponent'
 
 // Integrations -%- ////
 
@@ -52,6 +53,7 @@ export default function DefaultView() {
                     </Typography>
                 </Box>
                 <FooterMenuComponent />
+                <NotificationUtilityComponent />
             </>
         )
     } else {
@@ -77,7 +79,8 @@ export default function DefaultView() {
                     <CircularProgressGeneralComponent />
                 </Box>
                 <FooterMenuComponent />
-                <StartedComponent />
+                <NotificationUtilityComponent />
+                <StartedUtilityComponent />
             </>
         )
     }

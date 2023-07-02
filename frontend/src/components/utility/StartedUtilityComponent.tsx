@@ -18,7 +18,7 @@ import { startState } from '../../recoil/atoms/startAtom'
 // Styled Components -%- ////
 
 // Application -%- ////
-export default function StartedComponent() {
+export default function StartedUtilityComponent() {
     const startTime = process.env.REACT_APP_START_TIME
     const [start, setStart] = useRecoilState(startState)
 

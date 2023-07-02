@@ -75,8 +75,8 @@ export default function BrandMenuComponentItemComponent(
                         color: '#212121',
                     }}
                 >
-                    {props?.app_title
-                        ? props?.app_title
+                    {props?.['app_title']
+                        ? props?.['app_title']
                         : process.env.REACT_APP_DEFAULT_APP_TITLE}
                 </Typography>
             </Box>
