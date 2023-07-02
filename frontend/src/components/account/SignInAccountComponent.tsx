@@ -1,5 +1,5 @@
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 import { useFormik } from 'formik'
@@ -19,7 +19,6 @@ type SignInAccountComponentProps = {
     username: string
     password: string
 }
-
 async function signIn(values: SignInAccountComponentProps) {
     try {
         const { username, password } = values
@@ -29,12 +28,10 @@ async function signIn(values: SignInAccountComponentProps) {
         console.log('error signing in', error)
     }
 }
-
 const validationSchema = yup.object({
     username: yup.string().min(8).required(),
     password: yup.string().min(8).required(),
 })
-
 export default function SignInAccountComponent() {
     const formik = useFormik({
         initialValues: {
@@ -47,9 +44,8 @@ export default function SignInAccountComponent() {
             return await signIn(values)
         },
     })
-
     return (
-        <>
+        <React.Fragment>
             <form onSubmit={formik.handleSubmit}>
                 <Box
                     sx={{
@@ -129,6 +125,6 @@ export default function SignInAccountComponent() {
                     </Button>
                 </Box>
             </form>
-        </>
+        </React.Fragment>
     )
 }

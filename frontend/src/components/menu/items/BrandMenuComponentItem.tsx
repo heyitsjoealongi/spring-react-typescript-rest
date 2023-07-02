@@ -1,5 +1,5 @@
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 
@@ -16,18 +16,15 @@ import DataObjectIcon from '@mui/icons-material/DataObject'
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 type BrandMenuComponentItemProps = {
     app_title: string
 }
-
 export default function BrandMenuComponentItemComponent(
     props: BrandMenuComponentItemProps
 ) {
     return (
-        <>
+        <React.Fragment>
             <Box
                 sx={{
                     display: 'flex',
@@ -80,7 +77,7 @@ export default function BrandMenuComponentItemComponent(
                         : process.env.REACT_APP_DEFAULT_APP_TITLE}
                 </Typography>
             </Box>
-        </>
+        </React.Fragment>
     )
 }
 

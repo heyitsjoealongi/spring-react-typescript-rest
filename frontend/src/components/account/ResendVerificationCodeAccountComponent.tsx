@@ -1,5 +1,5 @@
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 import { useFormik } from 'formik'
@@ -18,7 +18,6 @@ import TextField from '@mui/material/TextField'
 type ResendVerificationCodeAccountComponentProps = {
     username: string
 }
-
 async function resendConfirmationCode(
     values: ResendVerificationCodeAccountComponentProps
 ) {
@@ -30,11 +29,9 @@ async function resendConfirmationCode(
         console.log('error resending code: ', err)
     }
 }
-
 const validationSchema = yup.object({
     username: yup.string().min(8).required(),
 })
-
 export default function ResendVerificationCodeAccountComponent() {
     const formik = useFormik({
         initialValues: {
@@ -46,9 +43,8 @@ export default function ResendVerificationCodeAccountComponent() {
             return await resendConfirmationCode(values)
         },
     })
-
     return (
-        <>
+        <React.Fragment>
             <form onSubmit={formik.handleSubmit}>
                 <Box
                     sx={{
@@ -112,6 +108,6 @@ export default function ResendVerificationCodeAccountComponent() {
                     </Button>
                 </Box>
             </form>
-        </>
+        </React.Fragment>
     )
 }

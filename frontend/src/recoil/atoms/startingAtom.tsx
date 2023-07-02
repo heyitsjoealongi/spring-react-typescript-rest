@@ -13,8 +13,6 @@ import { atom } from 'recoil'
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 export const startingState = atom({
     key: 'starting', // unique ID (with respect to other atoms/selectors)

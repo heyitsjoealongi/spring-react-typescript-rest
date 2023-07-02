@@ -15,14 +15,11 @@ import Button from '@mui/material/Button'
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 type AppMenuComponentItemProps = {
     app_menu_title: string
     app_menu_link_item_link: string
 }
-
 export default function AppMenuComponentItem(props: AppMenuComponentItemProps) {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
     const open = Boolean(anchorEl)
@@ -35,7 +32,7 @@ export default function AppMenuComponentItem(props: AppMenuComponentItemProps) {
     }
 
     return (
-        <>
+        <React.Fragment>
             <Button
                 id="app-menu-component-item"
                 aria-controls={open ? 'app-menu-component-item' : undefined}
@@ -54,7 +51,7 @@ export default function AppMenuComponentItem(props: AppMenuComponentItemProps) {
                     ? props?.['app_menu_title']
                     : process.env.REACT_APP_DEFAULT_MENU_TITLE}
             </Button>
-        </>
+        </React.Fragment>
     )
 }
 

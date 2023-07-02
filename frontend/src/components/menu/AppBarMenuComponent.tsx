@@ -3,6 +3,8 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { useNavigate } from 'react-router-dom'
+import { useRecoilValue } from 'recoil'
+import { notificationsState } from '../../recoil/atoms/notificationsAtom'
 
 // MUI -%- ////
 import AppBar from '@mui/material/AppBar'
@@ -30,8 +32,6 @@ import NotificationMenuComponent from './NotificationMenuComponent'
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 type AppBarMenuComponentProps = {
     app_title: string
@@ -46,8 +46,8 @@ type AppBarMenuComponentProps = {
         user_menu_link: string
     }[]
 }
-
 export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
+    const notifications = useRecoilValue(notificationsState)
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
         null
     )
@@ -80,9 +80,8 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null)
     }
-
     return (
-        <>
+        <React.Fragment>
             <AppBar
                 position="static"
                 sx={{
@@ -227,13 +226,17 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
                                         onClick={handleOpenNotificationMenu}
                                         sx={{ color: '#212121' }}
                                     >
-                                        <Badge
-                                            color="primary"
-                                            variant="dot"
-                                            badgeContent=""
-                                        >
+                                        {notifications?.length > 0 ? (
+                                            <Badge
+                                                color="primary"
+                                                variant="dot"
+                                                badgeContent=""
+                                            >
+                                                <CircleNotificationsIcon />
+                                            </Badge>
+                                        ) : (
                                             <CircleNotificationsIcon />
-                                        </Badge>
+                                        )}
                                     </IconButton>
                                 </Tooltip>
                                 <Menu
@@ -252,7 +255,9 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
                                     open={Boolean(anchorElNotification)}
                                     onClose={handleCloseNotificationMenu}
                                 >
-                                    <NotificationMenuComponent />
+                                    <NotificationMenuComponent
+                                        notifications={notifications}
+                                    />
                                 </Menu>
                             </Box>
                             <Box
@@ -311,6 +316,6 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
                 </Container>
             </AppBar>
             <Divider light />
-        </>
+        </React.Fragment>
     )
 }

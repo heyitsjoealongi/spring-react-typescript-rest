@@ -1,5 +1,5 @@
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 import { useRecoilValue } from 'recoil'
@@ -22,14 +22,12 @@ import StartingUtilityComponent from '../../components/utility/StartingUtilityCo
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 export default function DefaultView() {
     const starting = useRecoilValue(startingState)
     if (starting) {
         return (
-            <>
+            <React.Fragment>
                 <MenuComponent />
                 <Box
                     sx={{
@@ -53,11 +51,11 @@ export default function DefaultView() {
                 </Box>
                 <FooterMenuComponent />
                 <NotificationUtilityComponent />
-            </>
+            </React.Fragment>
         )
     } else {
         return (
-            <>
+            <React.Fragment>
                 <MenuComponent />
                 <Box
                     sx={{
@@ -79,7 +77,7 @@ export default function DefaultView() {
                 </Box>
                 <FooterMenuComponent />
                 <StartingUtilityComponent />
-            </>
+            </React.Fragment>
         )
     }
 }

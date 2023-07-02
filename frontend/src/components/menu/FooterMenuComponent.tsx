@@ -120,15 +120,13 @@ const footerMenuFour = {
         },
     ],
 }
-const year = dayjs().year()
 
 // Middleware -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
+const year = dayjs().year()
 export default function FooterMenuComponent() {
     return (
         <React.Fragment>

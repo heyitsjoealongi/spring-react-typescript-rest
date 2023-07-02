@@ -1,5 +1,5 @@
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 import { useFormik } from 'formik'
@@ -21,9 +21,7 @@ async function signOut() {
         console.log('error signing out: ', error)
     }
 }
-
 const validationSchema = yup.object({})
-
 export default function SignOutAccountComponent() {
     const formik = useFormik({
         initialValues: {},
@@ -33,9 +31,8 @@ export default function SignOutAccountComponent() {
             return await signOut()
         },
     })
-
     return (
-        <>
+        <React.Fragment>
             <form onSubmit={formik.handleSubmit}>
                 <Box
                     sx={{
@@ -84,6 +81,6 @@ export default function SignOutAccountComponent() {
                     </Button>
                 </Box>
             </form>
-        </>
+        </React.Fragment>
     )
 }

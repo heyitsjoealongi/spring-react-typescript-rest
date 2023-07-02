@@ -1,5 +1,5 @@
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 import { useFormik } from 'formik'
@@ -19,7 +19,6 @@ type ConfirmSignUpAccountComponentProps = {
     username: string
     code: string
 }
-
 async function confirmSignUp(values: ConfirmSignUpAccountComponentProps) {
     try {
         const { username, code } = values
@@ -28,12 +27,10 @@ async function confirmSignUp(values: ConfirmSignUpAccountComponentProps) {
         console.log('error confirming sign up', error)
     }
 }
-
 const validationSchema = yup.object({
     username: yup.string().min(8).required(),
     code: yup.string().min(6).required(),
 })
-
 export default function ConfirmSignUpAccountComponent() {
     const formik = useFormik({
         initialValues: {
@@ -48,7 +45,7 @@ export default function ConfirmSignUpAccountComponent() {
     })
 
     return (
-        <>
+        <React.Fragment>
             <form onSubmit={formik.handleSubmit}>
                 <Box
                     sx={{
@@ -124,6 +121,6 @@ export default function ConfirmSignUpAccountComponent() {
                     </Button>
                 </Box>
             </form>
-        </>
+        </React.Fragment>
     )
 }

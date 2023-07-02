@@ -1,5 +1,5 @@
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 import { createTheme, ThemeProvider } from '@mui/material/styles'
@@ -22,8 +22,6 @@ import SignOutAccountView from './views/account/SignOutAccountView'
 
 // Cascading Style Sheets (CSS) -%- ////
 import './App.css'
-
-// Styled Components -%- ////
 const theme = createTheme({
     typography: {
         fontFamily: ['Overpass'].join(','),
@@ -66,14 +64,14 @@ const router = createBrowserRouter([
 
 export default function App() {
     return (
-        <>
+        <React.Fragment>
             <ThemeProvider theme={theme}>
                 <RouterProvider
                     router={router}
                     fallbackElement={<ErrorView />}
                 />
             </ThemeProvider>
-        </>
+        </React.Fragment>
     )
 }
 

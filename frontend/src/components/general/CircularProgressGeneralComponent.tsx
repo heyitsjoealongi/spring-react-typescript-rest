@@ -17,8 +17,6 @@ import Box from '@mui/material/Box'
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 export default function CircularProgressGeneralComponent() {
     return (

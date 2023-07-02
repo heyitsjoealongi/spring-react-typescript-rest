@@ -2,8 +2,6 @@
 import * as React from 'react'
 
 // Packages -%- ////
-import { useRecoilValue } from 'recoil'
-import { notificationsState } from '../../recoil/atoms/notificationsAtom'
 
 // MUI -%- ////
 
@@ -19,11 +17,17 @@ import Divider from '@mui/material/Divider'
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
-export default function NotificationMenuComponent() {
-    const notifications = useRecoilValue(notificationsState)
+type NotificationMenuComponentProps = {
+    notifications: {
+        id: number
+        app_notification_timestamp: string
+        app_notification_title: string
+        app_notification_subtitle: string
+        app_notification_link: string
+    }[]
+}
+export default function NotificationMenuComponent(props: NotificationMenuComponentProps) {
     return (
         <React.Fragment>
             <List
@@ -32,7 +36,7 @@ export default function NotificationMenuComponent() {
                     maxWidth: 360,
                 }}
             >
-                {notifications?.map((data) => (
+                {props?.['notifications']?.map((data) => (
                     <React.Fragment key={data?.['id']}>
                         <ListItem alignItems="flex-start">
                             <ListItemText

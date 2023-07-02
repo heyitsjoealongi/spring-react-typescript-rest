@@ -2,9 +2,10 @@
 import * as React from 'react'
 
 // Packages -%- ////
-import styled from '@emotion/styled'
 
 // MUI -%- ////
+import Container from '@mui/material/Container'
+import Box from '@mui/material/Box'
 
 // Components -%- ////
 import AppBarMenuComponent from './AppBarMenuComponent'
@@ -68,59 +69,58 @@ const userMenu = [
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-const MenuFlexComponent = styled.div`
-    display: none;
-    @media (min-width: 1000px) {
-        display: flex;
-        flexdirection: row;
-        flexwrap: nowrap;
-        flexflow: row nowrap;
-        justifycontent: flex-start;
-        alignitems: flex-start;
-        aligncontent: flex-start;
-        height: auto;
-        width: 50vw;
-        margin: 3vh auto;
-        padding: 0;
-        gap: 1.5vw;
-        background: none;
-        border: none;
-    }
-`
-
-const MenuFlexItemComponent = styled.div`
-    order: 0;
-    flex: none;
-    alignself: flex-start;
-    height: auto;
-    width: auto;
-    margin: 0 auto;
-    padding: 0;
-    background: none;
-    border: none;
-`
-
 // Application -%- ////
 export default function MenuComponent() {
     return (
-        <>
+        <React.Fragment>
             <AppBarMenuComponent
                 app_title={appInfo?.app_title}
                 app_menu={appMenu}
                 user_menu={userMenu}
             />
-            <MenuFlexComponent>
+            <Container
+                maxWidth="xl"
+                sx={{
+                    display: { xs: 'none', md: 'flex' },
+                    flexDirection: 'row',
+                    flexWrap: 'nowrap',
+                    flexFlow: 'row nowrap',
+                    justifyContent: 'flex-start',
+                    alignItems: 'flex-start',
+                    alignContent: 'flex-start',
+                    height: 'auto',
+                    width: '100%',
+                    maxWidth: '50vw',
+                    margin: '3vh auto',
+                    padding: 0,
+                    gap: '1.5vw',
+                    background: 'none',
+                    border: 'none',
+                }}
+            >
                 {appMenu?.map((data) => (
-                    <MenuFlexItemComponent key={data?.['id']}>
+                    <Box
+                        key={data?.['id']}
+                        sx={{
+                            order: '0',
+                            flex: 'none',
+                            alignSelf: 'flex-start',
+                            height: 'auto',
+                            width: 'auto',
+                            margin: '0 auto',
+                            padding: '0',
+                            background: 'none',
+                            border: 'none',
+                        }}
+                    >
                         <BasicMenuComponentItem
                             app_menu_title={data?.['app_menu_title']}
                             app_menu_link_item_link={data?.['app_menu_link']}
                         />
-                    </MenuFlexItemComponent>
+                    </Box>
                 ))}
-            </MenuFlexComponent>
-        </>
+            </Container>
+        </React.Fragment>
     )
 }
 

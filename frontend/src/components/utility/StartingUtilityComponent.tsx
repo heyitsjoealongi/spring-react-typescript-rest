@@ -15,8 +15,6 @@ import { startingState } from '../../recoil/atoms/startingAtom'
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 export default function StartingUtilityComponent() {
     const [starting, setStarting] = useRecoilState(startingState)

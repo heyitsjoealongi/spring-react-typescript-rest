@@ -1,6 +1,5 @@
 // React -%- ////
-import React from 'react'
-
+import * as React from 'react'
 // Packages -%- ////
 
 // MUI -%- ////
@@ -16,12 +15,10 @@ import SignUpAccountComponent from '../../components/account/SignUpAccountCompon
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 export default function SignUpAccountView() {
     return (
-        <>
+        <React.Fragment>
             <Menu />
             <Box
                 sx={{
@@ -43,7 +40,7 @@ export default function SignUpAccountView() {
             >
                 <SignUpAccountComponent />
             </Box>
-        </>
+        </React.Fragment>
     )
 }
 

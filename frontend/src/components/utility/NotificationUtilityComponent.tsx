@@ -15,10 +15,8 @@ import { notificationsState } from '../../recoil/atoms/notificationsAtom'
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
-const defaultNotification = (notifications) => {
+const constructNotifications = (notifications) => {
     const newNotification = {
         id: 0,
         app_notification_timestamp: '01/01/2023 - 12:00PM',
@@ -35,9 +33,9 @@ const defaultNotification = (notifications) => {
 }
 export default function NotificationUtilityComponent() {
     const [notifications, setNotifications] = useRecoilState(notificationsState)
-    const newNotifications = defaultNotification(notifications)
+    const constructedNotifications = constructNotifications(notifications)
     React.useEffect(() => {
-        setNotifications(newNotifications)
+        setNotifications(constructedNotifications)
         return () => {
             true
         }

@@ -28,8 +28,6 @@ DIVIDER COLOR #BDBDBD
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 
 // System -%- ////
@@ -38,22 +36,6 @@ DIVIDER COLOR #BDBDBD
 ## Environment Variables
 ```bash
 REACT_APP_NOT_SECRET_CODE=react-app-not-secret-value
-```
-
-## Emotion Styled Classes ``
-
-```bash
-flexDirection
-flexWrap
-flexFlow
-justifyContent
-alignItems
-alignContent
-alignSelf
-borderStyle
-borderWidth
-borderColor
-borderRadius
 ```
 
 ## Mapping Components
@@ -174,11 +156,6 @@ type Props = {
 {props?.['prop']?.map((data) => ({data?.['prop'] ? data?.['prop'] : ''}))}
 ```
 
-## Spreading Typed Arrays
-
-```bash
-const current = [...currentArray, ...newArray] as []
-```
 
 ## @Types (typeRoots)
 
@@ -202,8 +179,10 @@ applications:
             - yarn install --production --force --legacy-peer-deps
         build:
           commands:
-            - echo "REACT_APP_DEFAULT_APP_TITLE" >> .env 
-            - echo "REACT_APP_DELAY" >> .env 
+            - echo "REACT_APP_DELAY" >> .env
+            - echo "REACT_APP_DEFAULT_APP_TITLE" >> .env
+            - echo "REACT_APP_DEFAULT_APP_DESCRIPTION" >> .env
+            - echo "REACT_APP_DEFAULT_MENU_TITLE" >> .env
             - yarn build
       artifacts:
         baseDirectory: build

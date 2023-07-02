@@ -16,19 +16,16 @@ import ListItemText from '@mui/material/ListItemText'
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 type FooterMenuComponentItemProps = {
     footer_menu_item_title: string
     footer_menu_item_link: string
 }
-
 export default function FooterMenuComponentItem(
     props: FooterMenuComponentItemProps
 ) {
     return (
-        <>
+        <React.Fragment>
             <ListItem
                 id="footer-menu-component-item"
                 sx={{
@@ -62,7 +59,7 @@ export default function FooterMenuComponentItem(
                     />
                 </Link>
             </ListItem>
-        </>
+        </React.Fragment>
     )
 }
 

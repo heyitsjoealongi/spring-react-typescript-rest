@@ -1,5 +1,5 @@
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 
@@ -16,12 +16,10 @@ import CircularProgressGeneralComponent from '../../components/general/CircularP
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 export default function ErrorView() {
     return (
-        <>
+        <React.Fragment>
             <Menu />
             <Box
                 sx={{
@@ -41,7 +39,7 @@ export default function ErrorView() {
             >
                 <CircularProgressGeneralComponent />
             </Box>
-        </>
+        </React.Fragment>
     )
 }
 
