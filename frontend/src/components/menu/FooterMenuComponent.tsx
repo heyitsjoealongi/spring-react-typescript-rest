@@ -131,7 +131,7 @@ const year = dayjs().year()
 // Application -%- ////
 export default function FooterMenuComponent() {
     return (
-        <>
+        <React.Fragment>
             <Divider light />
             <Container
                 maxWidth="xl"
@@ -454,7 +454,7 @@ export default function FooterMenuComponent() {
                     </List>
                 </Box>
             </Container>
-        </>
+        </React.Fragment>
     )
 }
 

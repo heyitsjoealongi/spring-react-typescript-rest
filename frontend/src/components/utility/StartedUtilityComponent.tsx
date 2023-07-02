@@ -1,5 +1,5 @@
 // React -%- ////
-import { useEffect } from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 import { useRecoilState } from 'recoil'
@@ -22,7 +22,7 @@ export default function StartedUtilityComponent() {
     const startTime = process.env.REACT_APP_START_TIME
     const [start, setStart] = useRecoilState(startState)
 
-    useEffect(() => {
+    React.useEffect(() => {
         if (startTime) {
             setTimeout(() => {
                 setStart(true)

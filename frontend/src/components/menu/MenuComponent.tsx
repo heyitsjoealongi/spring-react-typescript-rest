@@ -3,8 +3,6 @@ import * as React from 'react'
 
 // Packages -%- ////
 import styled from '@emotion/styled'
-import { useRecoilValue } from 'recoil'
-import { notificationState } from '../../recoil/atoms/notificationAtom'
 
 // MUI -%- ////
 
@@ -105,15 +103,12 @@ const MenuFlexItemComponent = styled.div`
 
 // Application -%- ////
 export default function MenuComponent() {
-    const notifications = useRecoilValue(notificationState)
-
     return (
         <>
             <AppBarMenuComponent
                 app_title={appInfo?.app_title}
                 app_menu={appMenu}
                 user_menu={userMenu}
-                notifications={notifications}
             />
             <MenuFlexComponent>
                 {appMenu?.map((data) => (

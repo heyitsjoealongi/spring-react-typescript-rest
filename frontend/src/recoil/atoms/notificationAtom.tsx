@@ -18,7 +18,7 @@ import { atom } from 'recoil'
 // Application -%- ////
 
 export const notificationState = atom({
-    key: 'notifications', // unique ID (with respect to other atoms/selectors)
+    key: 'notification', // unique ID (with respect to other atoms/selectors)
     default: [], // default value (aka initial value)
 })
 

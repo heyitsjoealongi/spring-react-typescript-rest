@@ -1,5 +1,5 @@
 // React -%- ////
-import { useEffect } from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 import { useRecoilState } from 'recoil'
@@ -10,40 +10,6 @@ import { notificationState } from '../../recoil/atoms/notificationAtom'
 // Components -%- ////
 
 // Integrations -%- ////
-const appNotifications = [
-    {
-        id: 0,
-        app_notification_timestamp: '01/01/2023 - 12:00PM',
-        app_notification_title: 'Notification one, of many notifications',
-        app_notification_subtitle:
-            'This is notification one, and some extra text',
-        app_notification_link: '/',
-    },
-    {
-        id: 1,
-        app_notification_timestamp: '01/01/2023 - 12:00PM',
-        app_notification_title: 'Notification two, of many notifications',
-        app_notification_subtitle:
-            'This is notification two, and some extra text',
-        app_notification_link: '/',
-    },
-    {
-        id: 2,
-        app_notification_timestamp: '01/01/2023 - 12:00PM',
-        app_notification_title: 'Notification three, of many notifications',
-        app_notification_subtitle:
-            'This is notification three, and some extra text',
-        app_notification_link: '/',
-    },
-    {
-        id: 3,
-        app_notification_timestamp: '01/01/2023 - 12:00PM',
-        app_notification_title: 'Notification four, of many notifications',
-        app_notification_subtitle:
-            'This is notification four, and some extra text',
-        app_notification_link: '/',
-    },
-]
 
 // Middleware -%- ////
 
@@ -53,24 +19,16 @@ const appNotifications = [
 
 // Application -%- ////
 export default function NotificationUtilityComponent() {
-    const [notifications, setNotifications] = useRecoilState(notificationState)
-    useEffect(() => {
-        if (notifications?.length > 0) {
-            const current = [
-                ...notifications,
-                ...appNotifications,
-            ] as Array<object>
-            setNotifications(current as [])
-        } else {
-            const current = [...appNotifications] as Array<object>
-            setNotifications(current as [])
-        }
-        return () => {
-            notifications
-        }
-    }, [notifications])
+    const [notification, setNotification] = useRecoilState(notificationState)
 
-    return notifications
+    React.useEffect(() => {
+        setNotification([])
+        return () => {
+            notification
+        }
+    }, [])
+
+    return notification
 }
 
 // System -%- ////
