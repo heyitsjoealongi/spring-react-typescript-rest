@@ -9,7 +9,6 @@ import Box from '@mui/material/Box'
 // Components -%- ////
 import Menu from '../../components/menu/MenuComponent'
 import CircularProgressGeneralComponent from '../../components/general/CircularProgressGeneralComponent'
-import StartedComponent from '../../components/utility/StartedUtilityComponent'
 
 // Integrations -%- ////
 
@@ -42,7 +41,6 @@ export default function ErrorView() {
             >
                 <CircularProgressGeneralComponent />
             </Box>
-            <StartedComponent />
         </>
     )
 }

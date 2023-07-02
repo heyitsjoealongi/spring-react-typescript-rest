@@ -203,7 +203,7 @@ applications:
         build:
           commands:
             - echo "REACT_APP_DEFAULT_APP_TITLE" >> .env 
-            - echo "REACT_APP_START_TIME" >> .env 
+            - echo "REACT_APP_DELAY" >> .env 
             - yarn build
       artifacts:
         baseDirectory: build

@@ -3,7 +3,7 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { useRecoilValue } from 'recoil'
-import { notificationState } from '../../recoil/atoms/notificationAtom'
+import { notificationsState } from '../../recoil/atoms/notificationsAtom'
 
 // MUI -%- ////
 
@@ -14,41 +14,6 @@ import ListItemText from '@mui/material/ListItemText'
 import Divider from '@mui/material/Divider'
 
 // Integrations -%- ////
-const appNotifications = [
-    {
-        id: 0,
-        app_notification_timestamp: '01/01/2023 - 12:00PM',
-        app_notification_title: 'Notification one, of many notifications',
-        app_notification_subtitle:
-            'This is notification one, and some extra text',
-        app_notification_link: '/',
-    },
-    {
-        id: 1,
-        app_notification_timestamp: '01/01/2023 - 12:00PM',
-        app_notification_title: 'Notification two, of many notifications',
-        app_notification_subtitle:
-            'This is notification two, and some extra text',
-        app_notification_link: '/',
-    },
-    {
-        id: 2,
-        app_notification_timestamp: '01/01/2023 - 12:00PM',
-        app_notification_title: 'Notification three, of many notifications',
-        app_notification_subtitle:
-            'This is notification three, and some extra text',
-        app_notification_link: '/',
-    },
-    {
-        id: 3,
-        app_notification_timestamp: '01/01/2023 - 12:00PM',
-        app_notification_title: 'Notification four, of many notifications',
-        app_notification_subtitle:
-            'This is notification four, and some extra text',
-        app_notification_link: '/',
-    },
-]
-
 
 // Middleware -%- ////
 
@@ -57,34 +22,8 @@ const appNotifications = [
 // Styled Components -%- ////
 
 // Application -%- ////
-// const createNotifications = (notification) => {
-//     const notifications: object[] = [];
-
-//     if (appNotifications?.length > 0) {
-//         appNotifications?.forEach((data) => {
-//             notifications.push(
-//                 <React.Fragment>
-//                     <ListItem alignItems="flex-start" key={data?.['id']}>
-//                         <ListItemText
-//                             primary={data?.['app_notification_title']}
-//                             secondary={
-//                                 data?.['app_notification_timestamp'] +
-//                                 ': ' +
-//                                 data?.['app_notification_subtitle']
-//                             }
-//                         />
-//                     </ListItem>
-//                     <Divider variant="inset" component="li" />
-//                 </React.Fragment>
-//             )
-//         })
-//     }
-
-//     return notifications
-// }
-
 export default function NotificationMenuComponent() {
-    const notification = useRecoilValue(notificationState)
+    const notifications = useRecoilValue(notificationsState)
     return (
         <React.Fragment>
             <List
@@ -93,7 +32,7 @@ export default function NotificationMenuComponent() {
                     maxWidth: 360,
                 }}
             >
-                {notification?.map((data) => (
+                {notifications?.map((data) => (
                     <React.Fragment key={data?.['id']}>
                         <ListItem alignItems="flex-start">
                             <ListItemText
@@ -114,38 +53,3 @@ export default function NotificationMenuComponent() {
 }
 
 // System -%- ////
-
-// https://legacy.reactjs.org/docs/fragments.html#keyed-fragments
-
-// notifications: {
-//     id: number
-//     app_notification_timestamp: string
-//     app_notification_title: string
-//     app_notification_subtitle: string
-//     app_notification_link: string
-// }[]
-
-// Adding A Notification
-
-
-// export default function NotificationUtilityComponent() {
-//     const [notifications, setNotifications] = useRecoilState(notificationState)
-
-//     useEffect(() => {
-//         if (notifications?.length > 0) {
-//             const current = [
-//                 ...notifications,
-//                 ...appNotifications,
-//             ] as Array<object>
-//             setNotifications(current as [])
-//         } else {
-//             const current = [...appNotifications] as Array<object>
-//             setNotifications(current as [])
-//         }
-//         return () => {
-//             notifications
-//         }
-//     }, [notifications])
-
-//     return notifications
-// }

@@ -16,9 +16,8 @@ import { atom } from 'recoil'
 // Styled Components -%- ////
 
 // Application -%- ////
-
-export const notificationState = atom({
-    key: 'notification', // unique ID (with respect to other atoms/selectors)
+export const notificationsState = atom({
+    key: 'notifications', // unique ID (with respect to other atoms/selectors)
     default: [], // default value (aka initial value)
 })
 

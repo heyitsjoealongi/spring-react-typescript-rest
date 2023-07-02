@@ -3,7 +3,7 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { useRecoilState } from 'recoil'
-import { notificationState } from '../../recoil/atoms/notificationAtom'
+import { notificationsState } from '../../recoil/atoms/notificationsAtom'
 
 // MUI -%- ////
 
@@ -18,17 +18,31 @@ import { notificationState } from '../../recoil/atoms/notificationAtom'
 // Styled Components -%- ////
 
 // Application -%- ////
+const defaultNotification = (notifications) => {
+    const newNotification = {
+        id: 0,
+        app_notification_timestamp: '01/01/2023 - 12:00PM',
+        app_notification_title: 'Notification one, of many notifications',
+        app_notification_subtitle:
+            'This is notification one, and some extra text',
+        app_notification_link: '/',
+    }
+    if (notifications?.length > 0) {
+        return [...notifications, newNotification]
+    } else {
+        return [newNotification]
+    }
+}
 export default function NotificationUtilityComponent() {
-    const [notification, setNotification] = useRecoilState(notificationState)
-
+    const [notifications, setNotifications] = useRecoilState(notificationsState)
+    const newNotifications = defaultNotification(notifications)
     React.useEffect(() => {
-        setNotification([])
+        setNotifications(newNotifications)
         return () => {
-            notification
+            true
         }
     }, [])
-
-    return notification
+    return true
 }
 
 // System -%- ////

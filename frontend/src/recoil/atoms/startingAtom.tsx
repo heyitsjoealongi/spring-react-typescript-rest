@@ -16,8 +16,8 @@ import { atom } from 'recoil'
 // Styled Components -%- ////
 
 // Application -%- ////
-export const startState = atom({
-    key: 'start', // unique ID (with respect to other atoms/selectors)
+export const startingState = atom({
+    key: 'starting', // unique ID (with respect to other atoms/selectors)
     default: false, // default value (aka initial value)
 })
 

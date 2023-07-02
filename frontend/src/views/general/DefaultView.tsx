@@ -3,7 +3,7 @@ import React from 'react'
 
 // Packages -%- ////
 import { useRecoilValue } from 'recoil'
-import { startState } from '../../recoil/atoms/startAtom'
+import { startingState } from '../../recoil/atoms/startingAtom'
 
 // MUI -%- ////
 import Box from '@mui/material/Box'
@@ -14,7 +14,7 @@ import MenuComponent from '../../components/menu/MenuComponent'
 import FooterMenuComponent from '../../components/menu/FooterMenuComponent'
 import CircularProgressGeneralComponent from '../../components/general/CircularProgressGeneralComponent'
 import NotificationUtilityComponent from '../../components/utility/NotificationUtilityComponent'
-import StartedUtilityComponent from '../../components/utility/StartedUtilityComponent'
+import StartingUtilityComponent from '../../components/utility/StartingUtilityComponent'
 
 // Integrations -%- ////
 
@@ -26,9 +26,8 @@ import StartedUtilityComponent from '../../components/utility/StartedUtilityComp
 
 // Application -%- ////
 export default function DefaultView() {
-    const start = useRecoilValue(startState)
-
-    if (start) {
+    const starting = useRecoilValue(startingState)
+    if (starting) {
         return (
             <>
                 <MenuComponent />
@@ -79,7 +78,7 @@ export default function DefaultView() {
                     <CircularProgressGeneralComponent />
                 </Box>
                 <FooterMenuComponent />
-                <StartedUtilityComponent />
+                <StartingUtilityComponent />
             </>
         )
     }

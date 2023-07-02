@@ -3,7 +3,7 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { useRecoilState } from 'recoil'
-import { startState } from '../../recoil/atoms/startAtom'
+import { startingState } from '../../recoil/atoms/startingAtom'
 
 // MUI -%- ////
 
@@ -18,22 +18,20 @@ import { startState } from '../../recoil/atoms/startAtom'
 // Styled Components -%- ////
 
 // Application -%- ////
-export default function StartedUtilityComponent() {
-    const startTime = process.env.REACT_APP_START_TIME
-    const [start, setStart] = useRecoilState(startState)
-
+export default function StartingUtilityComponent() {
+    const [starting, setStarting] = useRecoilState(startingState)
+    const delay = process.env.REACT_APP_DELAY
     React.useEffect(() => {
-        if (startTime) {
+        if (delay) {
             setTimeout(() => {
-                setStart(true)
-            }, parseInt(startTime))
+                setStarting(true)
+            }, parseInt(delay))
         }
         return () => {
-            start
+            starting
         }
-    }, [startTime])
-
-    return start
+    }, [delay])
+    return starting
 }
 
 // System -%- ////
