@@ -1,12 +1,11 @@
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import {
-  RecoilRoot
-} from 'recoil';
+
+// MUI -%- ////
 
 // Components -%- ////
 import ErrorView from './views/general/ErrorView'
@@ -21,11 +20,8 @@ import SignOutAccountView from './views/account/SignOutAccountView'
 
 // Middleware -%- ////
 
-
 // Cascading Style Sheets (CSS) -%- ////
 import './App.css'
-
-// Styled Components -%- ////
 const theme = createTheme({
     typography: {
         fontFamily: ['Overpass'].join(','),
@@ -68,16 +64,14 @@ const router = createBrowserRouter([
 
 export default function App() {
     return (
-        <>
-            <RecoilRoot>
-                <ThemeProvider theme={theme}>
-                    <RouterProvider
-                        router={router}
-                        fallbackElement={<ErrorView />}
-                    />
-                </ThemeProvider>
-            </RecoilRoot>
-        </>
+        <React.Fragment>
+            <ThemeProvider theme={theme}>
+                <RouterProvider
+                    router={router}
+                    fallbackElement={<ErrorView />}
+                />
+            </ThemeProvider>
+        </React.Fragment>
     )
 }
 

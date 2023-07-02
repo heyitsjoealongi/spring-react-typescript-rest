@@ -1,10 +1,12 @@
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 
-// Components -%- ////
+// MUI -%- ////
 import Box from '@mui/material/Box'
+
+// Components -%- ////
 import Menu from '../../components/menu/MenuComponent'
 import ConfirmSignUpAccountComponent from '../../components/account/ConfirmSignUpAccountComponent'
 
@@ -14,12 +16,10 @@ import ConfirmSignUpAccountComponent from '../../components/account/ConfirmSignU
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 export default function ConfirmSignUpAccountView() {
     return (
-        <>
+        <React.Fragment>
             <Menu />
             <Box
                 sx={{
@@ -41,7 +41,7 @@ export default function ConfirmSignUpAccountView() {
             >
                 <ConfirmSignUpAccountComponent />
             </Box>
-        </>
+        </React.Fragment>
     )
 }
 

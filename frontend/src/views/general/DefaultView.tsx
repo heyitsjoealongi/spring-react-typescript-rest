@@ -1,21 +1,20 @@
-// https://mui.com/material-ui/react-progress/
-// https://recoiljs.org/docs/introduction/getting-started
-
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
-import {
-  useRecoilValue
-} from 'recoil';
-import { startingState } from '../../recoil/atoms/startingAtom';
+import { useRecoilValue } from 'recoil'
+import { startingState } from '../../recoil/atoms/startingAtom'
 
-// Components -%- ////
+// MUI -%- ////
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import Menu from '../../components/menu/MenuComponent'
+
+// Components -%- ////
+import MenuComponent from '../../components/menu/MenuComponent'
+import FooterMenuComponent from '../../components/menu/FooterMenuComponent'
 import CircularProgressGeneralComponent from '../../components/general/CircularProgressGeneralComponent'
-import StartedComponent from '../../components/utility/StartedComponent';
+import NotificationUtilityComponent from '../../components/utility/NotificationUtilityComponent'
+import StartingUtilityComponent from '../../components/utility/StartingUtilityComponent'
 
 // Integrations -%- ////
 
@@ -23,16 +22,13 @@ import StartedComponent from '../../components/utility/StartedComponent';
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 export default function DefaultView() {
-    const started = useRecoilValue(startingState);
-
-    if(started){
+    const starting = useRecoilValue(startingState)
+    if (starting) {
         return (
-            <>
-                <Menu />
+            <React.Fragment>
+                <MenuComponent />
                 <Box
                     sx={{
                         display: 'flex',
@@ -53,12 +49,14 @@ export default function DefaultView() {
                         Spring React TypeScript REST
                     </Typography>
                 </Box>
-            </>
+                <FooterMenuComponent />
+                <NotificationUtilityComponent />
+            </React.Fragment>
         )
     } else {
         return (
-            <>
-                <Menu />
+            <React.Fragment>
+                <MenuComponent />
                 <Box
                     sx={{
                         display: 'flex',
@@ -77,8 +75,9 @@ export default function DefaultView() {
                 >
                     <CircularProgressGeneralComponent />
                 </Box>
-                <StartedComponent />
-            </>
+                <FooterMenuComponent />
+                <StartingUtilityComponent />
+            </React.Fragment>
         )
     }
 }

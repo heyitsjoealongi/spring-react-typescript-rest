@@ -1,30 +1,24 @@
-// https://mui.com/material-ui/react-typography/
-// https://mui.com/material-ui/react-text-field/
-// https://mui.com/material-ui/material-icons/?query=login
-// https://mui.com/material-ui/react-button/
-// https://formik.org/docs/examples/with-material-ui
-// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#sign-in
-
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { Auth } from 'aws-amplify'
 
-// Components -%- ////
+// MUI -%- ////
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
+
+// Components -%- ////
 
 // Integrations -%- ////
 type SignInAccountComponentProps = {
     username: string
     password: string
 }
-
 async function signIn(values: SignInAccountComponentProps) {
     try {
         const { username, password } = values
@@ -34,12 +28,10 @@ async function signIn(values: SignInAccountComponentProps) {
         console.log('error signing in', error)
     }
 }
-
 const validationSchema = yup.object({
     username: yup.string().min(8).required(),
     password: yup.string().min(8).required(),
 })
-
 export default function SignInAccountComponent() {
     const formik = useFormik({
         initialValues: {
@@ -52,9 +44,8 @@ export default function SignInAccountComponent() {
             return await signIn(values)
         },
     })
-
     return (
-        <>
+        <React.Fragment>
             <form onSubmit={formik.handleSubmit}>
                 <Box
                     sx={{
@@ -134,6 +125,6 @@ export default function SignInAccountComponent() {
                     </Button>
                 </Box>
             </form>
-        </>
+        </React.Fragment>
     )
 }

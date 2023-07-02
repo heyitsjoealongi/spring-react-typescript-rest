@@ -1,29 +1,23 @@
-// https://mui.com/material-ui/react-typography/
-// https://mui.com/material-ui/react-text-field/
-// https://mui.com/material-ui/material-icons/?query=login
-// https://mui.com/material-ui/react-button/
-// https://formik.org/docs/examples/with-material-ui
-// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#re-send-sign-up-confirmation-code
-
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { Auth } from 'aws-amplify'
 
-// Components -%- ////
+// MUI -%- ////
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
+// Components -%- ////
+
 // Integrations -%- ////
 type ResendVerificationCodeAccountComponentProps = {
     username: string
 }
-
 async function resendConfirmationCode(
     values: ResendVerificationCodeAccountComponentProps
 ) {
@@ -35,11 +29,9 @@ async function resendConfirmationCode(
         console.log('error resending code: ', err)
     }
 }
-
 const validationSchema = yup.object({
     username: yup.string().min(8).required(),
 })
-
 export default function ResendVerificationCodeAccountComponent() {
     const formik = useFormik({
         initialValues: {
@@ -51,9 +43,8 @@ export default function ResendVerificationCodeAccountComponent() {
             return await resendConfirmationCode(values)
         },
     })
-
     return (
-        <>
+        <React.Fragment>
             <form onSubmit={formik.handleSubmit}>
                 <Box
                     sx={{
@@ -117,6 +108,6 @@ export default function ResendVerificationCodeAccountComponent() {
                     </Button>
                 </Box>
             </form>
-        </>
+        </React.Fragment>
     )
 }

@@ -1,5 +1,5 @@
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 
@@ -14,12 +14,10 @@ import SignInAccountComponent from '../../components/account/SignInAccountCompon
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 export default function SignInAccountView() {
     return (
-        <>
+        <React.Fragment>
             <Menu />
             <Box
                 sx={{
@@ -41,7 +39,7 @@ export default function SignInAccountView() {
             >
                 <SignInAccountComponent />
             </Box>
-        </>
+        </React.Fragment>
     )
 }
 

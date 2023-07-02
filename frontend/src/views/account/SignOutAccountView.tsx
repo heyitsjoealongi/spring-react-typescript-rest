@@ -1,10 +1,12 @@
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 
-// Components -%- ////
+// MUI -%- ////
 import Box from '@mui/material/Box'
+
+// Components -%- ////
 import Menu from '../../components/menu/MenuComponent'
 import SignOutAccountComponent from '../../components/account/SignOutAccountComponent'
 
@@ -14,12 +16,10 @@ import SignOutAccountComponent from '../../components/account/SignOutAccountComp
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-
 // Application -%- ////
 export default function SignOutAccountView() {
     return (
-        <>
+        <React.Fragment>
             <Menu />
             <Box
                 sx={{
@@ -41,7 +41,7 @@ export default function SignOutAccountView() {
             >
                 <SignOutAccountComponent />
             </Box>
-        </>
+        </React.Fragment>
     )
 }
 

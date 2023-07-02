@@ -1,23 +1,18 @@
-// https://mui.com/material-ui/react-typography/
-// https://mui.com/material-ui/react-text-field/
-// https://mui.com/material-ui/material-icons/?query=login
-// https://mui.com/material-ui/react-button/
-// https://formik.org/docs/examples/with-material-ui
-// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#sign-up
-
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { Auth } from 'aws-amplify'
 
-// Components -%- ////
+// MUI -%- ////
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
+
+// Components -%- ////
 
 // Integrations -%- ////
 type SignUpAccountComponentProps = {
@@ -26,7 +21,6 @@ type SignUpAccountComponentProps = {
     email: string
     name: string
 }
-
 async function signUp(values: SignUpAccountComponentProps) {
     try {
         const { username, password, email, name } = values
@@ -46,14 +40,12 @@ async function signUp(values: SignUpAccountComponentProps) {
         console.log('error signing up:', error)
     }
 }
-
 const validationSchema = yup.object({
     name: yup.string().min(8).required(),
     username: yup.string().min(8).required(),
     email: yup.string().email().required(),
     password: yup.string().min(8).required(),
 })
-
 export default function SignUpAccountComponent() {
     const formik = useFormik({
         initialValues: {
@@ -68,9 +60,8 @@ export default function SignUpAccountComponent() {
             return await signUp(values)
         },
     })
-
     return (
-        <>
+        <React.Fragment>
             <form onSubmit={formik.handleSubmit}>
                 <Box
                     sx={{
@@ -174,6 +165,6 @@ export default function SignUpAccountComponent() {
                     </Button>
                 </Box>
             </form>
-        </>
+        </React.Fragment>
     )
 }

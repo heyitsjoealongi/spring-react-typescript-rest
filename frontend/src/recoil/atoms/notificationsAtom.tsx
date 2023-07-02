@@ -14,9 +14,9 @@ import { atom } from 'recoil'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export const startingState = atom({
-    key: 'starting', // unique ID (with respect to other atoms/selectors)
-    default: false, // default value (aka initial value)
+export const notificationsState = atom({
+    key: 'notifications', // unique ID (with respect to other atoms/selectors)
+    default: [], // default value (aka initial value)
 })
 
 // System -%- ////

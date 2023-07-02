@@ -2,39 +2,42 @@
 import * as React from 'react'
 
 // Packages -%- ////
-import styled from '@emotion/styled'
+
+// MUI -%- ////
+import Container from '@mui/material/Container'
+import Box from '@mui/material/Box'
 
 // Components -%- ////
 import AppBarMenuComponent from './AppBarMenuComponent'
-import BasicMenuComponentItem from './items/BasicMenuComponentItem'
+import BasicMenuComponentItem from './items/AppMenuComponentItem'
 
 // Integrations -%- ////
-const appBar = {
-    app_bar_title: 'Frontend',
+const appInfo = {
+    app_title: 'Spring React TypeScript REST',
 }
-const basicMenus = [
+const appMenu = [
     {
         id: 0,
-        basic_menu_title: 'Menu one',
-        basic_menu_link: '/',
+        app_menu_title: 'Menu one',
+        app_menu_link: '/',
     },
     {
         id: 1,
-        basic_menu_title: 'Menu two',
-        basic_menu_link: '/',
+        app_menu_title: 'Menu two',
+        app_menu_link: '/',
     },
     {
         id: 2,
-        basic_menu_title: 'Menu three',
-        basic_menu_link: '/',
+        app_menu_title: 'Menu three',
+        app_menu_link: '/',
     },
     {
         id: 3,
-        basic_menu_title: 'Menu four',
-        basic_menu_link: '/',
+        app_menu_title: 'Menu four',
+        app_menu_link: '/',
     },
 ]
-const userMenus = [
+const userMenu = [
     {
         id: 0,
         user_menu_title: 'Sign up',
@@ -66,59 +69,58 @@ const userMenus = [
 
 // Cascading Style Sheets (CSS) -%- ////
 
-// Styled Components -%- ////
-const MenuFlexComponent = styled.div`
-    display: none;
-    @media (min-width: 1000px) {
-        display: flex;
-        flexDirection: row;
-        flexWrap: nowrap;
-        flexFlow: row nowrap;
-        justifyContent: flex-start;
-        alignItems: flex-start;
-        alignContent: flex-start;
-        height: auto;
-        width: 50vw;
-        margin: 1.5em auto;
-        padding: 0;
-        gap: 1.5em;
-        background: none;
-        border: none;
-    }
-`
-
-const MenuFlexItemComponent = styled.div`
-    order: 0;
-    flex: none;
-    alignSelf: flex-start;
-    height: auto;
-    width: auto;
-    margin: 0 auto;
-    padding: 0;
-    background: none;
-    border: none;
-`
-
 // Application -%- ////
 export default function MenuComponent() {
     return (
-        <>
+        <React.Fragment>
             <AppBarMenuComponent
-                app_bar_title={appBar?.app_bar_title}
-                app_bar_menu={basicMenus}
-                app_bar_user_menu={userMenus}
+                app_title={appInfo?.app_title}
+                app_menu={appMenu}
+                user_menu={userMenu}
             />
-            <MenuFlexComponent>
-                {basicMenus.map((data) => (
-                    <MenuFlexItemComponent key={data?.id}>
+            <Container
+                maxWidth="xl"
+                sx={{
+                    display: { xs: 'none', md: 'flex' },
+                    flexDirection: 'row',
+                    flexWrap: 'nowrap',
+                    flexFlow: 'row nowrap',
+                    justifyContent: 'flex-start',
+                    alignItems: 'flex-start',
+                    alignContent: 'flex-start',
+                    height: 'auto',
+                    width: '100%',
+                    maxWidth: '50vw',
+                    margin: '3vh auto',
+                    padding: 0,
+                    gap: '1.5vw',
+                    background: 'none',
+                    border: 'none',
+                }}
+            >
+                {appMenu?.map((data) => (
+                    <Box
+                        key={data?.['id']}
+                        sx={{
+                            order: '0',
+                            flex: 'none',
+                            alignSelf: 'flex-start',
+                            height: 'auto',
+                            width: 'auto',
+                            margin: '0 auto',
+                            padding: '0',
+                            background: 'none',
+                            border: 'none',
+                        }}
+                    >
                         <BasicMenuComponentItem
-                            basic_menu_title={data?.basic_menu_title}
-                            basic_item_link={data?.basic_menu_link}
+                            app_menu_title={data?.['app_menu_title']}
+                            app_menu_link_item_link={data?.['app_menu_link']}
                         />
-                    </MenuFlexItemComponent>
+                    </Box>
                 ))}
-            </MenuFlexComponent>
-        </>
+            </Container>
+        </React.Fragment>
     )
 }
 

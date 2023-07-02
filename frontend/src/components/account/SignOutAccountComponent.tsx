@@ -1,22 +1,17 @@
-// https://mui.com/material-ui/react-typography/
-// https://mui.com/material-ui/react-text-field/
-// https://mui.com/material-ui/material-icons/?query=login
-// https://mui.com/material-ui/react-button/
-// https://formik.org/docs/examples/with-material-ui
-// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#sign-out
-
 // React -%- ////
-import React from 'react'
+import * as React from 'react'
 
 // Packages -%- ////
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { Auth } from 'aws-amplify'
 
-// Components -%- ////
+// MUI -%- ////
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
+
+// Components -%- ////
 
 // Integrations -%- ////
 async function signOut() {
@@ -26,9 +21,7 @@ async function signOut() {
         console.log('error signing out: ', error)
     }
 }
-
 const validationSchema = yup.object({})
-
 export default function SignOutAccountComponent() {
     const formik = useFormik({
         initialValues: {},
@@ -38,9 +31,8 @@ export default function SignOutAccountComponent() {
             return await signOut()
         },
     })
-
     return (
-        <>
+        <React.Fragment>
             <form onSubmit={formik.handleSubmit}>
                 <Box
                     sx={{
@@ -89,6 +81,6 @@ export default function SignOutAccountComponent() {
                     </Button>
                 </Box>
             </form>
-        </>
+        </React.Fragment>
     )
 }
