@@ -3,8 +3,6 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { useNavigate } from 'react-router-dom'
-import { useRecoilValue } from 'recoil'
-import { notificationState } from '../../recoil/atoms/notificationAtom'
 
 // MUI -%- ////
 import AppBar from '@mui/material/AppBar'
@@ -18,6 +16,8 @@ import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import MenuIcon from '@mui/icons-material/Menu'
 import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemText from '@mui/material/ListItemText'
 import Divider from '@mui/material/Divider'
 import Badge from '@mui/material/Badge'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
@@ -25,7 +25,6 @@ import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications'
 
 // Components -%- ////
 import BrandMenuComponentItemComponent from './items/BrandMenuComponentItem'
-import NotificationMenuComponentItem from './items/NotificationMenuComponentItem'
 
 // Integrations -%- ////
 
@@ -47,6 +46,13 @@ type AppBarMenuComponentProps = {
         id: number
         user_menu_title: string
         user_menu_link: string
+    }[]
+    notifications: {
+        id: number
+        app_notification_timestamp: string
+        app_notification_title: string
+        app_notification_subtitle: string
+        app_notification_link: string
     }[]
 }
 
@@ -83,8 +89,6 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null)
     }
-    const notifications = useRecoilValue(notificationState)
-    console.log('notifications', notifications)
 
     return (
         <>
@@ -257,30 +261,42 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
                                     open={Boolean(anchorElNotification)}
                                     onClose={handleCloseNotificationMenu}
                                 >
-                                        <List
-                                            sx={{
-                                                width: '100%',
-                                                maxWidth: 360,
-                                            }}
-                                        >
-                                             {notifications?.map((data) => (
-                                                <NotificationMenuComponentItem
+                                    <List
+                                        sx={{
+                                            width: '100%',
+                                            maxWidth: 360,
+                                        }}
+                                    >
+                                        {props?.notifications?.map((data) => (
+                                            <>
+                                                <ListItem
+                                                    alignItems="flex-start"
                                                     key={data?.['id']}
-                                                    app_notification_timestamp={
-                                                        data?.['app_notification_timestamp']
-                                                    }
-                                                    app_notification_title={
-                                                        data?.['app_notification_title']
-                                                    }
-                                                    app_notification_subtitle={
-                                                        data?.['app_notification_subtitle']
-                                                    }
-                                                    app_notification_link={
-                                                        data?.['app_notification_link']
-                                                    }
+                                                >
+                                                    <ListItemText
+                                                        primary={
+                                                            data?.[
+                                                                'app_notification_title'
+                                                            ]
+                                                        }
+                                                        secondary={
+                                                            data?.[
+                                                                'app_notification_timestamp'
+                                                            ] +
+                                                            ': ' +
+                                                            data?.[
+                                                                'app_notification_subtitle'
+                                                            ]
+                                                        }
+                                                    />
+                                                </ListItem>
+                                                <Divider
+                                                    variant="inset"
+                                                    component="li"
                                                 />
-                                            ))} 
-                                        </List>
+                                            </>
+                                        ))}
+                                    </List>
                                 </Menu>
                             </Box>
                             <Box

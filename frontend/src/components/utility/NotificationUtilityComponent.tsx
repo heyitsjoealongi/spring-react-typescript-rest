@@ -15,28 +15,32 @@ const appNotifications = [
         id: 0,
         app_notification_timestamp: '01/01/2023 - 12:00PM',
         app_notification_title: 'Notification one, of many notifications',
-        app_notification_subtitle: 'This is notification one, and some extra text',
+        app_notification_subtitle:
+            'This is notification one, and some extra text',
         app_notification_link: '/',
     },
     {
         id: 1,
         app_notification_timestamp: '01/01/2023 - 12:00PM',
         app_notification_title: 'Notification two, of many notifications',
-        app_notification_subtitle: 'This is notification two, and some extra text',
+        app_notification_subtitle:
+            'This is notification two, and some extra text',
         app_notification_link: '/',
     },
     {
         id: 2,
         app_notification_timestamp: '01/01/2023 - 12:00PM',
         app_notification_title: 'Notification three, of many notifications',
-        app_notification_subtitle: 'This is notification three, and some extra text',
+        app_notification_subtitle:
+            'This is notification three, and some extra text',
         app_notification_link: '/',
     },
     {
         id: 3,
         app_notification_timestamp: '01/01/2023 - 12:00PM',
         app_notification_title: 'Notification four, of many notifications',
-        app_notification_subtitle: 'This is notification four, and some extra text',
+        app_notification_subtitle:
+            'This is notification four, and some extra text',
         app_notification_link: '/',
     },
 ]
@@ -51,12 +55,20 @@ const appNotifications = [
 export default function NotificationUtilityComponent() {
     const [notifications, setNotifications] = useRecoilState(notificationState)
     useEffect(() => {
-        const current = [...notifications, ...appNotifications] as []
-        setNotifications(current)
+        if (notifications?.length > 0) {
+            const current = [
+                ...notifications,
+                ...appNotifications,
+            ] as Array<object>
+            setNotifications(current as [])
+        } else {
+            const current = [...appNotifications] as Array<object>
+            setNotifications(current as [])
+        }
         return () => {
             notifications
         }
-    }, [])
+    }, [notifications])
 
     return notifications
 }

@@ -4,7 +4,6 @@ import React from 'react'
 // Packages -%- ////
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { RecoilRoot } from 'recoil'
 
 // MUI -%- ////
 
@@ -68,14 +67,12 @@ const router = createBrowserRouter([
 export default function App() {
     return (
         <>
-            <RecoilRoot>
-                <ThemeProvider theme={theme}>
-                    <RouterProvider
-                        router={router}
-                        fallbackElement={<ErrorView />}
-                    />
-                </ThemeProvider>
-            </RecoilRoot>
+            <ThemeProvider theme={theme}>
+                <RouterProvider
+                    router={router}
+                    fallbackElement={<ErrorView />}
+                />
+            </ThemeProvider>
         </>
     )
 }
