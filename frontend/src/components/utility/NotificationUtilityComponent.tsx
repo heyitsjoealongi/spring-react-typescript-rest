@@ -20,9 +20,9 @@ const constructNotifications = (notifications) => {
     const newNotification = {
         id: 0,
         app_notification_timestamp: '01/01/2023 - 12:00PM',
-        app_notification_title: 'Notification one, of many notifications',
+        app_notification_title: 'Notification one of many notifications',
         app_notification_subtitle:
-            'This is notification one, and some extra text',
+            'This is notification one and some extra text',
         app_notification_link: '/',
     }
     if (notifications?.length > 0) {

@@ -4,6 +4,7 @@ import * as React from 'react'
 // Packages -%- ////
 
 // MUI -%- ////
+import Typography from '@mui/material/Typography'
 
 // Components -%- ////
 import List from '@mui/material/List'
@@ -27,7 +28,9 @@ type NotificationMenuComponentProps = {
         app_notification_link: string
     }[]
 }
-export default function NotificationMenuComponent(props: NotificationMenuComponentProps) {
+export default function NotificationMenuComponent(
+    props: NotificationMenuComponentProps
+) {
     return (
         <React.Fragment>
             <List
@@ -40,11 +43,50 @@ export default function NotificationMenuComponent(props: NotificationMenuCompone
                     <React.Fragment key={data?.['id']}>
                         <ListItem alignItems="flex-start">
                             <ListItemText
-                                primary={data?.['app_notification_title']}
+                                primary={
+                                    <React.Fragment>
+                                        <Typography
+                                            sx={{
+                                                color: '#CDDC39',
+                                            }}
+                                            variant="caption"
+                                            gutterBottom
+                                        >
+                                            {
+                                                data?.[
+                                                    'app_notification_timestamp'
+                                                ]
+                                            }
+                                        </Typography>
+                                        <Typography
+                                            sx={{
+                                                color: '#212121',
+                                                fontWeight: '600',
+                                            }}
+                                            variant="subtitle2"
+                                            gutterBottom
+                                        >
+                                            {data?.['app_notification_title']}
+                                        </Typography>
+                                    </React.Fragment>
+                                }
                                 secondary={
-                                    data?.['app_notification_timestamp'] +
-                                    ': ' +
-                                    data?.['app_notification_subtitle']
+                                    <React.Fragment>
+                                        <Typography
+                                            sx={{
+                                                color: '#212121',
+                                                fontWeight: '300',
+                                            }}
+                                            variant="subtitle2"
+                                            gutterBottom
+                                        >
+                                            {
+                                                data?.[
+                                                    'app_notification_subtitle'
+                                                ]
+                                            }
+                                        </Typography>
+                                    </React.Fragment>
                                 }
                             />
                         </ListItem>
