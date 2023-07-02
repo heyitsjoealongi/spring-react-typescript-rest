@@ -79,7 +79,6 @@ export default function DefaultView() {
                     <CircularProgressGeneralComponent />
                 </Box>
                 <FooterMenuComponent />
-                <NotificationUtilityComponent />
                 <StartedUtilityComponent />
             </>
         )
