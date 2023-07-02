@@ -1,12 +1,9 @@
-// https://mui.com/material-ui/react-progress/
-// https://recoiljs.org/docs/introduction/getting-started
-
 // React -%- ////
 import React from 'react'
 
 // Packages -%- ////
 import { useRecoilValue } from 'recoil'
-import { startingState } from '../../recoil/atoms/startingAtom'
+import { startState } from '../../recoil/atoms/startAtom'
 
 // MUI -%- ////
 import Box from '@mui/material/Box'
@@ -28,9 +25,9 @@ import StartedComponent from '../../components/utility/StartedComponent'
 
 // Application -%- ////
 export default function DefaultView() {
-    const started = useRecoilValue(startingState)
+    const start = useRecoilValue(startState)
 
-    if (started) {
+    if (start) {
         return (
             <>
                 <MenuComponent />

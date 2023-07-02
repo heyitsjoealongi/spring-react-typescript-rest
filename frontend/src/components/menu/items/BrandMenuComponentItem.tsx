@@ -1,5 +1,3 @@
-// https://mui.com/material-ui/react-progress/
-
 // React -%- ////
 import React from 'react'
 
@@ -8,9 +6,9 @@ import React from 'react'
 // MUI -%- ////
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
+import DataObjectIcon from '@mui/icons-material/DataObject'
 
 // Components -%- ////
-import { ReactComponent as SpringReactTypeScriptREST } from '../../../assets/svg/spring-react-typescript-rest.svg'
 
 // Integrations -%- ////
 
@@ -56,7 +54,11 @@ export default function BrandMenuComponentItemComponent(
                         padding: '0 !important',
                     }}
                 >
-                    <SpringReactTypeScriptREST />
+                    <DataObjectIcon
+                        sx={{
+                            color: '#212121',
+                        }}
+                    />
                 </Box>
                 <Typography
                     variant="h6"

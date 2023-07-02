@@ -1,5 +1,3 @@
-// Documentation - https://mui.com/material-ui/react-menu/
-
 // React -%- ////
 import * as React from 'react'
 
@@ -53,7 +51,7 @@ export default function FooterMenuComponentItem(
                         sx={{
                             height: 'auto',
                             width: '100%',
-                            margin: '0.18vh 0 0 0',
+                            margin: '0.3vh 0 0 0',
                             padding: '0',
                             gap: '0',
                             color: '#212121',

@@ -1,12 +1,9 @@
-// https://mui.com/material-ui/react-progress/
-// https://recoiljs.org/docs/introduction/getting-started
-
 // React -%- ////
 import { useEffect } from 'react'
 
 // Packages -%- ////
 import { useRecoilState } from 'recoil'
-import { startingState } from '../../recoil/atoms/startingAtom'
+import { startState } from '../../recoil/atoms/startAtom'
 
 // MUI -%- ////
 
@@ -23,20 +20,20 @@ import { startingState } from '../../recoil/atoms/startingAtom'
 // Application -%- ////
 export default function StartedComponent() {
     const startTime = process.env.REACT_APP_START_TIME
-    const [started, setStarted] = useRecoilState(startingState)
+    const [start, setStart] = useRecoilState(startState)
 
     useEffect(() => {
         if (startTime) {
             setTimeout(() => {
-                setStarted(true)
+                setStart(true)
             }, parseInt(startTime))
         }
         return () => {
-            started
+            start
         }
     }, [startTime])
 
-    return started
+    return start
 }
 
 // System -%- ////

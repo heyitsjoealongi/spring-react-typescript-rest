@@ -12,7 +12,7 @@ import BasicMenuComponentItem from './items/AppMenuComponentItem'
 
 // Integrations -%- ////
 const appInfo = {
-    app_title: 'Frontend',
+    app_title: 'Spring React TypeScript REST',
 }
 const appMenu = [
     {
@@ -111,7 +111,7 @@ export default function MenuComponent() {
                 user_menu={userMenu}
             />
             <MenuFlexComponent>
-                {appMenu.map((data) => (
+                {appMenu?.map((data) => (
                     <MenuFlexItemComponent key={data?.id}>
                         <BasicMenuComponentItem
                             app_menu_title={data?.app_menu_title}

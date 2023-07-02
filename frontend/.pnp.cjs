@@ -53,6 +53,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:5.60.1"],\
             ["aws-amplify", "npm:5.3.3"],\
             ["buffer", "npm:6.0.3"],\
+            ["dayjs", "npm:1.11.9"],\
             ["eslint", "npm:8.44.0"],\
             ["eslint-plugin-react", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:7.32.2"],\
             ["formik", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:2.4.2"],\
@@ -10875,6 +10876,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["dayjs", [\
+        ["npm:1.11.9", {\
+          "packageLocation": "./.yarn/cache/dayjs-npm-1.11.9-c47d327b7c-a4844d83dc.zip/node_modules/dayjs/",\
+          "packageDependencies": [\
+            ["dayjs", "npm:1.11.9"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["debug", [\
         ["npm:2.6.9", {\
           "packageLocation": "./.yarn/cache/debug-npm-2.6.9-7d4cb597dc-d2f51589ca.zip/node_modules/debug/",\
@@ -19741,6 +19751,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:5.60.1"],\
             ["aws-amplify", "npm:5.3.3"],\
             ["buffer", "npm:6.0.3"],\
+            ["dayjs", "npm:1.11.9"],\
             ["eslint", "npm:8.44.0"],\
             ["eslint-plugin-react", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:7.32.2"],\
             ["formik", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:2.4.2"],\

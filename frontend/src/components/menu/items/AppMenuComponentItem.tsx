@@ -1,5 +1,3 @@
-// Documentation - https://mui.com/material-ui/react-menu/
-
 // React -%- ////
 import * as React from 'react'
 
@@ -47,8 +45,8 @@ export default function AppMenuComponentItem(props: AppMenuComponentItemProps) {
                 sx={{
                     color: '#212121',
                     '&:hover': {
-                        color: '#757575',
-                        background: '#CDDC39',
+                        color: '#F5F5F5',
+                        background: '#757575',
                     },
                 }}
             >

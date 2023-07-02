@@ -1,5 +1,3 @@
-// Documentation - https://mui.com/material-ui/react-app-bar/
-
 // React -%- ////
 import * as React from 'react'
 
@@ -17,11 +15,15 @@ import Menu from '@mui/material/Menu'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import MenuIcon from '@mui/icons-material/Menu'
+import List from '@mui/material/List'
+import Divider from '@mui/material/Divider'
+import Badge from '@mui/material/Badge'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications'
 
 // Components -%- ////
 import BrandMenuComponentItemComponent from './items/BrandMenuComponentItem'
+import NotificationMenuComponentItem from './items/NotificationMenuComponentItem'
 
 // Integrations -%- ////
 
@@ -81,36 +83,28 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
     }
 
     return (
-        <AppBar
-            position="static"
-            sx={{
-                display: 'flex',
-                flexDirection: 'row',
-                flexWrap: 'nowrap',
-                flexFlow: 'row nowrap',
-                justifyContent: 'center',
-                alignItems: 'center',
-                alignContent: 'center',
-                height: 'auto',
-                width: '100%',
-                margin: '0 !important',
-                padding: '0 !important',
-                background: 'none',
-                backgroundColor: 'transparent',
-                boxShadow: 'none',
-            }}
-        >
-            <Container
-                maxWidth="xl"
+        <>
+            <AppBar
+                position="static"
                 sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flexWrap: 'nowrap',
+                    flexFlow: 'row nowrap',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    alignContent: 'center',
                     height: 'auto',
                     width: '100%',
                     margin: '0 !important',
                     padding: '0 !important',
+                    background: 'none',
+                    backgroundColor: 'transparent',
+                    boxShadow: 'none',
                 }}
             >
-                <Toolbar
-                    disableGutters
+                <Container
+                    maxWidth="xl"
                     sx={{
                         height: 'auto',
                         width: '100%',
@@ -118,202 +112,229 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
                         padding: '0 !important',
                     }}
                 >
-                    <Box
+                    <Toolbar
+                        disableGutters
                         sx={{
-                            flex: 1,
-                            alignSelf: 'center',
-                            display: 'flex',
-                            flexDirection: 'row',
-                            flexWrap: 'nowrap',
-                            flexFlow: 'row nowrap',
-                            justifyContent: 'flex-start',
-                            alignItems: 'center',
-                            alignContent: 'center',
                             height: 'auto',
-                            width: '50%',
-                            margin: '0',
-                            padding: '0',
-                            gap: '0',
+                            width: '100%',
+                            margin: '0 !important',
+                            padding: '0 !important',
                         }}
                     >
                         <Box
                             sx={{
-                                display: { xs: 'flex', md: 'none' },
-                                flex: 0,
+                                flex: 1,
                                 alignSelf: 'center',
+                                display: 'flex',
+                                flexDirection: 'row',
+                                flexWrap: 'nowrap',
+                                flexFlow: 'row nowrap',
+                                justifyContent: 'flex-start',
+                                alignItems: 'center',
+                                alignContent: 'center',
+                                height: 'auto',
+                                width: '50%',
+                                margin: '0',
+                                padding: '0',
+                                gap: '0',
                             }}
                         >
-                            <IconButton
-                                size="large"
-                                aria-label="application menu"
-                                aria-controls="application-menu"
-                                aria-haspopup="true"
-                                onClick={handleOpenNavMenu}
-                                sx={{ color: '#212121' }}
-                            >
-                                <MenuIcon />
-                            </IconButton>
-                            <Menu
-                                id="application-menu"
-                                anchorEl={anchorElNav}
-                                anchorOrigin={{
-                                    vertical: 'bottom',
-                                    horizontal: 'left',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'left',
-                                }}
-                                open={Boolean(anchorElNav)}
-                                onClose={handleCloseNavMenu}
+                            <Box
                                 sx={{
-                                    display: { xs: 'block', md: 'none' },
+                                    display: { xs: 'flex', md: 'none' },
+                                    flex: 0,
+                                    alignSelf: 'center',
                                 }}
                             >
-                                {props?.app_menu.map((data) => (
-                                    <MenuItem
-                                        key={data?.id}
-                                        onClick={() =>
-                                            handleCloseNavMenu(
-                                                data?.app_menu_link
-                                            )
-                                        }
-                                    >
-                                        <Typography textAlign="center">
-                                            {data?.app_menu_title}
-                                        </Typography>
-                                    </MenuItem>
-                                ))}
-                            </Menu>
-                        </Box>
-                        <BrandMenuComponentItemComponent
-                            app_title={props?.app_title}
-                        />
-                    </Box>
-                    <Box
-                        sx={{
-                            flex: 1,
-                            alignSelf: 'center',
-                            display: 'flex',
-                            flexDirection: 'row',
-                            flexWrap: 'nowrap',
-                            flexFlow: 'row nowrap',
-                            justifyContent: 'flex-end',
-                            alignItems: 'center',
-                            alignContent: 'center',
-                            height: 'auto',
-                            width: '50%',
-                            margin: '0',
-                            padding: '0',
-                            gap: '0',
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                flex: 0,
-                                alignSelf: 'center',
-                            }}
-                        >
-                            <Tooltip title="User Notifications">
-                                <IconButton
-                                    size="large"
-                                    aria-label="notification menu"
-                                    aria-controls="notification-menu"
-                                    aria-haspopup="true"
-                                    onClick={handleOpenNotificationMenu}
-                                    sx={{ color: '#212121' }}
-                                >
-                                    <CircleNotificationsIcon />
-                                </IconButton>
-                            </Tooltip>
-                            <Menu
-                                sx={{ mt: '60px' }}
-                                id="notification-menu"
-                                anchorEl={anchorElNotification}
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                open={Boolean(anchorElNotification)}
-                                onClose={handleCloseNotificationMenu}
-                            >
-                                {props?.user_menu.map((data) => (
-                                    <MenuItem
-                                        key={data?.id}
-                                        onClick={() =>
-                                            handleCloseNavMenu(
-                                                data?.user_menu_link
-                                            )
-                                        }
-                                    >
-                                        <Typography textAlign="center">
-                                            {data?.user_menu_title}
-                                        </Typography>
-                                    </MenuItem>
-                                ))}
-                            </Menu>
-                        </Box>
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                flex: 0,
-                                alignSelf: 'center',
-                            }}
-                        >
-                            <Tooltip title="User Settings">
                                 <IconButton
                                     size="large"
                                     aria-label="application menu"
                                     aria-controls="application-menu"
                                     aria-haspopup="true"
-                                    onClick={handleOpenUserMenu}
+                                    onClick={handleOpenNavMenu}
                                     sx={{ color: '#212121' }}
                                 >
-                                    <AccountCircleIcon />
+                                    <MenuIcon />
                                 </IconButton>
-                            </Tooltip>
-                            <Menu
-                                sx={{ mt: '60px' }}
-                                id="application-menu"
-                                anchorEl={anchorElUser}
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                open={Boolean(anchorElUser)}
-                                onClose={handleCloseUserMenu}
-                            >
-                                {props?.user_menu.map((data) => (
-                                    <MenuItem
-                                        key={data?.id}
-                                        onClick={() =>
-                                            handleCloseNavMenu(
-                                                data?.user_menu_link
-                                            )
-                                        }
-                                    >
-                                        <Typography textAlign="center">
-                                            {data?.user_menu_title}
-                                        </Typography>
-                                    </MenuItem>
-                                ))}
-                            </Menu>
+                                <Menu
+                                    id="application-menu"
+                                    anchorEl={anchorElNav}
+                                    anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'left',
+                                    }}
+                                    keepMounted
+                                    transformOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'left',
+                                    }}
+                                    open={Boolean(anchorElNav)}
+                                    onClose={handleCloseNavMenu}
+                                    sx={{
+                                        display: { xs: 'block', md: 'none' },
+                                    }}
+                                >
+                                    {props?.app_menu?.map((data) => (
+                                        <MenuItem
+                                            key={data?.id}
+                                            onClick={() =>
+                                                handleCloseNavMenu(
+                                                    data?.app_menu_link
+                                                )
+                                            }
+                                        >
+                                            <Typography textAlign="center">
+                                                {data?.app_menu_title}
+                                            </Typography>
+                                        </MenuItem>
+                                    ))}
+                                </Menu>
+                            </Box>
+                            <BrandMenuComponentItemComponent
+                                app_title={props?.app_title}
+                            />
                         </Box>
-                    </Box>
-                </Toolbar>
-            </Container>
-        </AppBar>
+                        <Box
+                            sx={{
+                                flex: 1,
+                                alignSelf: 'center',
+                                display: 'flex',
+                                flexDirection: 'row',
+                                flexWrap: 'nowrap',
+                                flexFlow: 'row nowrap',
+                                justifyContent: 'flex-end',
+                                alignItems: 'center',
+                                alignContent: 'center',
+                                height: 'auto',
+                                width: '50%',
+                                margin: '0',
+                                padding: '0',
+                                gap: '0',
+                            }}
+                        >
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flex: 0,
+                                    alignSelf: 'center',
+                                }}
+                            >
+                                <Tooltip title="User Notifications">
+                                    <IconButton
+                                        size="large"
+                                        aria-label="notification menu"
+                                        aria-controls="notification-menu"
+                                        aria-haspopup="true"
+                                        onClick={handleOpenNotificationMenu}
+                                        sx={{ color: '#212121' }}
+                                    >
+                                        <Badge
+                                            color="primary"
+                                            variant="dot"
+                                            badgeContent=""
+                                        >
+                                            <CircleNotificationsIcon />
+                                        </Badge>
+                                    </IconButton>
+                                </Tooltip>
+                                <Menu
+                                    sx={{ mt: '60px' }}
+                                    id="notification-menu"
+                                    anchorEl={anchorElNotification}
+                                    anchorOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'right',
+                                    }}
+                                    keepMounted
+                                    transformOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'right',
+                                    }}
+                                    open={Boolean(anchorElNotification)}
+                                    onClose={handleCloseNotificationMenu}
+                                >
+                                    {/* {props?.user_menu?.map((data) => (
+                                        <MenuItem
+                                            key={data?.id}
+                                            onClick={() =>
+                                                handleCloseNavMenu(
+                                                    data?.user_menu_link
+                                                )
+                                            }
+                                        >
+                                            <Typography textAlign="center">
+                                                {data?.user_menu_title}
+                                            </Typography>
+                                        </MenuItem>
+                                    ))} */}
+
+                                    <List
+                                        sx={{
+                                            width: '100%',
+                                            maxWidth: 360,
+                                            bgcolor: 'background.paper',
+                                        }}
+                                    >
+                                        <NotificationMenuComponentItem />
+                                    </List>
+                                </Menu>
+                            </Box>
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flex: 0,
+                                    alignSelf: 'center',
+                                }}
+                            >
+                                <Tooltip title="User Settings">
+                                    <IconButton
+                                        size="large"
+                                        aria-label="application menu"
+                                        aria-controls="application-menu"
+                                        aria-haspopup="true"
+                                        onClick={handleOpenUserMenu}
+                                        sx={{ color: '#212121' }}
+                                    >
+                                        <AccountCircleIcon />
+                                    </IconButton>
+                                </Tooltip>
+                                <Menu
+                                    sx={{ mt: '60px' }}
+                                    id="application-menu"
+                                    anchorEl={anchorElUser}
+                                    anchorOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'right',
+                                    }}
+                                    keepMounted
+                                    transformOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'right',
+                                    }}
+                                    open={Boolean(anchorElUser)}
+                                    onClose={handleCloseUserMenu}
+                                >
+                                    {props?.user_menu?.map((data) => (
+                                        <MenuItem
+                                            key={data?.id}
+                                            onClick={() =>
+                                                handleCloseNavMenu(
+                                                    data?.user_menu_link
+                                                )
+                                            }
+                                        >
+                                            <Typography textAlign="center">
+                                                {data?.user_menu_title}
+                                            </Typography>
+                                        </MenuItem>
+                                    ))}
+                                </Menu>
+                            </Box>
+                        </Box>
+                    </Toolbar>
+                </Container>
+            </AppBar>
+            <Divider light />
+        </>
     )
 }

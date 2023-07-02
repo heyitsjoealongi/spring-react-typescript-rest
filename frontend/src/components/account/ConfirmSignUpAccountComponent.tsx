@@ -1,10 +1,3 @@
-// https://mui.com/material-ui/react-typography/
-// https://mui.com/material-ui/react-text-field/
-// https://mui.com/material-ui/material-icons/?query=login
-// https://mui.com/material-ui/react-button/
-// https://formik.org/docs/examples/with-material-ui
-// https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#confirm-sign-up
-
 // React -%- ////
 import React from 'react'
 

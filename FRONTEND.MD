@@ -68,7 +68,7 @@ const items = [
     },
 ]
 
-{items.map((data) =>(
+{items?.map((data) =>(
     <div key={data?.id}>
         {data?.example}
     </div>
@@ -171,7 +171,7 @@ type Props = {
   }[];
 };
 
-{props?.prop.map((data) => ({data?.prop ? data?.prop : ''}))}
+{props?.prop?.map((data) => ({data?.prop ? data?.prop : ''}))}
 ```
 
 ## @Types (typeRoots)

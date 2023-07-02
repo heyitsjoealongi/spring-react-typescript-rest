@@ -16,9 +16,9 @@ import { atom } from 'recoil'
 // Styled Components -%- ////
 
 // Application -%- ////
-export const startingState = atom({
-    key: 'started', // unique ID (with respect to other atoms/selectors)
-    default: false, // default value (aka initial value)
+export const notificationState = atom({
+    key: 'notifications', // unique ID (with respect to other atoms/selectors)
+    default: [], // default value (aka initial value)
 })
 
 // System -%- ////

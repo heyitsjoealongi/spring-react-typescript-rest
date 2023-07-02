@@ -1,5 +1,3 @@
-// https://mui.com/material-ui/react-progress/
-
 // React -%- ////
 import React from 'react'
 

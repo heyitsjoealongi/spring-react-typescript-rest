@@ -2,109 +2,125 @@
 import * as React from 'react'
 
 // Packages -%- ////
+import { default as dayjs } from 'dayjs'
 
 // MUI -%- ////
+import Divider from '@mui/material/Divider'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
 import Typography from '@mui/material/Typography'
 
 // Components -%- ////
-import BrandMenuComponentItemComponent from './items/BrandMenuComponentItem'
 import FooterMenuComponentItem from './items/FooterMenuComponentItem'
 
 // Integrations -%- ////
 const appInfo = {
-    app_title: 'Frontend',
+    app_title: 'Spring React TypeScript REST',
+    app_description:
+        'Fullstack Application — React (TypeScript) Frontend, Spring Boot Java Backend, OkHttp Client, and MySQL (Vitess) Service.',
 }
-const footerMenuOne = [
-    {
-        id: 0,
-        footer_menu_item_title: 'Menu one',
-        footer_menu_item_link: '/',
-    },
-    {
-        id: 1,
-        footer_menu_item_title: 'Menu two',
-        footer_menu_item_link: '/',
-    },
-    {
-        id: 2,
-        footer_menu_item_title: 'Menu three',
-        footer_menu_item_link: '/',
-    },
-    {
-        id: 3,
-        footer_menu_item_title: 'Menu four',
-        footer_menu_item_link: '/',
-    },
-]
-const footerMenuTwo = [
-    {
-        id: 0,
-        footer_menu_item_title: 'Menu one',
-        footer_menu_item_link: '/',
-    },
-    {
-        id: 1,
-        footer_menu_item_title: 'Menu two',
-        footer_menu_item_link: '/',
-    },
-    {
-        id: 2,
-        footer_menu_item_title: 'Menu three',
-        footer_menu_item_link: '/',
-    },
-    {
-        id: 3,
-        footer_menu_item_title: 'Menu four',
-        footer_menu_item_link: '/',
-    },
-]
-const footerMenuThree = [
-    {
-        id: 0,
-        footer_menu_item_title: 'Menu one',
-        footer_menu_item_link: '/',
-    },
-    {
-        id: 1,
-        footer_menu_item_title: 'Menu two',
-        footer_menu_item_link: '/',
-    },
-    {
-        id: 2,
-        footer_menu_item_title: 'Menu three',
-        footer_menu_item_link: '/',
-    },
-    {
-        id: 3,
-        footer_menu_item_title: 'Menu four',
-        footer_menu_item_link: '/',
-    },
-]
-const footerMenuFour = [
-    {
-        id: 0,
-        footer_menu_item_title: 'Menu one',
-        footer_menu_item_link: '/',
-    },
-    {
-        id: 1,
-        footer_menu_item_title: 'Menu two',
-        footer_menu_item_link: '/',
-    },
-    {
-        id: 2,
-        footer_menu_item_title: 'Menu three',
-        footer_menu_item_link: '/',
-    },
-    {
-        id: 3,
-        footer_menu_item_title: 'Menu four',
-        footer_menu_item_link: '/',
-    },
-]
+const footerMenuOne = {
+    menu_title: 'Menu title',
+    menu_items: [
+        {
+            id: 0,
+            footer_menu_item_title: 'Menu one',
+            footer_menu_item_link: '/',
+        },
+        {
+            id: 1,
+            footer_menu_item_title: 'Menu two',
+            footer_menu_item_link: '/',
+        },
+        {
+            id: 2,
+            footer_menu_item_title: 'Menu three',
+            footer_menu_item_link: '/',
+        },
+        {
+            id: 3,
+            footer_menu_item_title: 'Menu four',
+            footer_menu_item_link: '/',
+        },
+    ],
+}
+const footerMenuTwo = {
+    menu_title: 'Menu title',
+    menu_items: [
+        {
+            id: 0,
+            footer_menu_item_title: 'Menu one',
+            footer_menu_item_link: '/',
+        },
+        {
+            id: 1,
+            footer_menu_item_title: 'Menu two',
+            footer_menu_item_link: '/',
+        },
+        {
+            id: 2,
+            footer_menu_item_title: 'Menu three',
+            footer_menu_item_link: '/',
+        },
+        {
+            id: 3,
+            footer_menu_item_title: 'Menu four',
+            footer_menu_item_link: '/',
+        },
+    ],
+}
+const footerMenuThree = {
+    menu_title: 'Menu title',
+    menu_items: [
+        {
+            id: 0,
+            footer_menu_item_title: 'Menu one',
+            footer_menu_item_link: '/',
+        },
+        {
+            id: 1,
+            footer_menu_item_title: 'Menu two',
+            footer_menu_item_link: '/',
+        },
+        {
+            id: 2,
+            footer_menu_item_title: 'Menu three',
+            footer_menu_item_link: '/',
+        },
+        {
+            id: 3,
+            footer_menu_item_title: 'Menu four',
+            footer_menu_item_link: '/',
+        },
+    ],
+}
+const footerMenuFour = {
+    menu_title: 'Menu title',
+    menu_items: [
+        {
+            id: 0,
+            footer_menu_item_title: 'Menu one',
+            footer_menu_item_link: '/',
+        },
+        {
+            id: 1,
+            footer_menu_item_title: 'Menu two',
+            footer_menu_item_link: '/',
+        },
+        {
+            id: 2,
+            footer_menu_item_title: 'Menu three',
+            footer_menu_item_link: '/',
+        },
+        {
+            id: 3,
+            footer_menu_item_title: 'Menu four',
+            footer_menu_item_link: '/',
+        },
+    ],
+}
+const year = dayjs().year()
 
 // Middleware -%- ////
 
@@ -116,6 +132,7 @@ const footerMenuFour = [
 export default function FooterMenuComponent() {
     return (
         <>
+            <Divider light />
             <Container
                 maxWidth="xl"
                 sx={{
@@ -147,34 +164,47 @@ export default function FooterMenuComponent() {
                         alignContent: 'center',
                         height: 'auto',
                         width: '100%',
-                        maxWidth: { xs: '100%', md: '40%' },
+                        maxWidth: { xs: '90%', md: '20%' },
                         margin: { xs: '3vh 3vw 0 3vw', md: '3vh 0 0 0' },
-                        padding: '0',
+                        padding: { xs: '0', md: '0 1.5vw' },
                         gap: '0',
                     }}
                 >
-                    <Box
+                    <Typography
                         sx={{
                             flex: 1,
                             alignSelf: 'flex-start',
-                            display: 'flex',
-                            flexDirection: 'row',
-                            flexWrap: 'nowrap',
-                            flexFlow: 'row nowrap',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            alignContent: 'center',
                             height: 'auto',
-                            width: '50%',
+                            width: '100%',
                             margin: '0',
                             padding: '0',
-                            gap: '0',
                         }}
+                        component="div"
+                        variant="body2"
+                        gutterBottom
                     >
-                        <BrandMenuComponentItemComponent
-                            app_title={appInfo?.app_title}
-                        />
-                    </Box>
+                        © {year}{' '}
+                        {appInfo?.app_title
+                            ? appInfo?.app_title
+                            : process.env.REACT_APP_DEFAULT_APP_TITLE}
+                    </Typography>
+                    <Typography
+                        sx={{
+                            flex: 1,
+                            alignSelf: 'flex-start',
+                            height: 'auto',
+                            width: '100%',
+                            margin: '0',
+                            padding: '0',
+                        }}
+                        component="div"
+                        variant="caption"
+                        gutterBottom
+                    >
+                        {appInfo?.app_description
+                            ? appInfo?.app_description
+                            : process.env.REACT_APP_DEFAULT_APP_DESCRIPTION}
+                    </Typography>
                 </Box>
                 <Box
                     sx={{
@@ -189,9 +219,9 @@ export default function FooterMenuComponent() {
                         alignContent: 'center',
                         height: 'auto',
                         width: '100%',
-                        maxWidth: { xs: '100%', md: '20%' },
+                        maxWidth: { xs: '90%', md: '20%' },
                         margin: { xs: '3vh 3vw 0 3vw', md: '3vh 0 0 0' },
-                        padding: '0',
+                        padding: { xs: '0', md: '0 1.5vw' },
                         gap: '0',
                     }}
                 >
@@ -203,11 +233,15 @@ export default function FooterMenuComponent() {
                             width: '100%',
                             margin: '0',
                             padding: '0',
+                            color: '#616161',
+                            textTransform: 'uppercase',
                         }}
-                        variant="h6"
-                        component="div"
+                        variant="subtitle2"
+                        gutterBottom
                     >
-                        Text only
+                        {footerMenuOne?.menu_title
+                            ? footerMenuOne?.menu_title
+                            : process.env.REACT_APP_DEFAULT_MENU_TITLE}
                     </Typography>
                     <List
                         sx={{
@@ -221,7 +255,7 @@ export default function FooterMenuComponent() {
                         }}
                         dense={true}
                     >
-                        {footerMenuOne.map((data) => (
+                        {footerMenuOne?.menu_items?.map((data) => (
                             <FooterMenuComponentItem
                                 key={data?.id}
                                 footer_menu_item_title={
@@ -247,9 +281,9 @@ export default function FooterMenuComponent() {
                         alignContent: 'center',
                         height: 'auto',
                         width: '100%',
-                        maxWidth: { xs: '100%', md: '20%' },
+                        maxWidth: { xs: '90%', md: '20%' },
                         margin: { xs: '3vh 3vw 0 3vw', md: '3vh 0 0 0' },
-                        padding: '0',
+                        padding: { xs: '0', md: '0 1.5vw' },
                         gap: '0',
                     }}
                 >
@@ -261,11 +295,15 @@ export default function FooterMenuComponent() {
                             width: '100%',
                             margin: '0',
                             padding: '0',
+                            color: '#616161',
+                            textTransform: 'uppercase',
                         }}
-                        variant="h6"
-                        component="div"
+                        variant="subtitle2"
+                        gutterBottom
                     >
-                        Text only
+                        {footerMenuTwo?.menu_title
+                            ? footerMenuTwo?.menu_title
+                            : process.env.REACT_APP_DEFAULT_MENU_TITLE}
                     </Typography>
                     <List
                         sx={{
@@ -279,7 +317,7 @@ export default function FooterMenuComponent() {
                         }}
                         dense={true}
                     >
-                        {footerMenuTwo.map((data) => (
+                        {footerMenuTwo?.menu_items?.map((data) => (
                             <FooterMenuComponentItem
                                 key={data?.id}
                                 footer_menu_item_title={
@@ -305,9 +343,9 @@ export default function FooterMenuComponent() {
                         alignContent: 'center',
                         height: 'auto',
                         width: '100%',
-                        maxWidth: { xs: '100%', md: '20%' },
+                        maxWidth: { xs: '90%', md: '20%' },
                         margin: { xs: '3vh 3vw 0 3vw', md: '3vh 0 0 0' },
-                        padding: '0',
+                        padding: { xs: '0', md: '0 1.5vw' },
                         gap: '0',
                     }}
                 >
@@ -319,11 +357,15 @@ export default function FooterMenuComponent() {
                             width: '100%',
                             margin: '0',
                             padding: '0',
+                            color: '#616161',
+                            textTransform: 'uppercase',
                         }}
-                        variant="h6"
-                        component="div"
+                        variant="subtitle2"
+                        gutterBottom
                     >
-                        Text only
+                        {footerMenuThree?.menu_title
+                            ? footerMenuThree?.menu_title
+                            : process.env.REACT_APP_DEFAULT_MENU_TITLE}
                     </Typography>
                     <List
                         sx={{
@@ -337,7 +379,7 @@ export default function FooterMenuComponent() {
                         }}
                         dense={true}
                     >
-                        {footerMenuThree.map((data) => (
+                        {footerMenuThree?.menu_items?.map((data) => (
                             <FooterMenuComponentItem
                                 key={data?.id}
                                 footer_menu_item_title={
@@ -363,9 +405,9 @@ export default function FooterMenuComponent() {
                         alignContent: 'center',
                         height: 'auto',
                         width: '100%',
-                        maxWidth: { xs: '100%', md: '20%' },
+                        maxWidth: { xs: '90%', md: '20%' },
                         margin: { xs: '3vh 3vw 0 3vw', md: '3vh 0 0 0' },
-                        padding: '0',
+                        padding: { xs: '0', md: '0 1.5vw' },
                         gap: '0',
                     }}
                 >
@@ -377,11 +419,15 @@ export default function FooterMenuComponent() {
                             width: '100%',
                             margin: '0',
                             padding: '0',
+                            color: '#616161',
+                            textTransform: 'uppercase',
                         }}
-                        variant="h6"
-                        component="div"
+                        variant="subtitle2"
+                        gutterBottom
                     >
-                        Text only
+                        {footerMenuFour?.menu_title
+                            ? footerMenuFour?.menu_title
+                            : process.env.REACT_APP_DEFAULT_MENU_TITLE}
                     </Typography>
                     <List
                         sx={{
@@ -394,7 +440,7 @@ export default function FooterMenuComponent() {
                         }}
                         dense={true}
                     >
-                        {footerMenuFour.map((data) => (
+                        {footerMenuFour?.menu_items?.map((data) => (
                             <FooterMenuComponentItem
                                 key={data?.id}
                                 footer_menu_item_title={
