@@ -12,6 +12,8 @@ import Typography from '@mui/material/Typography'
 // Components -%- ////
 import { ReactComponent as ReactLogo } from './../../assets/svg/ReactLogo.svg'
 import { ReactComponent as TypeScriptLogo } from './../../assets/svg/TypeScriptLogo.svg'
+import { ReactComponent as MaterialUILogo } from './../../assets/svg/MaterialUILogo.svg'
+import { ReactComponent as RecoilLogo } from './../../assets/svg/RecoilLogo.svg'
 import { ReactComponent as AmplifyLogo } from './../../assets/svg/AmplifyLogo.svg'
 import { ReactComponent as AWSLogo } from './../../assets/svg/AWSLogo.svg'
 import { ReactComponent as SpringBootLogo } from './../../assets/svg/SpringBootLogo.svg'
@@ -105,6 +107,28 @@ export default function PreFooterFrameworksMenuComponent() {
                     }}
                 >
                     <Link
+                        to={'https://mui.com/'}
+                        target="_blank"
+                        aria-label="material-ui-logo-link"
+                        type="link"
+                    >
+                        <MaterialUILogo />
+                    </Link>
+                </Box>
+                <Box
+                    sx={{
+                        order: '3',
+                        flex: '0',
+                        flexBasis: 'auto',
+                        display: 'inline-flex',
+                        alignSelf: { xs: 'flex-start', md: 'center' },
+                        height: 'auto',
+                        width: 'auto',
+                        margin: { xs: '0', md: '0 auto' },
+                        padding: '0',
+                    }}
+                >
+                    <Link
                         to={'https://www.typescriptlang.org/'}
                         target="_blank"
                         aria-label="typescript-logo-link"
@@ -113,9 +137,32 @@ export default function PreFooterFrameworksMenuComponent() {
                         <TypeScriptLogo />
                     </Link>
                 </Box>
+
                 <Box
                     sx={{
-                        order: '3',
+                        order: '4',
+                        flex: '0',
+                        flexBasis: 'auto',
+                        display: 'inline-flex',
+                        alignSelf: { xs: 'flex-start', md: 'center' },
+                        height: 'auto',
+                        width: 'auto',
+                        margin: { xs: '0', md: '0 auto' },
+                        padding: '0',
+                    }}
+                >
+                    <Link
+                        to={'https://recoiljs.org/'}
+                        target="_blank"
+                        aria-label="recoil-logo-link"
+                        type="link"
+                    >
+                        <RecoilLogo />
+                    </Link>
+                </Box>
+                <Box
+                    sx={{
+                        order: '5',
                         flex: '0',
                         flexBasis: 'auto',
                         display: 'inline-flex',
@@ -137,7 +184,7 @@ export default function PreFooterFrameworksMenuComponent() {
                 </Box>
                 <Box
                     sx={{
-                        order: '4',
+                        order: '6',
                         flex: '0',
                         flexBasis: 'auto',
                         display: 'inline-flex',
@@ -160,7 +207,7 @@ export default function PreFooterFrameworksMenuComponent() {
 
                 <Box
                     sx={{
-                        order: '5',
+                        order: '7',
                         flex: '0',
                         flexBasis: 'auto',
                         display: 'inline-flex',
@@ -182,7 +229,7 @@ export default function PreFooterFrameworksMenuComponent() {
                 </Box>
                 <Box
                     sx={{
-                        order: '6',
+                        order: '8',
                         flex: '0',
                         flexBasis: 'auto',
                         display: 'inline-flex',
