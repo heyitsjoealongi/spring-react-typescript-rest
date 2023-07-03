@@ -1,4 +1,6 @@
 # Spring React TypeScript REST
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest?ref=badge_shield)
+
 
 Fullstack Application — React (TypeScript) Frontend, Spring Boot Java Backend, OkHttp Client, and MySQL (Vitess) Service.
 
@@ -354,3 +356,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
 
 - [Logo](https://thenounproject.com/icon/spring-14717/)
 - [User Icon](https://thenounproject.com/icon/user-5818176/)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest?ref=badge_large)
