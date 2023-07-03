@@ -15,6 +15,7 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 ### Frontend
 
 - [Create React App (TypeScript)](https://create-react-app.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [React Router](https://reactrouter.com/en/main)
 - [Material UI](https://mui.com/)
 - [Emotion Styled Components](https://emotion.sh/docs/introduction)
@@ -23,6 +24,7 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 ### Backend
 
 - [Spring Initializr](https://start.spring.io/)
+- [Amazon Corretto JDK](https://aws.amazon.com/corretto)
 
 ## Stack
 
