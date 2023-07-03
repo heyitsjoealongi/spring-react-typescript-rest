@@ -3,6 +3,7 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { default as dayjs } from 'dayjs'
+import { Link } from 'react-router-dom'
 
 // MUI -%- ////
 import Divider from '@mui/material/Divider'
@@ -10,9 +11,13 @@ import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import List from '@mui/material/List'
 import Typography from '@mui/material/Typography'
+import TwitterIcon from '@mui/icons-material/Twitter'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
 
 // Components -%- ////
 import FooterMenuComponentItem from './items/FooterMenuComponentItem'
+import PreFooterFrameworksMenuComponent from './PreFooterFrameworksMenuComponent'
 
 // Integrations -%- ////
 const appInfo = {
@@ -131,6 +136,8 @@ export default function FooterMenuComponent() {
     return (
         <React.Fragment>
             <Divider light />
+            <PreFooterFrameworksMenuComponent />
+            <Divider light />
             <Container
                 maxWidth="xl"
                 sx={{
@@ -168,12 +175,105 @@ export default function FooterMenuComponent() {
                         gap: '0',
                     }}
                 >
+                    <Box
+                        maxWidth="xl"
+                        sx={{
+                            flex: 1,
+                            alignSelf: 'flex-start',
+                            display: 'flex',
+                            flexDirection: 'row',
+                            flexWrap: 'nowrap',
+                            flexFlow: 'row nowrap',
+                            justifyContent: 'flex-start',
+                            alignItems: 'flex-start',
+                            alignContent: 'flex-start',
+                            height: 'auto',
+                            width: '100%',
+                            gap: '0.3vw',
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                order: '0',
+                                flex: '0',
+                                alignSelf: 'flex-start',
+                                height: 'auto',
+                                width: 'auto',
+                                margin: '0.3vh 0.3vw 0 0.3vh',
+                                padding: '0',
+                            }}
+                        >
+                            <Link
+                                to={'https://twitter.com/'}
+                                target="_blank"
+                                aria-label="twitter-icon-link"
+                                type="link"
+                            >
+                                <TwitterIcon
+                                    sx={{
+                                        height: '0.9em',
+                                        width: 'auto',
+                                    }}
+                                />
+                            </Link>
+                        </Box>
+                        <Box
+                            sx={{
+                                order: '1',
+                                flex: '0',
+                                alignSelf: 'flex-start',
+                                height: 'auto',
+                                width: 'auto',
+                                margin: '0.3vh 0.3vw',
+                                padding: '0',
+                            }}
+                        >
+                            <Link
+                                to={'https://www.linkedin.com/'}
+                                target="_blank"
+                                aria-label="linkedin-icon-link"
+                                type="link"
+                            >
+                                <LinkedInIcon
+                                    sx={{
+                                        height: '0.9em',
+                                        width: 'auto',
+                                    }}
+                                />
+                            </Link>
+                        </Box>
+                        <Box
+                            sx={{
+                                order: '2',
+                                flex: '0',
+                                alignSelf: 'flex-start',
+                                height: 'auto',
+                                width: 'auto',
+                                margin: '0.3vh 0.3vw',
+                                padding: '0',
+                            }}
+                        >
+                            <Link
+                                to={'https://www.linkedin.com/'}
+                                target="_blank"
+                                aria-label="linkedin-icon-link"
+                                type="link"
+                            >
+                                <GitHubIcon
+                                    sx={{
+                                        height: '0.9em',
+                                        width: 'auto',
+                                    }}
+                                />
+                            </Link>
+                        </Box>
+                    </Box>
                     <Typography
                         sx={{
                             flex: 1,
                             alignSelf: 'flex-start',
                             height: 'auto',
-                            width: '100%',
+                            width: 'auto',
                             margin: '0',
                             padding: '0',
                         }}
@@ -192,7 +292,7 @@ export default function FooterMenuComponent() {
                             alignSelf: 'flex-start',
                             height: 'auto',
                             width: '100%',
-                            margin: '0',
+                            margin: '1.5vh auto',
                             padding: '0',
                         }}
                         component="div"

@@ -39,6 +39,11 @@ DIVIDER COLOR #BDBDBD
 // System -%- ////
 ```
 
+## SVG in React
+```bash
+import {ReactComponent as SVG} from './example.svg';
+```
+
 ## Environment Variables
 ```bash
 REACT_APP_NOT_SECRET_CODE=react-app-not-secret-value

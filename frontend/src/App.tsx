@@ -26,6 +26,20 @@ const theme = createTheme({
     typography: {
         fontFamily: ['Overpass'].join(','),
     },
+    palette: {
+        primary: {
+            main: '#9E9E9E',
+            light: '#F5F5F5',
+            dark: '#616161',
+            contrastText: '#F5F5F5',
+        },
+        secondary: {
+            main: '#CDDC39',
+            light: '#F5F5F5',
+            dark: '#616161',
+            contrastText: '#F5F5F5',
+        },
+    },
 })
 
 // Application -%- ////

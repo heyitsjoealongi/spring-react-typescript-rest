@@ -7,7 +7,8 @@ import * as React from 'react'
 import Box from '@mui/material/Box'
 
 // Components -%- ////
-import Menu from '../../components/menu/MenuComponent'
+import MenuComponent from '../../components/menu/MenuComponent'
+import FooterMenuComponent from '../../components/menu/FooterMenuComponent'
 import CircularProgressGeneralComponent from '../../components/general/CircularProgressGeneralComponent'
 
 // Integrations -%- ////
@@ -20,7 +21,7 @@ import CircularProgressGeneralComponent from '../../components/general/CircularP
 export default function ErrorView() {
     return (
         <React.Fragment>
-            <Menu />
+            <MenuComponent />
             <Box
                 sx={{
                     display: 'flex',
@@ -39,6 +40,7 @@ export default function ErrorView() {
             >
                 <CircularProgressGeneralComponent />
             </Box>
+            <FooterMenuComponent />
         </React.Fragment>
     )
 }

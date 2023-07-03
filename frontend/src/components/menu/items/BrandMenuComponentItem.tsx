@@ -58,7 +58,6 @@ export default function BrandMenuComponentItemComponent(
                     />
                 </Box>
                 <Typography
-                    variant="h6"
                     noWrap
                     component="a"
                     href="/"
@@ -70,6 +69,8 @@ export default function BrandMenuComponentItemComponent(
                         margin: '0 !important',
                         padding: '0 !important',
                         color: '#212121',
+                        fontSize: '0.9em !important',
+                        fontWeight: '900',
                     }}
                 >
                     {props?.['app_title']

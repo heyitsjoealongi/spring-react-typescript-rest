@@ -48,6 +48,7 @@ type AppBarMenuComponentProps = {
 }
 export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
     const notifications = useRecoilValue(notificationsState)
+    const navigate = useNavigate()
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
         null
     )
@@ -56,7 +57,6 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
         null
     )
-    const navigate = useNavigate()
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget)
     }
@@ -69,7 +69,9 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
     const handleOpenNotificationMenu = (
         event: React.MouseEvent<HTMLElement>
     ) => {
-        setAnchorElNotification(event.currentTarget)
+        if (notifications?.length > 0) {
+            setAnchorElNotification(event.currentTarget)
+        }
     }
     const handleCloseNotificationMenu = () => {
         setAnchorElNotification(null)
@@ -228,7 +230,7 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
                                     >
                                         {notifications?.length > 0 ? (
                                             <Badge
-                                                color="primary"
+                                                color="secondary"
                                                 variant="dot"
                                                 badgeContent=""
                                             >

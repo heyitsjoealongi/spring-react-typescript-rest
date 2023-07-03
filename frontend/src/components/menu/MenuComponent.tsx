@@ -102,7 +102,7 @@ export default function MenuComponent() {
                     <Box
                         key={data?.['id']}
                         sx={{
-                            order: '0',
+                            order: `${data?.['id']}`,
                             flex: 'none',
                             alignSelf: 'flex-start',
                             height: 'auto',

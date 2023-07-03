@@ -47,7 +47,7 @@ export default function NotificationMenuComponent(
                                     <React.Fragment>
                                         <Typography
                                             sx={{
-                                                color: '#CDDC39',
+                                                color: '#212121',
                                             }}
                                             variant="caption"
                                             gutterBottom
