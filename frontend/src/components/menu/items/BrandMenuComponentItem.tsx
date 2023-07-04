@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import DataObjectIcon from '@mui/icons-material/DataObject'
 
+// System Components -%- ////
+
 // Components -%- ////
 
 // Integrations -%- ////
@@ -70,7 +72,6 @@ export default function BrandMenuComponentItemComponent(
                         padding: '0 !important',
                         color: '#212121',
                         fontSize: '0.9em !important',
-                        fontWeight: '900',
                     }}
                 >
                     {props?.['app_title']

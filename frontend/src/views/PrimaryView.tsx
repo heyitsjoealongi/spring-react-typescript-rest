@@ -1,0 +1,52 @@
+// React -%- ////
+import * as React from 'react'
+
+// Packages -%- ////
+import { useRecoilValue } from 'recoil'
+import { startingState } from '../recoil/atoms/startingAtom'
+
+// MUI -%- ////
+
+// System Components -%- ////
+import StartingUtilityComponent from '../components/utility/StartingUtilityComponent'
+import NotificationUtilityComponent from '../components/utility/NotificationUtilityComponent'
+import ErrorUtilityComponent from '../components/utility/ErrorUtilityComponent'
+
+// Components -%- ////
+import MenuComponent from '../components/menu/MenuComponent'
+import FooterMenuComponent from '../components/menu/FooterMenuComponent'
+
+// Integrations -%- ////
+
+// Middleware -%- ////
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Application -%- ////
+type PrimaryViewProps = {
+    children: React.ReactNode
+}
+export default function PrimaryView({ children }: PrimaryViewProps) {
+    const starting = useRecoilValue(startingState)
+    if (starting) {
+        return (
+            <React.Fragment>
+                <MenuComponent />
+                {children}
+                <FooterMenuComponent />
+                <NotificationUtilityComponent />
+            </React.Fragment>
+        )
+    } else {
+        return (
+            <React.Fragment>
+                <MenuComponent />
+                <ErrorUtilityComponent />
+                <FooterMenuComponent />
+                <StartingUtilityComponent />
+            </React.Fragment>
+        )
+    }
+}
+
+// System -%- ////

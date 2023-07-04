@@ -8,20 +8,17 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 // MUI -%- ////
 
 // Components -%- ////
-import ErrorView from './views/general/ErrorView'
-import DefaultView from './views/general/DefaultView'
-import SignUpAccountView from './views/account/SignUpAccountView'
-import ConfirmSignUpAccountView from './views/account/ConfirmSignUpAccountView'
-import ResendVerificationCodeAccountView from './views/account/ResendVerificationCodeAccountView'
-import SignInAccountView from './views/account/SignInAccountView'
-import SignOutAccountView from './views/account/SignOutAccountView'
+import ErrorUtilityView from './views/utility/ErrorUtilityView'
+import PrimaryView from './views/PrimaryView'
+import PrimaryInteractiveView from './views/interactive/PrimaryInteractiveView'
+import PrimaryAccountView from './views/account/PrimaryAccountView'
 
 // Integrations -%- ////
 
 // Middleware -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
-import './App.css'
+import './assets/styles/App.css'
 const theme = createTheme({
     typography: {
         fontFamily: ['Overpass'].join(','),
@@ -46,33 +43,57 @@ const theme = createTheme({
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <DefaultView />,
-        errorElement: <ErrorView />,
+        element: (
+            <PrimaryView>
+                <PrimaryInteractiveView />
+            </PrimaryView>
+        ),
+        errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-up',
-        element: <SignUpAccountView />,
-        errorElement: <ErrorView />,
+        element: (
+            <PrimaryView>
+                <PrimaryAccountView />
+            </PrimaryView>
+        ),
+        errorElement: <ErrorUtilityView />,
     },
     {
         path: '/confirm-sign-up',
-        element: <ConfirmSignUpAccountView />,
-        errorElement: <ErrorView />,
+        element: (
+            <PrimaryView>
+                <PrimaryAccountView />
+            </PrimaryView>
+        ),
+        errorElement: <ErrorUtilityView />,
     },
     {
         path: '/resend-verification-code',
-        element: <ResendVerificationCodeAccountView />,
-        errorElement: <ErrorView />,
+        element: (
+            <PrimaryView>
+                <PrimaryAccountView />
+            </PrimaryView>
+        ),
+        errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-in',
-        element: <SignInAccountView />,
-        errorElement: <ErrorView />,
+        element: (
+            <PrimaryView>
+                <PrimaryAccountView />
+            </PrimaryView>
+        ),
+        errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-out',
-        element: <SignOutAccountView />,
-        errorElement: <ErrorView />,
+        element: (
+            <PrimaryView>
+                <PrimaryAccountView />
+            </PrimaryView>
+        ),
+        errorElement: <ErrorUtilityView />,
     },
 ])
 
@@ -82,7 +103,7 @@ export default function App() {
             <ThemeProvider theme={theme}>
                 <RouterProvider
                     router={router}
-                    fallbackElement={<ErrorView />}
+                    fallbackElement={<ErrorUtilityView />}
                 />
             </ThemeProvider>
         </React.Fragment>

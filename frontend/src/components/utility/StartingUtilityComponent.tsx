@@ -7,6 +7,8 @@ import { startingState } from '../../recoil/atoms/startingAtom'
 
 // MUI -%- ////
 
+// System Components -%- ////
+
 // Components -%- ////
 
 // Integrations -%- ////
@@ -18,17 +20,19 @@ import { startingState } from '../../recoil/atoms/startingAtom'
 // Application -%- ////
 export default function StartingUtilityComponent() {
     const [starting, setStarting] = useRecoilState(startingState)
-    const delay = process.env.REACT_APP_DELAY
     React.useEffect(() => {
-        if (delay) {
-            setTimeout(() => {
+        setTimeout(
+            () => {
                 setStarting(true)
-            }, parseInt(delay))
-        }
+            },
+            !isNaN(parseInt(process.env.REACT_APP_DELAY))
+                ? parseInt(process.env.REACT_APP_DELAY)
+                : 1000
+        )
         return () => {
             starting
         }
-    }, [delay])
+    }, [])
     return starting
 }
 

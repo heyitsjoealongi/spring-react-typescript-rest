@@ -7,9 +7,11 @@ import * as React from 'react'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 
-// Components -%- ////
+// System Components -%- ////
 import AppBarMenuComponent from './AppBarMenuComponent'
 import BasicMenuComponentItem from './items/AppMenuComponentItem'
+
+// Components -%- ////
 
 // Integrations -%- ////
 const appInfo = {
@@ -92,7 +94,7 @@ export default function MenuComponent() {
                     width: '100%',
                     maxWidth: '50vw',
                     margin: '3vh auto',
-                    padding: 0,
+                    padding: '0 !important',
                     gap: '1.5vw',
                     background: 'none',
                     border: 'none',

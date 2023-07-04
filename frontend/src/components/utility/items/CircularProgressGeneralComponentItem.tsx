@@ -9,6 +9,8 @@ import React from 'react'
 import CircularProgress from '@mui/material/CircularProgress'
 import Box from '@mui/material/Box'
 
+// System Components -%- ////
+
 // Components -%- ////
 
 // Integrations -%- ////
@@ -18,7 +20,7 @@ import Box from '@mui/material/Box'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function CircularProgressGeneralComponent() {
+export default function CircularProgressGeneralComponentItem() {
     return (
         <Box
             sx={{
