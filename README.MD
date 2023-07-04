@@ -20,6 +20,7 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 - [Material UI](https://mui.com/)
 - [Emotion Styled Components](https://emotion.sh/docs/introduction)
 - [Recoil](https://recoiljs.org/)
+- [Swiper](https://swiperjs.com/)
 
 ### Backend
 

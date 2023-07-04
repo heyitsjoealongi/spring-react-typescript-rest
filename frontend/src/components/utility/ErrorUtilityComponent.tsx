@@ -6,7 +6,6 @@ import * as React from 'react'
 // MUI -%- ////
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
 
 // System Components -%- ////
 

@@ -14,6 +14,26 @@ import Typography from '@mui/material/Typography'
 import SwiperAutoplayProgressComponentItem from './items/SwiperAutoplayProgressComponentItem'
 
 // Integrations -%- ////
+// import SlideOne from '../../assets/jpg/slide-one.jpg';
+// import SlideTwo from '../../assets/jpg/slide-two.jpg';
+// import SlideThree from '../../assets/jpg/slide-three.jpg';
+const heroSwipper = [
+    {
+        id: 0,
+        description: 'Slide one',
+        source: 'http://localhost:3000/assets/jpg/slide-one.jpg',
+    },
+    {
+        id: 1,
+        description: 'Slide two',
+        source: 'http://localhost:3000/assets/jpg/slide-two.jpg',
+    },
+    {
+        id: 2,
+        description: 'Slide three',
+        source: 'http://localhost:3000/assets/jpg/slide-three.jpg',
+    },
+]
 
 // Middleware -%- ////
 
@@ -76,9 +96,9 @@ export default function HeroSwiperComponent() {
                         textAlign: 'left',
                     }}
                 >
-                    Fullstack Application — React (TypeScript) Frontend, Spring
-                    Boot Java Backend, OkHttp Client, and MySQL (Vitess)
-                    Service.
+                    Create type-safe and performant interfaces backed with
+                    multi-threaded data models for definitive algorithms that
+                    transform and hone information.
                 </Typography>
             </Box>
             <Box
@@ -93,7 +113,9 @@ export default function HeroSwiperComponent() {
                     padding: '0',
                 }}
             >
-                <SwiperAutoplayProgressComponentItem />
+                <SwiperAutoplayProgressComponentItem
+                    hero_swipper={heroSwipper}
+                />
             </Box>
         </Container>
     )

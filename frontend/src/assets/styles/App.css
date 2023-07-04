@@ -177,12 +177,23 @@ p {
 }
 
 hr {
-    -webkit-color: #bdbdbd;
-    -moz-color: #bdbdbd;
-    -ms-color: #bdbdbd;
-    -o-color: #bdbdbd;
-    -khtml-color: #bdbdbd;
-    color: #bdbdbd;
+    -webkit-border-color: #bdbdbd !important;
+    -moz-border-color: #bdbdbd !important;
+    -ms-border-color: #bdbdbd !important;
+    -o-border-color: #bdbdbd !important;
+    -khtml-border-color: #bdbdbd !important;
+    border-color: #bdbdbd !important;
+    -webkit-border-width: thin;
+    -moz-border-width: thin;
+    -ms-border-width: thin;
+    -o-border-width: thin;
+    -khtml-border-width: thin;
+    border-width: thin;
+    -webkit-border-width: thin;
+    -moz-border-width: thin;
+    -ms-border-width: thin;
+    -o-border-width: thin;
+    -khtml-border-width: thin;
 }
 
 a {
@@ -207,4 +218,19 @@ a:hover {
     -o-color: #212121;
     -khtml-color: #212121;
     color: #212121;
+}
+
+img {
+    -webkit-max-width: 100%;
+    -moz-max-width: 100%;
+    -ms-max-width: 100%;
+    -o-max-width: 100%;
+    -khtml-max-width: 100%;
+    max-width: 100%;
+    -webkit-height: auto;
+    -moz-height: auto;
+    -ms-height: auto;
+    -o-height: auto;
+    -khtml-height: auto;
+    height: auto;
 }
