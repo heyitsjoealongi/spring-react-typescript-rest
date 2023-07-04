@@ -15,9 +15,11 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 
-// Components -%- ////
+// System Components -%- ////
 import FooterMenuComponentItem from './items/FooterMenuComponentItem'
 import PreFooterFrameworksMenuComponent from './PreFooterFrameworksMenuComponent'
+
+// Components -%- ////
 
 // Integrations -%- ////
 const appInfo = {

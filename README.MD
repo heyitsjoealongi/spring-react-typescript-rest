@@ -22,6 +22,7 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 - [Material UI](https://mui.com/)
 - [Emotion Styled Components](https://emotion.sh/docs/introduction)
 - [Recoil](https://recoiljs.org/)
+- [Swiper](https://swiperjs.com/)
 
 ### Backend
 
@@ -116,7 +117,7 @@ cd frontend
   yarn install
   ```
 
-#### Build JAR with Yarn
+#### Build Application with Yarn
 
 - Install [Visual Studio Code](https://code.visualstudio.com/) editor
 
@@ -357,6 +358,8 @@ For more examples and information on Spring Boot Docker builds, reference the [S
 - [Logo](https://thenounproject.com/icon/spring-14717/)
 - [User Icon](https://thenounproject.com/icon/user-5818176/)
 
+##### License
 
-## License
+© 2023 Spring React TypeScript REST released via [MIT](https://opensource.org/licenses/MIT) license. Information on this license can be viewed as it applies to this repository on GitHub at [Spring React TypeScript REST License](https://github.com/collectedview/spring-react-typescript-rest/blob/master/LICENSE).
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest?ref=badge_large)

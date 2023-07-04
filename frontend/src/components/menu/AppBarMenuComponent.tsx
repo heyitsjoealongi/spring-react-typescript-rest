@@ -22,9 +22,11 @@ import Badge from '@mui/material/Badge'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications'
 
-// Components -%- ////
+// System Components -%- ////
 import BrandMenuComponentItemComponent from './items/BrandMenuComponentItem'
 import NotificationMenuComponent from './NotificationMenuComponent'
+
+// Components -%- ////
 
 // Integrations -%- ////
 

@@ -30,6 +30,7 @@ html {
     -o-font-style: normal;
     -khtml-font-style: normal;
     font-style: normal;
+    -webkit-font-smoothing: auto;
     -webkit-font-smooth: auto;
     -moz-font-smooth: auto;
     -ms-font-smooth: auto;
@@ -48,26 +49,17 @@ html {
     -o-line-height: 1;
     -khtml-line-height: 1;
     line-height: 1;
+    -webkit-font-family: 'Overpass', sans-serif;
+    -moz-font-family: 'Overpass', sans-serif;
+    -ms-font-family: 'Overpass', sans-serif;
+    -o-font-family: 'Overpass', sans-serif;
+    -khtml-font-family: 'Overpass', sans-serif;
+    font-family: 'Overpass', sans-serif;
 }
 
 body {
-    -webkit-width: 100%;
-    -moz-width: 100%;
-    -ms-width: 100%;
-    -o-width: 100%;
-    -khtml-width: 100%;
     width: 100%;
-    -webkit-width: 100%;
-    -moz-width: 100%;
-    -ms-width: 100%;
-    -o-height: 100%;
-    -khtml-height: 100%;
-    height: 100%;
-    -webkit-margin: 0;
-    -moz-margin: 0;
-    -ms-margin: 0;
-    -o-margin: 0;
-    -khtml-margin: 0;
+    height: auto;
     margin: 0;
     -webkit-padding: 0;
     -moz-padding: 0;
@@ -185,12 +177,23 @@ p {
 }
 
 hr {
-    -webkit-color: #bdbdbd;
-    -moz-color: #bdbdbd;
-    -ms-color: #bdbdbd;
-    -o-color: #bdbdbd;
-    -khtml-color: #bdbdbd;
-    color: #bdbdbd;
+    -webkit-border-color: #bdbdbd !important;
+    -moz-border-color: #bdbdbd !important;
+    -ms-border-color: #bdbdbd !important;
+    -o-border-color: #bdbdbd !important;
+    -khtml-border-color: #bdbdbd !important;
+    border-color: #bdbdbd !important;
+    -webkit-border-width: thin;
+    -moz-border-width: thin;
+    -ms-border-width: thin;
+    -o-border-width: thin;
+    -khtml-border-width: thin;
+    border-width: thin;
+    -webkit-border-width: thin;
+    -moz-border-width: thin;
+    -ms-border-width: thin;
+    -o-border-width: thin;
+    -khtml-border-width: thin;
 }
 
 a {
@@ -215,4 +218,19 @@ a:hover {
     -o-color: #212121;
     -khtml-color: #212121;
     color: #212121;
+}
+
+img {
+    -webkit-max-width: 100%;
+    -moz-max-width: 100%;
+    -ms-max-width: 100%;
+    -o-max-width: 100%;
+    -khtml-max-width: 100%;
+    max-width: 100%;
+    -webkit-height: auto;
+    -moz-height: auto;
+    -ms-height: auto;
+    -o-height: auto;
+    -khtml-height: auto;
+    height: auto;
 }

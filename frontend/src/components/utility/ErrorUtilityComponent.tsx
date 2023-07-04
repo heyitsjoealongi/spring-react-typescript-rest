@@ -4,12 +4,13 @@ import * as React from 'react'
 // Packages -%- ////
 
 // MUI -%- ////
+import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 
+// System Components -%- ////
+
 // Components -%- ////
-import MenuComponent from '../../components/menu/MenuComponent'
-import FooterMenuComponent from '../../components/menu/FooterMenuComponent'
-import CircularProgressGeneralComponent from '../../components/general/CircularProgressGeneralComponent'
+import CircularProgressGeneralComponentItem from './items/CircularProgressGeneralComponentItem'
 
 // Integrations -%- ////
 
@@ -18,10 +19,17 @@ import CircularProgressGeneralComponent from '../../components/general/CircularP
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function ErrorView() {
+export default function ErrorUtilityComponent() {
     return (
-        <React.Fragment>
-            <MenuComponent />
+        <Container
+            maxWidth="xl"
+            sx={{
+                height: 'auto',
+                width: '100%',
+                margin: '0 auto',
+                padding: '0 !important',
+            }}
+        >
             <Box
                 sx={{
                     display: 'flex',
@@ -33,15 +41,14 @@ export default function ErrorView() {
                     alignContent: 'center',
                     height: '75vh',
                     width: '100%',
-                    margin: '0 auto',
-                    padding: '0',
+                    margin: { xs: '0 3vw', md: '0 auto' },
+                    padding: '0 !important',
                     gap: '0',
                 }}
             >
-                <CircularProgressGeneralComponent />
+                <CircularProgressGeneralComponentItem />
             </Box>
-            <FooterMenuComponent />
-        </React.Fragment>
+        </Container>
     )
 }
 
