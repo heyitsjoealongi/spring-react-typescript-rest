@@ -49,6 +49,12 @@ html {
     -o-line-height: 1;
     -khtml-line-height: 1;
     line-height: 1;
+    -webkit-font-family: 'Overpass', sans-serif;
+    -moz-font-family: 'Overpass', sans-serif;
+    -ms-font-family: 'Overpass', sans-serif;
+    -o-font-family: 'Overpass', sans-serif;
+    -khtml-font-family: 'Overpass', sans-serif;
+    font-family: 'Overpass', sans-serif;
 }
 
 body {

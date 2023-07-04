@@ -8,8 +8,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 // MUI -%- ////
 
 // Components -%- ////
-import ErrorView from './views/system/ErrorView'
-import DefaultView from './views/system/DefaultView'
+import ErrorUtilityView from './views/utility/ErrorUtilityView'
+import PrimaryInteractiveView from './views/interactive/PrimaryInteractiveView'
 import SignUpAccountView from './views/account/SignUpAccountView'
 import ConfirmSignUpAccountView from './views/account/ConfirmSignUpAccountView'
 import ResendVerificationCodeAccountView from './views/account/ResendVerificationCodeAccountView'
@@ -46,33 +46,33 @@ const theme = createTheme({
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <DefaultView />,
-        errorElement: <ErrorView />,
+        element: <PrimaryInteractiveView />,
+        errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-up',
         element: <SignUpAccountView />,
-        errorElement: <ErrorView />,
+        errorElement: <ErrorUtilityView />,
     },
     {
         path: '/confirm-sign-up',
         element: <ConfirmSignUpAccountView />,
-        errorElement: <ErrorView />,
+        errorElement: <ErrorUtilityView />,
     },
     {
         path: '/resend-verification-code',
         element: <ResendVerificationCodeAccountView />,
-        errorElement: <ErrorView />,
+        errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-in',
         element: <SignInAccountView />,
-        errorElement: <ErrorView />,
+        errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-out',
         element: <SignOutAccountView />,
-        errorElement: <ErrorView />,
+        errorElement: <ErrorUtilityView />,
     },
 ])
 
@@ -82,7 +82,7 @@ export default function App() {
             <ThemeProvider theme={theme}>
                 <RouterProvider
                     router={router}
-                    fallbackElement={<ErrorView />}
+                    fallbackElement={<ErrorUtilityView />}
                 />
             </ThemeProvider>
         </React.Fragment>
