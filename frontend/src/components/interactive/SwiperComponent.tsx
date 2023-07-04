@@ -37,7 +37,7 @@ export default function SwiperComponent() {
                     width: '100%',
                     maxWidth: '90%',
                     margin: { xs: '3vh 3vw', md: '3vh auto' },
-                    padding: 0,
+                    padding: '0',
                     gap: '0',
                 }}
             >

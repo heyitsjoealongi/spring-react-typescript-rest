@@ -1,8 +1,8 @@
 .swiper {
     width: 100%;
-    max-width: 81vw;
+    max-width: 100vw;
     height: 100%;
-    max-height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .swiper-slide {
@@ -13,6 +13,12 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+
+.swiper,
+.swiper-slide {
+    min-height: 300px;
+    max-height: 300px;
 }
 
 .swiper-slide img {
@@ -52,8 +58,11 @@
     transform: rotate(-90deg);
 }
 
-@media only screen and (min-width: 1000px) {
-    .swiper {
+@media only screen and (min-width: 900px) {
+    .swiper,
+    .swiper-slide {
+        min-height: 600px;
         max-height: 600px;
+        max-width: 81vw;
     }
 }

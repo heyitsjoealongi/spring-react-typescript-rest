@@ -94,7 +94,7 @@ export default function MenuComponent() {
                     width: '100%',
                     maxWidth: '50vw',
                     margin: '3vh auto',
-                    padding: 0,
+                    padding: '0',
                     gap: '1.5vw',
                     background: 'none',
                     border: 'none',

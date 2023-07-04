@@ -30,6 +30,7 @@ html {
     -o-font-style: normal;
     -khtml-font-style: normal;
     font-style: normal;
+    -webkit-font-smoothing: auto;
     -webkit-font-smooth: auto;
     -moz-font-smooth: auto;
     -ms-font-smooth: auto;
@@ -51,23 +52,8 @@ html {
 }
 
 body {
-    -webkit-width: 100%;
-    -moz-width: 100%;
-    -ms-width: 100%;
-    -o-width: 100%;
-    -khtml-width: 100%;
     width: 100%;
-    -webkit-width: 100%;
-    -moz-width: 100%;
-    -ms-width: 100%;
-    -o-height: 100%;
-    -khtml-height: 100%;
-    height: 100%;
-    -webkit-margin: 0;
-    -moz-margin: 0;
-    -ms-margin: 0;
-    -o-margin: 0;
-    -khtml-margin: 0;
+    height: auto;
     margin: 0;
     -webkit-padding: 0;
     -moz-padding: 0;
