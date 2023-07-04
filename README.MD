@@ -355,8 +355,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
 
 #### Acknowledgements
 
-- [Logo](https://thenounproject.com/icon/spring-14717/)
-- [User Icon](https://thenounproject.com/icon/user-5818176/)
+- [Stock Imagery](https://unsplash.com/)
 
 ##### License
 

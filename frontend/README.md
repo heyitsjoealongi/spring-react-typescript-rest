@@ -194,7 +194,7 @@ applications:
             - echo "REACT_APP_DEFAULT_APP_TITLE" >> .env
             - echo "REACT_APP_DEFAULT_APP_DESCRIPTION" >> .env
             - echo "REACT_APP_DEFAULT_MENU_TITLE" >> .env
-            - echo "REACT_APP_SLIDER_DEFAULT" >> .env
+            - echo "REACT_APP_SLIDER_DELAY" >> .env
             - yarn build
       artifacts:
         baseDirectory: build
