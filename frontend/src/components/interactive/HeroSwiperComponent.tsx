@@ -97,7 +97,7 @@ export default function HeroSwiperComponent() {
                     }}
                 >
                     Create type-safe and performant interfaces backed with
-                    multi-threaded data models for definitive algorithms that
+                    multi-threaded data models for definitive backend algorithms that
                     transform and hone information.
                 </Typography>
             </Box>
