@@ -9,6 +9,8 @@ import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
+// System Components -%- ////
+
 // Components -%- ////
 import { ReactComponent as ReactLogo } from './../../assets/svg/ReactLogo.svg'
 import { ReactComponent as TypeScriptLogo } from './../../assets/svg/TypeScriptLogo.svg'
@@ -33,7 +35,7 @@ export default function PreFooterFrameworksMenuComponent() {
                 maxWidth="xl"
                 sx={{
                     display: 'flex',
-                    flexDirection: { xs: 'row', md: 'row' },
+                    flexDirection: 'row',
                     flexWrap: { xs: 'wrap', md: 'nowrap' },
                     flexFlow: { xs: 'row wrap', md: 'row nowrap' },
                     justifyContent: { xs: 'space-evenly', md: 'center' },

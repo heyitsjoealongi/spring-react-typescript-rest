@@ -3,9 +3,13 @@ import * as React from 'react'
 
 // Packages -%- ////
 
-// Components -%- ////
+// MUI -%- ////
 import Box from '@mui/material/Box'
+
+// System Components -%- ////
 import Menu from '../../components/menu/MenuComponent'
+
+// Components -%- ////
 import SignInAccountComponent from '../../components/account/SignInAccountComponent'
 
 // Integrations -%- ////

@@ -6,10 +6,12 @@ import * as React from 'react'
 // MUI -%- ////
 import Box from '@mui/material/Box'
 
-// Components -%- ////
+// System Components -%- ////
 import MenuComponent from '../../components/menu/MenuComponent'
 import FooterMenuComponent from '../../components/menu/FooterMenuComponent'
-import CircularProgressGeneralComponent from '../../components/general/CircularProgressGeneralComponent'
+import CircularProgressGeneralComponent from '../../components/system/CircularProgressGeneralComponent'
+
+// Components -%- ////
 
 // Integrations -%- ////
 

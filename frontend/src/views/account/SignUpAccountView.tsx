@@ -5,8 +5,10 @@ import * as React from 'react'
 // MUI -%- ////
 import Box from '@mui/material/Box'
 
-// Components -%- ////
+// System Components -%- ////
 import Menu from '../../components/menu/MenuComponent'
+
+// Components -%- ////
 import SignUpAccountComponent from '../../components/account/SignUpAccountComponent'
 
 // Integrations -%- ////

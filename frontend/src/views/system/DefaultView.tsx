@@ -9,12 +9,15 @@ import { startingState } from '../../recoil/atoms/startingAtom'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
-// Components -%- ////
+// System Components -%- ////
 import MenuComponent from '../../components/menu/MenuComponent'
 import FooterMenuComponent from '../../components/menu/FooterMenuComponent'
-import CircularProgressGeneralComponent from '../../components/general/CircularProgressGeneralComponent'
+import CircularProgressGeneralComponent from '../../components/system/CircularProgressGeneralComponent'
 import NotificationUtilityComponent from '../../components/utility/NotificationUtilityComponent'
 import StartingUtilityComponent from '../../components/utility/StartingUtilityComponent'
+
+// Components -%- ////
+import SwiperComponent from '../../components/interactive/items/SwiperAutoplayProgressComponentItem'
 
 // Integrations -%- ////
 
@@ -45,9 +48,10 @@ export default function DefaultView() {
                         gap: '0',
                     }}
                 >
-                    <Typography variant="h4" gutterBottom>
+                    <Typography variant="h1" gutterBottom>
                         Spring React TypeScript REST
                     </Typography>
+                    <SwiperComponent />
                 </Box>
                 <FooterMenuComponent />
                 <NotificationUtilityComponent />

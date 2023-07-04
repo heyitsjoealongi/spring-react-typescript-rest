@@ -8,8 +8,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 // MUI -%- ////
 
 // Components -%- ////
-import ErrorView from './views/general/ErrorView'
-import DefaultView from './views/general/DefaultView'
+import ErrorView from './views/system/ErrorView'
+import DefaultView from './views/system/DefaultView'
 import SignUpAccountView from './views/account/SignUpAccountView'
 import ConfirmSignUpAccountView from './views/account/ConfirmSignUpAccountView'
 import ResendVerificationCodeAccountView from './views/account/ResendVerificationCodeAccountView'
@@ -21,7 +21,7 @@ import SignOutAccountView from './views/account/SignOutAccountView'
 // Middleware -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
-import './App.css'
+import './assets/styles/App.css'
 const theme = createTheme({
     typography: {
         fontFamily: ['Overpass'].join(','),

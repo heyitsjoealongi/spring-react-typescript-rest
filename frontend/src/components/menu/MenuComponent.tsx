@@ -7,9 +7,11 @@ import * as React from 'react'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 
-// Components -%- ////
+// System Components -%- ////
 import AppBarMenuComponent from './AppBarMenuComponent'
 import BasicMenuComponentItem from './items/AppMenuComponentItem'
+
+// Components -%- ////
 
 // Integrations -%- ////
 const appInfo = {
