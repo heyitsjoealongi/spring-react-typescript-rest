@@ -1,4 +1,6 @@
 # Spring React TypeScript REST
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest?ref=badge_shield)
+
 
 Fullstack Application — React (TypeScript) Frontend, Spring Boot Java Backend, OkHttp Client, and MySQL (Vitess) Service.
 
