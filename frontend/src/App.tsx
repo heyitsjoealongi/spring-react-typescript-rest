@@ -9,12 +9,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 // Components -%- ////
 import ErrorUtilityView from './views/utility/ErrorUtilityView'
+import PrimaryView from './views/PrimaryView'
 import PrimaryInteractiveView from './views/interactive/PrimaryInteractiveView'
-import SignUpAccountView from './views/account/SignUpAccountView'
-import ConfirmSignUpAccountView from './views/account/ConfirmSignUpAccountView'
-import ResendVerificationCodeAccountView from './views/account/ResendVerificationCodeAccountView'
-import SignInAccountView from './views/account/SignInAccountView'
-import SignOutAccountView from './views/account/SignOutAccountView'
+import PrimaryAccountView from './views/account/PrimaryAccountView'
 
 // Integrations -%- ////
 
@@ -46,32 +43,56 @@ const theme = createTheme({
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <PrimaryInteractiveView />,
+        element: (
+            <PrimaryView>
+                <PrimaryInteractiveView />
+            </PrimaryView>
+        ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-up',
-        element: <SignUpAccountView />,
+        element: (
+            <PrimaryView>
+                <PrimaryAccountView />
+            </PrimaryView>
+        ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/confirm-sign-up',
-        element: <ConfirmSignUpAccountView />,
+        element: (
+            <PrimaryView>
+                <PrimaryAccountView />
+            </PrimaryView>
+        ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/resend-verification-code',
-        element: <ResendVerificationCodeAccountView />,
+        element: (
+            <PrimaryView>
+                <PrimaryAccountView />
+            </PrimaryView>
+        ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-in',
-        element: <SignInAccountView />,
+        element: (
+            <PrimaryView>
+                <PrimaryAccountView />
+            </PrimaryView>
+        ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-out',
-        element: <SignOutAccountView />,
+        element: (
+            <PrimaryView>
+                <PrimaryAccountView />
+            </PrimaryView>
+        ),
         errorElement: <ErrorUtilityView />,
     },
 ])
