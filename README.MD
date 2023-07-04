@@ -115,7 +115,7 @@ cd frontend
   yarn install
   ```
 
-#### Build JAR with Yarn
+#### Build Application with Yarn
 
 - Install [Visual Studio Code](https://code.visualstudio.com/) editor
 
