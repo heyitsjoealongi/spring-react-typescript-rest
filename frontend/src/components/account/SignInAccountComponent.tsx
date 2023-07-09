@@ -5,6 +5,9 @@ import * as React from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { Auth } from 'aws-amplify'
+import { useRecoilState } from 'recoil'
+import { authenticationState } from '../../recoil/atoms/authenticationAtom'
+import { useNavigate } from 'react-router-dom'
 
 // MUI -%- ////
 import Box from '@mui/material/Box'
@@ -17,6 +20,12 @@ import TextField from '@mui/material/TextField'
 // Components -%- ////
 
 // Integrations -%- ////
+
+// Middleware -%- ////
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Application -%- ////
 type SignInAccountComponentProps = {
     username: string
     password: string
@@ -24,8 +33,7 @@ type SignInAccountComponentProps = {
 async function signIn(values: SignInAccountComponentProps) {
     try {
         const { username, password } = values
-        const user = await Auth.signIn(username, password)
-        console.log('user', user)
+        return await Auth.signIn(username, password)
     } catch (error) {
         console.log('error signing in', error)
     }
@@ -35,6 +43,9 @@ const validationSchema = yup.object({
     password: yup.string().min(8).required(),
 })
 export default function SignInAccountComponent() {
+    const [authentication, setAuthentication] =
+        useRecoilState(authenticationState)
+    const navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
             username: '',
@@ -42,8 +53,18 @@ export default function SignInAccountComponent() {
         },
         validationSchema: validationSchema,
         onSubmit: async (values) => {
-            // alert(JSON.stringify(values, null, 2))
-            return await signIn(values)
+            const signedIn = await signIn(values)
+            console.log('signedIn', signedIn)
+            if (
+                signedIn?.['signInUserSession']?.['idToken']?.['payload']?.[
+                    'auth_time'
+                ]
+            ) {
+                setAuthentication(true)
+                return navigate(`/welcome`)
+            } else {
+                return authentication
+            }
         },
     })
     return (

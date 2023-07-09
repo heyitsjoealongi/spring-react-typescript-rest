@@ -12,6 +12,7 @@ import ErrorUtilityView from './views/utility/ErrorUtilityView'
 import PrimaryView from './views/PrimaryView'
 import PrimaryInteractiveView from './views/interactive/PrimaryInteractiveView'
 import PrimaryAccountView from './views/account/PrimaryAccountView'
+import PrimaryApplicationView from './views/application/PrimaryApplicationView'
 
 // Integrations -%- ////
 
@@ -91,6 +92,15 @@ const router = createBrowserRouter([
         element: (
             <PrimaryView>
                 <PrimaryAccountView />
+            </PrimaryView>
+        ),
+        errorElement: <ErrorUtilityView />,
+    },
+    {
+        path: '/welcome',
+        element: (
+            <PrimaryView>
+                <PrimaryApplicationView />
             </PrimaryView>
         ),
         errorElement: <ErrorUtilityView />,

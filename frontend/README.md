@@ -1,4 +1,3 @@
-
 # Frontend Log - Spring React Typescript REST
 
 ## Colors
@@ -13,6 +12,7 @@ SECONDARY TEXT #757575
 DIVIDER COLOR #BDBDBD
 
 ## Multiples of 9
+
 ```bash
 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99, 108, 117, 126, 135, 144, 153, 162, 171, 180, 189, 198, 207, 216, 225, 234, 243, 252, 261, 270, 279, 288, 297, 306, 315, 324, 333, 342, 351, 360, 369, 378, 387, 396, 405, 414, 423, 432, 441
 ```
@@ -40,18 +40,20 @@ DIVIDER COLOR #BDBDBD
 ```
 
 ## SVG in React
+
 ```bash
 import {ReactComponent as SVG} from './example.svg';
 ```
 
 ## Environment Variables
+
 ```bash
 REACT_APP_NOT_SECRET_CODE=react-app-not-secret-value
 ```
 
 ## Mapping Components
 
-- [Documentation](https://react.dev/learn/rendering-lists)
+-   [Documentation](https://react.dev/learn/rendering-lists)
 
 ```bash
 const items = [
@@ -70,7 +72,7 @@ const items = [
 
 ## Emotion Styled Objects
 
-- [Documentation](https://emotion.sh/docs/object-styles)
+-   [Documentation](https://emotion.sh/docs/object-styles)
 
 ```bash
 import { css } from '@emotion/react'
@@ -88,7 +90,7 @@ return(
 
 ## Emotion Styled Components
 
-- [Documentation](https://emotion.sh/docs/styled)
+-   [Documentation](https://emotion.sh/docs/styled)
 
 ```bash
 import styled from "@emotion/styled";
@@ -102,7 +104,7 @@ return(<Button>Click me</Button>)
 
 ## Emotion Flex (Styled Components)
 
-- [Documentation](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+-   [Documentation](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ```bash
 const List = styled.div`
@@ -137,8 +139,8 @@ const ListItem = styled.div`
 
 ## Prop Types
 
-- [Documentation](https://www.typescriptlang.org/docs/handbook/utility-types.html)
-- [Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/app_menu_link/getting-started/app_menu_link_type_example/)
+-   [Documentation](https://www.typescriptlang.org/docs/handbook/utility-types.html)
+-   [Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/app_menu_link/getting-started/app_menu_link_type_example/)
 
 ```bash
 type Props = {
@@ -150,8 +152,8 @@ export default function Function(props: Props) {}
 
 ## Mapping Prop Types
 
-- [Documentation](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
-- [Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/app_menu_link/getting-started/app_menu_link_type_example/)
+-   [Documentation](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
+-   [Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/app_menu_link/getting-started/app_menu_link_type_example/)
 
 ```bash
 type Props = {
@@ -167,10 +169,9 @@ type Props = {
 {props?.['prop']?.map((data) => ({data?.['prop'] ? data?.['prop'] : ''}))}
 ```
 
-
 ## @Types (typeRoots)
 
-- [Documentation](https://www.typescriptlang.org/tsconfig#typeRoots)
+-   [Documentation](https://www.typescriptlang.org/tsconfig#typeRoots)
 
 ## Amplify Configuration (amplify.yaml)
 
@@ -257,6 +258,103 @@ if(example){
 }
 ```
 
+## Amplify Auth - Sign In (Object)
+
+```bash
+{
+    "username": "",
+    "pool": {
+        "userPoolId": "",
+        "clientId": "",
+        "client": {
+            "endpoint": "",
+            "fetchOptions": {}
+        },
+        "advancedSecurityDataCollectionFlag": true,
+        "storage": {
+            "amplify-auto-sign-in": "true",
+            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.accessToken": "",
+            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.clockDrift": "0",
+            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.refreshToken": "",
+            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.LastAuthUser": "",
+            "amplify-signin-with-hostedUI": "false",
+            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.userData": "",
+            "loglevel": "",
+            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.idToken": ""
+        }
+    },
+    "Session": null,
+    "client": {
+        "endpoint": "https://cognito-idp.us-east-1.amazonaws.com/",
+        "fetchOptions": {}
+    },
+    "signInUserSession": {
+        "idToken": {
+            "jwtToken": "",
+            "payload": {
+                "sub": "",
+                "email_verified": true,
+                "iss": "",
+                "cognito:username": "",
+                "origin_jti": "",
+                "aud": "",
+                "event_id": "",
+                "token_use": "",
+                "auth_time": 0,
+                "name": "",
+                "exp": 0,
+                "iat": 0,
+                "jti": "",
+                "email": ""
+            }
+        },
+        "refreshToken": {
+            "token": ""
+        },
+        "accessToken": {
+            "jwtToken": "",
+            "payload": {
+                "sub": "",
+                "iss": "",
+                "client_id": "",
+                "origin_jti": "",
+                "event_id": "",
+                "token_use": "",
+                "scope": "",
+                "auth_time": 0,
+                "exp": 0,
+                "iat": 0,
+                "jti": "",
+                "username": ""
+            }
+        },
+        "clockDrift": 0
+    },
+    "authenticationFlowType": "USER_SRP_AUTH",
+    "storage": {
+        "amplify-auto-sign-in": "true",
+        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.accessToken": "",
+        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.clockDrift": "0",
+        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.refreshToken": "",
+        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.LastAuthUser": "",
+        "amplify-signin-with-hostedUI": "false",
+        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.userData": "",
+        "loglevel": "",
+        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.idToken": ""
+    },
+    "keyPrefix": "",
+    "userDataKey": "",
+    "attributes": {
+        "sub": "",
+        "email_verified": true,
+        "name": "",
+        "email": ""
+    },
+    "preferredMFA": ""
+}
+
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -303,3 +401,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+```
+
+```

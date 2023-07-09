@@ -17,6 +17,12 @@ import Button from '@mui/material/Button'
 // Components -%- ////
 
 // Integrations -%- ////
+
+// Middleware -%- ////
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Application -%- ////
 type SignUpAccountComponentProps = {
     username: string
     password: string

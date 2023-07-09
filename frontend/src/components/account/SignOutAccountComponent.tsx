@@ -16,6 +16,12 @@ import Button from '@mui/material/Button'
 // Components -%- ////
 
 // Integrations -%- ////
+
+// Middleware -%- ////
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Application -%- ////
 async function signOut() {
     try {
         await Auth.signOut()

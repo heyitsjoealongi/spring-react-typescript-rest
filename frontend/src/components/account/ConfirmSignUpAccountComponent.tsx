@@ -17,6 +17,12 @@ import TextField from '@mui/material/TextField'
 // Components -%- ////
 
 // Integrations -%- ////
+
+// Middleware -%- ////
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Application -%- ////
 type ConfirmSignUpAccountComponentProps = {
     username: string
     code: string
