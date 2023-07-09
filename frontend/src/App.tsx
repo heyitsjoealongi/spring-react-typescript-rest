@@ -3,20 +3,32 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
+import { useRecoilValue } from 'recoil'
+import { authenticatedState } from './recoil/atoms/authenticatedAtom'
 
 // MUI -%- ////
 
 // Components -%- ////
 import ErrorUtilityView from './views/utility/ErrorUtilityView'
-import PrimaryView from './views/PrimaryView'
-import PrimaryInteractiveView from './views/interactive/PrimaryInteractiveView'
+import ViewTemplate from './views/ViewTemplate'
+import LandingView from './views/landing/LandingView'
 import PrimaryAccountView from './views/account/PrimaryAccountView'
 import PrimaryApplicationView from './views/application/PrimaryApplicationView'
 
 // Integrations -%- ////
 
 // Middleware -%- ////
+type AuthenticatedProps = {
+    children: React.ReactNode
+}
+const Authenticated = ({ children }: AuthenticatedProps) => {
+    return useRecoilValue(authenticatedState) === true ? (
+        children
+    ) : (
+        <Navigate to="/sign-in" replace />
+    )
+}
 
 // Cascading Style Sheets (CSS) -%- ////
 import './assets/styles/App.css'
@@ -45,63 +57,65 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: (
-            <PrimaryView>
-                <PrimaryInteractiveView />
-            </PrimaryView>
+            <ViewTemplate>
+                <LandingView />
+            </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-up',
         element: (
-            <PrimaryView>
+            <ViewTemplate>
                 <PrimaryAccountView />
-            </PrimaryView>
+            </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/confirm-sign-up',
         element: (
-            <PrimaryView>
+            <ViewTemplate>
                 <PrimaryAccountView />
-            </PrimaryView>
+            </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/resend-verification-code',
         element: (
-            <PrimaryView>
+            <ViewTemplate>
                 <PrimaryAccountView />
-            </PrimaryView>
+            </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-in',
         element: (
-            <PrimaryView>
+            <ViewTemplate>
                 <PrimaryAccountView />
-            </PrimaryView>
+            </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-out',
         element: (
-            <PrimaryView>
+            <ViewTemplate>
                 <PrimaryAccountView />
-            </PrimaryView>
+            </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/welcome',
         element: (
-            <PrimaryView>
-                <PrimaryApplicationView />
-            </PrimaryView>
+            <Authenticated>
+                <ViewTemplate>
+                    <PrimaryApplicationView />
+                </ViewTemplate>
+            </Authenticated>
         ),
         errorElement: <ErrorUtilityView />,
     },

@@ -22,8 +22,6 @@ import { getUserData } from '../../functions/account'
 // Application -%- ////
 export default function WelcomeComponent() {
     const userData = getUserData()
-    console.log('userData', userData)
-    console.log('username', userData?.['Username'])
     return (
         <Container
             maxWidth="xl"
@@ -63,7 +61,7 @@ export default function WelcomeComponent() {
                         width: '100%',
                         margin: '0',
                         padding: '0',
-                        textAlign: 'left',
+                        textAlign: 'center',
                     }}
                 >
                     Welcome,{' '}

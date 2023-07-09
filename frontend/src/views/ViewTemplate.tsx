@@ -23,10 +23,10 @@ import FooterMenuComponent from '../components/menu/FooterMenuComponent'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-type PrimaryViewProps = {
+type ViewTemplateProps = {
     children: React.ReactNode
 }
-export default function PrimaryView({ children }: PrimaryViewProps) {
+export default function ViewTemplate({ children }: ViewTemplateProps) {
     const starting = useRecoilValue(startState)
     if (starting) {
         return (
