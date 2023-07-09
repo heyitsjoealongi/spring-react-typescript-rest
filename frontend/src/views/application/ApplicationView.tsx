@@ -17,7 +17,7 @@ import WelcomeComponent from '../../components/application/WelcomeComponent'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function PrimaryApplicationView() {
+export default function ApplicationView() {
     return (
         <React.Fragment>
             <WelcomeComponent />

@@ -39,33 +39,54 @@ const appMenu = [
         app_menu_link: '/',
     },
 ]
-const userMenu = [
-    {
-        id: 0,
-        user_menu_title: 'Sign up',
-        user_menu_link: '/sign-up',
-    },
-    {
-        id: 1,
-        user_menu_title: 'Confirm sign up',
-        user_menu_link: '/confirm-sign-up',
-    },
-    {
-        id: 2,
-        user_menu_title: 'Resend verification code',
-        user_menu_link: '/resend-verification-code',
-    },
-    {
-        id: 3,
-        user_menu_title: 'Sign in',
-        user_menu_link: '/sign-in',
-    },
-    {
-        id: 4,
-        user_menu_title: 'Sign out',
-        user_menu_link: '/sign-out',
-    },
-]
+const userMenu = {
+    authenticated: [
+        {
+            id: 0,
+            user_menu_title: 'Sign out',
+            user_menu_link: '/sign-out',
+        },
+    ],
+    unauthenticated: [
+        {
+            id: 0,
+            user_menu_title: 'Sign up',
+            user_menu_link: '/sign-up',
+        },
+        {
+            id: 1,
+            user_menu_title: 'Sign in',
+            user_menu_link: '/sign-in',
+        },
+    ],
+    all: [
+        {
+            id: 0,
+            user_menu_title: 'Sign up',
+            user_menu_link: '/sign-up',
+        },
+        {
+            id: 1,
+            user_menu_title: 'Confirm sign up',
+            user_menu_link: '/confirm-sign-up',
+        },
+        {
+            id: 2,
+            user_menu_title: 'Resend verification code',
+            user_menu_link: '/resend-verification-code',
+        },
+        {
+            id: 3,
+            user_menu_title: 'Sign in',
+            user_menu_link: '/sign-in',
+        },
+        {
+            id: 4,
+            user_menu_title: 'Sign out',
+            user_menu_link: '/sign-out',
+        },
+    ],
+}
 
 // Middleware -%- ////
 

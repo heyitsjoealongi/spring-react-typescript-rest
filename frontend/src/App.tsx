@@ -13,8 +13,8 @@ import { authenticatedState } from './recoil/atoms/authenticatedAtom'
 import ErrorUtilityView from './views/utility/ErrorUtilityView'
 import ViewTemplate from './views/ViewTemplate'
 import LandingView from './views/landing/LandingView'
-import PrimaryAccountView from './views/account/PrimaryAccountView'
-import PrimaryApplicationView from './views/application/PrimaryApplicationView'
+import AccountView from './views/account/AccountView'
+import ApplicationView from './views/application/ApplicationView'
 
 // Integrations -%- ////
 
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
         path: '/sign-up',
         element: (
             <ViewTemplate>
-                <PrimaryAccountView />
+                <AccountView />
             </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
         path: '/confirm-sign-up',
         element: (
             <ViewTemplate>
-                <PrimaryAccountView />
+                <AccountView />
             </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
@@ -85,7 +85,7 @@ const router = createBrowserRouter([
         path: '/resend-verification-code',
         element: (
             <ViewTemplate>
-                <PrimaryAccountView />
+                <AccountView />
             </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
@@ -94,7 +94,7 @@ const router = createBrowserRouter([
         path: '/sign-in',
         element: (
             <ViewTemplate>
-                <PrimaryAccountView />
+                <AccountView />
             </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
@@ -103,7 +103,7 @@ const router = createBrowserRouter([
         path: '/sign-out',
         element: (
             <ViewTemplate>
-                <PrimaryAccountView />
+                <AccountView />
             </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
@@ -113,7 +113,7 @@ const router = createBrowserRouter([
         element: (
             <Authenticated>
                 <ViewTemplate>
-                    <PrimaryApplicationView />
+                    <ApplicationView />
                 </ViewTemplate>
             </Authenticated>
         ),
