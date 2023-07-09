@@ -6,7 +6,7 @@ import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { Auth } from 'aws-amplify'
 import { useRecoilState } from 'recoil'
-import { authenticationState } from '../../recoil/atoms/authenticationAtom'
+import { authenticatedState } from '../../recoil/atoms/authenticatedAtom'
 import { useNavigate } from 'react-router-dom'
 
 // MUI -%- ////
@@ -20,6 +20,7 @@ import TextField from '@mui/material/TextField'
 // Components -%- ////
 
 // Integrations -%- ////
+import { setUserDataKey } from '../../functions/account'
 
 // Middleware -%- ////
 
@@ -43,8 +44,7 @@ const validationSchema = yup.object({
     password: yup.string().min(8).required(),
 })
 export default function SignInAccountComponent() {
-    const [authentication, setAuthentication] =
-        useRecoilState(authenticationState)
+    const [authenticated, setAuthenticated] = useRecoilState(authenticatedState)
     const navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
@@ -53,17 +53,17 @@ export default function SignInAccountComponent() {
         },
         validationSchema: validationSchema,
         onSubmit: async (values) => {
-            const signedIn = await signIn(values)
-            console.log('signedIn', signedIn)
-            if (
-                signedIn?.['signInUserSession']?.['idToken']?.['payload']?.[
-                    'auth_time'
-                ]
-            ) {
-                setAuthentication(true)
-                return navigate(`/welcome`)
-            } else {
-                return authentication
+            try {
+                const { userDataKey } = await signIn(values)
+                if (userDataKey) {
+                    setUserDataKey(userDataKey)
+                    setAuthenticated(true)
+                    navigate(`/welcome`)
+                }
+                return authenticated
+            } catch (error) {
+                console.log('error signing in', error)
+                return authenticated
             }
         },
     })

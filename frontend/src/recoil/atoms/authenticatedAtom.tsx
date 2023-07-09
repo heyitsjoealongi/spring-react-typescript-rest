@@ -14,7 +14,7 @@ import { atom } from 'recoil'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export const authenticationState = atom({
+export const authenticatedState = atom({
     key: 'authenticated', // unique ID (with respect to other atoms/selectors)
     default: false, // default value (aka initial value)
 })

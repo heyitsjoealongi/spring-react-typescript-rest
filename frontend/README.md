@@ -260,6 +260,8 @@ if(example){
 
 ## Amplify Auth - Sign In (Object)
 
+Additional to this response, Amplify generates user data objects in the local storage
+
 ```bash
 {
     "username": "",
@@ -352,7 +354,22 @@ if(example){
     },
     "preferredMFA": ""
 }
+```
 
+## Amplify Auth - User Attributes (Object)
+
+Storing and retrieving the dynamic `userDataKey` allows for extracting the user data from local storage
+
+```bash
+{
+  "UserAttributes": [
+    { "Name": "sub", "Value": "" },
+    { "Name": "email_verified", "Value": "true" },
+    { "Name": "name", "Value": "" },
+    { "Name": "email", "Value": "" }
+  ],
+  "Username": "collectedview"
+}
 ```
 
 # Getting Started with Create React App
@@ -401,6 +418,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+```
+
+```
 
 ```
 

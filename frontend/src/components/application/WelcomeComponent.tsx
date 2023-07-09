@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography'
 // Components -%- ////
 
 // Integrations -%- ////
+import { getUserData } from '../../functions/account'
 
 // Middleware -%- ////
 
@@ -20,6 +21,9 @@ import Typography from '@mui/material/Typography'
 
 // Application -%- ////
 export default function WelcomeComponent() {
+    const userData = getUserData()
+    console.log('userData', userData)
+    console.log('username', userData?.['Username'])
     return (
         <Container
             maxWidth="xl"
@@ -62,7 +66,10 @@ export default function WelcomeComponent() {
                         textAlign: 'left',
                     }}
                 >
-                    Welcome,
+                    Welcome,{' '}
+                    {userData?.['Username']
+                        ? userData?.['Username']
+                        : process.env.REACT_APP_DEFAULT_USERNAME}
                 </Typography>
             </Box>
         </Container>

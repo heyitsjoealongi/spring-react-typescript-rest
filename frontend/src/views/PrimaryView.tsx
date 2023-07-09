@@ -3,7 +3,7 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { useRecoilValue } from 'recoil'
-import { startingState } from '../recoil/atoms/startingAtom'
+import { startState } from '../recoil/atoms/startAtom'
 
 // MUI -%- ////
 
@@ -27,7 +27,7 @@ type PrimaryViewProps = {
     children: React.ReactNode
 }
 export default function PrimaryView({ children }: PrimaryViewProps) {
-    const starting = useRecoilValue(startingState)
+    const starting = useRecoilValue(startState)
     if (starting) {
         return (
             <React.Fragment>
