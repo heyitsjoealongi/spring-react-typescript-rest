@@ -3,7 +3,7 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { useRecoilValue } from 'recoil'
-import { startingState } from '../recoil/atoms/startingAtom'
+import { startState } from '../recoil/atoms/startAtom'
 
 // MUI -%- ////
 
@@ -23,11 +23,11 @@ import FooterMenuComponent from '../components/menu/FooterMenuComponent'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-type PrimaryViewProps = {
+type ViewTemplateProps = {
     children: React.ReactNode
 }
-export default function PrimaryView({ children }: PrimaryViewProps) {
-    const starting = useRecoilValue(startingState)
+export default function ViewTemplate({ children }: ViewTemplateProps) {
+    const starting = useRecoilValue(startState)
     if (starting) {
         return (
             <React.Fragment>

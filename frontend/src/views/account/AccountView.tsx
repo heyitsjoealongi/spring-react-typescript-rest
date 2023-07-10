@@ -23,7 +23,7 @@ import SignOutAccountComponent from '../../components/account/SignOutAccountComp
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function PrimaryAccountView() {
+export default function AccountView() {
     const location = useLocation()
     const { pathname } = location
     if (pathname === '/sign-up') {

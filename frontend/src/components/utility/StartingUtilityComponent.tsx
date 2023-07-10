@@ -3,7 +3,7 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { useRecoilState } from 'recoil'
-import { startingState } from '../../recoil/atoms/startingAtom'
+import { startState } from '../../recoil/atoms/startAtom'
 
 // MUI -%- ////
 
@@ -19,7 +19,7 @@ import { startingState } from '../../recoil/atoms/startingAtom'
 
 // Application -%- ////
 export default function StartingUtilityComponent() {
-    const [starting, setStarting] = useRecoilState(startingState)
+    const [starting, setStarting] = useRecoilState(startState)
     React.useEffect(() => {
         setTimeout(
             () => {

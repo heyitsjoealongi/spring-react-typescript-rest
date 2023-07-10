@@ -5,6 +5,9 @@ import * as React from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { Auth } from 'aws-amplify'
+import { useRecoilState } from 'recoil'
+import { authenticatedState } from '../../recoil/atoms/authenticatedAtom'
+import { useNavigate } from 'react-router-dom'
 
 // MUI -%- ////
 import Box from '@mui/material/Box'
@@ -16,21 +19,37 @@ import Button from '@mui/material/Button'
 // Components -%- ////
 
 // Integrations -%- ////
+import { removeUserData } from '../../functions/account'
+
+// Middleware -%- ////
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Application -%- ////
 async function signOut() {
     try {
-        await Auth.signOut()
+        return await Auth.signOut()
     } catch (error) {
-        console.log('error signing out: ', error)
+        console.log('error signing out:', error)
+        return error
     }
 }
 const validationSchema = yup.object({})
 export default function SignOutAccountComponent() {
+    const [authenticated, setAuthenticated] = useRecoilState(authenticatedState)
+    const navigate = useNavigate()
     const formik = useFormik({
         initialValues: {},
         validationSchema: validationSchema,
         onSubmit: async () => {
-            // alert(JSON.stringify(values, null, 2))
-            return await signOut()
+            try {
+                await signOut()
+                removeUserData()
+                await setAuthenticated(false)
+                return navigate('/')
+            } catch (error) {
+                console.log('error signing out:', error)
+            }
         },
     })
     return (

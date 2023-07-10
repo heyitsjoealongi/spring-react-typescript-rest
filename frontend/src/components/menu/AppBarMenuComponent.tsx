@@ -5,6 +5,7 @@ import * as React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRecoilValue } from 'recoil'
 import { notificationsState } from '../../recoil/atoms/notificationsAtom'
+import { authenticatedState } from '../../recoil/atoms/authenticatedAtom'
 
 // MUI -%- ////
 import AppBar from '@mui/material/AppBar'
@@ -43,10 +44,10 @@ type AppBarMenuComponentProps = {
         app_menu_link: string
     }[]
     user_menu: {
-        id: number
-        user_menu_title: string
-        user_menu_link: string
-    }[]
+        authenticated: Array<object>
+        unauthenticated: Array<object>
+        all: Array<object>
+    }
 }
 export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
     const notifications = useRecoilValue(notificationsState)
@@ -299,20 +300,51 @@ export default function AppBarMenuComponent(props: AppBarMenuComponentProps) {
                                     open={Boolean(anchorElUser)}
                                     onClose={handleCloseUserMenu}
                                 >
-                                    {props?.['user_menu']?.map((data) => (
-                                        <MenuItem
-                                            key={data?.['id']}
-                                            onClick={() =>
-                                                handleCloseNavMenu(
-                                                    data?.['user_menu_link']
-                                                )
-                                            }
-                                        >
-                                            <Typography textAlign="center">
-                                                {data?.['user_menu_title']}
-                                            </Typography>
-                                        </MenuItem>
-                                    ))}
+                                    {useRecoilValue(authenticatedState)
+                                        ? props?.['user_menu']?.[
+                                              'authenticated'
+                                          ]?.map((data) => (
+                                              <MenuItem
+                                                  key={data?.['id']}
+                                                  onClick={() =>
+                                                      handleCloseNavMenu(
+                                                          data?.[
+                                                              'user_menu_link'
+                                                          ]
+                                                      )
+                                                  }
+                                              >
+                                                  <Typography textAlign="center">
+                                                      {
+                                                          data?.[
+                                                              'user_menu_title'
+                                                          ]
+                                                      }
+                                                  </Typography>
+                                              </MenuItem>
+                                          ))
+                                        : props?.['user_menu']?.[
+                                              'unauthenticated'
+                                          ]?.map((data) => (
+                                              <MenuItem
+                                                  key={data?.['id']}
+                                                  onClick={() =>
+                                                      handleCloseNavMenu(
+                                                          data?.[
+                                                              'user_menu_link'
+                                                          ]
+                                                      )
+                                                  }
+                                              >
+                                                  <Typography textAlign="center">
+                                                      {
+                                                          data?.[
+                                                              'user_menu_title'
+                                                          ]
+                                                      }
+                                                  </Typography>
+                                              </MenuItem>
+                                          ))}
                                 </Menu>
                             </Box>
                         </Box>

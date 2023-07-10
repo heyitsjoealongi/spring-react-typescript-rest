@@ -5,6 +5,9 @@ import * as React from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { Auth } from 'aws-amplify'
+import { useRecoilState } from 'recoil'
+import { confirmingState } from '../../recoil/atoms/confirmingAtom'
+import { useNavigate } from 'react-router-dom'
 
 // MUI -%- ////
 import Box from '@mui/material/Box'
@@ -17,6 +20,12 @@ import TextField from '@mui/material/TextField'
 // Components -%- ////
 
 // Integrations -%- ////
+
+// Middleware -%- ////
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Application -%- ////
 type ConfirmSignUpAccountComponentProps = {
     username: string
     code: string
@@ -24,9 +33,16 @@ type ConfirmSignUpAccountComponentProps = {
 async function confirmSignUp(values: ConfirmSignUpAccountComponentProps) {
     try {
         const { username, code } = values
-        await Auth.confirmSignUp(username, code)
+        return await Auth.confirmSignUp(username, code)
     } catch (error) {
-        console.log('error confirming sign up', error)
+        if (
+            error?.toString() ===
+            'NotAuthorizedException: User cannot be confirmed. Current status is CONFIRMED'
+        ) {
+            return { confirmed: true }
+        } else {
+            console.log('error confirming sign up:', error)
+        }
     }
 }
 const validationSchema = yup.object({
@@ -34,6 +50,8 @@ const validationSchema = yup.object({
     code: yup.string().min(6).required(),
 })
 export default function ConfirmSignUpAccountComponent() {
+    const [confirming, setConfirming] = useRecoilState(confirmingState)
+    const navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
             username: '',
@@ -41,8 +59,15 @@ export default function ConfirmSignUpAccountComponent() {
         },
         validationSchema: validationSchema,
         onSubmit: async (values) => {
-            // alert(JSON.stringify(values, null, 2))
-            return await confirmSignUp(values)
+            try {
+                const user = await confirmSignUp(values)
+                if (user?.['userDataKey'] || user?.['confirmed']) {
+                    await setConfirming(false)
+                    return navigate('/sign-in')
+                }
+            } catch (error) {
+                console.log('error confirming sign up:', error)
+            }
         },
     })
 

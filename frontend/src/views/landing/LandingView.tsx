@@ -17,7 +17,7 @@ import HeroSwiperComponent from '../../components/interactive/HeroSwiperComponen
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function PrimaryInteractiveView() {
+export default function LandingView() {
     return (
         <React.Fragment>
             <HeroSwiperComponent />

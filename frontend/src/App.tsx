@@ -3,19 +3,53 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
+import { useRecoilValue } from 'recoil'
+import { authenticatedState } from './recoil/atoms/authenticatedAtom'
+import { confirmingState } from './recoil/atoms/confirmingAtom'
 
 // MUI -%- ////
 
 // Components -%- ////
 import ErrorUtilityView from './views/utility/ErrorUtilityView'
-import PrimaryView from './views/PrimaryView'
-import PrimaryInteractiveView from './views/interactive/PrimaryInteractiveView'
-import PrimaryAccountView from './views/account/PrimaryAccountView'
+import ViewTemplate from './views/ViewTemplate'
+import LandingView from './views/landing/LandingView'
+import AccountView from './views/account/AccountView'
+import ApplicationView from './views/application/ApplicationView'
 
 // Integrations -%- ////
 
 // Middleware -%- ////
+type AuthenticatedProps = {
+    children: React.ReactNode
+}
+const Authenticated = ({ children }: AuthenticatedProps) => {
+    return useRecoilValue(authenticatedState) === true ? (
+        children
+    ) : (
+        <Navigate to="/sign-in" replace />
+    )
+}
+type UnauthenticatedProps = {
+    children: React.ReactNode
+}
+const Unauthenticated = ({ children }: UnauthenticatedProps) => {
+    return useRecoilValue(authenticatedState) === false ? (
+        children
+    ) : (
+        <Navigate to="/welcome" replace />
+    )
+}
+type ConfirmingProps = {
+    children: React.ReactNode
+}
+const Confirming = ({ children }: ConfirmingProps) => {
+    return useRecoilValue(confirmingState) === true ? (
+        children
+    ) : (
+        <Navigate to="/" replace />
+    )
+}
 
 // Cascading Style Sheets (CSS) -%- ////
 import './assets/styles/App.css'
@@ -44,54 +78,75 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: (
-            <PrimaryView>
-                <PrimaryInteractiveView />
-            </PrimaryView>
+            <ViewTemplate>
+                <LandingView />
+            </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-up',
         element: (
-            <PrimaryView>
-                <PrimaryAccountView />
-            </PrimaryView>
+            <Unauthenticated>
+                <ViewTemplate>
+                    <AccountView />
+                </ViewTemplate>
+            </Unauthenticated>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/confirm-sign-up',
         element: (
-            <PrimaryView>
-                <PrimaryAccountView />
-            </PrimaryView>
+            <Confirming>
+                <ViewTemplate>
+                    <AccountView />
+                </ViewTemplate>
+            </Confirming>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/resend-verification-code',
         element: (
-            <PrimaryView>
-                <PrimaryAccountView />
-            </PrimaryView>
+            <Confirming>
+                <ViewTemplate>
+                    <AccountView />
+                </ViewTemplate>
+            </Confirming>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-in',
         element: (
-            <PrimaryView>
-                <PrimaryAccountView />
-            </PrimaryView>
+            <Unauthenticated>
+                <ViewTemplate>
+                    <AccountView />
+                </ViewTemplate>
+            </Unauthenticated>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-out',
         element: (
-            <PrimaryView>
-                <PrimaryAccountView />
-            </PrimaryView>
+            <Authenticated>
+                <ViewTemplate>
+                    <AccountView />
+                </ViewTemplate>
+            </Authenticated>
+        ),
+        errorElement: <ErrorUtilityView />,
+    },
+    {
+        path: '/welcome',
+        element: (
+            <Authenticated>
+                <ViewTemplate>
+                    <ApplicationView />
+                </ViewTemplate>
+            </Authenticated>
         ),
         errorElement: <ErrorUtilityView />,
     },
