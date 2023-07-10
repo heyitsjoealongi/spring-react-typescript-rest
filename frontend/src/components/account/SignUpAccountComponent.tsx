@@ -5,6 +5,9 @@ import * as React from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { Auth } from 'aws-amplify'
+import { useRecoilState } from 'recoil'
+import { confirmingState } from '../../recoil/atoms/confirmingAtom'
+import { useNavigate } from 'react-router-dom'
 
 // MUI -%- ////
 import Box from '@mui/material/Box'
@@ -17,6 +20,7 @@ import Button from '@mui/material/Button'
 // Components -%- ////
 
 // Integrations -%- ////
+import { setUserDataKey } from '../../functions/account'
 
 // Middleware -%- ////
 
@@ -43,7 +47,7 @@ async function signUp(values: SignUpAccountComponentProps) {
                 enabled: true,
             },
         })
-        console.log(user)
+        return user
     } catch (error) {
         console.log('error signing up:', error)
     }
@@ -55,6 +59,8 @@ const validationSchema = yup.object({
     password: yup.string().min(8).required(),
 })
 export default function SignUpAccountComponent() {
+    const [confirming, setConfirming] = useRecoilState(confirmingState)
+    const navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -64,8 +70,16 @@ export default function SignUpAccountComponent() {
         },
         validationSchema: validationSchema,
         onSubmit: async (values) => {
-            // alert(JSON.stringify(values, null, 2))
-            return await signUp(values)
+            try {
+                const user = await signUp(values)
+                if (user?.['userDataKey']) {
+                    setUserDataKey(user?.['userDataKey'])
+                    await setConfirming(true)
+                    return navigate('/confirm-sign-up')
+                }
+            } catch (error) {
+                console.log('error signing up:', error)
+            }
         },
     })
     return (

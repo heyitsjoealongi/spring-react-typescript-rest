@@ -30,7 +30,8 @@ async function signOut() {
     try {
         return await Auth.signOut()
     } catch (error) {
-        console.log('error signing out: ', error)
+        console.log('error signing out:', error)
+        return error
     }
 }
 const validationSchema = yup.object({})
@@ -44,12 +45,10 @@ export default function SignOutAccountComponent() {
             try {
                 await signOut()
                 removeUserData()
-                setAuthenticated(false)
-                navigate('/')
-                return authenticated
+                await setAuthenticated(false)
+                return navigate('/')
             } catch (error) {
-                console.log('error signing out: ', error)
-                return authenticated
+                console.log('error signing out:', error)
             }
         },
     })

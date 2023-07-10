@@ -368,7 +368,41 @@ Storing and retrieving the dynamic `userDataKey` allows for extracting the user 
     { "Name": "name", "Value": "" },
     { "Name": "email", "Value": "" }
   ],
-  "Username": "collectedview"
+  "Username": ""
+}
+```
+
+## Amplify Auth - Sign Up (Object)
+
+```bash
+{
+  "username": "",
+  "pool": {
+    "userPoolId": "",
+    "clientId": "",
+    "client": {
+      "endpoint": "",
+      "fetchOptions": {}
+    },
+    "advancedSecurityDataCollectionFlag": true,
+    "storage": {
+      "loglevel": "INFO",
+      "amplify-auto-sign-in": "true"
+    }
+  },
+  "Session": null,
+  "client": {
+    "endpoint": "",
+    "fetchOptions": {}
+  },
+  "signInUserSession": null,
+  "authenticationFlowType": "",
+  "storage": {
+    "loglevel": "",
+    "amplify-auto-sign-in": "true"
+  },
+  "keyPrefix": "",
+  "userDataKey": ""
 }
 ```
 

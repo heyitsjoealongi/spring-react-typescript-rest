@@ -6,6 +6,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import { useRecoilValue } from 'recoil'
 import { authenticatedState } from './recoil/atoms/authenticatedAtom'
+import { confirmingState } from './recoil/atoms/confirmingAtom'
 
 // MUI -%- ////
 
@@ -39,11 +40,15 @@ const Unauthenticated = ({ children }: UnauthenticatedProps) => {
         <Navigate to="/welcome" replace />
     )
 }
-type ValidatingProps = {
+type ConfirmingProps = {
     children: React.ReactNode
 }
-const Validating = ({ children }: ValidatingProps) => {
-    return <Navigate to="/" replace />
+const Confirming = ({ children }: ConfirmingProps) => {
+    return useRecoilValue(confirmingState) === true ? (
+        children
+    ) : (
+        <Navigate to="/" replace />
+    )
 }
 
 // Cascading Style Sheets (CSS) -%- ////
@@ -93,22 +98,22 @@ const router = createBrowserRouter([
     {
         path: '/confirm-sign-up',
         element: (
-            <Validating>
+            <Confirming>
                 <ViewTemplate>
                     <AccountView />
                 </ViewTemplate>
-            </Validating>
+            </Confirming>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/resend-verification-code',
         element: (
-            <Validating>
+            <Confirming>
                 <ViewTemplate>
                     <AccountView />
                 </ViewTemplate>
-            </Validating>
+            </Confirming>
         ),
         errorElement: <ErrorUtilityView />,
     },

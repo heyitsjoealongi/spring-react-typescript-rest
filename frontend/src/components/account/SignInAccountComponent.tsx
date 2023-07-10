@@ -7,6 +7,7 @@ import * as yup from 'yup'
 import { Auth } from 'aws-amplify'
 import { useRecoilState } from 'recoil'
 import { authenticatedState } from '../../recoil/atoms/authenticatedAtom'
+import { confirmingState } from '../../recoil/atoms/confirmingAtom'
 import { useNavigate } from 'react-router-dom'
 
 // MUI -%- ////
@@ -36,7 +37,14 @@ async function signIn(values: SignInAccountComponentProps) {
         const { username, password } = values
         return await Auth.signIn(username, password)
     } catch (error) {
-        console.log('error signing in: ', error)
+        if (
+            error?.toString() ===
+            'UserNotConfirmedException: User is not confirmed.'
+        ) {
+            return { confirming: true }
+        } else {
+            console.log('error confirming sign up', error)
+        }
     }
 }
 const validationSchema = yup.object({
@@ -45,6 +53,7 @@ const validationSchema = yup.object({
 })
 export default function SignInAccountComponent() {
     const [authenticated, setAuthenticated] = useRecoilState(authenticatedState)
+    const [confirming, setConfirming] = useRecoilState(confirmingState)
     const navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
@@ -54,16 +63,17 @@ export default function SignInAccountComponent() {
         validationSchema: validationSchema,
         onSubmit: async (values) => {
             try {
-                const { userDataKey } = await signIn(values)
-                if (userDataKey) {
-                    setUserDataKey(userDataKey)
-                    setAuthenticated(true)
-                    navigate('/welcome')
+                const user = await signIn(values)
+                if (user?.['userDataKey']) {
+                    setUserDataKey(user?.['userDataKey'])
+                    await setAuthenticated(true)
+                    return navigate('/welcome')
+                } else if (user?.['confirming']) {
+                    await setConfirming(true)
+                    return navigate('/confirm-sign-up')
                 }
-                return authenticated
             } catch (error) {
-                console.log('error signing in: ', error)
-                return authenticated
+                console.log('error signing in:', error)
             }
         },
     })

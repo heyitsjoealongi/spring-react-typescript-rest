@@ -31,10 +31,9 @@ async function resendConfirmationCode(
 ) {
     try {
         const { username } = values
-        await Auth.resendSignUp(username)
-        console.log('code resent successfully')
-    } catch (err) {
-        console.log('error resending code: ', err)
+        return await Auth.resendSignUp(username)
+    } catch (error) {
+        console.log('error resending code:', error)
     }
 }
 const validationSchema = yup.object({
@@ -47,7 +46,6 @@ export default function ResendVerificationCodeAccountComponent() {
         },
         validationSchema: validationSchema,
         onSubmit: async (values) => {
-            // alert(JSON.stringify(values, null, 2))
             return await resendConfirmationCode(values)
         },
     })
