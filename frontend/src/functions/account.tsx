@@ -23,5 +23,8 @@ export const getUserData = () => {
     const userDataKey = getUserDataKey()
     return JSON.parse(localStorage.getItem(`${userDataKey}`))
 }
+export const removeUserData = () => {
+    return localStorage.removeItem('userDataKey')
+}
 
 // System -%- ////

@@ -29,6 +29,22 @@ const Authenticated = ({ children }: AuthenticatedProps) => {
         <Navigate to="/sign-in" replace />
     )
 }
+type UnauthenticatedProps = {
+    children: React.ReactNode
+}
+const Unauthenticated = ({ children }: UnauthenticatedProps) => {
+    return useRecoilValue(authenticatedState) === false ? (
+        children
+    ) : (
+        <Navigate to="/welcome" replace />
+    )
+}
+type ValidatingProps = {
+    children: React.ReactNode
+}
+const Validating = ({ children }: ValidatingProps) => {
+    return <Navigate to="/" replace />
+}
 
 // Cascading Style Sheets (CSS) -%- ////
 import './assets/styles/App.css'
@@ -66,45 +82,55 @@ const router = createBrowserRouter([
     {
         path: '/sign-up',
         element: (
-            <ViewTemplate>
-                <AccountView />
-            </ViewTemplate>
+            <Unauthenticated>
+                <ViewTemplate>
+                    <AccountView />
+                </ViewTemplate>
+            </Unauthenticated>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/confirm-sign-up',
         element: (
-            <ViewTemplate>
-                <AccountView />
-            </ViewTemplate>
+            <Validating>
+                <ViewTemplate>
+                    <AccountView />
+                </ViewTemplate>
+            </Validating>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/resend-verification-code',
         element: (
-            <ViewTemplate>
-                <AccountView />
-            </ViewTemplate>
+            <Validating>
+                <ViewTemplate>
+                    <AccountView />
+                </ViewTemplate>
+            </Validating>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-in',
         element: (
-            <ViewTemplate>
-                <AccountView />
-            </ViewTemplate>
+            <Unauthenticated>
+                <ViewTemplate>
+                    <AccountView />
+                </ViewTemplate>
+            </Unauthenticated>
         ),
         errorElement: <ErrorUtilityView />,
     },
     {
         path: '/sign-out',
         element: (
-            <ViewTemplate>
-                <AccountView />
-            </ViewTemplate>
+            <Authenticated>
+                <ViewTemplate>
+                    <AccountView />
+                </ViewTemplate>
+            </Authenticated>
         ),
         errorElement: <ErrorUtilityView />,
     },

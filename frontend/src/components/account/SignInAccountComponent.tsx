@@ -36,7 +36,7 @@ async function signIn(values: SignInAccountComponentProps) {
         const { username, password } = values
         return await Auth.signIn(username, password)
     } catch (error) {
-        console.log('error signing in', error)
+        console.log('error signing in: ', error)
     }
 }
 const validationSchema = yup.object({
@@ -58,11 +58,11 @@ export default function SignInAccountComponent() {
                 if (userDataKey) {
                     setUserDataKey(userDataKey)
                     setAuthenticated(true)
-                    navigate(`/welcome`)
+                    navigate('/welcome')
                 }
                 return authenticated
             } catch (error) {
-                console.log('error signing in', error)
+                console.log('error signing in: ', error)
                 return authenticated
             }
         },
