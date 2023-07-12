@@ -90,6 +90,7 @@ export default function HeroSwiperComponent(props: HeroSwiperComponentProps) {
             </Box>
             <Box
                 sx={{
+                    display: 'inline-flex',
                     order: '1',
                     flexBasis: '100%',
                     flex: '1',

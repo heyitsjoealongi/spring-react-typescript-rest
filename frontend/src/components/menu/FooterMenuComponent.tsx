@@ -53,26 +53,26 @@ const footerMenuOne = {
     ],
 }
 const footerMenuTwo = {
-    menu_title: 'Menu title',
+    menu_title: 'Topics',
     menu_items: [
         {
             id: 0,
-            footer_menu_item_title: 'Menu one',
+            footer_menu_item_title: 'Cloud Computing',
             footer_menu_item_link: '/',
         },
         {
             id: 1,
-            footer_menu_item_title: 'Menu two',
+            footer_menu_item_title: 'Serverless',
             footer_menu_item_link: '/',
         },
         {
             id: 2,
-            footer_menu_item_title: 'Menu three',
+            footer_menu_item_title: 'Authentication',
             footer_menu_item_link: '/',
         },
         {
             id: 3,
-            footer_menu_item_title: 'Menu four',
+            footer_menu_item_title: 'Authorization',
             footer_menu_item_link: '/',
         },
     ],
@@ -196,6 +196,7 @@ export default function FooterMenuComponent() {
                     >
                         <Box
                             sx={{
+                                display: 'inline-flex',
                                 order: '0',
                                 flex: '0',
                                 alignSelf: 'flex-start',
@@ -221,6 +222,7 @@ export default function FooterMenuComponent() {
                         </Box>
                         <Box
                             sx={{
+                                display: 'inline-flex',
                                 order: '1',
                                 flex: '0',
                                 alignSelf: 'flex-start',
@@ -246,6 +248,7 @@ export default function FooterMenuComponent() {
                         </Box>
                         <Box
                             sx={{
+                                display: 'inline-flex',
                                 order: '2',
                                 flex: '0',
                                 alignSelf: 'flex-start',
@@ -272,6 +275,7 @@ export default function FooterMenuComponent() {
                     </Box>
                     <Typography
                         sx={{
+                            display: 'inline-flex',
                             flex: 1,
                             alignSelf: 'flex-start',
                             height: 'auto',
@@ -290,6 +294,7 @@ export default function FooterMenuComponent() {
                     </Typography>
                     <Typography
                         sx={{
+                            display: 'inline-flex',
                             flex: 1,
                             alignSelf: 'flex-start',
                             height: 'auto',

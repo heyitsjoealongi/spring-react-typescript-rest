@@ -170,6 +170,7 @@ export default function SignUpAccountComponent() {
                         fullWidth
                         type="submit"
                         sx={{
+                            display: 'inline-flex',
                             order: 2,
                             flex: 'none',
                             alignSelf: 'flexStart',

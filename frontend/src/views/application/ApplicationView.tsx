@@ -40,6 +40,60 @@ const blog_scape = [
         caption:
             'Build complex applications with dynamic user interfaces that captivate visual experiences. Advance delivery of content, products, and data with multi-threaded Java.',
     },
+    {
+        id: 3,
+        slug: 'three',
+        cover: `${process.env.REACT_APP_URL + '/assets/jpg/slide-three.jpg'}`,
+        title: 'Learn how to continuously integrate React, TypeScript, and Spring',
+        topic: 'Cloud Computing',
+        caption:
+            'Build complex applications with dynamic user interfaces that captivate visual experiences. Advance delivery of content, products, and data with multi-threaded Java.',
+    },
+    {
+        id: 4,
+        slug: 'two',
+        cover: `${process.env.REACT_APP_URL + '/assets/jpg/slide-two.jpg'}`,
+        title: 'Learn how to continuously integrate React, TypeScript,and Spring',
+        topic: 'Cloud Computing',
+        caption:
+            'Build complex applications with dynamic user interfaces that captivate visual experiences. Advance delivery of content, products, and data with multi-threaded Java.',
+    },
+    {
+        id: 5,
+        slug: 'one',
+        cover: `${process.env.REACT_APP_URL + '/assets/jpg/slide-one.jpg'}`,
+        title: 'Learn how to continuously integrate React, TypeScript, and Spring',
+        topic: 'Cloud Computing',
+        caption:
+            'Build complex applications with dynamic user interfaces that captivate visual experiences. Advance delivery of content, products, and data with multi-threaded Java.',
+    },
+    {
+        id: 6,
+        slug: 'one',
+        cover: `${process.env.REACT_APP_URL + '/assets/jpg/slide-one.jpg'}`,
+        title: 'Learn how to continuously integrate React, TypeScript, and Spring',
+        topic: 'Cloud Computing',
+        caption:
+            'Build complex applications with dynamic user interfaces that captivate visual experiences. Advance delivery of content, products, and data with multi-threaded Java.',
+    },
+    {
+        id: 7,
+        slug: 'two',
+        cover: `${process.env.REACT_APP_URL + '/assets/jpg/slide-two.jpg'}`,
+        title: 'Learn how to continuously integrate React, TypeScript,and Spring',
+        topic: 'Cloud Computing',
+        caption:
+            'Build complex applications with dynamic user interfaces that captivate visual experiences. Advance delivery of content, products, and data with multi-threaded Java.',
+    },
+    {
+        id: 8,
+        slug: 'three',
+        cover: `${process.env.REACT_APP_URL + '/assets/jpg/slide-three.jpg'}`,
+        title: 'Learn how to continuously integrate React, TypeScript, and Spring',
+        topic: 'Cloud Computing',
+        caption:
+            'Build complex applications with dynamic user interfaces that captivate visual experiences. Advance delivery of content, products, and data with multi-threaded Java.',
+    },
 ]
 
 // Middleware -%- ////

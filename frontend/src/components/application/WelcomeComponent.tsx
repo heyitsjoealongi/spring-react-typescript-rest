@@ -43,6 +43,7 @@ export default function WelcomeComponent() {
         >
             <Box
                 sx={{
+                    display: 'inline-flex',
                     order: '1',
                     flexBasis: '100%',
                     flex: '1',

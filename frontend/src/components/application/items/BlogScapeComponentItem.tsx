@@ -24,6 +24,7 @@ import { CardActionArea } from '@mui/material'
 
 // Application -%- ////
 type BlogScapeComponentItemProps = {
+    id: number
     slug: string
     cover: string
     title: string
@@ -36,13 +37,15 @@ export default function BlogScapeComponentItem(
     return (
         <Card
             sx={{
-                order: '1',
+                display: 'inline-flex',
+                order: props?.['id'],
                 flexBasis: '100%',
-                flex: '1',
+                flex: 'auto',
                 alignSelf: 'center',
                 height: 'auto',
-                width: { xs: '100%', md: '33.33%' },
-                margin: { xs: '1.5vh 3vw 3vh 3vw', md: '0 auto' },
+                width: '100%',
+                minWidth: { xs: '100%', md: '30%' },
+                maxWidth: { xs: '100%', md: '30%' },
                 padding: '0',
             }}
         >

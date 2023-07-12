@@ -52,6 +52,7 @@ export default function PreFooterFrameworksMenuComponent() {
             >
                 <Box
                     sx={{
+                        display: 'inline-flex',
                         order: '0',
                         flexBasis: { xs: '100%', md: 'auto' },
                         flex: '3',
@@ -75,10 +76,10 @@ export default function PreFooterFrameworksMenuComponent() {
                 </Box>
                 <Box
                     sx={{
+                        display: 'inline-flex',
                         order: '1',
                         flex: '0',
                         flexBasis: 'auto',
-                        display: 'inline-flex',
                         alignSelf: { xs: 'flex-start', md: 'center' },
                         height: 'auto',
                         width: 'auto',
@@ -97,10 +98,10 @@ export default function PreFooterFrameworksMenuComponent() {
                 </Box>
                 <Box
                     sx={{
+                        display: 'inline-flex',
                         order: '2',
                         flex: '0',
                         flexBasis: 'auto',
-                        display: 'inline-flex',
                         alignSelf: { xs: 'flex-start', md: 'center' },
                         height: 'auto',
                         width: 'auto',
@@ -119,10 +120,10 @@ export default function PreFooterFrameworksMenuComponent() {
                 </Box>
                 <Box
                     sx={{
+                        display: 'inline-flex',
                         order: '3',
                         flex: '0',
                         flexBasis: 'auto',
-                        display: 'inline-flex',
                         alignSelf: { xs: 'flex-start', md: 'center' },
                         height: 'auto',
                         width: 'auto',
@@ -142,10 +143,10 @@ export default function PreFooterFrameworksMenuComponent() {
 
                 <Box
                     sx={{
+                        display: 'inline-flex',
                         order: '4',
                         flex: '0',
                         flexBasis: 'auto',
-                        display: 'inline-flex',
                         alignSelf: { xs: 'flex-start', md: 'center' },
                         height: 'auto',
                         width: 'auto',
@@ -164,10 +165,10 @@ export default function PreFooterFrameworksMenuComponent() {
                 </Box>
                 <Box
                     sx={{
+                        display: 'inline-flex',
                         order: '5',
                         flex: '0',
                         flexBasis: 'auto',
-                        display: 'inline-flex',
                         alignSelf: { xs: 'flex-start', md: 'center' },
                         height: 'auto',
                         width: 'auto',
@@ -186,10 +187,10 @@ export default function PreFooterFrameworksMenuComponent() {
                 </Box>
                 <Box
                     sx={{
+                        display: 'inline-flex',
                         order: '6',
                         flex: '0',
                         flexBasis: 'auto',
-                        display: 'inline-flex',
                         alignSelf: { xs: 'flex-start', md: 'center' },
                         height: 'auto',
                         width: 'auto',
@@ -209,10 +210,10 @@ export default function PreFooterFrameworksMenuComponent() {
 
                 <Box
                     sx={{
+                        display: 'inline-flex',
                         order: '7',
                         flex: '0',
                         flexBasis: 'auto',
-                        display: 'inline-flex',
                         alignSelf: { xs: 'flex-start', md: 'center' },
                         height: 'auto',
                         width: 'auto',
@@ -231,10 +232,10 @@ export default function PreFooterFrameworksMenuComponent() {
                 </Box>
                 <Box
                     sx={{
+                        display: 'inline-flex',
                         order: '8',
                         flex: '0',
                         flexBasis: 'auto',
-                        display: 'inline-flex',
                         alignSelf: { xs: 'flex-start', md: 'center' },
                         height: 'auto',
                         width: 'auto',

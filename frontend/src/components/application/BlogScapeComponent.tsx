@@ -5,7 +5,6 @@ import * as React from 'react'
 
 // MUI -%- ////
 import Container from '@mui/material/Container'
-import Box from '@mui/material/Box'
 
 // System Components -%- ////
 
@@ -35,23 +34,24 @@ export default function BlogScapeComponent(props: BlogScapeComponentProps) {
             maxWidth="xl"
             sx={{
                 display: 'flex',
-                flexDirection: { xs: 'column', md: 'row' },
-                flexWrap: { xs: 'wrap', md: 'nowrap' },
-                flexFlow: { xs: 'column wrap', md: 'row nowrap' },
+                flexDirection: { xs: 'column', sm: 'row' },
+                flexWrap: 'wrap',
+                flexFlow: { xs: 'column wrap', sm: 'row wrap' },
                 justifyContent: 'center',
                 alignItems: 'center',
                 alignContent: 'center',
                 height: 'auto',
                 width: '100%',
                 maxWidth: '90%',
-                margin: { xs: '0 auto', md: '3vh auto' },
+                margin: { xs: '0 auto', sm: '1.5vh auto', md: '3vh auto' },
                 padding: '0 !important',
-                gap: '1.5vw',
+                gap: '1.5em',
             }}
         >
             {props?.['blog_scape']?.map((data) => (
                 <BlogScapeComponentItem
                     key={data?.['id']}
+                    id={data?.['id']}
                     slug={data?.['slug']}
                     cover={data?.['cover']}
                     title={data?.['title']}
