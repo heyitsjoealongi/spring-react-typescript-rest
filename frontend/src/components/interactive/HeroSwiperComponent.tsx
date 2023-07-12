@@ -14,30 +14,20 @@ import Typography from '@mui/material/Typography'
 import SwiperAutoplayProgressComponentItem from './items/SwiperAutoplayProgressComponentItem'
 
 // Integrations -%- ////
-const heroSwipper = [
-    {
-        id: 0,
-        description: 'Slide one',
-        source: `${process.env.REACT_APP_URL + '/assets/jpg/slide-one.jpg'}`,
-    },
-    {
-        id: 1,
-        description: 'Slide two',
-        source: `${process.env.REACT_APP_URL + '/assets/jpg/slide-two.jpg'}`,
-    },
-    {
-        id: 2,
-        description: 'Slide three',
-        source: `${process.env.REACT_APP_URL + '/assets/jpg/slide-three.jpg'}`,
-    },
-]
 
 // Middleware -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function HeroSwiperComponent() {
+type HeroSwiperComponentProps = {
+    hero_swipper: {
+        id: number
+        source: string
+        description: string
+    }[]
+}
+export default function HeroSwiperComponent(props: HeroSwiperComponentProps) {
     return (
         <Container
             maxWidth="xl"
@@ -94,8 +84,8 @@ export default function HeroSwiperComponent() {
                     }}
                 >
                     Create type-safe and performant interfaces backed with
-                    multi-threaded data models for definitive backend algorithms that
-                    transform and hone information.
+                    multi-threaded data models for definitive backend algorithms
+                    that transform and hone information.
                 </Typography>
             </Box>
             <Box
@@ -111,7 +101,7 @@ export default function HeroSwiperComponent() {
                 }}
             >
                 <SwiperAutoplayProgressComponentItem
-                    hero_swipper={heroSwipper}
+                    hero_swipper={props?.['hero_swipper']}
                 />
             </Box>
         </Container>

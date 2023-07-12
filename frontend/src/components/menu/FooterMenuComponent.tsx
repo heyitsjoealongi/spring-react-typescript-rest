@@ -28,26 +28,26 @@ const appInfo = {
         'Fullstack Application — React (TypeScript) Frontend, Spring Boot Java Backend, OkHttp Client, and MySQL (Vitess) Service.',
 }
 const footerMenuOne = {
-    menu_title: 'Menu title',
+    menu_title: 'Application',
     menu_items: [
         {
             id: 0,
-            footer_menu_item_title: 'Menu one',
+            footer_menu_item_title: 'Home',
             footer_menu_item_link: '/',
         },
         {
             id: 1,
-            footer_menu_item_title: 'Menu two',
+            footer_menu_item_title: 'Articles',
             footer_menu_item_link: '/',
         },
         {
             id: 2,
-            footer_menu_item_title: 'Menu three',
+            footer_menu_item_title: 'Topics',
             footer_menu_item_link: '/',
         },
         {
             id: 3,
-            footer_menu_item_title: 'Menu four',
+            footer_menu_item_title: 'Story',
             footer_menu_item_link: '/',
         },
     ],

@@ -20,22 +20,22 @@ const appInfo = {
 const appMenu = [
     {
         id: 0,
-        app_menu_title: 'Menu one',
+        app_menu_title: 'Home',
         app_menu_link: '/',
     },
     {
         id: 1,
-        app_menu_title: 'Menu two',
+        app_menu_title: 'Articles',
         app_menu_link: '/',
     },
     {
         id: 2,
-        app_menu_title: 'Menu three',
+        app_menu_title: 'Topics',
         app_menu_link: '/',
     },
     {
         id: 3,
-        app_menu_title: 'Menu four',
+        app_menu_title: 'Story',
         app_menu_link: '/',
     },
 ]
@@ -112,8 +112,7 @@ export default function MenuComponent() {
                     alignItems: 'flex-start',
                     alignContent: 'flex-start',
                     height: 'auto',
-                    width: '100%',
-                    maxWidth: '50vw',
+                    width: '30vw',
                     margin: '3vh auto',
                     padding: '0 !important',
                     gap: '1.5vw',

@@ -42,7 +42,7 @@ DIVIDER COLOR #BDBDBD
 ## SVG in React
 
 ```bash
-import {ReactComponent as SVG} from './example.svg';
+import { ReactComponent as SVG } from './example.svg';
 ```
 
 ## Environment Variables
@@ -453,11 +453,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-```
-
-```
-
-```
-
-```
