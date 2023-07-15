@@ -2,7 +2,7 @@
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest?ref=badge_shield)
 
-Fullstack Application — React (TypeScript) Frontend, Spring Boot Java Backend, OkHttp Client, and MySQL (AWS RDS - Aurora) Service.
+Fullstack Application — React (TypeScript) frontend, Axios HTTP client, Spring Boot Java backend, OkHttp client, and MySQL (AWS RDS - Aurora) service. (Template)
 
 - Frontend Demo via [Amplify](https://main.dh06uvvwsg3un.amplifyapp.com/)
 
@@ -23,6 +23,7 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 - [Emotion Styled Components](https://emotion.sh/docs/introduction)
 - [Recoil](https://recoiljs.org/)
 - [Swiper](https://swiperjs.com/)
+- [Axios HTTP](https://axios-http.com/)
 
 ### Backend
 
