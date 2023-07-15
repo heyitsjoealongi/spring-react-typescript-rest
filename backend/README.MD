@@ -39,12 +39,6 @@ spring.jpa.show-sql: true
 }
 ```
 
-- AWS Configure CLI Command
-
-```bash
-aws configure
-```
-
 - AWS CLI Command (Secrets Manager)
 
 ```bash
