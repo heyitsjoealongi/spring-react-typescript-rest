@@ -198,6 +198,7 @@ applications:
             - echo "REACT_APP_DEFAULT_MENU_TITLE" >> .env
             - echo "REACT_APP_SLIDER_DELAY" >> .env
             - echo "REACT_APP_DEFAULT_USERNAME" >> .env
+            - echo "REACT_APP_BACKEND_URL" >> .env
             - yarn build
       artifacts:
         baseDirectory: build
