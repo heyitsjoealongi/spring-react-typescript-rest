@@ -1,6 +1,6 @@
 # Spring React TypeScript REST
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest?ref=badge_shield)
 
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest?ref=badge_shield)
 
 Fullstack Application — React (TypeScript) Frontend, Spring Boot Java Backend, OkHttp Client, and MySQL (Vitess) Service.
 
@@ -28,6 +28,13 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 
 - [Spring Initializr](https://start.spring.io/)
 - [Amazon Corretto JDK](https://aws.amazon.com/corretto)
+- [Spring Data JDBC](https://spring.io/projects/spring-data-jdbc)
+
+### Cloud
+
+- [AWS Amplify - Hosting](https://aws.amazon.com/amplify/hosting/)
+- [AWS Amplify - Authentication](https://aws.amazon.com/amplify/authentication/)
+- [AWS RDS - Aurora](https://aws.amazon.com/rds/aurora/)
 
 ## Stack
 
@@ -51,6 +58,7 @@ yarn prettier --write .
 ```
 
 ## Add Packages (Frontend)
+
 ```bash
 yarn add
 
@@ -58,11 +66,13 @@ yarn add --dev
 ```
 
 ## Install Packages (Frontend)
+
 ```bash
 yarn install
 ```
 
 ## Clean Cache (Frontend)
+
 ```bash
 yarn cache clean
 ```
@@ -179,7 +189,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
 
 #### Install Amplify CLI
 
-- Install [AWS Amplify CLI](https://docs.amplify.aws/cli/) to setup backend functionality
+- Install [AWS Amplify CLI](https://docs.amplify.aws/cli/) to setup Amplify functionality
 
 ```bash
 npm install -g @aws-amplify/cli
@@ -332,6 +342,34 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   ```bash
   docker push collectedview/spring-react-typescript-rest-backend:latest
   ```
+
+### AWS
+
+#### Install AWS CLI
+
+- Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) to setup AWS functionality
+
+- Check for successful installation
+
+```bash
+aws --version
+```
+
+- Create a CLI based Access Id and Secret Key for an AWS [IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
+
+- Prepare the following values for the configuration stage of the AWS CLI, the [region can be found on this documentation page](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html), reference the column with the label, "region".
+
+- Access Key: <ACCESS_KEY>
+- Secret Key: <SECRET_KEY>
+- Region: <REGION>
+
+```bash
+aws configure
+```
+
+#### Set AWS IAM Permissions
+
+- Add any required permissions to the IAM User for which the AWS CLI configuration was established with
 
 ## Vitess
 
