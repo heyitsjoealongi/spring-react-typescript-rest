@@ -11,7 +11,6 @@ import axios from 'axios'
 // System Components -%- ////
 
 // Components -%- ////
-import WelcomeComponent from '../../components/application/WelcomeComponent'
 import ArticleScapeComponent from '../../components/application/ArticleScapeComponent'
 
 // Integrations -%- ////
@@ -34,7 +33,7 @@ async function fetchArticles() {
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function ApplicationView() {
+export default function ArticlesView() {
     const [articles, setArticles] = useRecoilState(articlesState)
     React.useEffect(() => {
         if (articles?.length < 1) {
@@ -52,7 +51,6 @@ export default function ApplicationView() {
     }, [articles])
     return (
         <React.Fragment>
-            <WelcomeComponent />
             <ArticleScapeComponent articles={articles} />
         </React.Fragment>
     )

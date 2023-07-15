@@ -5,11 +5,7 @@ import com.example.demo.model.Article;
 import com.example.demo.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller // This means that this class is a Controller
 @RequestMapping(path="/article") // This means URL's start with /demo (after Application path)
@@ -38,7 +34,7 @@ public class ArticleController {
         articleRepository.save(article);
         return "Saved";
     }
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Article> getAllArticles() {
         // This returns a JSON or XML with the users

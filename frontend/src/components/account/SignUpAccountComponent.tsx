@@ -75,7 +75,8 @@ export default function SignUpAccountComponent() {
                 if (user?.['userDataKey']) {
                     setUserDataKey(user?.['userDataKey'])
                     await setConfirming(true)
-                    return navigate('/confirm-sign-up')
+                    navigate('/confirm-sign-up')
+                    return confirming
                 }
             } catch (error) {
                 console.log('error signing up:', error)

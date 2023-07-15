@@ -67,10 +67,12 @@ export default function SignInAccountComponent() {
                 if (user?.['userDataKey']) {
                     setUserDataKey(user?.['userDataKey'])
                     await setAuthenticated(true)
-                    return navigate('/welcome')
+                    navigate('/welcome')
+                    return { authenticated, confirming }
                 } else if (user?.['confirming']) {
                     await setConfirming(true)
-                    return navigate('/confirm-sign-up')
+                    navigate('/confirm-sign-up')
+                    return { authenticated, confirming }
                 }
             } catch (error) {
                 console.log('error signing in:', error)

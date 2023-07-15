@@ -46,7 +46,8 @@ export default function SignOutAccountComponent() {
                 await signOut()
                 removeUserData()
                 await setAuthenticated(false)
-                return navigate('/')
+                navigate('/')
+                return authenticated
             } catch (error) {
                 console.log('error signing out:', error)
             }

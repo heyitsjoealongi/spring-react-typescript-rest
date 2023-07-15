@@ -16,7 +16,7 @@
 export const setUserDataKey = (userDataKey: string) => {
     return localStorage.setItem('userDataKey', JSON.stringify(userDataKey))
 }
-export const getUserDataKey = () => {
+const getUserDataKey = () => {
     return JSON.parse(localStorage.getItem('userDataKey'))
 }
 export const getUserData = () => {

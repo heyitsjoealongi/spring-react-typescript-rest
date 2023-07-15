@@ -38,7 +38,7 @@ const footerMenuOne = {
         {
             id: 1,
             footer_menu_item_title: 'Articles',
-            footer_menu_item_link: '/',
+            footer_menu_item_link: '/articles',
         },
         {
             id: 2,

@@ -35,6 +35,7 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 - [AWS Amplify - Hosting](https://aws.amazon.com/amplify/hosting/)
 - [AWS Amplify - Authentication](https://aws.amazon.com/amplify/authentication/)
 - [AWS RDS - Aurora](https://aws.amazon.com/rds/aurora/)
+- [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/)
 
 ## Stack
 

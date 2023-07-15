@@ -26,7 +26,7 @@ const appMenu = [
     {
         id: 1,
         app_menu_title: 'Articles',
-        app_menu_link: '/',
+        app_menu_link: '/articles',
     },
     {
         id: 2,
