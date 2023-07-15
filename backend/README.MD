@@ -24,7 +24,7 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
 spring.jpa.show-sql: true
 ```
 
-## Add AWS Secret Manager Credentials
+## Add AWS Secret Manager (Credentials Secret)
 
 - Credentials File (.JSON)
 
@@ -43,4 +43,12 @@ spring.jpa.show-sql: true
 
 ```bash
 aws secretsmanager create-secret --name rds/credentials --secret-string file://credentials.json
+```
+
+## Add AWS Secret Manager (Generic Secret)
+
+- AWS CLI Command (Secrets Manager)
+
+```bash
+aws secretsmanager create-secret --name generic/secret/ --secret-string "{\"generic-one-key\":\"generic-two-value\",\"generic-two-key\":\"generic-two-value\"}"
 ```
