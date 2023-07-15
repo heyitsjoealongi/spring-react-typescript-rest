@@ -35,7 +35,7 @@ const appMenu = [
     },
     {
         id: 3,
-        app_menu_title: 'Story',
+        app_menu_title: 'Stats',
         app_menu_link: '/',
     },
 ]

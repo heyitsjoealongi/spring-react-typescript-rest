@@ -47,7 +47,7 @@ const footerMenuOne = {
         },
         {
             id: 3,
-            footer_menu_item_title: 'Story',
+            footer_menu_item_title: 'Stats',
             footer_menu_item_link: '/',
         },
     ],
@@ -57,72 +57,72 @@ const footerMenuTwo = {
     menu_items: [
         {
             id: 0,
-            footer_menu_item_title: 'Cloud Computing',
+            footer_menu_item_title: 'Cloud',
             footer_menu_item_link: '/',
         },
         {
             id: 1,
-            footer_menu_item_title: 'Serverless',
+            footer_menu_item_title: 'Java',
             footer_menu_item_link: '/',
         },
         {
             id: 2,
-            footer_menu_item_title: 'Authentication',
+            footer_menu_item_title: 'JavaScript',
             footer_menu_item_link: '/',
         },
         {
             id: 3,
-            footer_menu_item_title: 'Authorization',
+            footer_menu_item_title: 'Database',
             footer_menu_item_link: '/',
         },
     ],
 }
 const footerMenuThree = {
-    menu_title: 'Menu title',
+    menu_title: 'Stats',
     menu_items: [
         {
             id: 0,
-            footer_menu_item_title: 'Menu one',
+            footer_menu_item_title: 'Views',
             footer_menu_item_link: '/',
         },
         {
             id: 1,
-            footer_menu_item_title: 'Menu two',
+            footer_menu_item_title: 'Reads',
             footer_menu_item_link: '/',
         },
         {
             id: 2,
-            footer_menu_item_title: 'Menu three',
+            footer_menu_item_title: 'Origin',
             footer_menu_item_link: '/',
         },
         {
             id: 3,
-            footer_menu_item_title: 'Menu four',
+            footer_menu_item_title: 'Activity',
             footer_menu_item_link: '/',
         },
     ],
 }
 const footerMenuFour = {
-    menu_title: 'Menu title',
+    menu_title: 'About',
     menu_items: [
         {
             id: 0,
-            footer_menu_item_title: 'Menu one',
+            footer_menu_item_title: 'Story',
             footer_menu_item_link: '/',
         },
         {
             id: 1,
-            footer_menu_item_title: 'Menu two',
+            footer_menu_item_title: 'Experience',
             footer_menu_item_link: '/',
         },
         {
             id: 2,
-            footer_menu_item_title: 'Menu three',
+            footer_menu_item_title: 'Architecture',
             footer_menu_item_link: '/',
         },
         {
             id: 3,
-            footer_menu_item_title: 'Menu four',
+            footer_menu_item_title: 'Code',
             footer_menu_item_link: '/',
         },
     ],
