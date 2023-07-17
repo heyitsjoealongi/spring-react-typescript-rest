@@ -23,7 +23,7 @@ import { CardActionArea } from '@mui/material'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-type BlogScapeComponentItemProps = {
+type ArticleScapeComponentItemProps = {
     id: number
     slug: string
     cover: string
@@ -31,8 +31,8 @@ type BlogScapeComponentItemProps = {
     topic: string
     caption: string
 }
-export default function BlogScapeComponentItem(
-    props: BlogScapeComponentItemProps
+export default function ArticleScapeComponentItem(
+    props: ArticleScapeComponentItemProps
 ) {
     return (
         <Card

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: backend-namespace
+  labels:
+    app: backend-application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-application
+  template:
+    metadata:
+      name: backend-pod
+      labels:
+        app: backend-application
+    spec:
+      containers:
+        - name: backend-container
+          image: <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository>:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9000
+      restartPolicy: Always

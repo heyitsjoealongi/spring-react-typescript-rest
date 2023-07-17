@@ -9,7 +9,7 @@ import Container from '@mui/material/Container'
 // System Components -%- ////
 
 // Components -%- ////
-import BlogScapeComponentItem from './items/BlogScapeComponentItem'
+import ArticleScapeComponentItem from './items/ArticleScapeComponentItem'
 
 // Integrations -%- ////
 
@@ -18,8 +18,8 @@ import BlogScapeComponentItem from './items/BlogScapeComponentItem'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-type BlogScapeComponentProps = {
-    blog_scape: {
+type ArticleScapeComponentProps = {
+    articles: {
         id: number
         slug: string
         cover: string
@@ -28,7 +28,9 @@ type BlogScapeComponentProps = {
         caption: string
     }[]
 }
-export default function BlogScapeComponent(props: BlogScapeComponentProps) {
+export default function ArticleScapeComponent(
+    props: ArticleScapeComponentProps
+) {
     return (
         <Container
             maxWidth="xl"
@@ -48,8 +50,8 @@ export default function BlogScapeComponent(props: BlogScapeComponentProps) {
                 gap: '1.5em',
             }}
         >
-            {props?.['blog_scape']?.map((data) => (
-                <BlogScapeComponentItem
+            {props?.['articles']?.map((data) => (
+                <ArticleScapeComponentItem
                     key={data?.['id']}
                     id={data?.['id']}
                     slug={data?.['slug']}

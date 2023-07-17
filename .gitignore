@@ -77,6 +77,14 @@ firebase.json
 
 ###### Backend ######
 
+### Local Env Files ###
+application-production.properties
+/application-production.properties
+*/application-production.properties
+application-development.properties
+/application-development.properties
+*/application-development.properties
+
 ### Gradle ###
 HELP.md
 .gradle

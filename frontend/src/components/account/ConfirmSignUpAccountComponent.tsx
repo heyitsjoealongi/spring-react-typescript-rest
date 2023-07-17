@@ -63,7 +63,8 @@ export default function ConfirmSignUpAccountComponent() {
                 const user = await confirmSignUp(values)
                 if (user?.['userDataKey'] || user?.['confirmed']) {
                     await setConfirming(false)
-                    return navigate('/sign-in')
+                    navigate('/sign-in')
+                    return confirming
                 }
             } catch (error) {
                 console.log('error confirming sign up:', error)

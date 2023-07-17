@@ -1,8 +1,8 @@
 # Spring React TypeScript REST
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcollectedview%2Fspring-react-typescript-rest?ref=badge_shield)
 
-
-Fullstack Application — React (TypeScript) Frontend, Spring Boot Java Backend, OkHttp Client, and MySQL (Vitess) Service.
+Fullstack Application — React (TypeScript) frontend, Axios HTTP client, Spring Boot Java backend, OkHttp client, and MySQL (AWS RDS - MySQL) service. (Template)
 
 - Frontend Demo via [Amplify](https://main.dh06uvvwsg3un.amplifyapp.com/)
 
@@ -23,11 +23,22 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 - [Emotion Styled Components](https://emotion.sh/docs/introduction)
 - [Recoil](https://recoiljs.org/)
 - [Swiper](https://swiperjs.com/)
+- [Axios HTTP](https://axios-http.com/)
 
 ### Backend
 
 - [Spring Initializr](https://start.spring.io/)
 - [Amazon Corretto JDK](https://aws.amazon.com/corretto)
+- [Spring Data JDBC](https://spring.io/projects/spring-data-jdbc)
+
+### Cloud
+
+- [AWS Amplify - Hosting](https://aws.amazon.com/amplify/hosting/)
+- [AWS Amplify - Authentication](https://aws.amazon.com/amplify/authentication/)
+- [AWS RDS - MySQL](https://aws.amazon.com/rds/aurora/)
+- [AWS Virtual Private Cloud](https://aws.amazon.com/vpc/)
+- [Amazon Elastic Container Registry](https://aws.amazon.com/ecr/)
+- [Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/)
 
 ## Stack
 
@@ -35,6 +46,12 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 
 ```bash
 git rm -r --cached .
+```
+
+### Reset git head (Frontend/Backend)
+
+```bash
+git reset --hard <COMMIT_ID>
 ```
 
 ### Scan files for secrets (Frontend/Backend)
@@ -51,6 +68,7 @@ yarn prettier --write .
 ```
 
 ## Add Packages (Frontend)
+
 ```bash
 yarn add
 
@@ -58,11 +76,13 @@ yarn add --dev
 ```
 
 ## Install Packages (Frontend)
+
 ```bash
 yarn install
 ```
 
 ## Clean Cache (Frontend)
+
 ```bash
 yarn cache clean
 ```
@@ -116,6 +136,12 @@ cd frontend
   ```bash
   yarn install
   ```
+
+#### Create/convert env
+
+- Rename the `example.env` file to `.env` for Yarn and Docker
+
+  - This is a security measure for reducing commits with secrets
 
 #### Build Application with Yarn
 
@@ -179,7 +205,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
 
 #### Install Amplify CLI
 
-- Install [AWS Amplify CLI](https://docs.amplify.aws/cli/) to setup backend functionality
+- Install [AWS Amplify CLI](https://docs.amplify.aws/cli/) to setup Amplify functionality
 
 ```bash
 npm install -g @aws-amplify/cli
@@ -269,6 +295,12 @@ cd backend
   sdk install gradle 8.1.1
   ```
 
+#### Create/convert application properties
+
+- Rename the `application-dev.properties` and `application-prod.properties` files to `application-development.properties` and `application-produdction.properties` for Gradle and Docker
+
+  - This is a security measure for reducing commits with secrets
+
 #### Build JAR with Gradle
 
 - Install [IntelliJ IDEA](https://www.jetbrains.com/idea/) IDE
@@ -333,11 +365,72 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   docker push collectedview/spring-react-typescript-rest-backend:latest
   ```
 
-## Vitess
+  #### Push Docker Image to ECR (Amazon Elastic Container Registry)
+
+- Add the Powershell [AWS tools](https://www.powershellgallery.com/packages/AWS.Tools.ECR/4.1.370) for ECR, to begin setting up registry permissions
+
+  ```bash
+  Install-Module -Name AWS.Tools.ECR
+  ```
+
+- You can reference the [Getting started](https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-console.html) documentation for implementing access configuration (Make sure the repository is established with a non-root account)
+
+- [Pipe AWS password](https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html) to Docker login command
+
+  ```bash
+  (Get-ECRLoginCommand).Password | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com
+  ```
+
+- Docker [tag](https://docs.docker.com/engine/reference/commandline/tag/) command
+
+  Tag:
+
+  ```bash
+  docker tag spring-react-typescript-rest/backend:latest <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository>:latest
+  ```
+
+- Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
+
+  Push:
+
+  ```bash
+  docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository>:latest
+  ```
+
+### AWS
+
+#### Install AWS CLI
+
+- Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) to setup AWS functionality
+
+- Check for successful installation AWS CLI
+
+  ```bash
+  aws --version
+  ```
+
+- Create a CLI based Access Id and Secret Key for an AWS [IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
+
+- Prepare the following values for the configuration stage of the AWS CLI, the [region can be found on this documentation page](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html), reference the column with the label, "region".
+
+- Access Key: <ACCESS_KEY>
+- Secret Key: <SECRET_KEY>
+- Region: <REGION>
+
+```bash
+aws configure
+```
+
+#### Set AWS IAM Permissions
+
+- Add any required permissions to the IAM User for which the AWS CLI configuration was established with
+
+## AWS RDS - MySQL
 
 ### MySQL
 
 - Install [MySQL Community Server](https://dev.mysql.com/downloads/windows/installer/8.0.html)
+- Install [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
 
 ## Helm
 
@@ -347,10 +440,128 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   choco install kubernetes-helm
   ```
 
+- Check for successful installation of Helm
+
+  ```bash
+  helm version
+  ```
+
 - Create Helm chart with chocolatey
 
   ```bash
   helm create <chart name>
+  ```
+
+## Kubernetes
+
+- Install [Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-nonstandard-package-tools) with chocolatey
+
+  ```bash
+  choco install kubernetes-cli
+  ```
+
+- Check for successful installation of KubeCTL
+
+  ```bash
+  kubectl version --client
+  ```
+
+- Install [EKS Kubernetes CLI](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/setting-up-eksctl.html) with chocolatey
+
+  ```bash
+  chocolatey install -y eksctl
+  ```
+
+- Upgrade EKS Kubernetes CLI
+
+  ```bash
+  chocolatey upgrade -y eksctl
+  ```
+
+- Check for successful installation of EKSCTL
+
+  ```bash
+  eksctl version
+  ```
+
+#### Create EKS Cluster
+
+- Create a cluster for your application with KubeCTL and EKSCTL
+
+  ```bash
+  eksctl create cluster --name <your-cluster-name> --version <version-number> --nodes=1 --node-type=t3.medium
+  ```
+
+- Check for successful EKS cluster creation with KubeCTL
+
+  ```bash
+  kubectl get nodes
+  ```
+
+#### Add EKS Cluster Node Groups
+
+- Create a cluster for your application with KubeCTL and EKSCTL
+
+  ```bash
+  eksctl create nodegroup --cluster cluster --region us-east-1 --name nodes-grouped --node-ami-family AmazonLinux2 --node-type t3.medium --nodes 1 --nodes-min 1 --nodes-max 3
+  ```
+
+- Check for successful EKS cluster node group creation with KubeCTL
+
+  ```bash
+  kubectl get nodes
+  ```
+
+#### Configure EKS Cluster
+
+- Change to kubernetes folder within the backend folder `cd backend/kubernetes`
+
+- Update and apply namespace file with KubeCTL
+
+  ```bash
+  kubectl apply -f namespace.yaml
+  ```
+
+- Check for successful EKS cluster namespace creation with KubeCTL
+
+  ```bash
+  kubectl get namespaces --show-labels
+  ```
+
+- Update and apply deployment file with KubeCTL
+
+  ```bash
+  kubectl apply -f deployment.yaml
+  ```
+
+- Check for successful EKS cluster deployment creation with KubeCTL
+
+  ```bash
+  kubectl get deployments --show-labels --namespace=<namespace>
+  ```
+
+- Update and apply service file with KubeCTL
+
+  ```bash
+  kubectl apply -f service.yaml
+  ```
+
+- Check for successful EKS cluster service creation with KubeCTL
+
+  ```bash
+  kubectl get services --show-labels --namespace=<namespace>
+  ```
+
+- Update and apply ingress file with KubeCTL
+
+  ```bash
+  kubectl apply -f ingress.yaml
+  ```
+
+- Check for successful EKS cluster ingress creation with KubeCTL
+
+  ```bash
+  kubectl get ingress --show-labels --namespace=<namespace>
   ```
 
 #### Acknowledgements
