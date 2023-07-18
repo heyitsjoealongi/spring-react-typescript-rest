@@ -21,5 +21,5 @@ spec:
           image: <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository>:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 9000
+            - containerPort: 8080
       restartPolicy: Always
