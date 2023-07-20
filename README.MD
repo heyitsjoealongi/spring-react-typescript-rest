@@ -40,6 +40,8 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 - [AWS Elastic Container Registry](https://aws.amazon.com/ecr/)
 - [AWS Elastic Kubernetes Service](https://aws.amazon.com/eks/)
 - [AWS EC2](https://aws.amazon.com/ec2/)
+- [AWS Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/)
+- [AWS Private CA](https://aws.amazon.com/private-ca/)
 
 ## Stack
 

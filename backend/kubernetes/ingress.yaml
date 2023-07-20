@@ -3,14 +3,14 @@ kind: Ingress
 metadata:
   name: backend-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/ssl-redirect: true
 spec:
   ingressClassName: alb
   rules:
-    - host: java.collectedview.io
-    - https:
+    - host: <domain>
+    - http:
         paths:
           - path: /
             pathType: Prefix
@@ -19,3 +19,7 @@ spec:
                 name: backend-service
                 port:
                   number: 80
+  tls:
+    - hosts:
+        - <domain>
+      secretName: backend-secret
