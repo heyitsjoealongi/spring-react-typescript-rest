@@ -35,10 +35,13 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 
 - [AWS Amplify - Hosting](https://aws.amazon.com/amplify/hosting/)
 - [AWS Amplify - Authentication](https://aws.amazon.com/amplify/authentication/)
-- [AWS RDS - MySQL](https://aws.amazon.com/rds/aurora/)
+- [AWS RDS - Aurora](https://aws.amazon.com/rds/aurora/)
 - [AWS Virtual Private Cloud](https://aws.amazon.com/vpc/)
-- [Amazon Elastic Container Registry](https://aws.amazon.com/ecr/)
-- [Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/)
+- [AWS Elastic Container Registry](https://aws.amazon.com/ecr/)
+- [AWS Elastic Kubernetes Service](https://aws.amazon.com/eks/)
+- [AWS EC2](https://aws.amazon.com/ec2/)
+- [AWS Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/)
+- [AWS Private CA](https://aws.amazon.com/private-ca/)
 
 ## Stack
 
