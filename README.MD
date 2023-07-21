@@ -29,7 +29,9 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 
 - [Spring Initializr](https://start.spring.io/)
 - [Amazon Corretto JDK](https://aws.amazon.com/corretto)
-- [Spring Data JDBC](https://spring.io/projects/spring-data-jdbc)
+- [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
+- [MySQL - Connector/J](https://dev.mysql.com/downloads/connector/j/)
+- [Spring Security](https://docs.spring.io/spring-security/reference/index.html)
 
 ### Cloud
 

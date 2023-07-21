@@ -15,14 +15,63 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9000/hello-world",
+							"raw": "http://localhost:8080/hello-world",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9000",
+							"port": "8080",
 							"path": [
 								"hello-world"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/article/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"article",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Articles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"slug\": \"\",\r\n    \"cover\": \"\",\r\n    \"title\": \"\",\r\n    \"topic\": \"\",\r\n    \"caption\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/article/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"article",
+								"add"
 							]
 						}
 					},
