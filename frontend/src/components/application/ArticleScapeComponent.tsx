@@ -18,11 +18,7 @@ import ArticleScapeComponentItem from './items/ArticleScapeComponentItem'
 async function fetchArticles() {
     try {
         const base = process.env.REACT_APP_BACKEND_URL.toString()
-        const { data } = await axios.get(base + '/article/all', {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
+        const { data } = await axios.get(base + '/article/all')
         return data
     } catch (error) {
         console.log('error requesting articles:', error)
