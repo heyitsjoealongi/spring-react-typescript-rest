@@ -1,0 +1,28 @@
+// React -%- ////
+
+// Packages -%- ////
+import axios from 'axios'
+
+// MUI -%- ////
+
+// Components -%- ////
+
+// Integrations -%- ////
+
+// Middleware -%- ////
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Application -%- ////
+export const fetchArticles = async () => {
+    try {
+        const base = process.env.REACT_APP_BACKEND_URL.toString()
+        const endpoint = process.env.REACT_APP_ARTICLE_LIST_ENDPOINT.toString()
+        const { data } = await axios.get(base + endpoint)
+        return data
+    } catch (error) {
+        console.log('error requesting articles:', error)
+    }
+}
+
+// System -%- ////

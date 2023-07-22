@@ -23,7 +23,7 @@ import { fetchArticles } from '../../functions/articles'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function ArticleScapeComponent() {
+export default function TopicBlocksComponent() {
     const [articles, setArticles] = useRecoilState(articlesState)
     React.useEffect(() => {
         if (articles?.length < 0) {
