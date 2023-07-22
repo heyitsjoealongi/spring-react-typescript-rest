@@ -23,20 +23,26 @@ import { fetchTopics } from '../../functions/articles'
 
 // Application -%- ////
 export default function TopicBlocksComponent() {
+    // State Hook
     const [topics, setTopics] = useRecoilState(topicsState)
+
+    // State Refresher Hook
     React.useEffect(() => {
-        if (topics?.length < 0) {
+        if (topics?.length < 1) {
             fetchTopics().then((data) => {
                 if (data) {
                     setTopics(data)
                 }
-                return topics
             })
             return () => {
                 true
             }
         }
     }, [topics])
+
+    // State Condenser Hook
+    const topicList = useRecoilValue(topicsState)
+
     return (
         <Container
             maxWidth="xl"
@@ -56,8 +62,8 @@ export default function TopicBlocksComponent() {
                 gap: '1.5em',
             }}
         >
-            {useRecoilValue(topicsState)?.length > 0 ? (
-                JSON.stringify(useRecoilValue(topicsState))
+            {topicList?.length > 1 ? (
+                JSON.stringify(topicList)
             ) : (
                 <Box
                     sx={{

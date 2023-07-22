@@ -24,20 +24,26 @@ import { fetchArticles } from '../../functions/articles'
 
 // Application -%- ////
 export default function ArticleScapeComponent() {
+    // State Hook
     const [articles, setArticles] = useRecoilState(articlesState)
+
+    // State Refresher Hook
     React.useEffect(() => {
-        if (articles?.length < 0) {
+        if (articles?.length < 1) {
             fetchArticles().then((data) => {
                 if (data) {
                     setArticles(data)
                 }
-                return articles
             })
             return () => {
                 true
             }
         }
     }, [articles])
+
+    // State Condenser Hook
+    const articleList = useRecoilValue(articlesState)
+
     return (
         <Container
             maxWidth="xl"
@@ -57,8 +63,8 @@ export default function ArticleScapeComponent() {
                 gap: '1.5em',
             }}
         >
-            {useRecoilValue(articlesState)?.length > 0 ? (
-                useRecoilValue(articlesState)?.map((data) => (
+            {articleList?.length > 1 ? (
+                articleList?.map((data) => (
                     <ArticleScapeComponentItem
                         key={data?.['id']}
                         id={data?.['id']}
