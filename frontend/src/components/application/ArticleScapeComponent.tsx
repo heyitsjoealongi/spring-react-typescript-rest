@@ -35,9 +35,9 @@ export default function ArticleScapeComponent() {
                     setArticles(data)
                 }
             })
-            return () => {
-                true
-            }
+        }
+        return () => {
+            true
         }
     }, [articles])
 

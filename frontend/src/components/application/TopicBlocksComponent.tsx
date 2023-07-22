@@ -35,9 +35,9 @@ export default function TopicBlocksComponent() {
                     setTopics(data)
                 }
             })
-            return () => {
-                true
-            }
+        }
+        return () => {
+            true
         }
     }, [topics])
 
