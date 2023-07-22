@@ -3,7 +3,7 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { useRecoilState, useRecoilValue } from 'recoil'
-import { articlesState } from '../../recoil/atoms/articlesAtom'
+import { topicsState } from '../../recoil/atoms/topicsAtom'
 
 // MUI -%- ////
 import Container from '@mui/material/Container'
@@ -13,36 +13,36 @@ import Typography from '@mui/material/Typography'
 // System Components -%- ////
 
 // Components -%- ////
-import ArticleScapeComponentItem from './items/ArticleScapeComponentItem'
+import TopicBlocksComponentItem from './items/TopicBlocksComponentItem'
 
 // Integrations -%- ////
-import { fetchArticles } from '../../functions/articles'
+import { fetchTopics } from '../../functions/articles'
 
 // Middleware -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function ArticleScapeComponent() {
+export default function TopicBlocksComponent() {
     // State Hook
-    const [articles, setArticles] = useRecoilState(articlesState)
+    const [topics, setTopics] = useRecoilState(topicsState)
 
     // State Refresher Hook
     React.useEffect(() => {
-        if (articles?.length < 1) {
-            fetchArticles().then((data) => {
+        if (topics?.length < 1) {
+            fetchTopics().then((data) => {
                 if (data) {
-                    setArticles(data)
+                    setTopics(data)
                 }
             })
             return () => {
                 true
             }
         }
-    }, [articles])
+    }, [topics])
 
     // State Condenser Hook
-    const articleList = useRecoilValue(articlesState)
+    const topicList = useRecoilValue(topicsState)
 
     return (
         <Container
@@ -58,21 +58,17 @@ export default function ArticleScapeComponent() {
                 height: 'auto',
                 width: '100%',
                 maxWidth: '90%',
-                margin: { xs: '3vh auto', md: '3vh auto' },
+                margin: '3vh auto',
                 padding: '0 !important',
                 gap: '1.5em',
             }}
         >
-            {articleList?.length > 1 ? (
-                articleList?.map((data) => (
-                    <ArticleScapeComponentItem
-                        key={data?.['id']}
-                        id={data?.['id']}
-                        slug={data?.['slug']}
-                        cover={data?.['cover']}
-                        title={data?.['title']}
+            {topicList?.length > 1 ? (
+                topicList?.map((data, index) => (
+                    <TopicBlocksComponentItem
+                        key={index}
+                        id={index}
                         topic={data?.['topic']}
-                        caption={data?.['caption']}
                     />
                 ))
             ) : (
@@ -101,7 +97,7 @@ export default function ArticleScapeComponent() {
                             color: '#9E9E9E',
                         }}
                     >
-                        Articles are unavailable at this time
+                        Topics are unavailable at this time
                     </Typography>
                 </Box>
             )}

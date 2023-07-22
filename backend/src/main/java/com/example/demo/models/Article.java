@@ -1,12 +1,13 @@
-package com.example.demo.model;
+package com.example.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity // This tells Hibernate to make a table out of this class
-public class ArticleModel {
+public class Article {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -22,6 +23,7 @@ public class ArticleModel {
 
     private String caption;
 
+    @JsonIgnore
     public Integer getId() {
         return id;
     }

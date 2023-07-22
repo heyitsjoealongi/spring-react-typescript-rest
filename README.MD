@@ -194,7 +194,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
   Tag:
 
   ```bash
-  docker tag spring-react-typescript-rest/frontend:latest collectedview/spring-react-typescript-rest-frontend:latest
+  docker tag spring-react-typescript-rest/frontend collectedview/spring-react-typescript-rest-frontend:latest
   ```
 
 - Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
@@ -324,7 +324,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
 - Docker [build](https://docs.docker.com/engine/reference/commandline/build/) command
 
   ```bash
-  docker build -t spring-react-typescript-rest/backend:latest .
+  docker build -t spring-react-typescript-rest/backend .
   ```
 
 #### Run Docker Image
@@ -358,7 +358,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Tag:
 
   ```bash
-  docker tag spring-react-typescript-rest/backend:latest collectedview/spring-react-typescript-rest-backend:latest
+  docker tag spring-react-typescript-rest/backend collectedview/spring-react-typescript-rest-backend:latest
   ```
 
 - Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
@@ -390,7 +390,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Tag:
 
   ```bash
-  docker tag spring-react-typescript-rest/backend:latest <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository>:latest
+  docker tag spring-react-typescript-rest/backend <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository>:latest
   ```
 
 - Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command

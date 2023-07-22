@@ -15,17 +15,17 @@ const hero_swipper = [
     {
         id: 0,
         description: 'Slide one',
-        source: `${process.env.REACT_APP_URL + '/assets/jpg/slide-one.jpg'}`,
+        source: `${process.env.REACT_APP_URL + '/assets/jpg/example.jpg'}`,
     },
     {
         id: 1,
         description: 'Slide two',
-        source: `${process.env.REACT_APP_URL + '/assets/jpg/slide-two.jpg'}`,
+        source: `${process.env.REACT_APP_URL + '/assets/jpg/example.jpg'}`,
     },
     {
         id: 2,
         description: 'Slide three',
-        source: `${process.env.REACT_APP_URL + '/assets/jpg/slide-three.jpg'}`,
+        source: `${process.env.REACT_APP_URL + '/assets/jpg/example.jpg'}`,
     },
 ]
 

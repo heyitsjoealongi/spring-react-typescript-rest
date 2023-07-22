@@ -1,0 +1,2 @@
+INSERT INTO `rdsa`.`article` (`id`,`caption`, `cover`, `slug`, `title`, `topic`) 
+VALUES (1, 'Build complex applications with dynamic user interfaces that captivate visual experiences. Advance delivery of content, products, and data with multi-threaded Java.', 'http://localhost:3000/assets/jpg/example.jpg', 'one', 'Learn how to continuously integrate React, TypeScript, and Spring', 'Cloud Computing');

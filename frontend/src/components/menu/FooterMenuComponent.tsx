@@ -43,7 +43,7 @@ const footerMenuOne = {
         {
             id: 2,
             footer_menu_item_title: 'Topics',
-            footer_menu_item_link: '/',
+            footer_menu_item_link: '/topics',
         },
         {
             id: 3,

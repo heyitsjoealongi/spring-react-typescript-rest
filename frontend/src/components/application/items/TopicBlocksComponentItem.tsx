@@ -8,7 +8,6 @@ import * as React from 'react'
 // MUI -%- ////
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import { CardActionArea } from '@mui/material'
 
@@ -23,16 +22,12 @@ import { CardActionArea } from '@mui/material'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-type ArticleScapeComponentItemProps = {
+type TopicBlocksComponentItemProps = {
     id: number
-    slug: string
-    cover: string
-    title: string
     topic: string
-    caption: string
 }
-export default function ArticleScapeComponentItem(
-    props: ArticleScapeComponentItemProps
+export default function TopicBlocksComponentItem(
+    props: TopicBlocksComponentItemProps
 ) {
     return (
         <Card
@@ -55,26 +50,21 @@ export default function ArticleScapeComponentItem(
             }}
         >
             <CardActionArea>
-                <CardMedia
-                    component="img"
-                    height="100px"
-                    image={props?.['cover']}
-                    alt={props?.['title']}
-                    loading="lazy"
-                />
                 <CardContent>
-                    <Typography gutterBottom variant="h6" component="div">
-                        {props?.['title']}
-                    </Typography>
                     <Typography
                         gutterBottom
-                        variant="subtitle1"
+                        variant="h6"
                         component="div"
+                        sx={{
+                            alignSelf: 'center',
+                            height: 'auto',
+                            width: '100%',
+                            margin: '3vh auto',
+                            padding: '0 !important',
+                            textAlign: 'center',
+                        }}
                     >
                         {props?.['topic']}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        {props?.['caption']}
                     </Typography>
                 </CardContent>
             </CardActionArea>
