@@ -2,6 +2,9 @@
 import * as React from 'react'
 
 // Packages -%- ////
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { articlesState } from '../../recoil/atoms/articlesAtom'
+import axios from 'axios'
 
 // MUI -%- ////
 import Container from '@mui/material/Container'
@@ -12,25 +15,39 @@ import Container from '@mui/material/Container'
 import ArticleScapeComponentItem from './items/ArticleScapeComponentItem'
 
 // Integrations -%- ////
+async function fetchArticles() {
+    try {
+        const base = process.env.REACT_APP_BACKEND_URL.toString()
+        const { data } = await axios.get(base + '/article/all', {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        return data
+    } catch (error) {
+        console.log('error requesting articles:', error)
+    }
+}
 
 // Middleware -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-type ArticleScapeComponentProps = {
-    articles: {
-        id: number
-        slug: string
-        cover: string
-        title: string
-        topic: string
-        caption: string
-    }[]
-}
-export default function ArticleScapeComponent(
-    props: ArticleScapeComponentProps
-) {
+export default function ArticleScapeComponent() {
+    const [articles, setArticles] = useRecoilState(articlesState)
+    React.useEffect(() => {
+        fetchArticles().then((data) => {
+            console.log(data)
+            if (data) {
+                setArticles(data)
+            }
+            return articles
+        })
+        return () => {
+            true
+        }
+    }, [])
     return (
         <Container
             maxWidth="xl"
@@ -50,7 +67,7 @@ export default function ArticleScapeComponent(
                 gap: '1.5em',
             }}
         >
-            {props?.['articles']?.map((data) => (
+            {useRecoilValue(articlesState)?.map((data) => (
                 <ArticleScapeComponentItem
                     key={data?.['id']}
                     id={data?.['id']}

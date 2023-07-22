@@ -8,6 +8,6 @@ spec:
     app: backend-application
   ports:
     - protocol: TCP
-      port: 80
+      port: 443
       targetPort: 8080
-      name: http
+      name: https

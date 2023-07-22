@@ -166,7 +166,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
 - Docker [build](https://docs.docker.com/engine/reference/commandline/build/) command
 
   ```bash
-  docker build -t spring-react-typescript-rest/frontend .
+  docker build -t spring-react-typescript-rest/frontend:latest .
   ```
 
 #### Run Docker Image
@@ -176,7 +176,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
   Start Container (Publish):
 
   ```bash
-  docker run -p 3000:3000 spring-react-typescript-rest/frontend
+  docker run -p 3000:3000 spring-react-typescript-rest/frontend:latest
   ```
 
 #### Push Docker Image
@@ -324,7 +324,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
 - Docker [build](https://docs.docker.com/engine/reference/commandline/build/) command
 
   ```bash
-  docker build -t spring-react-typescript-rest/backend .
+  docker build -t spring-react-typescript-rest/backend:latest .
   ```
 
 #### Run Docker Image
@@ -334,13 +334,13 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Start Container (Publish):
 
   ```bash
-  docker run -p 9000:9000 spring-react-typescript-rest/backend
+  docker run -p 9000:9000 spring-react-typescript-rest/backend:latest
   ```
 
   Start Container (Interactively & pseudo-TTY) :
 
   ```bash
-  docker run spring-react-typescript-rest/backend -it 9000:9000
+  docker run spring-react-typescript-rest/backend:latest -it 9000:9000
   ```
 
 #### Push Docker Image
@@ -429,7 +429,7 @@ aws configure
 
 - Add any required permissions to the IAM User for which the AWS CLI configuration was established with
 
-## AWS RDS - MySQL
+## AWS RDS - Aurora
 
 ### MySQL
 
@@ -516,6 +516,12 @@ aws configure
   kubectl get nodes
   ```
 
+#### Request AWS Certificate Manager (ACM) - Certificate
+
+- Access AWS Certificate Manager (ACM) in AWS Console
+- Request a public certificate for the domain the application will use
+- Add the domain and the certificate's arn to the `ingress.yaml` file
+
 #### Configure EKS Cluster
 
 - Change to kubernetes folder within the backend folder `cd backend/kubernetes`
@@ -548,6 +554,7 @@ aws configure
 
   ```bash
   kubectl apply -f service.yaml
+
   ```
 
 - Check for successful EKS cluster service creation with KubeCTL
