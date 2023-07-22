@@ -35,7 +35,7 @@ public class SpringReactTypeScriptREST {
 		@Bean
 		CorsConfigurationSource corsConfigurationSource() {
 			CorsConfiguration configuration = new CorsConfiguration();
-			configuration.setAllowedOrigins(Arrays.asList("https://main.dh06uvvwsg3un.amplifyapp.com"));
+			configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
 			configuration.setAllowedMethods(Arrays.asList("GET","POST","OPTIONS"));
 			UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 			source.registerCorsConfiguration("/**", configuration);
