@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography'
 // System Components -%- ////
 
 // Components -%- ////
+import TopicBlocksComponentItem from './items/TopicBlocksComponentItem'
 
 // Integrations -%- ////
 import { fetchTopics } from '../../functions/articles'
@@ -57,13 +58,19 @@ export default function TopicBlocksComponent() {
                 height: 'auto',
                 width: '100%',
                 maxWidth: '90%',
-                margin: { xs: '0 auto', sm: '1.5vh auto', md: '3vh auto' },
+                margin: '3vh auto',
                 padding: '0 !important',
                 gap: '1.5em',
             }}
         >
             {topicList?.length > 1 ? (
-                JSON.stringify(topicList)
+                topicList?.map((data, index) => (
+                    <TopicBlocksComponentItem
+                        key={index}
+                        id={index}
+                        topic={data?.['topic']}
+                    />
+                ))
             ) : (
                 <Box
                     sx={{

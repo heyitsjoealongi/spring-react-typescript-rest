@@ -58,7 +58,7 @@ export default function ArticleScapeComponent() {
                 height: 'auto',
                 width: '100%',
                 maxWidth: '90%',
-                margin: { xs: '0 auto', sm: '1.5vh auto', md: '3vh auto' },
+                margin: { xs: '3vh auto', md: '3vh auto' },
                 padding: '0 !important',
                 gap: '1.5em',
             }}

@@ -177,6 +177,12 @@ p {
 }
 
 hr {
+    -webkit-color: #bdbdbd !important;
+    -moz-color: #bdbdbd !important;
+    -ms-color: #bdbdbd !important;
+    -o-color: #bdbdbd !important;
+    -khtml-color: #bdbdbd !important;
+    color: #bdbdbd !important;
     -webkit-border-color: #bdbdbd !important;
     -moz-border-color: #bdbdbd !important;
     -ms-border-color: #bdbdbd !important;
