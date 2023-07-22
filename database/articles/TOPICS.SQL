@@ -1,2 +1,2 @@
 SELECT DISTINCT topic
-FROM `rdsa`.`article_model`
+FROM `rdsa`.`article`

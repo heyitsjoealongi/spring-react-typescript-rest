@@ -31,7 +31,7 @@ const appMenu = [
     {
         id: 2,
         app_menu_title: 'Topics',
-        app_menu_link: '/',
+        app_menu_link: '/topics',
     },
     {
         id: 3,

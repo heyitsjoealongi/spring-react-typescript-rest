@@ -24,5 +24,15 @@ export const fetchArticles = async () => {
         console.log('error requesting articles:', error)
     }
 }
+export const fetchTopics = async () => {
+    try {
+        const base = process.env.REACT_APP_BACKEND_URL.toString()
+        const endpoint = process.env.REACT_APP_TOPIC_LIST_ENDPOINT.toString()
+        const { data } = await axios.get(base + endpoint)
+        return data
+    } catch (error) {
+        console.log('error requesting topics:', error)
+    }
+}
 
 // System -%- ////

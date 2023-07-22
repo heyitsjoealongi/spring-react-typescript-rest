@@ -200,6 +200,7 @@ applications:
             - echo "REACT_APP_DEFAULT_USERNAME" >> .env
             - echo "REACT_APP_BACKEND_URL" >> .env
             - echo "REACT_APP_ARTICLE_LIST_ENDPOINT" >> .env
+            - echo "REACT_APP_TOPIC_LIST_ENDPOINT" >> .env
             - yarn build
       artifacts:
         baseDirectory: build

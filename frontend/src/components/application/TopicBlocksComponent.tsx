@@ -3,7 +3,7 @@ import * as React from 'react'
 
 // Packages -%- ////
 import { useRecoilState, useRecoilValue } from 'recoil'
-import { articlesState } from '../../recoil/atoms/articlesAtom'
+import { topicsState } from '../../recoil/atoms/topicsAtom'
 
 // MUI -%- ////
 import Container from '@mui/material/Container'
@@ -13,10 +13,9 @@ import Typography from '@mui/material/Typography'
 // System Components -%- ////
 
 // Components -%- ////
-import ArticleScapeComponentItem from './items/ArticleScapeComponentItem'
 
 // Integrations -%- ////
-import { fetchArticles } from '../../functions/articles'
+import { fetchTopics } from '../../functions/articles'
 
 // Middleware -%- ////
 
@@ -24,20 +23,20 @@ import { fetchArticles } from '../../functions/articles'
 
 // Application -%- ////
 export default function TopicBlocksComponent() {
-    const [articles, setArticles] = useRecoilState(articlesState)
+    const [topics, setTopics] = useRecoilState(topicsState)
     React.useEffect(() => {
-        if (articles?.length < 0) {
-            fetchArticles().then((data) => {
+        if (topics?.length < 0) {
+            fetchTopics().then((data) => {
                 if (data) {
-                    setArticles(data)
+                    setTopics(data)
                 }
-                return articles
+                return topics
             })
             return () => {
                 true
             }
         }
-    }, [articles])
+    }, [topics])
     return (
         <Container
             maxWidth="xl"
@@ -57,18 +56,8 @@ export default function TopicBlocksComponent() {
                 gap: '1.5em',
             }}
         >
-            {useRecoilValue(articlesState)?.length > 0 ? (
-                useRecoilValue(articlesState)?.map((data) => (
-                    <ArticleScapeComponentItem
-                        key={data?.['id']}
-                        id={data?.['id']}
-                        slug={data?.['slug']}
-                        cover={data?.['cover']}
-                        title={data?.['title']}
-                        topic={data?.['topic']}
-                        caption={data?.['caption']}
-                    />
-                ))
+            {useRecoilValue(topicsState)?.length > 0 ? (
+                JSON.stringify(useRecoilValue(topicsState))
             ) : (
                 <Box
                     sx={{
@@ -95,7 +84,7 @@ export default function TopicBlocksComponent() {
                             color: '#9E9E9E',
                         }}
                     >
-                        Articles are unavailable at this time
+                        Topics are unavailable at this time
                     </Typography>
                 </Box>
             )}
