@@ -575,6 +575,20 @@ aws configure
   kubectl get ingress --show-labels --namespace=<namespace>
   ```
 
+#### Deploy/Restart EKS Cluster Images
+
+- Rollout restart deployment with KubeCTL to pull new image
+
+  ```bash
+  kubectl rollout restart deployment/backend-deployment --namespace=<namespace>
+  ```
+
+- Check for successful EKS cluster deployment pod restarts with KubeCTL
+
+  ```bash
+  kubectl get pods --namespace=<namespace>
+  ```
+
 #### Acknowledgements
 
 - [Stock Imagery](https://unsplash.com/)
