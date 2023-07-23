@@ -39,7 +39,7 @@ export default function LandingView() {
     return (
         <React.Fragment>
             <HeroSwiperComponent hero_swipper={hero_swipper} />
-            <SponsorBannerComponent hero_swipper={hero_swipper} />
+            <SponsorBannerComponent />
         </React.Fragment>
     )
 }

@@ -11,6 +11,7 @@ import { confirmingState } from './recoil/atoms/confirmingAtom'
 // MUI -%- ////
 
 // Components -%- ////
+import AnalyticUtilityView from './views/utility/AnalyticUtilityView'
 import ErrorUtilityView from './views/utility/ErrorUtilityView'
 import ViewTemplate from './views/ViewTemplate'
 import LandingView from './views/landing/LandingView'
@@ -181,6 +182,7 @@ export default function App() {
                     fallbackElement={<ErrorUtilityView />}
                 />
             </ThemeProvider>
+            <AnalyticUtilityView />
         </React.Fragment>
     )
 }

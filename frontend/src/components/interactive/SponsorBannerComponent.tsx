@@ -7,11 +7,11 @@ import * as React from 'react'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
 
 // System Components -%- ////
 
 // Components -%- ////
-import SwiperAutoplayProgressComponentItem from './items/SwiperAutoplayProgressComponentItem'
 
 // Integrations -%- ////
 
@@ -20,16 +20,7 @@ import SwiperAutoplayProgressComponentItem from './items/SwiperAutoplayProgressC
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-type HeroSwiperComponentProps = {
-    hero_swipper: {
-        id: number
-        source: string
-        description: string
-    }[]
-}
-export default function SponsorBannerComponent(
-    props: HeroSwiperComponentProps
-) {
+export default function SponsorBannerComponent() {
     return (
         <Box
             sx={{
@@ -98,9 +89,30 @@ export default function SponsorBannerComponent(
                             textAlign: 'left',
                         }}
                     >
-                        Access the full offering of micro-content, code, and
-                        cloud advice right from you computer desk.
+                        Access the full offering of cloud native code
+                        micro-content, right from wherever you are, anytime you
+                        would like.
                     </Typography>
+                    <Button
+                        color="primary"
+                        variant="contained"
+                        fullWidth
+                        sx={{
+                            height: 'auto',
+                            width: { xs: '100%', md: '18%' },
+                            margin: '1.5vh auto',
+                            padding: '0.5em 1.5em',
+                            color: '#F5F5F5',
+                            background: '#212121',
+                            boxShadow: 'none',
+                            '&:hover': {
+                                color: '#212121',
+                                background: '#F5F5F5',
+                            },
+                        }}
+                    >
+                        Subscribe for access
+                    </Button>
                 </Box>
             </Container>
         </Box>

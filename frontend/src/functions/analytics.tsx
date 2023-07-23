@@ -1,0 +1,70 @@
+// React -%- ////
+import dayjs from 'dayjs'
+
+// Packages -%- ////
+
+// MUI -%- ////
+
+// Components -%- ////
+
+// Integrations -%- ////
+
+// Middleware -%- ////
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Application -%- ////
+export const getURL = () => {
+    return window?.location?.href
+}
+export const getTimestamp = () => {
+    return dayjs()?.toISOString()
+}
+export const getUserAgent = () => {
+    return navigator?.userAgent
+}
+export const getLanguage = () => {
+    return navigator?.language
+}
+type GeoLocation = {
+    coords: object
+}
+interface Coordinates {
+    accuracy: number
+    altitude: number
+    altitudeAccuracy: number
+    heading: number
+    latitude: number
+    longitude: number
+    speed: number
+}
+export const getGeoLocation = () => {
+    const geo: any = {}
+    function success(pos: GeoLocation) {
+        const coords: any = pos?.coords
+        const {
+            accuracy,
+            altitude,
+            altitudeAccuracy,
+            heading,
+            latitude,
+            longitude,
+            speed,
+        }: Coordinates = coords
+        geo.accuracy = accuracy
+        geo.altitude = altitude
+        geo.altitudeAccuracy = altitudeAccuracy
+        geo.heading = heading
+        geo.latitude = latitude
+        geo.longitude = longitude
+        geo.speed = speed
+    }
+    navigator.geolocation.getCurrentPosition(success, null, {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+    })
+    return geo
+}
+
+// System -%- ////
