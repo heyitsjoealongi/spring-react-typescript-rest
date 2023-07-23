@@ -21,9 +21,9 @@ import TextField from '@mui/material/TextField'
 // Components -%- ////
 
 // Integrations -%- ////
-import { setUserDataKey } from '../../functions/account'
 
 // Middleware -%- ////
+import { setUserDataKey } from '../../functions/account'
 
 // Cascading Style Sheets (CSS) -%- ////
 

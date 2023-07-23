@@ -11,12 +11,13 @@ import { confirmingState } from './recoil/atoms/confirmingAtom'
 // MUI -%- ////
 
 // Components -%- ////
-import AnalyticUtilityView from './views/utility/AnalyticUtilityView'
 import ErrorUtilityView from './views/utility/ErrorUtilityView'
+import AnalyticUtilityView from './views/utility/AnalyticUtilityView'
 import ViewTemplate from './views/ViewTemplate'
 import LandingView from './views/landing/LandingView'
-import ArticlesView from './views/application/ArticlesView'
-import TopicsView from './views/application/TopicsView'
+import ArticleView from './views/application/ArticleView'
+import TopicView from './views/application/TopicView'
+import StatisticView from './views/application/AnalyticView'
 import AccountView from './views/account/AccountView'
 import ApplicationView from './views/application/ApplicationView'
 
@@ -91,7 +92,7 @@ const router = createBrowserRouter([
         path: '/articles',
         element: (
             <ViewTemplate>
-                <ArticlesView />
+                <ArticleView />
             </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
@@ -100,7 +101,16 @@ const router = createBrowserRouter([
         path: '/topics',
         element: (
             <ViewTemplate>
-                <TopicsView />
+                <TopicView />
+            </ViewTemplate>
+        ),
+        errorElement: <ErrorUtilityView />,
+    },
+    {
+        path: '/statistics',
+        element: (
+            <ViewTemplate>
+                <StatisticView />
             </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,

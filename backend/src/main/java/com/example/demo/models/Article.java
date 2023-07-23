@@ -1,6 +1,5 @@
 package com.example.demo.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,65 +22,52 @@ public class Article {
 
     private String caption;
 
-    @JsonIgnore
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getSlug() {
         return slug;
     }
 
-    public void setSlug(String slug) {
-        this.slug = slug;
-    }
-
     public String getCover() {
         return cover;
-    }
-
-    public void setCover(String cover) {
-        this.cover = cover;
-    }
-
-    public void getCover(String cover) {
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.cover = title;
-    }
-
-    public void getTitle(String title) {
-    }
-
     public String getTopic() {
         return topic;
-    }
-
-    public void setTopic(String topic) {
-        this.cover = topic;
-    }
-
-    public void getTopic(String topic) {
     }
 
     public String getCaption() {
         return caption;
     }
 
-    public void setCaption(String caption) {
-        this.caption = caption;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void getCaption(String caption) {
+    public void setSlug(String slug) {
+        this.slug = slug;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
+    public void setTitle(String title) {
+        this.cover = title;
+    }
+
+    public void setTopic(String topic) {
+        this.cover = topic;
+    }
+
+    public void setCaption(String caption) {
+        this.caption = caption;
     }
 
 }

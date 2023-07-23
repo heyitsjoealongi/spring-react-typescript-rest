@@ -9,10 +9,6 @@
 // Integrations -%- ////
 
 // Middleware -%- ////
-
-// Cascading Style Sheets (CSS) -%- ////
-
-// Application -%- ////
 export const setUserDataKey = (userDataKey: string) => {
     return localStorage.setItem('userDataKey', JSON.stringify(userDataKey))
 }
@@ -26,5 +22,9 @@ export const getUserData = () => {
 export const removeUserData = () => {
     return localStorage.removeItem('userDataKey')
 }
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Application -%- ////
 
 // System -%- ////

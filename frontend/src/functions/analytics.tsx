@@ -8,12 +8,19 @@ import dayjs from 'dayjs'
 // Components -%- ////
 
 // Integrations -%- ////
+export const fetchAnalytics = async () => {
+    try {
+        const base = process.env.REACT_APP_BACKEND_URL.toString()
+        const endpoint =
+            process.env.REACT_APP_ANALYTICS_LIST_ENDPOINT.toString()
+        const { data } = await axios.get(base + endpoint)
+        return data
+    } catch (error) {
+        console.log('error requesting analytics:', error)
+    }
+}
 
 // Middleware -%- ////
-
-// Cascading Style Sheets (CSS) -%- ////
-
-// Application -%- ////
 export const getURL = () => {
     return window?.location?.href
 }
@@ -66,5 +73,9 @@ export const getGeoLocation = () => {
     })
     return geo
 }
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Application -%- ////
 
 // System -%- ////

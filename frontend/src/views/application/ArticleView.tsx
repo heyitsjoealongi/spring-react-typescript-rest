@@ -17,7 +17,7 @@ import ArticleScapeComponent from '../../components/application/ArticleScapeComp
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function ArticlesView() {
+export default function ArticleView() {
     return (
         <React.Fragment>
             <ArticleScapeComponent />

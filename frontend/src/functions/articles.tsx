@@ -8,12 +8,6 @@ import axios from 'axios'
 // Components -%- ////
 
 // Integrations -%- ////
-
-// Middleware -%- ////
-
-// Cascading Style Sheets (CSS) -%- ////
-
-// Application -%- ////
 export const fetchArticles = async () => {
     try {
         const base = process.env.REACT_APP_BACKEND_URL.toString()
@@ -34,5 +28,11 @@ export const fetchTopics = async () => {
         console.log('error requesting topics:', error)
     }
 }
+
+// Middleware -%- ////
+
+// Cascading Style Sheets (CSS) -%- ////
+
+// Application -%- ////
 
 // System -%- ////
