@@ -9,6 +9,7 @@ import * as React from 'react'
 
 // Components -%- ////
 import HeroSwiperComponent from '../../components/interactive/HeroSwiperComponent'
+import SponsorBannerComponent from '../../components/interactive/SponsorBannerComponent'
 
 // Integrations -%- ////
 const hero_swipper = [
@@ -38,6 +39,7 @@ export default function LandingView() {
     return (
         <React.Fragment>
             <HeroSwiperComponent hero_swipper={hero_swipper} />
+            <SponsorBannerComponent hero_swipper={hero_swipper} />
         </React.Fragment>
     )
 }

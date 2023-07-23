@@ -99,6 +99,10 @@ export default function HeroSwiperComponent(props: HeroSwiperComponentProps) {
                     width: { xs: '100%', md: '50%' },
                     margin: { xs: '1.5vh 3vw 3vh 3vw', md: '0 auto' },
                     padding: '0',
+                    borderStyle: 'solid',
+                    borderWidth: '0.5px',
+                    borderColor: '#BDBDBD',
+                    borderRadius: '3px',
                 }}
             >
                 <SwiperAutoplayProgressComponentItem
