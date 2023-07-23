@@ -78,7 +78,7 @@ const footerMenuTwo = {
     ],
 }
 const footerMenuThree = {
-    menu_title: 'Stats',
+    menu_title: 'Analytics',
     menu_items: [
         {
             id: 0,

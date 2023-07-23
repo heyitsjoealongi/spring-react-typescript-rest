@@ -4,9 +4,7 @@ import com.example.demo.models.Analytic;
 import com.example.demo.repositories.Analytics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller // This means that this class is a Controller
 @RequestMapping(path="/analytics") // This means URL's start with /demo (after Application path)
@@ -21,6 +19,29 @@ public class AnalyticsController {
 
         // This returns a JSON or XML with the analytics
         return analytics.findAll();
+
+    }
+
+    @PutMapping(path="/add")
+    public @ResponseBody String addAnalytic(
+            @RequestParam String url,
+            @RequestParam String timestamp,
+            @RequestParam String useragent,
+            @RequestParam String language,
+            @RequestParam String geolocation
+    ) {
+
+        // @ResponseBody means the returned String is the response, not a view name
+        // @RequestParam means it is a parameter from the GET or POST request
+
+        Analytic analytic = new Analytic();
+        analytic.setURL(url);
+        analytic.setTimestamp(timestamp);
+        analytic.setUserAgent(useragent);
+        analytic.setLanguage(language);
+        analytic.setGeoLocation(geolocation);
+        analytic.save(analytic);
+        return "Saved";
 
     }
 

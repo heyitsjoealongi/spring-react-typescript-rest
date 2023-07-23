@@ -29,17 +29,19 @@ export default function TopicBlocksComponent() {
 
     // State Refresher Hook
     React.useEffect(() => {
-        if (topics?.length < 1) {
+        if (!topics?.length) {
             fetchTopics().then((data) => {
                 if (data) {
                     setTopics(data)
+                } else {
+                    setTopics([])
                 }
             })
         }
         return () => {
             true
         }
-    }, [topics])
+    }, [])
 
     // State Condenser Hook
     const topicList = useRecoilValue(topicsState)

@@ -17,7 +17,7 @@ import ViewTemplate from './views/ViewTemplate'
 import LandingView from './views/landing/LandingView'
 import ArticleView from './views/application/ArticleView'
 import TopicView from './views/application/TopicView'
-import StatisticView from './views/application/AnalyticView'
+import AnalyticView from './views/application/AnalyticView'
 import AccountView from './views/account/AccountView'
 import ApplicationView from './views/application/ApplicationView'
 
@@ -107,10 +107,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorUtilityView />,
     },
     {
-        path: '/statistics',
+        path: '/analytics',
         element: (
             <ViewTemplate>
-                <StatisticView />
+                <AnalyticView />
             </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,

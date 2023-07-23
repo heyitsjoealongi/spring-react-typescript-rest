@@ -24,21 +24,23 @@ import { fetchAnalytics } from '../../functions/analytics'
 // Application -%- ////
 export default function AnalyticViewComponent() {
     // State Hook
-    const [analytics, setAnalytic] = useRecoilState(analyticsState)
+    const [analytics, setAnalytics] = useRecoilState(analyticsState)
 
     // State Refresher Hook
     React.useEffect(() => {
-        if (analytics?.length < 1) {
+        if (!analytics?.length) {
             fetchAnalytics().then((data) => {
                 if (data) {
-                    setAnalytic(data)
+                    setAnalytics(data)
+                } else {
+                    setAnalytics([])
                 }
             })
         }
         return () => {
             true
         }
-    }, [analytics])
+    }, [])
 
     // State Condenser Hook
     const analyticsList = useRecoilValue(analyticsState)
@@ -63,7 +65,7 @@ export default function AnalyticViewComponent() {
             }}
         >
             {analyticsList?.length > 1 ? (
-                { analyticsList }
+                JSON.stringify(analyticsList)
             ) : (
                 <Box
                     sx={{

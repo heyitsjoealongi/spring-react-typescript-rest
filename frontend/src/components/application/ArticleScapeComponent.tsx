@@ -29,17 +29,19 @@ export default function ArticleScapeComponent() {
 
     // State Refresher Hook
     React.useEffect(() => {
-        if (articles?.length < 1) {
+        if (!articles?.length) {
             fetchArticles().then((data) => {
                 if (data) {
                     setArticles(data)
+                } else {
+                    setArticles([])
                 }
             })
         }
         return () => {
             true
         }
-    }, [articles])
+    }, [])
 
     // State Condenser Hook
     const articleList = useRecoilValue(articlesState)

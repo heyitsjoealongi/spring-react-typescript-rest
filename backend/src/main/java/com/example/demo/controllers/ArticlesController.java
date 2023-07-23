@@ -2,7 +2,6 @@ package com.example.demo.controllers;
 
 import com.example.demo.interfaces.TopicsOnly;
 import com.example.demo.models.Article;
-
 import com.example.demo.repositories.Articles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -70,4 +70,7 @@ public class Analytic {
         this.geolocation = geolocation;
     }
 
+    public void save(Analytic analytic) {
+    }
+
 }
