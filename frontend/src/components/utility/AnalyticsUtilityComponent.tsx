@@ -1,4 +1,5 @@
 // React -%- ////
+import * as React from 'react'
 
 // Packages -%- ////
 
@@ -28,7 +29,12 @@ export default function AnalyticsUtilityComponent() {
     const useragent = getUserAgent()
     const language = getLanguage()
     const geolocation = getGeoLocation()
-    return { url, timestamp, useragent, language, geolocation }
+    console.log('----url', url)
+    console.log('----timestamp', timestamp)
+    console.log('----userAgent', useragent)
+    console.log('----language', language)
+    console.log('----geolocation', geolocation)
+    return <React.Fragment></React.Fragment>
 }
 
 // System -%- ////
