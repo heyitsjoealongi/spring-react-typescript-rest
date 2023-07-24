@@ -63,7 +63,34 @@ export default function AnalyticViewComponent() {
             }}
         >
             {analyticsList?.length > 1 ? (
-                JSON.stringify(analyticsList)
+                <Box
+                    sx={{
+                        display: 'inline-flex',
+                        order: '1',
+                        flexBasis: '100%',
+                        flex: '1',
+                        alignSelf: 'center',
+                        height: 'auto',
+                        width: { xs: '100%', md: '50%' },
+                        margin: { xs: '1.5vh 3vw 3vh 3vw', md: '0 auto' },
+                        padding: '0',
+                    }}
+                >
+                    <Typography
+                        variant="h5"
+                        gutterBottom
+                        sx={{
+                            height: 'auto',
+                            width: '100%',
+                            margin: { xs: '9vh 9vw', md: '15vh 15vw' },
+                            padding: '0',
+                            textAlign: 'center',
+                            color: '#9E9E9E',
+                        }}
+                    >
+                        Analytics are unavailable at this time
+                    </Typography>
+                </Box>
             ) : (
                 <Box
                     sx={{
