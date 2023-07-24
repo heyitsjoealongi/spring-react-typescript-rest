@@ -16,9 +16,7 @@ import TextField from '@mui/material/TextField'
 
 // Components -%- ////
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

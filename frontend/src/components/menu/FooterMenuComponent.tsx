@@ -21,7 +21,7 @@ import PreFooterFrameworksMenuComponent from './PreFooterFrameworksMenuComponent
 
 // Components -%- ////
 
-// Integrations -%- ////
+// Middleware & Integrations -%- ////
 const appInfo = {
     app_title: 'Spring React TypeScript REST',
     app_description:
@@ -78,7 +78,7 @@ const footerMenuTwo = {
     ],
 }
 const footerMenuThree = {
-    menu_title: 'Stats',
+    menu_title: 'Analytics',
     menu_items: [
         {
             id: 0,
@@ -127,8 +127,6 @@ const footerMenuFour = {
         },
     ],
 }
-
-// Middleware -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 
@@ -309,6 +307,31 @@ export default function FooterMenuComponent() {
                         {appInfo?.app_description
                             ? appInfo?.app_description
                             : process.env.REACT_APP_DEFAULT_APP_DESCRIPTION}
+                    </Typography>
+                    <Typography
+                        sx={{
+                            display: 'inline-flex',
+                            flex: 1,
+                            alignSelf: 'flex-start',
+                            height: 'auto',
+                            width: '100%',
+                            margin: '0 0 1.5vh 0',
+                            padding: '0',
+                            textTransform: 'uppercase',
+                            fontSize: '12px',
+                            fontWeight: '600',
+                        }}
+                        component="div"
+                        gutterBottom
+                    >
+                        <Link
+                            to={'/privacy'}
+                            target="_blank"
+                            aria-label="linkedin-icon-link"
+                            type="link"
+                        >
+                            Privacy Policy
+                        </Link>
                     </Typography>
                 </Box>
                 <Box

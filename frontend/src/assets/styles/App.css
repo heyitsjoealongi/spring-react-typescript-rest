@@ -203,12 +203,6 @@ hr {
 }
 
 a {
-    -webkit-font-size: 18px !important;
-    -moz-font-size: 18px !important;
-    -ms-font-size: 18px !important;
-    -o-font-size: 18px !important;
-    -khtml-font-size: 18px !important;
-    font-size: 18px !important;
     -webkit-text-decoration: none;
     -moz-text-decoration: none;
     -ms-text-decoration: none;

@@ -12,16 +12,17 @@ import { confirmingState } from './recoil/atoms/confirmingAtom'
 
 // Components -%- ////
 import ErrorUtilityView from './views/utility/ErrorUtilityView'
+import AnalyticUtilityView from './views/utility/AnalyticUtilityView'
 import ViewTemplate from './views/ViewTemplate'
 import LandingView from './views/landing/LandingView'
-import ArticlesView from './views/application/ArticlesView'
-import TopicsView from './views/application/TopicsView'
+import ArticleView from './views/application/ArticleView'
+import TopicView from './views/application/TopicView'
+import AnalyticView from './views/application/AnalyticView'
+import PrivacyView from './views/application/PrivacyView'
 import AccountView from './views/account/AccountView'
 import ApplicationView from './views/application/ApplicationView'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 type AuthenticatedProps = {
     children: React.ReactNode
 }
@@ -90,7 +91,7 @@ const router = createBrowserRouter([
         path: '/articles',
         element: (
             <ViewTemplate>
-                <ArticlesView />
+                <ArticleView />
             </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
@@ -99,7 +100,25 @@ const router = createBrowserRouter([
         path: '/topics',
         element: (
             <ViewTemplate>
-                <TopicsView />
+                <TopicView />
+            </ViewTemplate>
+        ),
+        errorElement: <ErrorUtilityView />,
+    },
+    {
+        path: '/analytics',
+        element: (
+            <ViewTemplate>
+                <AnalyticView />
+            </ViewTemplate>
+        ),
+        errorElement: <ErrorUtilityView />,
+    },
+    {
+        path: '/privacy',
+        element: (
+            <ViewTemplate>
+                <PrivacyView />
             </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
@@ -175,6 +194,7 @@ const router = createBrowserRouter([
 export default function App() {
     return (
         <React.Fragment>
+            <AnalyticUtilityView />
             <ThemeProvider theme={theme}>
                 <RouterProvider
                     router={router}

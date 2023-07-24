@@ -28,9 +28,7 @@ DIVIDER COLOR #BDBDBD
 
 // Components -%- ////
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 
@@ -192,15 +190,19 @@ applications:
         build:
           commands:
             - echo "REACT_APP_URL" >> .env
+            - echo "REACT_APP_BACKEND_URL" >> .env
             - echo "REACT_APP_DELAY" >> .env
+            - echo "REACT_APP_SLIDER_DELAY" >> .env
             - echo "REACT_APP_DEFAULT_APP_TITLE" >> .env
             - echo "REACT_APP_DEFAULT_APP_DESCRIPTION" >> .env
             - echo "REACT_APP_DEFAULT_MENU_TITLE" >> .env
-            - echo "REACT_APP_SLIDER_DELAY" >> .env
+            - echo "REACT_APP_DEFAULT_EMAIL" >> .env
+            - echo "REACT_APP_DEFAULT_PHONE_NUMBER" >> .env
             - echo "REACT_APP_DEFAULT_USERNAME" >> .env
-            - echo "REACT_APP_BACKEND_URL" >> .env
             - echo "REACT_APP_ARTICLE_LIST_ENDPOINT" >> .env
             - echo "REACT_APP_TOPIC_LIST_ENDPOINT" >> .env
+            - echo "REACT_APP_ANALYTICS_LIST_ENDPOINT" >> .env
+            - echo "REACT_APP_ANALYTICS_ADD_ENDPOINT" >> .env
             - yarn build
       artifacts:
         baseDirectory: build

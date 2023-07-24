@@ -8,19 +8,17 @@ import * as React from 'react'
 // System Components -%- ////
 
 // Components -%- ////
-import ArticleScapeComponent from '../../components/application/ArticleScapeComponent'
+import PrivacyViewComponent from '../../components/application/PrivacyViewComponent'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function ArticlesView() {
+export default function PrivacyView() {
     return (
         <React.Fragment>
-            <ArticleScapeComponent />
+            <PrivacyViewComponent />
         </React.Fragment>
     )
 }

@@ -11,9 +11,7 @@ import { notificationsState } from '../../recoil/atoms/notificationsAtom'
 
 // Components -%- ////
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

@@ -8,19 +8,17 @@ import * as React from 'react'
 // System Components -%- ////
 
 // Components -%- ////
-import TopicBlocksComponent from '../../components/application/TopicBlocksComponent'
+import AnalyticViewComponent from '../../components/application/AnalyticViewComponent'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function ArticlesView() {
+export default function AnalyticView() {
     return (
         <React.Fragment>
-            <TopicBlocksComponent />
+            <AnalyticViewComponent />
         </React.Fragment>
     )
 }

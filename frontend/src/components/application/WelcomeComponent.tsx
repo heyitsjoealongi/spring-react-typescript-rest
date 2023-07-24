@@ -12,10 +12,8 @@ import Typography from '@mui/material/Typography'
 
 // Components -%- ////
 
-// Integrations -%- ////
+// Middleware & Integrations -%- ////
 import { getUserData } from '../../functions/account'
-
-// Middleware -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

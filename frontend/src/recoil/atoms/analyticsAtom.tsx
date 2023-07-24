@@ -12,8 +12,8 @@ import { atom } from 'recoil'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export const notificationsState = atom({
-    key: 'notifications', // unique ID (with respect to other atoms/selectors)
+export const analyticsState = atom({
+    key: 'analytics', // unique ID (with respect to other atoms/selectors)
     default: null, // default value (aka initial value)
 })
 

@@ -29,9 +29,7 @@ import NotificationMenuComponent from './NotificationMenuComponent'
 
 // Components -%- ////
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

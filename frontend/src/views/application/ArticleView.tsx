@@ -8,7 +8,6 @@ import * as React from 'react'
 // System Components -%- ////
 
 // Components -%- ////
-import WelcomeComponent from '../../components/application/WelcomeComponent'
 import ArticleScapeComponent from '../../components/application/ArticleScapeComponent'
 
 // Middleware & Integrations -%- ////
@@ -16,10 +15,9 @@ import ArticleScapeComponent from '../../components/application/ArticleScapeComp
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function ApplicationView() {
+export default function ArticleView() {
     return (
         <React.Fragment>
-            <WelcomeComponent />
             <ArticleScapeComponent />
         </React.Fragment>
     )

@@ -12,9 +12,7 @@ import Box from '@mui/material/Box'
 // Components -%- ////
 import CircularProgressGeneralComponentItem from './items/CircularProgressGeneralComponentItem'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

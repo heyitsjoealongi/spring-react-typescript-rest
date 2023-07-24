@@ -16,9 +16,7 @@ import ResendVerificationCodeAccountComponent from '../../components/account/Res
 import SignInAccountComponent from '../../components/account/SignInAccountComponent'
 import SignOutAccountComponent from '../../components/account/SignOutAccountComponent'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

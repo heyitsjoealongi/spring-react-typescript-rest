@@ -8,19 +8,17 @@ import * as React from 'react'
 // System Components -%- ////
 
 // Components -%- ////
-import WelcomeComponent from '../../components/application/WelcomeComponent'
-import ArticleScapeComponent from '../../components/application/ArticleScapeComponent'
+import AnalyticUtilityComponent from '../../components/utility/AnalyticUtilityComponent'
 
 // Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function ApplicationView() {
+export default function AnalyticUtilityView() {
     return (
         <React.Fragment>
-            <WelcomeComponent />
-            <ArticleScapeComponent />
+            <AnalyticUtilityComponent />
         </React.Fragment>
     )
 }

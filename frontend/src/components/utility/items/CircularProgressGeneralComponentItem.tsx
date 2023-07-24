@@ -13,9 +13,7 @@ import Box from '@mui/material/Box'
 
 // Components -%- ////
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 
