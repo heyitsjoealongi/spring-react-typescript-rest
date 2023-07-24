@@ -13,7 +13,7 @@ import BasicMenuComponentItem from './items/AppMenuComponentItem'
 
 // Components -%- ////
 
-// Integrations -%- ////
+// Middleware & Integrations -%- ////
 const appInfo = {
     app_title: 'Spring React TypeScript REST',
 }
@@ -87,8 +87,6 @@ const userMenu = {
         },
     ],
 }
-
-// Middleware -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

@@ -3,8 +3,13 @@ package com.example.demo.controllers;
 import com.example.demo.models.Analytic;
 import com.example.demo.repositories.Analytics;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.lang.reflect.Type;
+import java.net.URISyntaxException;
 
 @Controller // This means that this class is a Controller
 @RequestMapping(path="/analytics") // This means URL's start with /demo (after Application path)
@@ -22,25 +27,13 @@ public class AnalyticsController {
 
     }
 
-    @PutMapping(path="/add")
-    public @ResponseBody String addAnalytic(
-            @RequestParam String url,
-            @RequestParam String timestamp,
-            @RequestParam String useragent,
-            @RequestParam String language,
-            @RequestParam String geolocation
-    ) {
-
+    @PostMapping(path="/add") // Map ONLY POST Requests
+    public @ResponseBody String addNewAnalytic (@RequestBody Analytic analytic) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
+        // @RequestBody means it is a body from the GET or POST request
 
-        Analytic analytic = new Analytic();
-        analytic.setURL(url);
-        analytic.setTimestamp(timestamp);
-        analytic.setUserAgent(useragent);
-        analytic.setLanguage(language);
-        analytic.setGeoLocation(geolocation);
-        analytic.save(analytic);
+        analytics.save(analytic);
         return "Saved";
 
     }

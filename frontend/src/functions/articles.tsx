@@ -7,8 +7,8 @@ import axios from 'axios'
 
 // Components -%- ////
 
-// Integrations -%- ////
-export const fetchArticles = async () => {
+// Middleware & Integrations -%- ////
+export const getArticles = async () => {
     try {
         const base = process.env.REACT_APP_BACKEND_URL.toString()
         const endpoint = process.env.REACT_APP_ARTICLE_LIST_ENDPOINT.toString()
@@ -18,7 +18,7 @@ export const fetchArticles = async () => {
         console.log('error requesting articles:', error)
     }
 }
-export const fetchTopics = async () => {
+export const getTopics = async () => {
     try {
         const base = process.env.REACT_APP_BACKEND_URL.toString()
         const endpoint = process.env.REACT_APP_TOPIC_LIST_ENDPOINT.toString()
@@ -28,8 +28,6 @@ export const fetchTopics = async () => {
         console.log('error requesting topics:', error)
     }
 }
-
-// Middleware -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

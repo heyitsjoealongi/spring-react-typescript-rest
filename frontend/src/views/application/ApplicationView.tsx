@@ -11,9 +11,7 @@ import * as React from 'react'
 import WelcomeComponent from '../../components/application/WelcomeComponent'
 import ArticleScapeComponent from '../../components/application/ArticleScapeComponent'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

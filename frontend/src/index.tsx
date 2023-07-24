@@ -12,9 +12,7 @@ import { RecoilRoot } from 'recoil'
 // Components -%- ////
 import App from './App'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 Amplify.configure(awsconfig)
 Sentry.init({
     dsn: 'https://11e48bcec0b54c81a38319fca65bebab@o536418.ingest.sentry.io/4505298496454656',

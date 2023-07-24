@@ -11,7 +11,7 @@ import * as React from 'react'
 import HeroSwiperComponent from '../../components/interactive/HeroSwiperComponent'
 import SponsorBannerComponent from '../../components/interactive/SponsorBannerComponent'
 
-// Integrations -%- ////
+// Middleware & Integrations -%- ////
 const hero_swipper = [
     {
         id: 0,
@@ -29,8 +29,6 @@ const hero_swipper = [
         source: `${process.env.REACT_APP_URL + '/assets/jpg/example.jpg'}`,
     },
 ]
-
-// Middleware -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

@@ -1,6 +1,7 @@
 package com.example.demo.interfaces;
 
 
-public interface TopicsOnly {
+public interface Topics {
     String getTopic();
+
 }

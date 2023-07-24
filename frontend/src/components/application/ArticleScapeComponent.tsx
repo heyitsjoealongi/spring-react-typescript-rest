@@ -15,8 +15,8 @@ import Typography from '@mui/material/Typography'
 // Components -%- ////
 import ArticleScapeComponentItem from './items/ArticleScapeComponentItem'
 
-// Integrations -%- ////
-import { fetchArticles } from '../../functions/articles'
+// Middleware & Integrations -%- ////
+import { getArticles } from '../../functions/articles'
 
 // Middleware -%- ////
 
@@ -30,7 +30,7 @@ export default function ArticleScapeComponent() {
     // State Refresher Hook
     React.useEffect(() => {
         if (!articles?.length) {
-            fetchArticles().then((data) => {
+            getArticles().then((data) => {
                 if (data) {
                     setArticles(data)
                 } else {

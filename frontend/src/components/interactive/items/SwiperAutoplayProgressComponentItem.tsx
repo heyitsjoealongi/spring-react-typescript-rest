@@ -11,9 +11,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 // Components -%- ////
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 import 'swiper/css'

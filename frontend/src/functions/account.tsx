@@ -6,9 +6,7 @@
 
 // Components -%- ////
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 export const setUserDataKey = (userDataKey: string) => {
     return localStorage.setItem('userDataKey', JSON.stringify(userDataKey))
 }

@@ -14,10 +14,8 @@ import Typography from '@mui/material/Typography'
 
 // Components -%- ////
 
-// Integrations -%- ////
-import { fetchAnalytics } from '../../functions/analytics'
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
+import { getAnalytics } from '../../functions/analytics'
 
 // Cascading Style Sheets (CSS) -%- ////
 
@@ -29,7 +27,7 @@ export default function AnalyticViewComponent() {
     // State Refresher Hook
     React.useEffect(() => {
         if (!analytics?.length) {
-            fetchAnalytics().then((data) => {
+            getAnalytics().then((data) => {
                 if (data) {
                     setAnalytics(data)
                 } else {

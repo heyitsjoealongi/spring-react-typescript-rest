@@ -59,15 +59,18 @@ public class Article {
     }
 
     public void setTitle(String title) {
-        this.cover = title;
+        this.title = title;
     }
 
     public void setTopic(String topic) {
-        this.cover = topic;
+        this.topic = topic;
     }
 
     public void setCaption(String caption) {
         this.caption = caption;
+    }
+
+    public Article() {
     }
 
 }

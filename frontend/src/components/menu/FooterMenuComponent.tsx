@@ -21,7 +21,7 @@ import PreFooterFrameworksMenuComponent from './PreFooterFrameworksMenuComponent
 
 // Components -%- ////
 
-// Integrations -%- ////
+// Middleware & Integrations -%- ////
 const appInfo = {
     app_title: 'Spring React TypeScript REST',
     app_description:
@@ -127,8 +127,6 @@ const footerMenuFour = {
         },
     ],
 }
-
-// Middleware -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

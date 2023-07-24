@@ -13,9 +13,7 @@ import Typography from '@mui/material/Typography'
 // Components -%- ////
 import SwiperAutoplayProgressComponentItem from './items/SwiperAutoplayProgressComponentItem'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

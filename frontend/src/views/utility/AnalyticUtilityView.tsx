@@ -8,11 +8,9 @@ import * as React from 'react'
 // System Components -%- ////
 
 // Components -%- ////
-import AnalyticUtilityComponent from '../../components/utility/AnalyticsUtilityComponent'
+import AnalyticUtilityComponent from '../../components/utility/AnalyticUtilityComponent'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

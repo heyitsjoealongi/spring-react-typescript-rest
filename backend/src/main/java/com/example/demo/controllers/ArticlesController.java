@@ -1,6 +1,6 @@
 package com.example.demo.controllers;
 
-import com.example.demo.interfaces.TopicsOnly;
+import com.example.demo.interfaces.Topics;
 import com.example.demo.models.Article;
 import com.example.demo.repositories.Articles;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class ArticlesController {
     }
 
     @GetMapping(path="/topics")
-    public @ResponseBody Iterable<TopicsOnly> getAllTopics() {
+    public @ResponseBody Iterable<Topics> getAllTopics() {
 
         // This returns a JSON or XML with the topics of articles
         return articles.findAllTopics();

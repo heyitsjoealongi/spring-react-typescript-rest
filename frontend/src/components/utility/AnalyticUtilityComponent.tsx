@@ -9,31 +9,40 @@ import * as React from 'react'
 
 // Components -%- ////
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 import {
     getURL,
     getTimestamp,
     getUserAgent,
     getLanguage,
     getGeoLocation,
+    saveAnalytic,
 } from '../../functions/analytics'
 
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-export default function AnalyticsUtilityComponent() {
+export default function AnalyticUtilityComponent() {
     const url = getURL()
     const timestamp = getTimestamp()
     const useragent = getUserAgent()
     const language = getLanguage()
     const geolocation = getGeoLocation()
-    console.log('----url', url)
-    console.log('----timestamp', timestamp)
-    console.log('----userAgent', useragent)
-    console.log('----language', language)
-    console.log('----geolocation', geolocation)
+
+    // State Refresher Hook
+    React.useEffect(() => {
+        saveAnalytic({
+            url,
+            timestamp,
+            useragent,
+            language,
+            geolocation,
+        })
+        return () => {
+            true
+        }
+    }, [])
+
     return <React.Fragment></React.Fragment>
 }
 

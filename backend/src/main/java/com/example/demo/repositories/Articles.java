@@ -1,6 +1,6 @@
 package com.example.demo.repositories;
 
-import com.example.demo.interfaces.TopicsOnly;
+import com.example.demo.interfaces.Topics;
 import com.example.demo.models.Article;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -17,6 +17,6 @@ public interface Articles extends CrudRepository<Article, Integer> {
             value = "SELECT DISTINCT topic FROM `rdsa`.`article`",
             nativeQuery = true
     )
-    Collection<TopicsOnly> findAllTopics();
+    Collection<Topics> findAllTopics();
 
 }

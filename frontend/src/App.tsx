@@ -21,9 +21,7 @@ import AnalyticView from './views/application/AnalyticView'
 import AccountView from './views/account/AccountView'
 import ApplicationView from './views/application/ApplicationView'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 type AuthenticatedProps = {
     children: React.ReactNode
 }

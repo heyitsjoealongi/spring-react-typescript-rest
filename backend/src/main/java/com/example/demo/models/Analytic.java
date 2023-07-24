@@ -59,18 +59,18 @@ public class Analytic {
     }
 
     public void setUserAgent(String useragent) {
-        this.timestamp = useragent;
+        this.useragent = useragent;
     }
 
     public void setLanguage(String language) {
-        this.timestamp = language;
+        this.language = language;
     }
 
     public void setGeoLocation(String geolocation) {
         this.geolocation = geolocation;
     }
 
-    public void save(Analytic analytic) {
+    public Analytic() {
     }
 
 }

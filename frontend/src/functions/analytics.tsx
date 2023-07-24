@@ -8,8 +8,8 @@ import dayjs from 'dayjs'
 
 // Components -%- ////
 
-// Integrations -%- ////
-export const fetchAnalytics = async () => {
+// Middleware & Integrations -%- ////
+export const getAnalytics = async () => {
     try {
         const base = process.env.REACT_APP_BACKEND_URL.toString()
         const endpoint =
@@ -20,8 +20,27 @@ export const fetchAnalytics = async () => {
         console.log('error requesting analytics:', error)
     }
 }
-
-// Middleware -%- ////
+type Analytic = {
+    url: string
+    timestamp: string
+    useragent: string
+    language: string
+    geolocation: string
+}
+export const saveAnalytic = async (analytic: Analytic) => {
+    try {
+        const base = process.env.REACT_APP_BACKEND_URL.toString()
+        const endpoint = process.env.REACT_APP_ANALYTICS_ADD_ENDPOINT.toString()
+        const { data } = await axios.post(base + endpoint, analytic, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        return data
+    } catch (error) {
+        console.log('error saving analytic:', error)
+    }
+}
 export const getURL = () => {
     return window?.location?.href
 }

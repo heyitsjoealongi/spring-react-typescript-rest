@@ -10,9 +10,7 @@ import * as React from 'react'
 // Components -%- ////
 import TopicBlocksComponent from '../../components/application/TopicBlocksComponent'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

@@ -18,9 +18,7 @@ import Button from '@mui/material/Button'
 
 // Components -%- ////
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 import { removeUserData } from '../../functions/account'
 
 // Cascading Style Sheets (CSS) -%- ////

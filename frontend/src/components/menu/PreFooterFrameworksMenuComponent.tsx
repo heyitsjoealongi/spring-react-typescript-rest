@@ -21,9 +21,7 @@ import { ReactComponent as AWSLogo } from './../../assets/svg/AWSLogo.svg'
 import { ReactComponent as SpringBootLogo } from './../../assets/svg/SpringBootLogo.svg'
 import { ReactComponent as MySQLLogo } from './../../assets/svg/MySQLLogo.svg'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

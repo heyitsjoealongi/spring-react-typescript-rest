@@ -12,9 +12,7 @@ import DataObjectIcon from '@mui/icons-material/DataObject'
 
 // Components -%- ////
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

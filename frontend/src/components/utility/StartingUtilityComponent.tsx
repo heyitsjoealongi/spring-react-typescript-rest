@@ -11,9 +11,7 @@ import { startState } from '../../recoil/atoms/startAtom'
 
 // Components -%- ////
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

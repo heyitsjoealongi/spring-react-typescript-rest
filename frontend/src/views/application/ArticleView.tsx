@@ -10,9 +10,7 @@ import * as React from 'react'
 // Components -%- ////
 import ArticleScapeComponent from '../../components/application/ArticleScapeComponent'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

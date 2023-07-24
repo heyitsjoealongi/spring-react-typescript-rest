@@ -15,8 +15,8 @@ import Typography from '@mui/material/Typography'
 // Components -%- ////
 import TopicBlocksComponentItem from './items/TopicBlocksComponentItem'
 
-// Integrations -%- ////
-import { fetchTopics } from '../../functions/articles'
+// Middleware & Integrations -%- ////
+import { getTopics } from '../../functions/articles'
 
 // Middleware -%- ////
 
@@ -30,7 +30,7 @@ export default function TopicBlocksComponent() {
     // State Refresher Hook
     React.useEffect(() => {
         if (!topics?.length) {
-            fetchTopics().then((data) => {
+            getTopics().then((data) => {
                 if (data) {
                     setTopics(data)
                 } else {

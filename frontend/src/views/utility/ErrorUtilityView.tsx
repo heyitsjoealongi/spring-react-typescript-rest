@@ -12,9 +12,7 @@ import ErrorUtilityComponent from '../../components/utility/ErrorUtilityComponen
 import MenuComponent from '../../components/menu/MenuComponent'
 import FooterMenuComponent from '../../components/menu/FooterMenuComponent'
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 
 // Cascading Style Sheets (CSS) -%- ////
 

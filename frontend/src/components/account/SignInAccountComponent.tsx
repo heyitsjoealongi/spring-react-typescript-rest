@@ -20,9 +20,7 @@ import TextField from '@mui/material/TextField'
 
 // Components -%- ////
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 import { setUserDataKey } from '../../functions/account'
 
 // Cascading Style Sheets (CSS) -%- ////

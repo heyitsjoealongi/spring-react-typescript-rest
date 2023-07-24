@@ -19,9 +19,7 @@ import Button from '@mui/material/Button'
 
 // Components -%- ////
 
-// Integrations -%- ////
-
-// Middleware -%- ////
+// Middleware & Integrations -%- ////
 import { setUserDataKey } from '../../functions/account'
 
 // Cascading Style Sheets (CSS) -%- ////
