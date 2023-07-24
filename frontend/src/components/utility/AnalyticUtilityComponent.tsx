@@ -4,6 +4,7 @@ import * as React from 'react'
 // Packages -%- ////
 
 // MUI -%- ////
+import Box from '@mui/material/Box'
 
 // System Components -%- ////
 
@@ -43,7 +44,17 @@ export default function AnalyticUtilityComponent() {
         }
     }, [])
 
-    return <React.Fragment></React.Fragment>
+    return (
+        <Box
+            sx={{
+                visibility: 'hidden !important',
+                height: '0 !important',
+                width: '0 !important',
+                margin: '0 !important',
+                padding: '0 !important',
+            }}
+        ></Box>
+    )
 }
 
 // System -%- ////

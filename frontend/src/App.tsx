@@ -184,13 +184,13 @@ const router = createBrowserRouter([
 export default function App() {
     return (
         <React.Fragment>
+            <AnalyticUtilityView />
             <ThemeProvider theme={theme}>
                 <RouterProvider
                     router={router}
                     fallbackElement={<ErrorUtilityView />}
                 />
             </ThemeProvider>
-            <AnalyticUtilityView />
         </React.Fragment>
     )
 }
