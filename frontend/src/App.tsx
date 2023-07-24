@@ -18,6 +18,7 @@ import LandingView from './views/landing/LandingView'
 import ArticleView from './views/application/ArticleView'
 import TopicView from './views/application/TopicView'
 import AnalyticView from './views/application/AnalyticView'
+import PrivacyView from './views/application/PrivacyView'
 import AccountView from './views/account/AccountView'
 import ApplicationView from './views/application/ApplicationView'
 
@@ -109,6 +110,15 @@ const router = createBrowserRouter([
         element: (
             <ViewTemplate>
                 <AnalyticView />
+            </ViewTemplate>
+        ),
+        errorElement: <ErrorUtilityView />,
+    },
+    {
+        path: '/privacy',
+        element: (
+            <ViewTemplate>
+                <PrivacyView />
             </ViewTemplate>
         ),
         errorElement: <ErrorUtilityView />,
