@@ -67,15 +67,16 @@ export default function ArticleScapeComponent() {
         >
             {articleList?.length > 1 ? (
                 articleList?.map((data) => (
-                    <ArticleScapeComponentItem
-                        key={data?.['id']}
-                        id={data?.['id']}
-                        slug={data?.['slug']}
-                        cover={data?.['cover']}
-                        title={data?.['title']}
-                        topic={data?.['topic']}
-                        caption={data?.['caption']}
-                    />
+                    <React.Fragment key={data?.['id']}>
+                        <ArticleScapeComponentItem
+                            id={data?.['id']}
+                            slug={data?.['slug']}
+                            cover={data?.['cover']}
+                            title={data?.['title']}
+                            topic={data?.['topic']}
+                            caption={data?.['caption']}
+                        />
+                    </React.Fragment>
                 ))
             ) : (
                 <Box

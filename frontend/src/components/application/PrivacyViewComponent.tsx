@@ -13,7 +13,6 @@ import Typography from '@mui/material/Typography'
 // Components -%- ////
 
 // Middleware & Integrations -%- ////
-import { getUserData } from '../../functions/account'
 
 // Cascading Style Sheets (CSS) -%- ////
 

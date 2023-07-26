@@ -25,7 +25,7 @@ type Analytic = {
     timestamp: string
     useragent: string
     language: string
-    geolocation: string
+    geolocation: object
 }
 export const saveAnalytic = async (analytic: Analytic) => {
     try {
@@ -66,7 +66,15 @@ interface Coordinates {
     speed: number
 }
 export const getGeoLocation = () => {
-    const geo: any = {}
+    const geo: Coordinates = {
+        accuracy: 0,
+        altitude: 0,
+        altitudeAccuracy: 0,
+        heading: 0,
+        latitude: 0,
+        longitude: 0,
+        speed: 0,
+    }
     function success(pos: GeoLocation) {
         const coords: any = pos?.coords
         const {

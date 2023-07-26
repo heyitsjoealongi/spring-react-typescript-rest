@@ -9,10 +9,17 @@ import { analyticsState } from '../../recoil/atoms/analyticsAtom'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
+import TableContainer from '@mui/material/TableContainer'
+import Table from '@mui/material/Table'
+import TableHead from '@mui/material/TableHead'
+import TableBody from '@mui/material/TableBody'
+import TableRow from '@mui/material/TableRow'
+import TableCell from '@mui/material/TableCell'
 
 // System Components -%- ////
 
 // Components -%- ////
+import AnalyticTableComponentItem from './items/AnalyticTableComponentItem'
 
 // Middleware & Integrations -%- ////
 import { getAnalytics } from '../../functions/analytics'
@@ -76,20 +83,38 @@ export default function AnalyticViewComponent() {
                         padding: '0',
                     }}
                 >
-                    <Typography
-                        variant="h5"
-                        gutterBottom
-                        sx={{
-                            height: 'auto',
-                            width: '100%',
-                            margin: { xs: '9vh 9vw', md: '15vh 15vw' },
-                            padding: '0',
-                            textAlign: 'center',
-                            color: '#9E9E9E',
-                        }}
-                    >
-                        Analytics are unavailable at this time
-                    </Typography>
+                    <TableContainer>
+                        <Table aria-label="simple table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Page</TableCell>
+                                    <TableCell align="left">
+                                        Timestamp
+                                    </TableCell>
+                                    <TableCell align="left">Language</TableCell>
+                                    <TableCell align="left">
+                                        User Agent
+                                    </TableCell>
+                                    <TableCell align="left">
+                                        Geolocation
+                                    </TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {analyticsList.map((data) => (
+                                    <React.Fragment key={data?.['id']}>
+                                        <AnalyticTableComponentItem
+                                            url={data?.['url']}
+                                            timestamp={data?.['timestamp']}
+                                            language={data?.['language']}
+                                            userAgent={data?.['userAgent']}
+                                            geoLocation={data?.['geoLocation']}
+                                        />
+                                    </React.Fragment>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 </Box>
             ) : (
                 <Box
