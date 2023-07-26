@@ -21,24 +21,24 @@ type Page = {
 }
 const page = (url: string) => {
     const clean: Page = { page: '', app_url: '' }
-    clean.page = url.toString()
+    clean.page = url?.toString()
     clean.app_url = process.env.REACT_APP_URL
-    clean.page = clean.page.replaceAll('http://', '')
-    clean.app_url = clean.app_url.replaceAll('http://', '')
-    clean.page = clean.page.replaceAll('https://', '')
-    clean.app_url = clean.app_url.replaceAll('https://', '')
-    clean.page = clean.page.replaceAll('www.', '')
-    clean.app_url = clean.app_url.replaceAll('www.', '')
-    clean.page = clean.page.replaceAll(clean?.['app_url'], '')
-    return clean.page
+    clean.page = clean?.page?.replaceAll('http://', '')
+    clean.app_url = clean?.app_url?.replaceAll('http://', '')
+    clean.page = clean?.page?.replaceAll('https://', '')
+    clean.app_url = clean?.app_url?.replaceAll('https://', '')
+    clean.page = clean?.page?.replaceAll('www.', '')
+    clean.app_url = clean?.app_url?.replaceAll('www.', '')
+    clean.page = clean?.page?.replaceAll(clean?.['app_url'], '')
+    return clean?.page
 }
 type Date = {
     date: string
 }
 const date = (timestamp: string) => {
     const clean: Date = { date: '' }
-    clean.date = dayjs(timestamp).format('MM/DD/YYYY')
-    return clean.date
+    clean.date = dayjs(timestamp)?.format('MM/DD/YYYY')
+    return clean?.date
 }
 type AnalyticTableComponentItemProps = {
     url: string

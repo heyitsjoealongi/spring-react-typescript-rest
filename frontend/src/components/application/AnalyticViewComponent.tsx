@@ -102,14 +102,15 @@ export default function AnalyticViewComponent() {
                             </TableHead>
                             <TableBody>
                                 {analyticsList.map((data) => (
-                                    <AnalyticTableComponentItem
-                                        key={data?.['id']}
-                                        url={data?.['url']}
-                                        timestamp={data?.['timestamp']}
-                                        language={data?.['language']}
-                                        userAgent={data?.['userAgent']}
-                                        geoLocation={data?.['geoLocation']}
-                                    />
+                                    <React.Fragment key={data?.['id']}>
+                                        <AnalyticTableComponentItem
+                                            url={data?.['url']}
+                                            timestamp={data?.['timestamp']}
+                                            language={data?.['language']}
+                                            userAgent={data?.['userAgent']}
+                                            geoLocation={data?.['geoLocation']}
+                                        />
+                                    </React.Fragment>
                                 ))}
                             </TableBody>
                         </Table>

@@ -67,11 +67,12 @@ export default function TopicBlocksComponent() {
         >
             {topicList?.length > 1 ? (
                 topicList?.map((data, index) => (
-                    <TopicBlocksComponentItem
-                        key={index}
-                        id={index}
-                        topic={data?.['topic']}
-                    />
+                    <React.Fragment key={index}>
+                        <TopicBlocksComponentItem
+                            id={index}
+                            topic={data?.['topic']}
+                        />
+                    </React.Fragment>
                 ))
             ) : (
                 <Box
