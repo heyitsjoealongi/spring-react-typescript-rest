@@ -67,8 +67,8 @@ export default function AnalyticTableComponentItem(
                     : props?.['timestamp']}
             </TableCell>
             <TableCell align="left">{props?.['language']}</TableCell>
-            <TableCell align="left">{props?.['userAgent']}</TableCell>
-            <TableCell align="left">{props?.['geoLocation']}</TableCell>
+            <TableCell align="left"></TableCell>
+            <TableCell align="left"></TableCell>
         </TableRow>
     )
 }

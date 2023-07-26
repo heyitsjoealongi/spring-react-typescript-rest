@@ -547,7 +547,7 @@ aws configure
 - Check for successful EKS cluster deployment creation with KubeCTL
 
   ```bash
-  kubectl get deployments --show-labels --namespace=<namespace>
+  kubectl get deployments --show-labels --namespace=backend-namespace
   ```
 
 - Update and apply service file with KubeCTL
@@ -560,7 +560,7 @@ aws configure
 - Check for successful EKS cluster service creation with KubeCTL
 
   ```bash
-  kubectl get services --show-labels --namespace=<namespace>
+  kubectl get services --show-labels --namespace=backend-namespace
   ```
 
 - Update and apply ingress file with KubeCTL
@@ -572,7 +572,7 @@ aws configure
 - Check for successful EKS cluster ingress creation with KubeCTL
 
   ```bash
-  kubectl get ingress --show-labels --namespace=<namespace>
+  kubectl get ingress --show-labels --namespace=backend-namespace
   ```
 
 #### Deploy/Restart EKS Cluster Images
@@ -580,13 +580,13 @@ aws configure
 - Rollout restart deployment with KubeCTL to pull new image
 
   ```bash
-  kubectl rollout restart deployment/backend-deployment --namespace=<namespace>
+  kubectl rollout restart deployment/backend-deployment --namespace=backend-namespace
   ```
 
 - Check for successful EKS cluster deployment pod restarts with KubeCTL
 
   ```bash
-  kubectl get pods --namespace=<namespace>
+  kubectl get pods --namespace=backend-namespace
   ```
 
 #### Acknowledgements

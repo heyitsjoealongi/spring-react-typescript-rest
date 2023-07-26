@@ -88,16 +88,10 @@ export default function AnalyticViewComponent() {
                             <TableHead>
                                 <TableRow>
                                     <TableCell>Page</TableCell>
-                                    <TableCell align="left">
-                                        Timestamp
-                                    </TableCell>
+                                    <TableCell align="left">Date</TableCell>
                                     <TableCell align="left">Language</TableCell>
-                                    <TableCell align="left">
-                                        User Agent
-                                    </TableCell>
-                                    <TableCell align="left">
-                                        Geolocation
-                                    </TableCell>
+                                    <TableCell align="left">User</TableCell>
+                                    <TableCell align="left">Location</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>

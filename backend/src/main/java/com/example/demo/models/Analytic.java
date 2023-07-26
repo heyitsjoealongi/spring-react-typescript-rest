@@ -34,17 +34,17 @@ public class Analytic {
         return timestamp;
     }
 
-    public String getUserAgent() {
-        return useragent;
-    }
+//    public String getUserAgent() {
+//        return useragent;
+//    }
 
     public String getLanguage() {
         return language;
     }
 
-    public String getGeoLocation() {
-        return geolocation;
-    }
+//    public String getGeoLocation() {
+//        return geolocation;
+//    }
 
     public void setId(Integer id) {
         this.id = id;
