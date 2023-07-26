@@ -90,8 +90,8 @@ export default function AnalyticViewComponent() {
                                     <TableCell>Page</TableCell>
                                     <TableCell align="left">Date</TableCell>
                                     <TableCell align="left">Language</TableCell>
-                                    <TableCell align="left">User</TableCell>
-                                    <TableCell align="left">Location</TableCell>
+                                    <TableCell align="left">Browser</TableCell>
+                                    <TableCell align="left">Country</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
