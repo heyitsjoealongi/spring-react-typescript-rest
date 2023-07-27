@@ -1254,8 +1254,8 @@ export default function PrivacyViewComponent() {
                     </p>
                     <p>By email: {process.env.REACT_APP_DEFAULT_EMAIL} .</p>
                     <p>
-                        By visiting this page on our website:
-                        {process.env.REACT_APP_URL}.
+                        By visiting this page on our website:{' '}
+                        {process.env.REACT_APP_URL} .
                     </p>
                     <p>
                         By phone number:{' '}

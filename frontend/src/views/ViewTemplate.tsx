@@ -11,6 +11,7 @@ import { startState } from '../recoil/atoms/startAtom'
 import StartingUtilityComponent from '../components/utility/StartingUtilityComponent'
 import NotificationUtilityComponent from '../components/utility/NotificationUtilityComponent'
 import ErrorUtilityComponent from '../components/utility/ErrorUtilityComponent'
+import AnalyticUtilityComponent from '../components/utility/AnalyticUtilityComponent'
 
 // Components -%- ////
 import MenuComponent from '../components/menu/MenuComponent'
@@ -33,6 +34,7 @@ export default function ViewTemplate({ children }: ViewTemplateProps) {
                 {children}
                 <FooterMenuComponent />
                 <NotificationUtilityComponent />
+                <AnalyticUtilityComponent />
             </React.Fragment>
         )
     } else {

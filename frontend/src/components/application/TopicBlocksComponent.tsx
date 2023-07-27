@@ -46,6 +46,9 @@ export default function TopicBlocksComponent() {
     // State Condenser Hook
     const topicList = useRecoilValue(topicsState)
 
+    // State Cache Hook
+    const topicListCache = React.useMemo(() => topicList, [topics])
+
     return (
         <Container
             maxWidth="xl"
@@ -65,8 +68,8 @@ export default function TopicBlocksComponent() {
                 gap: '1.5em',
             }}
         >
-            {topicList?.length > 1 ? (
-                topicList?.map((data, index) => (
+            {topicListCache?.length > 1 ? (
+                topicListCache?.map((data, index) => (
                     <React.Fragment key={index}>
                         <TopicBlocksComponentItem
                             id={index}

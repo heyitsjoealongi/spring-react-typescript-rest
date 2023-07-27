@@ -46,6 +46,9 @@ export default function ArticleScapeComponent() {
     // State Condenser Hook
     const articleList = useRecoilValue(articlesState)
 
+    // State Cache Hook
+    const articleListCache = React.useMemo(() => articleList, [articles])
+
     return (
         <Container
             maxWidth="xl"
@@ -65,8 +68,8 @@ export default function ArticleScapeComponent() {
                 gap: '1.5em',
             }}
         >
-            {articleList?.length > 1 ? (
-                articleList?.map((data) => (
+            {articleListCache?.length > 1 ? (
+                articleListCache?.map((data) => (
                     <React.Fragment key={data?.['id']}>
                         <ArticleScapeComponentItem
                             id={data?.['id']}

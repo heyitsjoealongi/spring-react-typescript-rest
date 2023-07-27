@@ -12,7 +12,6 @@ import { confirmingState } from './recoil/atoms/confirmingAtom'
 
 // Components -%- ////
 import ErrorUtilityView from './views/utility/ErrorUtilityView'
-import AnalyticUtilityView from './views/utility/AnalyticUtilityView'
 import ViewTemplate from './views/ViewTemplate'
 import LandingView from './views/landing/LandingView'
 import ArticleView from './views/application/ArticleView'
@@ -194,7 +193,6 @@ const router = createBrowserRouter([
 export default function App() {
     return (
         <React.Fragment>
-            <AnalyticUtilityView />
             <ThemeProvider theme={theme}>
                 <RouterProvider
                     router={router}

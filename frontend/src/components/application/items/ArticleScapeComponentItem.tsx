@@ -50,6 +50,7 @@ export default function ArticleScapeComponentItem(
                 borderWidth: '0.5px',
                 borderColor: '#BDBDBD',
                 borderRadius: '3px',
+                boxShadow: 'none !important',
             }}
         >
             <CardActionArea>

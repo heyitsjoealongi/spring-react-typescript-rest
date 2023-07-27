@@ -20,22 +20,30 @@ export const getAnalytics = async () => {
         console.log('error requesting analytics:', error)
     }
 }
-type Analytic = {
-    url: string
-    timestamp: string
-    useragent: string
-    language: string
-    geolocation: object
-}
-export const saveAnalytic = async (analytic: Analytic) => {
+export const saveAnalytic = async () => {
     try {
+        const url = getURL()
+        const timestamp = getTimestamp()
+        const useragent = getUserAgent()
+        const language = getLanguage()
+        const geolocation = getGeoLocation()
         const base = process.env.REACT_APP_BACKEND_URL.toString()
         const endpoint = process.env.REACT_APP_ANALYTICS_ADD_ENDPOINT.toString()
-        const { data } = await axios.post(base + endpoint, analytic, {
-            headers: {
-                'Content-Type': 'application/json',
+        const { data } = await axios.post(
+            base + endpoint,
+            {
+                url,
+                timestamp,
+                useragent,
+                language,
+                geolocation,
             },
-        })
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }
+        )
         return data
     } catch (error) {
         console.log('error saving analytic:', error)

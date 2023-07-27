@@ -50,6 +50,9 @@ export default function AnalyticViewComponent() {
     // State Condenser Hook
     const analyticsList = useRecoilValue(analyticsState)
 
+    // State Cache Hook
+    const analyticsListCache = React.useMemo(() => analyticsList, [analytics])
+
     return (
         <Container
             maxWidth="xl"
@@ -69,7 +72,7 @@ export default function AnalyticViewComponent() {
                 gap: '1.5em',
             }}
         >
-            {analyticsList?.length > 1 ? (
+            {analyticsListCache?.length > 1 ? (
                 <Box
                     sx={{
                         display: 'inline-flex',
@@ -83,19 +86,66 @@ export default function AnalyticViewComponent() {
                         padding: '0',
                     }}
                 >
-                    <TableContainer>
+                    <TableContainer
+                        sx={{
+                            backgroundColor: '#fff',
+                            borderStyle: 'solid',
+                            borderWidth: '0.5px',
+                            borderColor: '#BDBDBD',
+                            borderRadius: '3px',
+                        }}
+                    >
                         <Table aria-label="simple table">
                             <TableHead>
-                                <TableRow>
-                                    <TableCell>Page</TableCell>
-                                    <TableCell align="left">Date</TableCell>
-                                    <TableCell align="left">Language</TableCell>
-                                    <TableCell align="left">Browser</TableCell>
-                                    <TableCell align="left">Country</TableCell>
+                                <TableRow
+                                    sx={{
+                                        color: '#F5F5F5',
+                                        backgroundColor: '#212121',
+                                    }}
+                                >
+                                    <TableCell
+                                        sx={{
+                                            color: '#F5F5F5',
+                                        }}
+                                    >
+                                        Page
+                                    </TableCell>
+                                    <TableCell
+                                        align="left"
+                                        sx={{
+                                            color: '#F5F5F5',
+                                        }}
+                                    >
+                                        Date
+                                    </TableCell>
+                                    <TableCell
+                                        align="left"
+                                        sx={{
+                                            color: '#F5F5F5',
+                                        }}
+                                    >
+                                        Language
+                                    </TableCell>
+                                    <TableCell
+                                        align="left"
+                                        sx={{
+                                            color: '#F5F5F5',
+                                        }}
+                                    >
+                                        Browser
+                                    </TableCell>
+                                    <TableCell
+                                        align="left"
+                                        sx={{
+                                            color: '#F5F5F5',
+                                        }}
+                                    >
+                                        Country
+                                    </TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {analyticsList.map((data) => (
+                                {analyticsListCache.map((data) => (
                                     <React.Fragment key={data?.['id']}>
                                         <AnalyticTableComponentItem
                                             url={data?.['url']}
