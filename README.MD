@@ -44,6 +44,14 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 - [AWS EC2](https://aws.amazon.com/ec2/)
 - [AWS Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/)
 
+### Tools
+
+- [Yarn](https://yarnpkg.com/)
+- [Gradle](https://gradle.org/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Intellij Idea](https://www.jetbrains.com/idea/)
+- [Postman](https://www.postman.com/)
+
 ## Stack
 
 ### Clear git cache (Frontend/Backend)

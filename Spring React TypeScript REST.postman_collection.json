@@ -51,6 +51,21 @@
 				{
 					"name": "All Topics",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Username}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -69,13 +84,69 @@
 					"response": []
 				},
 				{
-					"name": "Add Articles",
+					"name": "All Analytics",
 					"request": {
-						"method": "POST",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{Username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
 						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/analytics/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"analytics",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Analytic",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"slug\": \"\",\r\n    \"cover\": \"\",\r\n    \"title\": \"\",\r\n    \"topic\": \"\",\r\n    \"caption\": \"\"\r\n}",
+							"raw": "{\r\n    \"url\": \"http://localhost:3000/\",\r\n    \"timestamp\": \"timestamp\",\r\n    \"useragent\": \"useragent\",\r\n    \"language\": \"language\",\r\n    \"geolocation\": \"geolocation\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -83,14 +154,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/articles/add",
+							"raw": "http://localhost:8080/analytics/add",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"articles",
+								"analytics",
 								"add"
 							]
 						}
@@ -98,6 +169,37 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Password",
+			"value": "abcd1234"
+		},
+		{
+			"key": "Username",
+			"value": "user1234",
+			"type": "string"
 		}
 	]
 }
