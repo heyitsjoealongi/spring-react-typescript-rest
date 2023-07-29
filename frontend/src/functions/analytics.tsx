@@ -14,7 +14,13 @@ export const getAnalytics = async () => {
         const base = process.env.REACT_APP_BACKEND_URL.toString()
         const endpoint =
             process.env.REACT_APP_ANALYTICS_LIST_ENDPOINT.toString()
-        const { data } = await axios.get(base + endpoint)
+        const { data } = await axios.get(base + endpoint, {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization:
+                    'Basic ' + `${process.env.REACT_APP_SPRING_AUTH}`,
+            },
+        })
         return data
     } catch (error) {
         console.log('error requesting analytics:', error)
@@ -41,6 +47,8 @@ export const saveAnalytic = async () => {
             {
                 headers: {
                     'Content-Type': 'application/json',
+                    Authorization:
+                        'Basic ' + `${process.env.REACT_APP_SPRING_AUTH}`,
                 },
             }
         )

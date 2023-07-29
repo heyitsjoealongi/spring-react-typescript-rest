@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.lang.reflect.Type;
 import java.net.URISyntaxException;
 
-@Controller // This means that this class is a Controller
+@RestController // This means that this class is a Rest Controller
 @RequestMapping(path="/analytics") // This means URL's start with /demo (after Application path)
 public class AnalyticsController {
 

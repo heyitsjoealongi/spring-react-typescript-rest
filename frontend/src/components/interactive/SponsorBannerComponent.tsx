@@ -26,7 +26,7 @@ export default function SponsorBannerComponent() {
                 height: 'auto',
                 width: '100%',
                 margin: '0 auto',
-                padding: { xs: '3vh 3vw', md: '6vh 6vw' },
+                padding: { xs: '3vh 3vw', md: '6vh 0' },
                 background: '#CDDC39',
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
@@ -46,7 +46,7 @@ export default function SponsorBannerComponent() {
                     height: 'auto',
                     width: '100%',
                     maxWidth: '90%',
-                    margin: { xs: '0 auto', md: '6vh auto' },
+                    margin: { xs: '0 auto', md: '3vh auto' },
                     padding: '0 !important',
                     gap: '1.5vw',
                 }}
@@ -97,7 +97,7 @@ export default function SponsorBannerComponent() {
                         fullWidth
                         sx={{
                             height: 'auto',
-                            width: { xs: '100%', md: '18%' },
+                            width: { xs: '100%', md: '33.33%' },
                             margin: '1.5vh auto',
                             padding: '0.5em 1.5em',
                             color: '#F5F5F5',
