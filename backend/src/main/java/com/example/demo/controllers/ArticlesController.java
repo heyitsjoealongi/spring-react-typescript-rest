@@ -4,11 +4,11 @@ import com.example.demo.interfaces.Topics;
 import com.example.demo.models.Article;
 import com.example.demo.repositories.Articles;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "https://main.dh06uvvwsg3un.amplifyapp.com", maxAge = 3600)
 @RestController // This means that this class is a Rest Controller
-@RequestMapping(path="/articles") // This means URL's start with /demo (after Application path)
+@RequestMapping(path="/articles", method=RequestMethod.OPTIONS) // This means URL's start with /demo (after Application path)
 public class ArticlesController {
 
     @Autowired // This means to get the bean called articlesRepository

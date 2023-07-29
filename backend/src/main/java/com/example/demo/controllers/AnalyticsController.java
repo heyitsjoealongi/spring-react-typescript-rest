@@ -3,16 +3,11 @@ package com.example.demo.controllers;
 import com.example.demo.models.Analytic;
 import com.example.demo.repositories.Analytics;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Type;
-import java.net.URISyntaxException;
-
+@CrossOrigin(origins = "https://main.dh06uvvwsg3un.amplifyapp.com", maxAge = 3600)
 @RestController // This means that this class is a Rest Controller
-@RequestMapping(path="/analytics") // This means URL's start with /demo (after Application path)
+@RequestMapping(path="/analytics", method=RequestMethod.OPTIONS) // This means URL's start with /demo (after Application path)
 public class AnalyticsController {
 
     @Autowired // This means to get the bean called analyticsRepository

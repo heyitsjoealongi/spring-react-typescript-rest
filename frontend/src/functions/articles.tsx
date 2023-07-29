@@ -15,8 +15,6 @@ export const getArticles = async () => {
         const { data } = await axios.get(base + endpoint, {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization:
-                    'Basic ' + `${process.env.REACT_APP_SPRING_AUTH}`,
             },
         })
         return data
@@ -31,8 +29,6 @@ export const getTopics = async () => {
         const { data } = await axios.get(base + endpoint, {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization:
-                    'Basic ' + `${process.env.REACT_APP_SPRING_AUTH}`,
             },
         })
         return data

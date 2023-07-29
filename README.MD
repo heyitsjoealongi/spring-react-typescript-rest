@@ -202,7 +202,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
   Tag:
 
   ```bash
-  docker tag spring-react-typescript-rest/frontend collectedview/spring-react-typescript-rest-frontend:latest
+  docker tag spring-react-typescript-rest/frontend <docker_username>/spring-react-typescript-rest-frontend:latest
   ```
 
 - Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
@@ -210,7 +210,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
   Push:
 
   ```bash
-  docker push collectedview/spring-react-typescript-rest-frontend:latest
+  docker push <docker_username>/spring-react-typescript-rest-frontend:latest
   ```
 
 ### Amplify
@@ -366,7 +366,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Tag:
 
   ```bash
-  docker tag spring-react-typescript-rest/backend collectedview/spring-react-typescript-rest-backend:latest
+  docker tag spring-react-typescript-rest/backend <docker_username>/spring-react-typescript-rest-backend:latest
   ```
 
 - Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
@@ -374,7 +374,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Push:
 
   ```bash
-  docker push collectedview/spring-react-typescript-rest-backend:latest
+  docker push <docker_username>/spring-react-typescript-rest-backend:latest
   ```
 
   #### Push Docker Image to ECR (Amazon Elastic Container Registry)
