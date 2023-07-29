@@ -203,6 +203,8 @@ applications:
             - echo "REACT_APP_TOPIC_LIST_ENDPOINT" >> .env
             - echo "REACT_APP_ANALYTICS_LIST_ENDPOINT" >> .env
             - echo "REACT_APP_ANALYTICS_ADD_ENDPOINT" >> .env
+            - echo "REACT_APP_BACKEND_USERNAME" >> .env
+            - echo "REACT_APP_BACKEND_PASSWORD" >> .env
             - yarn build
       artifacts:
         baseDirectory: build

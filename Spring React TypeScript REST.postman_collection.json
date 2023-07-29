@@ -12,6 +12,9 @@
 				{
 					"name": "Hello World",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -31,6 +34,9 @@
 				{
 					"name": "All Articles",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -52,19 +58,7 @@
 					"name": "All Topics",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{Password}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{Username}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -87,19 +81,7 @@
 					"name": "All Analytics",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "{{Username}}",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "{{Password}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -122,19 +104,7 @@
 					"name": "Add Analytic",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{Password}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{Username}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [
@@ -189,17 +159,6 @@
 					""
 				]
 			}
-		}
-	],
-	"variable": [
-		{
-			"key": "Password",
-			"value": "abcd1234"
-		},
-		{
-			"key": "Username",
-			"value": "user1234",
-			"type": "string"
 		}
 	]
 }

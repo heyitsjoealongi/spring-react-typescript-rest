@@ -6,7 +6,6 @@ import com.example.demo.repositories.Articles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "https://main.dh06uvvwsg3un.amplifyapp.com", maxAge = 3600)
 @RestController // This means that this class is a Rest Controller
 @RequestMapping(path="/articles", method=RequestMethod.OPTIONS) // This means URL's start with /demo (after Application path)
 public class ArticlesController {

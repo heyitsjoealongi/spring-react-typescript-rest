@@ -5,17 +5,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.filter.CommonsRequestLoggingFilter;
 
 @Configuration
-public class RequestLoggingConfiguration {
+public class RequestConfiguration {
 
     @Bean
-    public CommonsRequestLoggingFilter commonsRequestLoggingFilter() {
+    CommonsRequestLoggingFilter commonsRequestLoggingFilter() {
         CommonsRequestLoggingFilter filter
                 = new CommonsRequestLoggingFilter();
         filter.setIncludeQueryString(true);
         filter.setIncludePayload(true);
         filter.setIncludeHeaders(false);
         filter.setMaxPayloadLength(10000);
-        filter.setAfterMessagePrefix("REST SERVICE REQUEST: ");
+        filter.setAfterMessagePrefix("RESTful Service: ");
         return filter;
     }
 

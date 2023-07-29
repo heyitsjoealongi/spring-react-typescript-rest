@@ -46,11 +46,14 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 
 ### Tools
 
-- [Yarn](https://yarnpkg.com/)
-- [Gradle](https://gradle.org/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Intellij Idea](https://www.jetbrains.com/idea/)
+- [Yarn](https://yarnpkg.com/)
+- [Gradle](https://gradle.org/)
 - [Postman](https://www.postman.com/)
+- [MySQL Community Server](https://dev.mysql.com/downloads/windows/installer/8.0.html)
+- [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
+- [Kubernetes Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 
 ## Stack
 
@@ -202,7 +205,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
   Tag:
 
   ```bash
-  docker tag spring-react-typescript-rest/frontend <docker_username>/spring-react-typescript-rest-frontend:latest
+  docker tag spring-react-typescript-rest/frontend <DOCKER_USERNAME>/spring-react-typescript-rest-frontend:latest
   ```
 
 - Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
@@ -210,7 +213,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
   Push:
 
   ```bash
-  docker push <docker_username>/spring-react-typescript-rest-frontend:latest
+  docker push <DOCKER_USERNAME>/spring-react-typescript-rest-frontend:latest
   ```
 
 ### Amplify
@@ -366,7 +369,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Tag:
 
   ```bash
-  docker tag spring-react-typescript-rest/backend <docker_username>/spring-react-typescript-rest-backend:latest
+  docker tag spring-react-typescript-rest/backend <DOCKER_USERNAME>/spring-react-typescript-rest-backend:latest
   ```
 
 - Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
@@ -374,7 +377,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Push:
 
   ```bash
-  docker push <docker_username>/spring-react-typescript-rest-backend:latest
+  docker push <DOCKER_USERNAME>/spring-react-typescript-rest-backend:latest
   ```
 
   #### Push Docker Image to ECR (Amazon Elastic Container Registry)
@@ -398,7 +401,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Tag:
 
   ```bash
-  docker tag spring-react-typescript-rest/backend <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository>:latest
+  docker tag spring-react-typescript-rest/backend <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/<REPOSITORY>:latest
   ```
 
 - Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
@@ -406,7 +409,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Push:
 
   ```bash
-  docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository>:latest
+  docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/<REPOSITORY>:latest
   ```
 
 ### AWS
@@ -415,7 +418,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
 
 - Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) to setup AWS functionality
 
-- Check for successful installation AWS CLI
+- Validate successful installation AWS CLI
 
   ```bash
   aws --version
@@ -452,7 +455,7 @@ aws configure
   choco install kubernetes-helm
   ```
 
-- Check for successful installation of Helm
+- Validate successful installation of Helm
 
   ```bash
   helm version
@@ -461,7 +464,7 @@ aws configure
 - Create Helm chart with chocolatey
 
   ```bash
-  helm create <chart name>
+  helm create <CHART_NAME>
   ```
 
 ## Kubernetes
@@ -472,7 +475,7 @@ aws configure
   choco install kubernetes-cli
   ```
 
-- Check for successful installation of KubeCTL
+- Validate successful installation of KubeCTL
 
   ```bash
   kubectl version --client
@@ -490,7 +493,7 @@ aws configure
   chocolatey upgrade -y eksctl
   ```
 
-- Check for successful installation of EKSCTL
+- Validate successful installation of EKSCTL
 
   ```bash
   eksctl version
@@ -501,10 +504,10 @@ aws configure
 - Create a cluster for your application with KubeCTL and EKSCTL
 
   ```bash
-  eksctl create cluster --name <your-cluster-name> --version <version-number> --nodes=1 --node-type=t3.medium
+  eksctl create cluster --name=Cluster --version=1.27 --nodes=1 --node-type=t3.medium
   ```
 
-- Check for successful EKS cluster creation with KubeCTL
+- Validate successful EKS cluster creation with KubeCTL
 
   ```bash
   kubectl get nodes
@@ -518,7 +521,7 @@ aws configure
   eksctl create nodegroup --cluster cluster --region us-east-1 --name nodes-grouped --node-ami-family AmazonLinux2 --node-type t3.medium --nodes 1 --nodes-min 1 --nodes-max 3
   ```
 
-- Check for successful EKS cluster node group creation with KubeCTL
+- Validate successful EKS cluster node group creation with KubeCTL
 
   ```bash
   kubectl get nodes
@@ -540,7 +543,7 @@ aws configure
   kubectl apply -f namespace.yaml
   ```
 
-- Check for successful EKS cluster namespace creation with KubeCTL
+- Validate successful EKS cluster namespace creation with KubeCTL
 
   ```bash
   kubectl get namespaces --show-labels
@@ -552,32 +555,33 @@ aws configure
   kubectl apply -f deployment.yaml
   ```
 
-- Check for successful EKS cluster deployment creation with KubeCTL
+- Validate successful EKS cluster deployment creation with KubeCTL
 
   ```bash
   kubectl get deployments --show-labels --namespace=backend-namespace
   ```
 
-- Update and apply service file with KubeCTL
+- Update and apply service file/s with KubeCTL
 
   ```bash
   kubectl apply -f service.yaml
-
+  kubectl apply -f service-secure.yaml
   ```
 
-- Check for successful EKS cluster service creation with KubeCTL
+- Validate successful EKS cluster service creation with KubeCTL
 
   ```bash
   kubectl get services --show-labels --namespace=backend-namespace
   ```
 
-- Update and apply ingress file with KubeCTL
+- Update and apply ingress file/s with KubeCTL
 
   ```bash
   kubectl apply -f ingress.yaml
+  kubectl apply -f ingress-secure.yaml
   ```
 
-- Check for successful EKS cluster ingress creation with KubeCTL
+- Validate successful EKS cluster ingress creation with KubeCTL
 
   ```bash
   kubectl get ingress --show-labels --namespace=backend-namespace
@@ -591,10 +595,60 @@ aws configure
   kubectl rollout restart deployment/backend-deployment --namespace=backend-namespace
   ```
 
-- Check for successful EKS cluster deployment pod restarts with KubeCTL
+- Validate successful EKS cluster deployment pod restarts with KubeCTL
 
   ```bash
   kubectl get pods --namespace=backend-namespace
+  ```
+
+#### Add AWS Load Balancer Controller (add-on)
+
+- Get AWS Region IAM Policy JSON
+
+  ```bash
+  curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.4.7/docs/install/iam_policy.json
+  ```
+
+- Create AWS Load Balancer Controller IAM Policy
+
+  ```bash
+  aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
+  ```
+
+- Create AWS EKS OIDC Provider
+
+  ```bash
+  eksctl utils associate-iam-oidc-provider --region=us-east-1 --cluster=Cluster --approve
+  ```
+
+- Create AWS Load Balancer Controller IAM Role
+
+  ```bash
+  eksctl create iamserviceaccount --cluster=Cluster --namespace=kube-system --name=aws-load-balancer-controller --role-name AmazonEKSLoadBalancerControllerRole --attach-policy-arn=arn:aws:iam::<ACCOUNT_ID>:policy/AWSLoadBalancerControllerIAMPolicy --approve
+  ```
+
+- ADD AWS Load Balancer Controller Helm Repository
+
+  ```bash
+  helm repo add eks https://aws.github.io/eks-charts
+  ```
+
+- Update AWS Load Balancer Controller Helm Repository
+
+  ```bash
+  helm repo update eks
+  ```
+
+- Install AWS Load Balancer Controller with Helm
+
+  ```bash
+  helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=Cluster --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller
+  ```
+
+- Validate successful AWS Load Balancer Controller deployment with KubeCTL
+
+  ```bash
+  kubectl get deployment -n kube-system aws-load-balancer-controller
   ```
 
 #### Acknowledgements

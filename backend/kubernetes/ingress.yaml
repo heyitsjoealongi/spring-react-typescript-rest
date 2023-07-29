@@ -5,9 +5,6 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
-    alb.ingress.kubernetes.io/certificate-arn: <acm cert arn>
-    alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
 spec:
   ingressClassName: alb
   rules:
@@ -20,4 +17,4 @@ spec:
               service:
                 name: backend-service
                 port:
-                  number: 443
+                  number: 80
