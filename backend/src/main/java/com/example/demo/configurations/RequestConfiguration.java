@@ -9,14 +9,18 @@ public class RequestConfiguration {
 
     @Bean
     CommonsRequestLoggingFilter commonsRequestLoggingFilter() {
+
         CommonsRequestLoggingFilter filter
                 = new CommonsRequestLoggingFilter();
+
         filter.setIncludeQueryString(true);
         filter.setIncludePayload(true);
         filter.setIncludeHeaders(false);
         filter.setMaxPayloadLength(10000);
         filter.setAfterMessagePrefix("RESTful Service: ");
+
         return filter;
+
     }
 
 }

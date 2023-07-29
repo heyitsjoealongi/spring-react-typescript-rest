@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController // This means that this class is a Rest Controller
-@RequestMapping(path="/analytics", method=RequestMethod.OPTIONS) // This means URL's start with /demo (after Application path)
+@RequestMapping(path="/analytics") // This means URL's start with /demo (after Application path)
 public class AnalyticsController {
 
     @Autowired // This means to get the bean called analyticsRepository
@@ -22,13 +22,13 @@ public class AnalyticsController {
     }
 
     @PostMapping(path="/add") // Map ONLY POST Requests
-    public @ResponseBody String addNewAnalytic (@RequestBody Analytic analytic) {
+    public @ResponseBody Analytic addNewAnalytic (@RequestBody Analytic analytic) {
+
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
         // @RequestBody means it is a body from the GET or POST request
 
-        analytics.save(analytic);
-        return "Saved";
+        return analytics.save(analytic);
 
     }
 

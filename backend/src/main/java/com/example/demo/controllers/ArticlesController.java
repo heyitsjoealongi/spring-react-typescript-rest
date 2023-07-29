@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController // This means that this class is a Rest Controller
-@RequestMapping(path="/articles", method=RequestMethod.OPTIONS) // This means URL's start with /demo (after Application path)
+@RequestMapping(path="/articles") // This means URL's start with /demo (after Application path)
 public class ArticlesController {
 
     @Autowired // This means to get the bean called articlesRepository
