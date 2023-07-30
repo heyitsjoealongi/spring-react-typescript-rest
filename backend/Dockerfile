@@ -1,10 +1,11 @@
 #!/bin/bash
-FROM gradle:7.6.1-jdk17-alpine AS build
+FROM gradle:latest
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
-RUN gradle build --no-daemon
+USER java
+RUN gradle --no-daemon
 FROM amazoncorretto:17
-EXPOSE 8080
 RUN mkdir /app
 COPY --from=build /home/gradle/src/build/libs/*.jar /app/spring-boot-application.jar
+EXPOSE 8080
 ENTRYPOINT ["java","-Dspring.profiles.active=production","-jar","/app/spring-boot-application.jar"]

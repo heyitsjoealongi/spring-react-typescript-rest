@@ -11,20 +11,9 @@ import dayjs from 'dayjs'
 // Middleware & Integrations -%- ////
 export const getAnalytics = async () => {
     try {
-        const base = process.env.REACT_APP_BACKEND_URL.toString()
-        const endpoint =
-            process.env.REACT_APP_ANALYTICS_LIST_ENDPOINT.toString()
-        const bearer = window.btoa(
-            process.env.REACT_APP_BACKEND_USERNAME +
-                ':' +
-                process.env.REACT_APP_BACKEND_PASSWORD
-        )
-        const { data } = await axios.get(base + endpoint, {
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Basic ' + `${bearer}`,
-            },
-        })
+        const base = process.env.REACT_APP_SERVER_URL
+        const endpoint = process.env.REACT_APP_ANALYTICS_LIST_ENDPOINT
+        const { data } = await axios.get(base + endpoint)
         return data
     } catch (error) {
         console.log('error requesting analytics:', error)
@@ -37,29 +26,15 @@ export const saveAnalytic = async () => {
         const useragent = getUserAgent()
         const language = getLanguage()
         const geolocation = getGeoLocation()
-        const base = process.env.REACT_APP_BACKEND_URL.toString()
-        const endpoint = process.env.REACT_APP_ANALYTICS_ADD_ENDPOINT.toString()
-        const bearer = window.btoa(
-            process.env.REACT_APP_BACKEND_USERNAME +
-                ':' +
-                process.env.REACT_APP_BACKEND_PASSWORD
-        )
-        const { data } = await axios.post(
-            base + endpoint,
-            {
-                url,
-                timestamp,
-                useragent,
-                language,
-                geolocation,
-            },
-            {
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: 'Basic ' + `${bearer}`,
-                },
-            }
-        )
+        const base = process.env.REACT_APP_SERVER_URL
+        const endpoint = process.env.REACT_APP_ANALYTICS_ADD_ENDPOINT
+        const { data } = await axios.post(base + endpoint, {
+            url,
+            timestamp,
+            useragent,
+            language,
+            geolocation,
+        })
         return data
     } catch (error) {
         console.log('error saving analytic:', error)

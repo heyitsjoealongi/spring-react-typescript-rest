@@ -25,6 +25,11 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 - [Swiper](https://swiperjs.com/)
 - [Axios HTTP](https://axios-http.com/)
 
+### Middleware
+
+- [Deno](https://deno.land/)
+- [Oak](https://oakserver.github.io/oak/)
+
 ### Backend
 
 - [Spring Initializr](https://start.spring.io/)
@@ -168,6 +173,14 @@ cd frontend
   yarn build
   ```
 
+#### Start Frontend
+
+- Start project
+
+  ```bash
+  yarn start
+  ```
+
 ### Docker
 
 #### Build Backend Docker Image
@@ -177,7 +190,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
 - Docker [build](https://docs.docker.com/engine/reference/commandline/build/) command
 
   ```bash
-  docker build -t spring-react-typescript-rest/frontend:latest .
+  docker build -t spring-react-typescript-rest/frontend .
   ```
 
 #### Run Docker Image
@@ -187,7 +200,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
   Start Container (Publish):
 
   ```bash
-  docker run -p 3000:3000 spring-react-typescript-rest/frontend:latest
+  docker run -p 3000:3000 spring-react-typescript-rest/frontend
   ```
 
 #### Push Docker Image
@@ -237,6 +250,110 @@ amplify configure
 - Initialize the [AWS Amplify](https://aws.amazon.com/amplify/) project configuration
 
 - If the initialization does not complete, rename the `.gitignore`, make sure to copy the contents of the initial `.gitignore`, into the file Amplify generates
+
+## Middleware
+
+Access the middleware code by opening a command line in the root of this project and changing to the middleware folder.
+
+```bash
+cd middleware
+```
+
+### Deno
+
+#### Start middleware
+
+- Start project
+
+  ```bash
+  deno run --allow-net --allow-read --allow-env --allow-run --watch=routes/ main.ts
+  ```
+
+### Docker
+
+#### Build Backend Docker Image
+
+For more examples and information on Spring Boot Docker builds, reference the [Spring Framework Documentation](https://spring.io/guides/topicals/spring-boot-docker/).
+
+- Docker [build](https://docs.docker.com/engine/reference/commandline/build/) command
+
+  ```bash
+  docker build -t spring-react-typescript-rest/middleware .
+  ```
+
+#### Run Docker Image
+
+- Docker [run](https://docs.docker.com/engine/reference/commandline/run/) command
+
+  Start Container (Publish):
+
+  ```bash
+  docker run -p 4000:4000 spring-react-typescript-rest/middleware
+  ```
+
+  Start Container (Interactively & pseudo-TTY) :
+
+  ```bash
+  docker run spring-react-typescript-rest/middleware -it 4000:4000
+  ```
+
+#### Push Docker Image
+
+- Docker [login](https://docs.docker.com/engine/reference/commandline/login/) command
+
+  Login:
+
+  ```bash
+  docker login
+  ```
+
+- Docker [tag](https://docs.docker.com/engine/reference/commandline/tag/) command
+
+  Tag:
+
+  ```bash
+  docker tag spring-react-typescript-rest/middleware <DOCKER_USERNAME>/spring-react-typescript-rest-middleware:latest
+  ```
+
+- Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
+
+  Push:
+
+  ```bash
+  docker push <DOCKER_USERNAME>/spring-react-typescript-rest-middleware:latest
+  ```
+
+  #### Push Docker Image to ECR (Amazon Elastic Container Registry)
+
+- Add the Powershell [AWS tools](https://www.powershellgallery.com/packages/AWS.Tools.ECR/4.1.370) for ECR, to begin setting up registry permissions
+
+  ```bash
+  Install-Module -Name AWS.Tools.ECR
+  ```
+
+- You can reference the [Getting started](https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-console.html) documentation for implementing access configuration (Make sure the repository is established with a non-root account)
+
+- [Pipe AWS password](https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html) to Docker login command
+
+  ```bash
+  (Get-ECRLoginCommand).Password | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com
+  ```
+
+- Docker [tag](https://docs.docker.com/engine/reference/commandline/tag/) command
+
+  Tag:
+
+  ```bash
+  docker tag spring-react-typescript-rest/middleware <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/<REPOSITORY>:latest
+  ```
+
+- Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
+
+  Push:
+
+  ```bash
+  docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/<REPOSITORY>:latest
+  ```
 
 ## Backend
 
@@ -310,6 +427,28 @@ cd backend
   sdk install gradle 8.1.1
   ```
 
+#### Start Backend with Gradle
+
+- Create configuration in IntelliJ IDEA or reference the `SpringReactTypeScriptREST.run.xml` file in the `backend` folder and start the application with IntelliJ IDEA
+
+  ```bash
+  <component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="SpringReactTypeScriptREST" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="development" />
+      <module name="com.example.spring-react-typescript-rest.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.SpringReactTypeScriptREST" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  ```
+
 #### Create/convert application properties
 
 - Rename the `application-dev.properties` and `application-prod.properties` files to `application-development.properties` and `application-produdction.properties` for Gradle and Docker
@@ -345,13 +484,13 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Start Container (Publish):
 
   ```bash
-  docker run -p 9000:9000 spring-react-typescript-rest/backend:latest
+  docker run -p 8080:8080 spring-react-typescript-rest/backend
   ```
 
   Start Container (Interactively & pseudo-TTY) :
 
   ```bash
-  docker run spring-react-typescript-rest/backend:latest -it 9000:9000
+  docker run spring-react-typescript-rest/backend -it 8080:8080
   ```
 
 #### Push Docker Image
