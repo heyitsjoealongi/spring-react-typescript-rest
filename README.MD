@@ -55,6 +55,7 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 - [Yarn](https://yarnpkg.com/)
 - [Deno](https://deno.land/)
 - [Gradle](https://gradle.org/)
+- [Docker](https://www.docker.com/)
 - [Postman](https://www.postman.com/)
 - [MySQL Community Server](https://dev.mysql.com/downloads/windows/installer/8.0.html)
 - [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
@@ -288,13 +289,13 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Start Container (Publish):
 
   ```bash
-  docker run -p 4000:4000 spring-react-typescript-rest/middleware
+  docker run -p 4040:4040 spring-react-typescript-rest/middleware
   ```
 
   Start Container (Interactively & pseudo-TTY) :
 
   ```bash
-  docker run spring-react-typescript-rest/middleware -it 4000:4000
+  docker run spring-react-typescript-rest/middleware -it 4040:4040
   ```
 
 #### Push Docker Image
@@ -344,7 +345,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Tag:
 
   ```bash
-  docker tag spring-react-typescript-rest/middleware <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/<REPOSITORY>:latest
+  docker tag spring-react-typescript-rest/middleware <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/middleware:latest
   ```
 
 - Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
@@ -352,7 +353,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Push:
 
   ```bash
-  docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/<REPOSITORY>:latest
+  docker push <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/middleware:latest
   ```
 
 ## Backend
@@ -540,7 +541,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Tag:
 
   ```bash
-  docker tag spring-react-typescript-rest/backend <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/<REPOSITORY>:latest
+  docker tag spring-react-typescript-rest/backend <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/backend:latest
   ```
 
 - Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
@@ -548,7 +549,7 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Push:
 
   ```bash
-  docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/<REPOSITORY>:latest
+  docker push <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/backend:latest
   ```
 
 ### AWS
@@ -657,7 +658,7 @@ aws configure
 - Create a cluster for your application with KubeCTL and EKSCTL
 
   ```bash
-  eksctl create nodegroup --cluster cluster --region us-east-1 --name nodes-grouped --node-ami-family AmazonLinux2 --node-type t3.medium --nodes 1 --nodes-min 1 --nodes-max 3
+  eksctl create nodegroup --cluster=Cluster --region=<REGION> --name=Nodegroup --node-ami-family=AmazonLinux2 --node-type=t3.medium --nodes=1 --nodes-min=1 --nodes-max=3
   ```
 
 - Validate successful EKS cluster node group creation with KubeCTL
@@ -757,7 +758,7 @@ aws configure
 - Create AWS EKS OIDC Provider
 
   ```bash
-  eksctl utils associate-iam-oidc-provider --region=us-east-1 --cluster=Cluster --approve
+  eksctl utils associate-iam-oidc-provider --region=<REGION> --cluster=Cluster --approve
   ```
 
 - Create AWS Load Balancer Controller IAM Role

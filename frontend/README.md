@@ -295,7 +295,7 @@ Additional to this response, Amplify generates user data objects in the local st
     },
     "Session": null,
     "client": {
-        "endpoint": "https://cognito-idp.us-east-1.amazonaws.com/",
+        "endpoint": "https://cognito-idp.<REGION>.amazonaws.com/",
         "fetchOptions": {}
     },
     "signInUserSession": {

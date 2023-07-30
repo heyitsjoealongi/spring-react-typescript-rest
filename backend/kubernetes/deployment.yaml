@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: backend-container
-          image: <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository>:latest
+          image: <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/backend:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

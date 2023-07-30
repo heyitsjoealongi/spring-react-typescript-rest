@@ -4,5 +4,5 @@ WORKDIR /app
 USER deno
 COPY . ./
 RUN deno cache main.ts
-EXPOSE 4000
+EXPOSE 4040
 CMD ["run", "--allow-net", "--allow-read", "--allow-env", "--allow-run", "--watch=routes/", "main.ts"]

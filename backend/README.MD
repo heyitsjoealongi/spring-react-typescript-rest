@@ -17,7 +17,7 @@ spring.jpa.show-sql:true
 ```bash
 server.port=9000
 spring.jpa.hibernate.ddl-auto=update
-spring.datasource.url=jdbc-secretsmanager:mysql://database.c1xdmh2pzhg7.us-east-1.rds.amazonaws.com:3306/schema
+spring.datasource.url=jdbc-secretsmanager:mysql://<DB_ENDPOINT>:<DB_PORT>/<DB_NAME>
 spring.datasource.username=rds/credentials
 spring.datasource.driver-class-name=com.amazonaws.secretsmanager.sql.AWSSecretsManagerMySQLDriver
 spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
