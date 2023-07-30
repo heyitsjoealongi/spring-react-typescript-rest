@@ -190,7 +190,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
 - Docker [build](https://docs.docker.com/engine/reference/commandline/build/) command
 
   ```bash
-  docker build -t spring-react-typescript-rest/frontend:latest .
+  docker build -t spring-react-typescript-rest/frontend .
   ```
 
 #### Run Docker Image
@@ -200,7 +200,7 @@ For more examples and information on Node JavaScript Docker builds, reference th
   Start Container (Publish):
 
   ```bash
-  docker run -p 3000:3000 spring-react-typescript-rest/frontend:latest
+  docker run -p 3000:3000 spring-react-typescript-rest/frontend
   ```
 
 #### Push Docker Image
@@ -266,7 +266,93 @@ cd middleware
 - Start project
 
   ```bash
-  deno run --allow-net --allow-read --allow-env --allow-run --watch=routes/ server.ts
+  deno run --allow-net --allow-read --allow-env --allow-run --watch=routes/ main.ts
+  ```
+
+### Docker
+
+#### Build Backend Docker Image
+
+For more examples and information on Spring Boot Docker builds, reference the [Spring Framework Documentation](https://spring.io/guides/topicals/spring-boot-docker/).
+
+- Docker [build](https://docs.docker.com/engine/reference/commandline/build/) command
+
+  ```bash
+  docker build -t spring-react-typescript-rest/middleware .
+  ```
+
+#### Run Docker Image
+
+- Docker [run](https://docs.docker.com/engine/reference/commandline/run/) command
+
+  Start Container (Publish):
+
+  ```bash
+  docker run -p 4000:4000 spring-react-typescript-rest/middleware
+  ```
+
+  Start Container (Interactively & pseudo-TTY) :
+
+  ```bash
+  docker run spring-react-typescript-rest/middleware -it 4000:4000
+  ```
+
+#### Push Docker Image
+
+- Docker [login](https://docs.docker.com/engine/reference/commandline/login/) command
+
+  Login:
+
+  ```bash
+  docker login
+  ```
+
+- Docker [tag](https://docs.docker.com/engine/reference/commandline/tag/) command
+
+  Tag:
+
+  ```bash
+  docker tag spring-react-typescript-rest/middleware <DOCKER_USERNAME>/spring-react-typescript-rest-middleware:latest
+  ```
+
+- Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
+
+  Push:
+
+  ```bash
+  docker push <DOCKER_USERNAME>/spring-react-typescript-rest-middleware:latest
+  ```
+
+  #### Push Docker Image to ECR (Amazon Elastic Container Registry)
+
+- Add the Powershell [AWS tools](https://www.powershellgallery.com/packages/AWS.Tools.ECR/4.1.370) for ECR, to begin setting up registry permissions
+
+  ```bash
+  Install-Module -Name AWS.Tools.ECR
+  ```
+
+- You can reference the [Getting started](https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-console.html) documentation for implementing access configuration (Make sure the repository is established with a non-root account)
+
+- [Pipe AWS password](https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html) to Docker login command
+
+  ```bash
+  (Get-ECRLoginCommand).Password | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com
+  ```
+
+- Docker [tag](https://docs.docker.com/engine/reference/commandline/tag/) command
+
+  Tag:
+
+  ```bash
+  docker tag spring-react-typescript-rest/middleware <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/<REPOSITORY>:latest
+  ```
+
+- Docker [push](https://docs.docker.com/engine/reference/commandline/push/) command
+
+  Push:
+
+  ```bash
+  docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/<REPOSITORY>:latest
   ```
 
 ## Backend
@@ -398,13 +484,13 @@ For more examples and information on Spring Boot Docker builds, reference the [S
   Start Container (Publish):
 
   ```bash
-  docker run -p 9000:9000 spring-react-typescript-rest/backend:latest
+  docker run -p 8080:8080 spring-react-typescript-rest/backend
   ```
 
   Start Container (Interactively & pseudo-TTY) :
 
   ```bash
-  docker run spring-react-typescript-rest/backend:latest -it 9000:9000
+  docker run spring-react-typescript-rest/backend -it 8080:8080
   ```
 
 #### Push Docker Image

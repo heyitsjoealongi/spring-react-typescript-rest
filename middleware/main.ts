@@ -16,7 +16,8 @@ app.use(async (ctx, next) => {
     "Access-Control-Allow-Methods",
     "GET, POST, OPTIONS"
   );
-  ctx.response.headers.set("Access-Control-Allow-Headers", "Content-Type");
+  ctx.response.headers.set("Access-Control-Max-Age", "3600");
+  ctx.response.headers.set("Access-Control-Allow-Headers", "*");
   await next();
 });
 app.use(router.routes());
