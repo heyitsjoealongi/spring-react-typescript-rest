@@ -27,7 +27,6 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 
 ### Middleware
 
-- [Deno](https://deno.land/)
 - [Oak](https://oakserver.github.io/oak/)
 
 ### Backend
@@ -54,6 +53,7 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Intellij Idea](https://www.jetbrains.com/idea/)
 - [Yarn](https://yarnpkg.com/)
+- [Deno](https://deno.land/)
 - [Gradle](https://gradle.org/)
 - [Postman](https://www.postman.com/)
 - [MySQL Community Server](https://dev.mysql.com/downloads/windows/installer/8.0.html)
@@ -87,7 +87,7 @@ cd frontend
 yarn prettier --write .
 ```
 
-## Add Packages (Frontend)
+### Add Packages (Frontend)
 
 ```bash
 yarn add
@@ -95,13 +95,13 @@ yarn add
 yarn add --dev
 ```
 
-## Install Packages (Frontend)
+### Install Packages (Frontend)
 
 ```bash
 yarn install
 ```
 
-## Clean Cache (Frontend)
+### Clean Cache (Frontend)
 
 ```bash
 yarn cache clean
@@ -790,11 +790,9 @@ aws configure
   kubectl get deployment -n kube-system aws-load-balancer-controller
   ```
 
-#### Acknowledgements
+## Acknowledgements
 
-- [Stock Imagery](https://unsplash.com/)
-
-##### License
+## License
 
 © 2023 Spring React TypeScript REST released via [MIT](https://opensource.org/licenses/MIT) license. Information on this license can be viewed as it applies to this repository on GitHub at [Spring React TypeScript REST License](https://github.com/collectedview/spring-react-typescript-rest/blob/master/LICENSE).
 
