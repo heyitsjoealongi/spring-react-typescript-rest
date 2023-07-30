@@ -190,7 +190,7 @@ applications:
         build:
           commands:
             - echo "REACT_APP_URL" >> .env
-            - echo "REACT_APP_BACKEND_URL" >> .env
+            - echo "REACT_APP_SERVER_URL" >> .env
             - echo "REACT_APP_DELAY" >> .env
             - echo "REACT_APP_SLIDER_DELAY" >> .env
             - echo "REACT_APP_DEFAULT_APP_TITLE" >> .env

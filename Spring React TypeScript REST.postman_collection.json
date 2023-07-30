@@ -10,32 +10,22 @@
 			"name": "Backend",
 			"item": [
 				{
-					"name": "Hello World",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "All Articles",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{Username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Password}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -58,7 +48,19 @@
 					"name": "All Topics",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{Username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Password}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -81,7 +83,19 @@
 					"name": "All Analytics",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{Username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Password}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -104,7 +118,19 @@
 					"name": "Add Analytic",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{Username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Password}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [
@@ -139,6 +165,118 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Middleware",
+			"item": [
+				{
+					"name": "All Articles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/articles/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"articles",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Topics",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/articles/topics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"articles",
+								"topics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Analytics",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/analytics/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"analytics",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Analytic",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"http://localhost:3000/\",\r\n    \"timestamp\": \"timestamp\",\r\n    \"useragent\": \"useragent\",\r\n    \"language\": \"language\",\r\n    \"geolocation\": \"geolocation\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/analytics/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"analytics",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -159,6 +297,18 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Username",
+			"value": "username",
+			"type": "string"
+		},
+		{
+			"key": "Password",
+			"value": "password",
+			"type": "string"
 		}
 	]
 }

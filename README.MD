@@ -25,6 +25,11 @@ Docker's example of this stack using [React, Java, and MySQL](https://github.com
 - [Swiper](https://swiperjs.com/)
 - [Axios HTTP](https://axios-http.com/)
 
+### Middleware
+
+- [Deno](https://deno.land/)
+- [Oak](https://oakserver.github.io/oak/)
+
 ### Backend
 
 - [Spring Initializr](https://start.spring.io/)
@@ -168,6 +173,14 @@ cd frontend
   yarn build
   ```
 
+#### Start Frontend
+
+- Start project
+
+  ```bash
+  yarn start
+  ```
+
 ### Docker
 
 #### Build Backend Docker Image
@@ -237,6 +250,24 @@ amplify configure
 - Initialize the [AWS Amplify](https://aws.amazon.com/amplify/) project configuration
 
 - If the initialization does not complete, rename the `.gitignore`, make sure to copy the contents of the initial `.gitignore`, into the file Amplify generates
+
+## Middleware
+
+Access the middleware code by opening a command line in the root of this project and changing to the middleware folder.
+
+```bash
+cd middleware
+```
+
+### Deno
+
+#### Start middleware
+
+- Start project
+
+  ```bash
+  deno run --allow-net --allow-read --allow-env --allow-run --watch=routes/ server.ts
+  ```
 
 ## Backend
 
@@ -308,6 +339,28 @@ cd backend
 
   ```bash
   sdk install gradle 8.1.1
+  ```
+
+#### Start Backend with Gradle
+
+- Create configuration in IntelliJ IDEA or reference the `SpringReactTypeScriptREST.run.xml` file in the `backend` folder and start the application with IntelliJ IDEA
+
+  ```bash
+  <component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="SpringReactTypeScriptREST" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="development" />
+      <module name="com.example.spring-react-typescript-rest.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.SpringReactTypeScriptREST" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   ```
 
 #### Create/convert application properties
