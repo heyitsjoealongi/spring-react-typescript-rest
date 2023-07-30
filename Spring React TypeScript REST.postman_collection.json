@@ -178,12 +178,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/articles/all",
+							"raw": "http://localhost:4040/articles/all",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8000",
+							"port": "4040",
 							"path": [
 								"articles",
 								"all"
@@ -201,12 +201,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/articles/topics",
+							"raw": "http://localhost:4040/articles/topics",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8000",
+							"port": "4040",
 							"path": [
 								"articles",
 								"topics"
@@ -224,12 +224,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/analytics/all",
+							"raw": "http://localhost:4040/analytics/all",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8000",
+							"port": "4040",
 							"path": [
 								"analytics",
 								"all"
@@ -262,12 +262,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/analytics/add",
+							"raw": "http://localhost:4040/analytics/add",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8000",
+							"port": "4040",
 							"path": [
 								"analytics",
 								"add"

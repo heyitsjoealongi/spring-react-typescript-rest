@@ -23,9 +23,8 @@ import PreFooterFrameworksMenuComponent from './PreFooterFrameworksMenuComponent
 
 // Middleware & Integrations -%- ////
 const appInfo = {
-    app_title: 'Spring React TypeScript REST',
-    app_description:
-        'Fullstack Application — React (TypeScript) Frontend, Spring Boot Java Backend, OkHttp Client, and MySQL (Vitess) Service.',
+    app_title: process.env.REACT_APP_DEFAULT_APP_TITLE,
+    app_description: process.env.REACT_APP_DEFAULT_APP_DESCRIPTION,
 }
 const footerMenuOne = {
     menu_title: 'Application',

@@ -1,7 +1,6 @@
 #!/bin/bash
 FROM denoland/deno:latest
 WORKDIR /app
-USER deno
 COPY . ./
 RUN deno cache main.ts
 EXPOSE 4040

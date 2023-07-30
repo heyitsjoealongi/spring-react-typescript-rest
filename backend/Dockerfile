@@ -1,9 +1,8 @@
 #!/bin/bash
-FROM gradle:latest
+FROM gradle:7.6.1-jdk17-alpine AS build
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
-USER java
-RUN gradle --no-daemon
+RUN gradle build --no-daemon
 FROM amazoncorretto:17
 RUN mkdir /app
 COPY --from=build /home/gradle/src/build/libs/*.jar /app/spring-boot-application.jar

@@ -18,6 +18,7 @@ import { ReactComponent as MaterialUILogo } from './../../assets/svg/MaterialUIL
 import { ReactComponent as RecoilLogo } from './../../assets/svg/RecoilLogo.svg'
 import { ReactComponent as AmplifyLogo } from './../../assets/svg/AmplifyLogo.svg'
 import { ReactComponent as AWSLogo } from './../../assets/svg/AWSLogo.svg'
+import { ReactComponent as DenoLogo } from './../../assets/svg/DenoLogo.svg'
 import { ReactComponent as SpringBootLogo } from './../../assets/svg/SpringBootLogo.svg'
 import { ReactComponent as MySQLLogo } from './../../assets/svg/MySQLLogo.svg'
 
@@ -205,7 +206,28 @@ export default function PreFooterFrameworksMenuComponent() {
                         <AWSLogo />
                     </Link>
                 </Box>
-
+                <Box
+                    sx={{
+                        display: 'inline-flex',
+                        order: '7',
+                        flex: '0',
+                        flexBasis: 'auto',
+                        alignSelf: { xs: 'flex-start', md: 'center' },
+                        height: 'auto',
+                        width: 'auto',
+                        margin: { xs: '0', md: '0 auto' },
+                        padding: '0',
+                    }}
+                >
+                    <Link
+                        to={'https://deno.land/'}
+                        target="_blank"
+                        aria-label="spring-logo-link"
+                        type="link"
+                    >
+                        <DenoLogo />
+                    </Link>
+                </Box>
                 <Box
                     sx={{
                         display: 'inline-flex',

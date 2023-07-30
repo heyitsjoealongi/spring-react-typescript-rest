@@ -1,15 +1,13 @@
+# Middleware Log - Spring React Typescript REST
+
+## Structure
+
+```bash
 // Deno -%- ////
 
 // Packages -%- ////
 
 // Types -%- ////
-type Analytic = {
-  url: string;
-  timestamp: string;
-  language: string;
-  userAgent: string;
-  geoLocation: string;
-};
 
 // Components -%- ////
 
@@ -18,3 +16,4 @@ type Analytic = {
 // Application -%- ////
 
 // System -%- ////
+```
