@@ -27,8 +27,7 @@ export const getArticles = async () => {
     });
     return data;
   } catch (error) {
-    console.log(`getArticles: ${JSON.stringify(error)}`);
-    return error;
+    console.log("Error requesting articles (Middleware)");
   }
 };
 export const getTopics = async () => {
@@ -48,8 +47,7 @@ export const getTopics = async () => {
     });
     return data;
   } catch (error) {
-    console.log(`getTopics: ${JSON.stringify(error)}`);
-    return error;
+    console.log("Error requesting topics (Middleware)");
   }
 };
 

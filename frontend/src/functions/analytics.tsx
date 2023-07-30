@@ -16,7 +16,7 @@ export const getAnalytics = async () => {
         const { data } = await axios.get(base + endpoint)
         return data
     } catch (error) {
-        console.log('error requesting analytics:', error)
+        console.log('Error requesting analytics (Frontend)')
     }
 }
 export const saveAnalytic = async () => {
@@ -37,7 +37,7 @@ export const saveAnalytic = async () => {
         })
         return data
     } catch (error) {
-        console.log('error saving analytic:', error)
+        console.log('Error saving analytic (Frontend)')
     }
 }
 export const getURL = () => {

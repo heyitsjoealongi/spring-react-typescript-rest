@@ -28,8 +28,7 @@ export const getAnalytics = async () => {
     });
     return data;
   } catch (error) {
-    console.log(`getAnalytics: ${JSON.stringify(error)}`);
-    return error;
+    console.log("Error requesting analytics (Middleware)");
   }
 };
 export const saveAnalytic = async (analytic: Analytic) => {
@@ -49,8 +48,7 @@ export const saveAnalytic = async (analytic: Analytic) => {
     });
     return data;
   } catch (error) {
-    console.log(`saveAnalytic: ${JSON.stringify(error)}`);
-    return error;
+    console.log("Error saving analytic (Middleware)");
   }
 };
 

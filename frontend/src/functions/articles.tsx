@@ -15,7 +15,7 @@ export const getArticles = async () => {
         const { data } = await axios.get(base + endpoint)
         return data
     } catch (error) {
-        console.log('error requesting articles:', error)
+        console.log('Error requesting articles (Frontend)')
     }
 }
 export const getTopics = async () => {
@@ -25,7 +25,7 @@ export const getTopics = async () => {
         const { data } = await axios.get(base + endpoint)
         return data
     } catch (error) {
-        console.log('error requesting topics:', error)
+        console.log('Error requesting topics (Frontend)')
     }
 }
 
