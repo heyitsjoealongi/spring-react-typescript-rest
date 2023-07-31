@@ -29,6 +29,7 @@ export const getAnalytics = async () => {
     return data;
   } catch (error) {
     console.log("Error requesting analytics (Middleware)");
+    return;
   }
 };
 export const saveAnalytic = async (analytic: Analytic) => {
@@ -49,6 +50,7 @@ export const saveAnalytic = async (analytic: Analytic) => {
     return data;
   } catch (error) {
     console.log("Error saving analytic (Middleware)");
+    return;
   }
 };
 

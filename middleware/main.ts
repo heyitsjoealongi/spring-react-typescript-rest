@@ -1,5 +1,6 @@
 // Deno -%- ////
 import { Application, Router } from "https://deno.land/x/oak/mod.ts";
+import { oakCors } from "https://deno.land/x/cors/mod.ts";
 import "https://deno.land/x/dotenv/load.ts";
 
 // Packages -%- ////
@@ -12,14 +13,23 @@ import "https://deno.land/x/dotenv/load.ts";
 import { SpringReactTypeScriptRESTRouter } from "./routes/spring-react-typescript-rest.ts";
 import { analyticsRouter } from "./routes/analytics.ts";
 import { articlesRouter } from "./routes/articles.ts";
+import { securityRouter } from "./routes/security.ts";
 
 // Application -%- ////
 const app = new Application();
 const router = new Router();
+app.use(
+  oakCors({
+    origin: `${Deno.env.get("ALLOWED_ORIGIN")}`,
+    methods: "GET, POST, OPTIONS",
+    preflightContinue: false,
+    optionsSuccessStatus: 200,
+  })
+);
 app.use(async (ctx, next) => {
   ctx.response.headers.set(
     "Access-Control-Allow-Origin",
-    Deno.env.get("ALLOWED_ORIGIN")
+    `${Deno.env.get("ALLOWED_ORIGIN")}`
   );
   ctx.response.headers.set(
     "Access-Control-Allow-Methods",
@@ -34,11 +44,12 @@ app.use(router.allowedMethods());
 router.use("/", SpringReactTypeScriptRESTRouter.routes());
 router.use("/analytics", analyticsRouter.routes());
 router.use("/articles", articlesRouter.routes());
-
-// System -%- ////
+router.use("/security", securityRouter.routes());
 app.addEventListener("listen", () => {
   console.log(
     `Listening on: http://localhost:${parseInt(Deno.env.get("PORT"))}`
   );
 });
 await app.listen({ port: parseInt(Deno.env.get("PORT")) });
+
+// System -%- ////
