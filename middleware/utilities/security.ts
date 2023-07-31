@@ -37,7 +37,7 @@ export const authentication = async (ctx: Context) => {
     const { username, password } = await req?.value;
     if (username && password) {
       const encoder = new TextEncoder();
-      const keyBuf = encoder?.encode(`${Deno.env.get("JWT_SECRET")}`);
+      const keyBuf = encoder?.encode(`${Deno.env.get("SECRET")}`);
       const user = await authenticateUsername(username);
       const pass = await authenticatePassword(password);
       if (user && pass) {
@@ -69,7 +69,7 @@ export const authentication = async (ctx: Context) => {
 export const authorization = async (ctx: Context) => {
   try {
     const encoder = new TextEncoder();
-    const keyBuf = encoder?.encode(`${Deno.env.get("JWT_SECRET")}`);
+    const keyBuf = encoder?.encode(`${Deno.env.get("SECRET")}`);
     const headers: Headers = ctx?.request?.headers;
     const authorization = headers?.get("Authorization");
     const jwt = authorization?.split(" ")[1];
