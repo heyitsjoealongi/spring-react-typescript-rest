@@ -20,7 +20,6 @@ export const getArticles = async () => {
                     Authorization: `Bearer ${auth}`,
                 },
             })
-            console.log('data', data)
             return data
         }
     } catch (error) {
