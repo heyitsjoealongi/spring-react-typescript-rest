@@ -54,6 +54,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["aws-amplify", "npm:5.3.4"],\
             ["axios", "npm:1.4.0"],\
             ["buffer", "npm:6.0.3"],\
+            ["crypto-js", "npm:4.1.1"],\
             ["dayjs", "npm:1.11.9"],\
             ["eslint", "npm:8.45.0"],\
             ["eslint-plugin-react", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:7.32.2"],\
@@ -10272,6 +10273,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["crypto-js", [\
+        ["npm:4.1.1", {\
+          "packageLocation": "./.yarn/cache/crypto-js-npm-4.1.1-38a3b8c19d-b3747c12ee.zip/node_modules/crypto-js/",\
+          "packageDependencies": [\
+            ["crypto-js", "npm:4.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["crypto-random-string", [\
         ["npm:2.0.0", {\
           "packageLocation": "./.yarn/cache/crypto-random-string-npm-2.0.0-8ab47992ef-0283879f55.zip/node_modules/crypto-random-string/",\
@@ -19596,6 +19606,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["aws-amplify", "npm:5.3.4"],\
             ["axios", "npm:1.4.0"],\
             ["buffer", "npm:6.0.3"],\
+            ["crypto-js", "npm:4.1.1"],\
             ["dayjs", "npm:1.11.9"],\
             ["eslint", "npm:8.45.0"],\
             ["eslint-plugin-react", "virtual:16ef16dc1f24023352cf6d32a708aea4acbdf33606a6f4132d2d1df862f5aa3f1e621874b5f3c448983f7b3fde14d194679b06d75a560c449187b874f9a3f269#npm:7.32.2"],\

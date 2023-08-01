@@ -14,7 +14,7 @@ export const getAnalytics = async () => {
     try {
         const auth = await authorize()
         if (auth) {
-            const base = process.env.REACT_APP_SERVER_URL
+            const base = process.env.REACT_APP_MIDDLEWARE_URL
             const endpoint = process.env.REACT_APP_ANALYTICS_LIST_ENDPOINT
             const { data } = await axios.get(base + endpoint, {
                 headers: {
@@ -36,7 +36,7 @@ export const saveAnalytic = async () => {
             const useragent = getUserAgent()
             const language = getLanguage()
             const geolocation = getGeoLocation()
-            const base = process.env.REACT_APP_SERVER_URL
+            const base = process.env.REACT_APP_MIDDLEWARE_URL
             const endpoint = process.env.REACT_APP_ANALYTICS_ADD_ENDPOINT
             const { data } = await axios.post(
                 base + endpoint,

@@ -18,9 +18,10 @@ import { securityRouter } from "./routes/security.ts";
 // Application -%- ////
 const app = new Application();
 const router = new Router();
+const port = await Deno.env.get("PORT");
 app.use(
   oakCors({
-    origin: `${Deno.env.get("ALLOWED_ORIGIN")}`,
+    origin: await Deno.env.get("ALLOWED_ORIGIN"),
     methods: "GET, POST, OPTIONS",
     preflightContinue: false,
     optionsSuccessStatus: 200,
@@ -29,7 +30,7 @@ app.use(
 app.use(async (ctx, next) => {
   ctx.response.headers.set(
     "Access-Control-Allow-Origin",
-    `${Deno.env.get("ALLOWED_ORIGIN")}`
+    await Deno.env.get("ALLOWED_ORIGIN")
   );
   ctx.response.headers.set(
     "Access-Control-Allow-Methods",
@@ -46,10 +47,8 @@ router.use("/analytics", analyticsRouter.routes());
 router.use("/articles", articlesRouter.routes());
 router.use("/security", securityRouter.routes());
 app.addEventListener("listen", () => {
-  console.log(
-    `Listening on: http://localhost:${parseInt(Deno.env.get("PORT"))}`
-  );
+  console.log(`Listening on: http://localhost:${port}`);
 });
-await app.listen({ port: parseInt(Deno.env.get("PORT")) });
+await app.listen({ port: port });
 
 // System -%- ////
