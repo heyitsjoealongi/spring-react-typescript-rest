@@ -54,13 +54,13 @@ export const authentication = async (ctx: Context) => {
     const { credentials } = await req?.value;
     const { username, password } = await decrypt(credentials);
     const encoder = new TextEncoder();
-    const keyBuf = encoder?.encode(await Deno.env.get("SECRET"));
+    const buffer = encoder?.encode(await Deno.env.get("SECRET"));
     const user = await authenticateUsername(username);
     const pass = await authenticatePassword(password);
     if (user && pass) {
       const payload: Payload = {
         iss: await Deno.env.get("MIDDLEWARE_URL"),
-        exp: getNumericDate(300),
+        exp: await getNumericDate(60),
       };
       const header: Header = {
         alg: "HS256",
@@ -68,7 +68,7 @@ export const authentication = async (ctx: Context) => {
       };
       const key = await crypto.subtle.importKey(
         "raw",
-        keyBuf,
+        buffer,
         { name: "HMAC", hash: "SHA-256" },
         true,
         ["sign", "verify"]
@@ -84,13 +84,13 @@ export const authentication = async (ctx: Context) => {
 export const authorization = async (ctx: Context) => {
   try {
     const encoder = new TextEncoder();
-    const keyBuf = encoder?.encode(`${Deno.env.get("SECRET")}`);
+    const buffer = encoder?.encode(`${Deno.env.get("SECRET")}`);
     const headers: Headers = ctx?.request?.headers;
     const authorization = headers?.get("Authorization");
     const jwt = authorization?.split(" ")[1];
     const key = await crypto?.subtle?.importKey(
       "raw",
-      keyBuf,
+      buffer,
       { name: "HMAC", hash: "SHA-256" },
       true,
       ["sign", "verify"]
