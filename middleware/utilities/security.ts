@@ -24,6 +24,7 @@ const authenticateUsername = async (username: string) => {
     }
   } catch (error) {
     console.log("Error authenticating username (Middleware)");
+    return;
   }
 };
 const authenticatePassword = async (password: string) => {
@@ -33,6 +34,7 @@ const authenticatePassword = async (password: string) => {
     }
   } catch (error) {
     console.log("Error authenticating password (Middleware)");
+    return;
   }
 };
 export const decrypt = async (data: object) => {
@@ -41,19 +43,19 @@ export const decrypt = async (data: object) => {
       data,
       await Deno.env.get("SECRET")
     );
-    return await JSON.parse(await bytes.toString(CryptoJS.enc.Utf8));
+    const string = await bytes.toString(CryptoJS.enc.Utf8);
+    return await JSON.parse(string);
   } catch (error) {
     console.log("Error decrypting (Middleware)");
+    return;
   }
 };
 
 // Application -%- ////
 export const authentication = async (ctx: Context) => {
   try {
-    const req = await ctx.request.body({ type: "json" });
-    const { username, password } = await decrypt(
-      req?.["value"]?.["credentials"]
-    );
+    const { credentials } = await ctx?.request?.body({ type: "json" })?.value;
+    const { username, password } = await decrypt(credentials);
     const encoder = new TextEncoder();
     const buffer = encoder?.encode(await Deno.env.get("SECRET"));
     if (
@@ -68,7 +70,7 @@ export const authentication = async (ctx: Context) => {
         alg: "HS256",
         typ: "JWT",
       };
-      const key = await crypto.subtle.importKey(
+      const key = await crypto?.subtle?.importKey(
         "raw",
         buffer,
         { name: "HMAC", hash: "SHA-256" },
@@ -86,7 +88,7 @@ export const authentication = async (ctx: Context) => {
 export const authorization = async (ctx: Context) => {
   try {
     const encoder = new TextEncoder();
-    const buffer = encoder?.encode(`${Deno.env.get("SECRET")}`);
+    const buffer = encoder?.encode(await Deno.env.get("SECRET"));
     const headers: Headers = ctx?.request?.headers;
     const authorization = headers?.get("Authorization");
     const jwt = authorization?.split(" ")[1];
