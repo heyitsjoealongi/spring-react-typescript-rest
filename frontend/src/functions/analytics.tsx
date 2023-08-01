@@ -1,41 +1,60 @@
 // React -%- ////
-import axios from 'axios'
-import dayjs from 'dayjs'
 
 // Packages -%- ////
+import axios from 'axios'
+import dayjs from 'dayjs'
 
 // MUI -%- ////
 
 // Components -%- ////
 
 // Middleware & Integrations -%- ////
+import { authorize } from './security'
 export const getAnalytics = async () => {
     try {
-        const base = process.env.REACT_APP_SERVER_URL
-        const endpoint = process.env.REACT_APP_ANALYTICS_LIST_ENDPOINT
-        const { data } = await axios.get(base + endpoint)
-        return data
+        const auth = await authorize()
+        if (auth) {
+            const base = process.env.REACT_APP_MIDDLEWARE_URL
+            const endpoint = process.env.REACT_APP_ANALYTICS_LIST_ENDPOINT
+            const { data } = await axios.get(base + endpoint, {
+                headers: {
+                    Authorization: `Bearer ${auth}`,
+                },
+            })
+            return data
+        }
     } catch (error) {
         console.log('Error requesting analytics (Frontend)')
     }
 }
 export const saveAnalytic = async () => {
     try {
-        const url = getURL()
-        const timestamp = getTimestamp()
-        const useragent = getUserAgent()
-        const language = getLanguage()
-        const geolocation = getGeoLocation()
-        const base = process.env.REACT_APP_SERVER_URL
-        const endpoint = process.env.REACT_APP_ANALYTICS_ADD_ENDPOINT
-        const { data } = await axios.post(base + endpoint, {
-            url,
-            timestamp,
-            useragent,
-            language,
-            geolocation,
-        })
-        return data
+        const auth = await authorize()
+        if (auth) {
+            const url = getURL()
+            const timestamp = getTimestamp()
+            const useragent = getUserAgent()
+            const language = getLanguage()
+            const geolocation = getGeoLocation()
+            const base = process.env.REACT_APP_MIDDLEWARE_URL
+            const endpoint = process.env.REACT_APP_ANALYTICS_ADD_ENDPOINT
+            const { data } = await axios.post(
+                base + endpoint,
+                {
+                    url,
+                    timestamp,
+                    useragent,
+                    language,
+                    geolocation,
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${auth}`,
+                    },
+                }
+            )
+            return data
+        }
     } catch (error) {
         console.log('Error saving analytic (Frontend)')
     }

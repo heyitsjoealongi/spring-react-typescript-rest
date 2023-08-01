@@ -20,6 +20,7 @@
     "aws-amplify": "^5.3.3",
     "axios": "^1.4.0",
     "buffer": "^6.0.3",
+    "crypto-js": "^4.1.1",
     "dayjs": "^1.11.9",
     "formik": "^2.4.2",
     "react": "18.2.0",
