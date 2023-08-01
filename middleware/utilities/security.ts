@@ -50,14 +50,16 @@ export const decrypt = async (data: object) => {
 // Application -%- ////
 export const authentication = async (ctx: Context) => {
   try {
-    const req = ctx.request.body({ type: "json" });
-    const { credentials } = await req?.value;
-    const { username, password } = await decrypt(credentials);
+    const req = await ctx.request.body({ type: "json" });
+    const { username, password } = await decrypt(
+      req?.["value"]?.["credentials"]
+    );
     const encoder = new TextEncoder();
     const buffer = encoder?.encode(await Deno.env.get("SECRET"));
-    const user = await authenticateUsername(username);
-    const pass = await authenticatePassword(password);
-    if (user && pass) {
+    if (
+      (await authenticateUsername(username)) &&
+      (await authenticatePassword(password))
+    ) {
       const payload: Payload = {
         iss: await Deno.env.get("MIDDLEWARE_URL"),
         exp: await getNumericDate(60),
