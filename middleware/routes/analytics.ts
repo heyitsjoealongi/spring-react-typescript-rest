@@ -21,7 +21,7 @@ analyticsRouter.get("/all", async (ctx: Context) => {
   }
   return;
 });
-analyticsRouter.get("/add", async (ctx: Context) => {
+analyticsRouter.post("/add", async (ctx: Context) => {
   const auth = await authorization(ctx);
   if (auth) {
     const analytic: Analytic = await ctx?.request?.body;
