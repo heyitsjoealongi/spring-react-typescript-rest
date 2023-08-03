@@ -20,6 +20,13 @@ spec:
         - name: middleware-container
           image: <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/middleware:latest
           imagePullPolicy: Always
+          restartPolicy: Always
           ports:
             - containerPort: 4040
-      restartPolicy: Always
+          resources:
+            requests:
+              memory: "60Mi"
+              cpu: "300m"
+            limits:
+              memory: "120Mi"
+              cpu: "600m"

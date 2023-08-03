@@ -18,8 +18,15 @@ spec:
     spec:
       containers:
         - name: backend-container
-          image: <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/backend:latest
+          image: registry.digitalocean.com/collectedview/backend:latest
           imagePullPolicy: Always
+          restartPolicy: Always
           ports:
             - containerPort: 8080
-      restartPolicy: Always
+          resources:
+            requests:
+              memory: "60Mi"
+              cpu: "300m"
+            limits:
+              memory: "120Mi"
+              cpu: "600m"
