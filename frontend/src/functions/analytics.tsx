@@ -18,6 +18,7 @@ export const getAnalytics = async () => {
             const endpoint = process.env.REACT_APP_ANALYTICS_LIST_ENDPOINT
             const { data } = await axios.get(base + endpoint, {
                 headers: {
+                    'Content-Type': 'application/json',
                     Authorization: `Bearer ${auth}`,
                 },
             })
@@ -49,6 +50,7 @@ export const saveAnalytic = async () => {
                 },
                 {
                     headers: {
+                        'Content-Type': 'application/json',
                         Authorization: `Bearer ${auth}`,
                     },
                 }

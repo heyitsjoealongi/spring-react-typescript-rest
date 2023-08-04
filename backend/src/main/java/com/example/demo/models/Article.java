@@ -1,73 +1,70 @@
 package com.example.demo.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Article {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer articleId;
 
-    private String slug;
+    private String articleSlug;
 
-    private String cover;
+    private String articleCover;
 
-    private String title;
+    private String articleTitle;
 
-    private String topic;
+    private String articleTopic;
 
-    private String caption;
+    private String articleCaption;
 
-    public Integer getId() {
-        return id;
+    public Integer getArticleId() {
+        return articleId;
     }
 
-    public String getSlug() {
-        return slug;
+    public String getArticleSlug() {
+        return articleSlug;
     }
 
-    public String getCover() {
-        return cover;
+    public String getArticleCover() {
+        return articleCover;
     }
 
-    public String getTitle() {
-        return title;
+    public String getArticleTitle() {
+        return articleTitle;
     }
 
-    public String getTopic() {
-        return topic;
+    public String getArticleTopic() {
+        return articleTopic;
     }
 
-    public String getCaption() {
-        return caption;
+    public String getArticleCaption() {
+        return articleCaption;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setArticleId(Integer articleId) {
+        this.articleId = articleId;
     }
 
-    public void setSlug(String slug) {
-        this.slug = slug;
+    public void setArticleSlug(String articleSlug) {
+        this.articleSlug = articleSlug;
     }
 
-    public void setCover(String cover) {
-        this.cover = cover;
+    public void setArticleCover(String articleCover) {
+        this.articleCover = articleCover;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setArticleTitle(String articleTitle) {
+        this.articleTitle = articleTitle;
     }
 
-    public void setTopic(String topic) {
-        this.topic = topic;
+    public void setArticleTopic(String articleTopic) {
+        this.articleTopic = articleTopic;
     }
 
-    public void setCaption(String caption) {
-        this.caption = caption;
+    public void setArticleCaption(String articleCaption) {
+        this.articleCaption = articleCaption;
     }
 
     public Article() {

@@ -41,11 +41,11 @@ const date = (timestamp: string) => {
     return clean?.date
 }
 type AnalyticTableComponentItemProps = {
-    url: string
-    timestamp: string
-    language: string
-    userAgent: string
-    geoLocation: string
+    analytic_url: string
+    analytic_timestamp: string
+    analytic_language: string
+    analytic_userAgent: string
+    analytic_geoLocation: string
 }
 export default function AnalyticTableComponentItem(
     props: AnalyticTableComponentItemProps
@@ -59,14 +59,16 @@ export default function AnalyticTableComponentItem(
             }}
         >
             <TableCell component="th" scope="row">
-                {page(props?.['url']) ? page(props?.['url']) : props?.['url']}
+                {page(props?.['analytic_url'])
+                    ? page(props?.['analytic_url'])
+                    : props?.['analytic_url']}
             </TableCell>
             <TableCell align="left">
-                {date(props?.['timestamp'])
-                    ? date(props?.['timestamp'])
-                    : props?.['timestamp']}
+                {date(props?.['analytic_timestamp'])
+                    ? date(props?.['analytic_timestamp'])
+                    : props?.['analytic_timestamp']}
             </TableCell>
-            <TableCell align="left">{props?.['language']}</TableCell>
+            <TableCell align="left">{props?.['analytic_language']}</TableCell>
             <TableCell align="left"></TableCell>
             <TableCell align="left"></TableCell>
         </TableRow>

@@ -72,8 +72,8 @@ export default function TopicBlocksComponent() {
                 topicListCache?.map((data, index) => (
                     <React.Fragment key={index}>
                         <TopicBlocksComponentItem
-                            id={index}
-                            topic={data?.['topic']}
+                            article_id={index}
+                            article_topic={data?.['article_topic']}
                         />
                     </React.Fragment>
                 ))

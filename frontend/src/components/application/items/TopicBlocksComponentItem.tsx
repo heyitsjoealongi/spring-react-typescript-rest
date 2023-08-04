@@ -21,8 +21,8 @@ import { CardActionArea } from '@mui/material'
 
 // Application -%- ////
 type TopicBlocksComponentItemProps = {
-    id: number
-    topic: string
+    article_id: number
+    article_topic: string
 }
 export default function TopicBlocksComponentItem(
     props: TopicBlocksComponentItemProps
@@ -31,7 +31,7 @@ export default function TopicBlocksComponentItem(
         <Card
             sx={{
                 display: 'inline-flex',
-                order: props?.['id'],
+                order: props?.['article_id'],
                 flexBasis: '100%',
                 flex: 'auto',
                 alignSelf: 'center',
@@ -63,7 +63,7 @@ export default function TopicBlocksComponentItem(
                             textAlign: 'center',
                         }}
                     >
-                        {props?.['topic']}
+                        {props?.['article_topic']}
                     </Typography>
                 </CardContent>
             </CardActionArea>

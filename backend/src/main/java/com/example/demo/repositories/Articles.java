@@ -14,7 +14,7 @@ public interface Articles extends CrudRepository<Article, Integer> {
 
     // Find All Distinct Topics
     @Query(
-            value = "SELECT DISTINCT topic FROM `rdsa`.`article`",
+            value = "SELECT DISTINCT article_topic FROM `rdsa`.`article`",
             nativeQuery = true
     )
     Collection<Topics> findAllTopics();

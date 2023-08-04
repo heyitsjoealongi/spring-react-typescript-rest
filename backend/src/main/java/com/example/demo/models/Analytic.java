@@ -1,73 +1,70 @@
 package com.example.demo.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Analytic {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer analyticId;
 
-    private String url;
+    private String analyticURL;
 
-    private String timestamp;
+    private String analyticTimestamp;
 
-    private String useragent;
+    private String analyticUserAgent;
 
-    private String language;
+    private String analyticLanguage;
 
-    private String geolocation;
+    private String analyticGeoLocation;
 
-    public Integer getId() {
-        return id;
+    public Integer getAnalyticId() {
+        return analyticId;
     }
 
     public String getURL() {
-        return url;
+        return analyticURL;
     }
 
-    public String getTimestamp() {
-        return timestamp;
+    public String getAnalyticTimestamp() {
+        return analyticTimestamp;
     }
 
-//    public String getUserAgent() {
-//        return useragent;
+//    public String getAnalyticUserAgent() {
+//        return analyticUserAgent;
 //    }
 
-    public String getLanguage() {
-        return language;
+    public String getAnalyticLanguage() {
+        return analyticLanguage;
     }
 
-//    public String getGeoLocation() {
-//        return geolocation;
+//    public String getAnalyticLocation() {
+//        return analyticGeoLocation;
 //    }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setAnalyticId(Integer analyticId) {
+        this.analyticId = analyticId;
     }
 
-    public void setURL(String url) {
-        this.url = url;
+    public void setAnalyticURL(String analyticURL) {
+        this.analyticURL = analyticURL;
     }
 
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
+    public void setAnalyticTimestamp(String analyticTimestamp) {
+        this.analyticTimestamp = analyticTimestamp;
     }
 
-    public void setUserAgent(String useragent) {
-        this.useragent = useragent;
+    public void setAnalyticUserAgent(String analyticUserAgent) {
+        this.analyticUserAgent = analyticUserAgent;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setAnalyticLanguage(String analyticLanguage) {
+        this.analyticLanguage = analyticLanguage;
     }
 
-    public void setGeoLocation(String geolocation) {
-        this.geolocation = geolocation;
+    public void setAnalyticGeoLocation(String analyticGeoLocation) {
+        this.analyticGeoLocation = analyticGeoLocation;
     }
 
     public Analytic() {

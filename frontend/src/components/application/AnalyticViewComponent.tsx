@@ -146,13 +146,23 @@ export default function AnalyticViewComponent() {
                             </TableHead>
                             <TableBody>
                                 {analyticsListCache.map((data) => (
-                                    <React.Fragment key={data?.['id']}>
+                                    <React.Fragment key={data?.['analytic_id']}>
                                         <AnalyticTableComponentItem
-                                            url={data?.['url']}
-                                            timestamp={data?.['timestamp']}
-                                            language={data?.['language']}
-                                            userAgent={data?.['userAgent']}
-                                            geoLocation={data?.['geoLocation']}
+                                            analytic_url={
+                                                data?.['analytic_url']
+                                            }
+                                            analytic_timestamp={
+                                                data?.['analytic_timestamp']
+                                            }
+                                            analytic_language={
+                                                data?.['analytic_language']
+                                            }
+                                            analytic_userAgent={
+                                                data?.['analytic_userAgent']
+                                            }
+                                            analytic_geoLocation={
+                                                data?.['analytic_geoLocation']
+                                            }
                                         />
                                     </React.Fragment>
                                 ))}
