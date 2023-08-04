@@ -4,8 +4,6 @@
 
 Fullstack Application — React (TypeScript) frontend, Axios HTTP client, Deno middleware, Spring Boot Java backend, OkHttp client, and MySQL (AWS RDS - Aurora) service.
 
-- Frontend Demo via [Amplify](https://main.dh06uvvwsg3un.amplifyapp.com/)
-
 - Frontend Image via [Docker Hub](https://hub.docker.com/r/collectedview/spring-react-typescript-rest-frontend)
 
 - Middleware Image via [Docker Hub](https://hub.docker.com/r/collectedview/spring-react-typescript-rest-middleware)
