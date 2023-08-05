@@ -5,6 +5,9 @@ import * as React from 'react'
 
 // Packages -%- ////
 
+// Types -%- ////
+import { Topic } from '../../../types/article'
+
 // MUI -%- ////
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -20,18 +23,12 @@ import { CardActionArea } from '@mui/material'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-type TopicBlocksComponentItemProps = {
-    id: number
-    topic: string
-}
-export default function TopicBlocksComponentItem(
-    props: TopicBlocksComponentItemProps
-) {
+export default function TopicBlocksComponentItem(props: Topic) {
     return (
         <Card
             sx={{
                 display: 'inline-flex',
-                order: props?.['id'],
+                order: props?.['article_id'],
                 flexBasis: '100%',
                 flex: 'auto',
                 alignSelf: 'center',
@@ -63,7 +60,7 @@ export default function TopicBlocksComponentItem(
                             textAlign: 'center',
                         }}
                     >
-                        {props?.['topic']}
+                        {props?.['article_topic']}
                     </Typography>
                 </CardContent>
             </CardActionArea>

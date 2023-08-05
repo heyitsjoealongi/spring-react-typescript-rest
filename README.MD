@@ -4,8 +4,6 @@
 
 Fullstack Application — React (TypeScript) frontend, Axios HTTP client, Deno middleware, Spring Boot Java backend, OkHttp client, and MySQL (AWS RDS - Aurora) service.
 
-- Frontend Demo via [Amplify](https://main.dh06uvvwsg3un.amplifyapp.com/)
-
 - Frontend Image via [Docker Hub](https://hub.docker.com/r/collectedview/spring-react-typescript-rest-frontend)
 
 - Middleware Image via [Docker Hub](https://hub.docker.com/r/collectedview/spring-react-typescript-rest-middleware)
@@ -439,7 +437,7 @@ cd backend
     <configuration default="false" name="SpringReactTypeScriptREST" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" value="development" />
       <module name="com.example.spring-react-typescript-rest.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.SpringReactTypeScriptREST" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.springreacttypescriptrest.backend.SpringReactTypeScriptREST" />
       <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
         <option name="credential" />
         <option name="region" />

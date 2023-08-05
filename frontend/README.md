@@ -24,6 +24,8 @@ DIVIDER COLOR #BDBDBD
 
 // Packages -%- ////
 
+// Types -%- ////
+
 // MUI -%- ////
 
 // Components -%- ////
@@ -285,14 +287,14 @@ Additional to this response, Amplify generates user data objects in the local st
         "advancedSecurityDataCollectionFlag": true,
         "storage": {
             "amplify-auto-sign-in": "true",
-            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.accessToken": "",
-            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.clockDrift": "0",
-            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.refreshToken": "",
+            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.springreacttypescriptrest.accessToken": "",
+            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.springreacttypescriptrest.clockDrift": "0",
+            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.springreacttypescriptrest.refreshToken": "",
             "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.LastAuthUser": "",
             "amplify-signin-with-hostedUI": "false",
-            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.userData": "",
+            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.springreacttypescriptrest.userData": "",
             "loglevel": "",
-            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.idToken": ""
+            "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.springreacttypescriptrest.idToken": ""
         }
     },
     "Session": null,
@@ -345,14 +347,14 @@ Additional to this response, Amplify generates user data objects in the local st
     "authenticationFlowType": "USER_SRP_AUTH",
     "storage": {
         "amplify-auto-sign-in": "true",
-        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.accessToken": "",
-        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.clockDrift": "0",
-        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.refreshToken": "",
+        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.springreacttypescriptrest.accessToken": "",
+        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.springreacttypescriptrest.clockDrift": "0",
+        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.springreacttypescriptrest.refreshToken": "",
         "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.LastAuthUser": "",
         "amplify-signin-with-hostedUI": "false",
-        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.userData": "",
+        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.springreacttypescriptrest.userData": "",
         "loglevel": "",
-        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.collectedview.idToken": ""
+        "CognitoIdentityServiceProvider.6n48moogq7vctmvnkpj5snkvg4.springreacttypescriptrest.idToken": ""
     },
     "keyPrefix": "",
     "userDataKey": "",

@@ -70,14 +70,14 @@ export default function ArticleScapeComponent() {
         >
             {articleListCache?.length > 1 ? (
                 articleListCache?.map((data) => (
-                    <React.Fragment key={data?.['id']}>
+                    <React.Fragment key={data?.['article_id']}>
                         <ArticleScapeComponentItem
-                            id={data?.['id']}
-                            slug={data?.['slug']}
-                            cover={data?.['cover']}
-                            title={data?.['title']}
-                            topic={data?.['topic']}
-                            caption={data?.['caption']}
+                            article_id={data?.['article_id']}
+                            article_slug={data?.['article_slug']}
+                            article_cover={data?.['article_cover']}
+                            article_title={data?.['article_title']}
+                            article_topic={data?.['article_topic']}
+                            article_caption={data?.['article_caption']}
                         />
                     </React.Fragment>
                 ))

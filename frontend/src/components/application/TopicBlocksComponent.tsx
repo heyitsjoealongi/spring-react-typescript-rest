@@ -5,6 +5,9 @@ import * as React from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { topicsState } from '../../recoil/atoms/topicsAtom'
 
+// Types -%- ////
+import { Topics } from '../../types/article'
+
 // MUI -%- ////
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
@@ -69,11 +72,11 @@ export default function TopicBlocksComponent() {
             }}
         >
             {topicListCache?.length > 1 ? (
-                topicListCache?.map((data, index) => (
-                    <React.Fragment key={index}>
+                topicListCache?.map((data: Topics) => (
+                    <React.Fragment key={data?.['article_id']}>
                         <TopicBlocksComponentItem
-                            id={index}
-                            topic={data?.['topic']}
+                            article_id={data?.['article_id']}
+                            article_topic={data?.['article_topic']}
                         />
                     </React.Fragment>
                 ))

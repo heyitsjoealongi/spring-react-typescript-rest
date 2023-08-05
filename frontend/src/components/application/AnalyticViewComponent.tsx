@@ -5,6 +5,9 @@ import * as React from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { analyticsState } from '../../recoil/atoms/analyticsAtom'
 
+// Types -%- ////
+import { Analytics } from '../../types/analytic'
+
 // MUI -%- ////
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
@@ -145,14 +148,25 @@ export default function AnalyticViewComponent() {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {analyticsListCache.map((data) => (
-                                    <React.Fragment key={data?.['id']}>
+                                {analyticsListCache.map((data: Analytics) => (
+                                    <React.Fragment key={data?.['analytic_id']}>
                                         <AnalyticTableComponentItem
-                                            url={data?.['url']}
-                                            timestamp={data?.['timestamp']}
-                                            language={data?.['language']}
-                                            userAgent={data?.['userAgent']}
-                                            geoLocation={data?.['geoLocation']}
+                                            analytic_id={data?.['analytic_id']}
+                                            analytic_url={
+                                                data?.['analytic_url']
+                                            }
+                                            analytic_timestamp={
+                                                data?.['analytic_timestamp']
+                                            }
+                                            analytic_language={
+                                                data?.[' analytic_language']
+                                            }
+                                            analytic_useragent={
+                                                data?.['analytic_useragent']
+                                            }
+                                            analytic_geolocation={
+                                                data?.['analytic_geolocation']
+                                            }
                                         />
                                     </React.Fragment>
                                 ))}

@@ -1,4 +1,4 @@
-package com.example.demo.configurations;
+package com.springreacttypescriptrest.backend.configurations;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,7 +19,7 @@ public class ResponseConfiguration implements Filter {
         HttpServletResponse response = (HttpServletResponse) res;
         HttpServletRequest request = (HttpServletRequest) req;
 
-        response.setHeader("Access-Control-Allow-Origin", "https://middleware.collectedview.io");
+        response.setHeader("Access-Control-Allow-Origin", "http://localhost:4040");
         response.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
         response.setHeader("Access-Control-Max-Age", "3600");
         response.setHeader("Access-Control-Allow-Headers", "*");

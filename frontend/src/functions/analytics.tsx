@@ -4,6 +4,9 @@
 import axios from 'axios'
 import dayjs from 'dayjs'
 
+// Types -%- ////
+import { Position, Coordinate } from '../types/analytic'
+
 // MUI -%- ////
 
 // Components -%- ////
@@ -18,6 +21,7 @@ export const getAnalytics = async () => {
             const endpoint = process.env.REACT_APP_ANALYTICS_LIST_ENDPOINT
             const { data } = await axios.get(base + endpoint, {
                 headers: {
+                    'Content-Type': 'application/json',
                     Authorization: `Bearer ${auth}`,
                 },
             })
@@ -31,24 +35,25 @@ export const saveAnalytic = async () => {
     try {
         const auth = await authorize()
         if (auth) {
-            const url = getURL()
-            const timestamp = getTimestamp()
-            const useragent = getUserAgent()
-            const language = getLanguage()
-            const geolocation = getGeoLocation()
+            const analytic_url = getURL()
+            const analytic_timestamp = getTimestamp()
+            const analytic_useragent = getUserAgent()
+            const analytic_language = getLanguage()
+            const analytic_geolocation = getGeoLocation()
             const base = process.env.REACT_APP_MIDDLEWARE_URL
             const endpoint = process.env.REACT_APP_ANALYTICS_ADD_ENDPOINT
             const { data } = await axios.post(
                 base + endpoint,
                 {
-                    url,
-                    timestamp,
-                    useragent,
-                    language,
-                    geolocation,
+                    analytic_url,
+                    analytic_timestamp,
+                    analytic_useragent,
+                    analytic_language,
+                    analytic_geolocation,
                 },
                 {
                     headers: {
+                        'Content-Type': 'application/json',
                         Authorization: `Bearer ${auth}`,
                     },
                 }
@@ -71,20 +76,9 @@ export const getUserAgent = () => {
 export const getLanguage = () => {
     return navigator?.language
 }
-type GeoLocation = {
-    coords: object
-}
-interface Coordinates {
-    accuracy: number
-    altitude: number
-    altitudeAccuracy: number
-    heading: number
-    latitude: number
-    longitude: number
-    speed: number
-}
+
 export const getGeoLocation = () => {
-    const geo: Coordinates = {
+    const geo: Coordinate = {
         accuracy: 0,
         altitude: 0,
         altitudeAccuracy: 0,
@@ -93,8 +87,8 @@ export const getGeoLocation = () => {
         longitude: 0,
         speed: 0,
     }
-    function success(pos: GeoLocation) {
-        const coords: any = pos?.coords
+    function success(pos: Position) {
+        const coords: any = pos?.['coords']
         const {
             accuracy,
             altitude,
@@ -103,7 +97,7 @@ export const getGeoLocation = () => {
             latitude,
             longitude,
             speed,
-        }: Coordinates = coords
+        }: Coordinate = coords
         geo.accuracy = accuracy
         geo.altitude = altitude
         geo.altitudeAccuracy = altitudeAccuracy

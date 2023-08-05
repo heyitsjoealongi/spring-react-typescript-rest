@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: middleware-container
-          image: <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/middleware:latest
+          image: <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/middleware:latest
           imagePullPolicy: Always
           restartPolicy: Always
           ports:

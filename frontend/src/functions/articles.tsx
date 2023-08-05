@@ -17,6 +17,7 @@ export const getArticles = async () => {
             const endpoint = process.env.REACT_APP_ARTICLE_LIST_ENDPOINT
             const { data } = await axios.get(base + endpoint, {
                 headers: {
+                    'Content-Type': 'application/json',
                     Authorization: `Bearer ${auth}`,
                 },
             })
@@ -34,6 +35,7 @@ export const getTopics = async () => {
             const endpoint = process.env.REACT_APP_TOPIC_LIST_ENDPOINT
             const { data } = await axios.get(base + endpoint, {
                 headers: {
+                    'Content-Type': 'application/json',
                     Authorization: `Bearer ${auth}`,
                 },
             })
