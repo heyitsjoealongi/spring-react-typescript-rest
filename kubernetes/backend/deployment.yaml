@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: backend-container
-          image: registry.digitalocean.com/collectedview/backend:latest
+          image: <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/backend:latest
           imagePullPolicy: Always
           restartPolicy: Always
           ports:
