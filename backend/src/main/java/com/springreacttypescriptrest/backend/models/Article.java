@@ -65,7 +65,4 @@ public class Article {
         this.article_caption = article_caption;
     }
 
-    public Article() {
-    }
-
 }
