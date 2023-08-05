@@ -1,4 +1,4 @@
-package com.example.demo.configurations;
+package com.springreacttypescriptrest.backend.configurations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

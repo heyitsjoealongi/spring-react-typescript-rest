@@ -4,11 +4,15 @@ import axiod from "https://deno.land/x/axiod/mod.ts";
 // Packages -%- ////
 
 // Types -%- ////
-import Analytic from "../types/Analytic.ts";
+import { AnalyticFresh } from "../types/analytic.ts";
 
 // Components -%- ////
 
 // Middleware & Integrations -%- ////
+import {
+  normalizeAnalytics,
+  structureAnalytic,
+} from "../functions/analytics.ts";
 
 // Application -%- ////
 export const getAnalytics = async () => {
@@ -26,13 +30,14 @@ export const getAnalytics = async () => {
         Authorization: "Basic " + `${bearer}`,
       },
     });
-    return data;
+    const analytics = await normalizeAnalytics(data);
+    return analytics;
   } catch (error) {
     console.log("Error requesting analytics (Middleware)");
     return;
   }
 };
-export const saveAnalytic = async (analytic: Analytic) => {
+export const saveAnalytic = async (analytic: AnalyticFresh) => {
   try {
     const base = await Deno.env.get("BACKEND_URL");
     const endpoint = await Deno.env.get("ANALYTICS_ADD_ENDPOINT");
@@ -41,17 +46,15 @@ export const saveAnalytic = async (analytic: Analytic) => {
         ":" +
         (await Deno.env.get("BACKEND_PASSWORD"))
     );
-    const { data } = await axiod.post(base + endpoint, analytic, {
+    const analyticStructured = await structureAnalytic(analytic);
+    const { data } = await axiod.post(base + endpoint, analyticStructured, {
       headers: {
-        "Content-Type": "application/json",
         Authorization: "Basic " + `${bearer}`,
       },
     });
     return data;
   } catch (error) {
-    console.log("Error saving analytic (Middleware)");
+    console.log("Error saving analytic (Middleware)", error);
     return;
   }
 };
-
-// System -%- ////

@@ -8,6 +8,7 @@ import axiod from "https://deno.land/x/axiod/mod.ts";
 // Components -%- ////
 
 // Middleware & Integrations -%- ////
+import { normalizeArticles, normalizeTopics } from "../functions/articles.ts";
 
 // Application -%- ////
 export const getArticles = async () => {
@@ -25,7 +26,8 @@ export const getArticles = async () => {
         Authorization: "Basic " + `${bearer}`,
       },
     });
-    return data;
+    const articles = await normalizeArticles(data);
+    return articles;
   } catch (error) {
     console.log("Error requesting articles (Middleware)");
     return;
@@ -46,7 +48,8 @@ export const getTopics = async () => {
         Authorization: "Basic " + `${bearer}`,
       },
     });
-    return data;
+    const topics = await normalizeTopics(data);
+    return topics;
   } catch (error) {
     console.log("Error requesting topics (Middleware)");
     return;

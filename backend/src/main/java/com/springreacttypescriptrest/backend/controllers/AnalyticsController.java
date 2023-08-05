@@ -1,7 +1,7 @@
-package com.example.demo.controllers;
+package com.springreacttypescriptrest.backend.controllers;
 
-import com.example.demo.models.Analytic;
-import com.example.demo.repositories.Analytics;
+import com.springreacttypescriptrest.backend.models.Analytic;
+import com.springreacttypescriptrest.backend.repositories.Analytics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,13 +22,15 @@ public class AnalyticsController {
     }
 
     @PostMapping(path="/add") // Map ONLY POST Requests
-    public @ResponseBody Analytic addNewAnalytic (@RequestBody Analytic analytic) {
+    public @ResponseBody String addAnalytic (@RequestBody Analytic analytic) {
 
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
         // @RequestBody means it is a body from the GET or POST request
 
-        return analytics.save(analytic);
+        analytics.save(analytic);
+
+        return "Added analytic";
 
     }
 

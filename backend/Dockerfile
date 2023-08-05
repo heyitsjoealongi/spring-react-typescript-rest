@@ -7,4 +7,4 @@ FROM amazoncorretto:17
 RUN mkdir /app
 COPY --from=build /home/gradle/src/build/libs/*.jar /app/spring-boot-application.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-Dspring.profiles.active=production","-jar","/app/spring-boot-application.jar"]
+ENTRYPOINT ["java","-Dspring.profiles.active=prod","-jar","/app/spring-boot-application.jar"]

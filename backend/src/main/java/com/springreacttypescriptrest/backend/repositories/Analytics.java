@@ -1,6 +1,6 @@
-package com.example.demo.repositories;
+package com.springreacttypescriptrest.backend.repositories;
 
-import com.example.demo.models.Analytic;
+import com.springreacttypescriptrest.backend.models.Analytic;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Collection;

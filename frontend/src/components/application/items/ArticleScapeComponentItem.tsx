@@ -22,12 +22,12 @@ import { CardActionArea } from '@mui/material'
 
 // Application -%- ////
 type ArticleScapeComponentItemProps = {
-    id: number
-    slug: string
-    cover: string
-    title: string
-    topic: string
-    caption: string
+    article_id: number
+    article_slug: string
+    article_cover: string
+    article_title: string
+    article_topic: string
+    article_caption: string
 }
 export default function ArticleScapeComponentItem(
     props: ArticleScapeComponentItemProps
@@ -36,7 +36,7 @@ export default function ArticleScapeComponentItem(
         <Card
             sx={{
                 display: 'inline-flex',
-                order: props?.['id'],
+                order: props?.['article_id'],
                 flexBasis: '100%',
                 flex: 'auto',
                 alignSelf: 'center',
@@ -57,23 +57,23 @@ export default function ArticleScapeComponentItem(
                 <CardMedia
                     component="img"
                     height="100px"
-                    image={props?.['cover']}
-                    alt={props?.['title']}
+                    image={props?.['article_cover']}
+                    alt={props?.['article_title']}
                     loading="lazy"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h6" component="div">
-                        {props?.['title']}
+                        {props?.['article_title']}
                     </Typography>
                     <Typography
                         gutterBottom
                         variant="subtitle1"
                         component="div"
                     >
-                        {props?.['topic']}
+                        {props?.['article_topic']}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {props?.['caption']}
+                        {props?.['article_caption']}
                     </Typography>
                 </CardContent>
             </CardActionArea>

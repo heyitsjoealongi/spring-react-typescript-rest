@@ -15,18 +15,28 @@ import { getArticles, getTopics } from "../apis/articles.ts";
 
 // Application -%- ////
 articlesRouter.get("/all", async (ctx: Context) => {
-  const auth = await authorization(ctx);
-  if (auth) {
-    ctx.response.body = await getArticles();
+  try {
+    const auth = await authorization(ctx);
+    if (auth) {
+      ctx.response.body = await getArticles();
+    }
+    return;
+  } catch (error) {
+    console.log("Error @ /articles/all endpoint (Middleware)");
+    return;
   }
-  return;
 });
 articlesRouter.get("/topics", async (ctx: Context) => {
-  const auth = await authorization(ctx);
-  if (auth) {
-    ctx.response.body = await getTopics();
+  try {
+    const auth = await authorization(ctx);
+    if (auth) {
+      ctx.response.body = await getTopics();
+    }
+    return;
+  } catch (error) {
+    console.log("Error @ /articles/topics endpoint (Middleware)");
+    return;
   }
-  return;
 });
 
 // System -%- ////

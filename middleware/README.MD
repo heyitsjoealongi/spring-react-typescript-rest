@@ -17,3 +17,9 @@
 
 // System -%- ////
 ```
+
+Start the project:
+
+```bash
+deno run --allow-net --allow-read --allow-env --allow-run --watch=static/,routes/ main.ts
+```
