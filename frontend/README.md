@@ -24,6 +24,8 @@ DIVIDER COLOR #BDBDBD
 
 // Packages -%- ////
 
+// Types -%- ////
+
 // MUI -%- ////
 
 // Components -%- ////

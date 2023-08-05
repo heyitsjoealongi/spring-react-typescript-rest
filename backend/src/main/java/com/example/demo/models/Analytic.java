@@ -23,7 +23,7 @@ public class Analytic {
         return analyticId;
     }
 
-    public String getURL() {
+    public String getAnalyticURL() {
         return analyticURL;
     }
 

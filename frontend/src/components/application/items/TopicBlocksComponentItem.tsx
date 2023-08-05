@@ -5,6 +5,9 @@ import * as React from 'react'
 
 // Packages -%- ////
 
+// Types -%- ////
+import { Topic } from '../../../types/article'
+
 // MUI -%- ////
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -20,13 +23,7 @@ import { CardActionArea } from '@mui/material'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-type TopicBlocksComponentItemProps = {
-    article_id: number
-    article_topic: string
-}
-export default function TopicBlocksComponentItem(
-    props: TopicBlocksComponentItemProps
-) {
+export default function TopicBlocksComponentItem(props: Topic) {
     return (
         <Card
             sx={{

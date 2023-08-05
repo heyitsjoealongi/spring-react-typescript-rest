@@ -36,7 +36,7 @@ export default function ArticleScapeComponentItem(
         <Card
             sx={{
                 display: 'inline-flex',
-                order: props?.['id'],
+                order: props?.['article_id'],
                 flexBasis: '100%',
                 flex: 'auto',
                 alignSelf: 'center',

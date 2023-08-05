@@ -4,6 +4,9 @@ import * as React from 'react'
 // Packages -%- ////
 import dayjs from 'dayjs'
 
+// Types -%- ////
+import { Analytic, Page, Date } from '../../../types/analytic'
+
 // MUI -%- ////
 import TableCell from '@mui/material/TableCell'
 import TableRow from '@mui/material/TableRow'
@@ -15,13 +18,9 @@ import TableRow from '@mui/material/TableRow'
 // Cascading Style Sheets (CSS) -%- ////
 
 // Application -%- ////
-type Page = {
-    page: string
-    app_url: string
-}
-const page = (url: string) => {
+const page = (analytic_url: string) => {
     const clean: Page = { page: '', app_url: '' }
-    clean.page = url?.toString()
+    clean.page = analytic_url?.toString()
     clean.app_url = process.env.REACT_APP_URL
     clean.page = clean?.page?.replaceAll('http://', '')
     clean.app_url = clean?.app_url?.replaceAll('http://', '')
@@ -32,24 +31,12 @@ const page = (url: string) => {
     clean.page = clean?.page?.replaceAll(clean?.['app_url'], '')
     return clean?.page
 }
-type Date = {
-    date: string
-}
 const date = (timestamp: string) => {
     const clean: Date = { date: '' }
     clean.date = dayjs(timestamp)?.format('MM/DD/YYYY')
     return clean?.date
 }
-type AnalyticTableComponentItemProps = {
-    analytic_url: string
-    analytic_timestamp: string
-    analytic_language: string
-    analytic_userAgent: string
-    analytic_geoLocation: string
-}
-export default function AnalyticTableComponentItem(
-    props: AnalyticTableComponentItemProps
-) {
+export default function AnalyticTableComponentItem(props: Analytic) {
     return (
         <TableRow
             sx={{

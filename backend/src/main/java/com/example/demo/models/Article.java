@@ -3,71 +3,71 @@ package com.example.demo.models;
 import jakarta.persistence.*;
 
 @Entity // This tells Hibernate to make a table out of this class
-public class Article {
+public class Analytic {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer articleId;
+    private Integer analyticId;
 
-    private String articleSlug;
+    private String analyticURL;
 
-    private String articleCover;
+    private String analyticTimestamp;
 
-    private String articleTitle;
+    private String analyticUserAgent;
 
-    private String articleTopic;
+    private String analyticLanguage;
 
-    private String articleCaption;
+    private String analyticGeoLocation;
 
-    public Integer getArticleId() {
-        return articleId;
+    public Integer getAnalyticId() {
+        return analyticId;
     }
 
-    public String getArticleSlug() {
-        return articleSlug;
+    public String getAnalyticURL() {
+        return analyticURL;
     }
 
-    public String getArticleCover() {
-        return articleCover;
+    public String getAnalyticTimestamp() {
+        return analyticTimestamp;
     }
 
-    public String getArticleTitle() {
-        return articleTitle;
+//    public String getAnalyticUserAgent() {
+//        return analyticUserAgent;
+//    }
+
+    public String getAnalyticLanguage() {
+        return analyticLanguage;
     }
 
-    public String getArticleTopic() {
-        return articleTopic;
+//    public String getAnalyticLocation() {
+//        return analyticGeoLocation;
+//    }
+
+    public void setAnalyticId(Integer analyticId) {
+        this.analyticId = analyticId;
     }
 
-    public String getArticleCaption() {
-        return articleCaption;
+    public void setAnalyticURL(String analyticURL) {
+        this.analyticURL = analyticURL;
     }
 
-    public void setArticleId(Integer articleId) {
-        this.articleId = articleId;
+    public void setAnalyticTimestamp(String analyticTimestamp) {
+        this.analyticTimestamp = analyticTimestamp;
     }
 
-    public void setArticleSlug(String articleSlug) {
-        this.articleSlug = articleSlug;
+    public void setAnalyticUserAgent(String analyticUserAgent) {
+        this.analyticUserAgent = analyticUserAgent;
     }
 
-    public void setArticleCover(String articleCover) {
-        this.articleCover = articleCover;
+    public void setAnalyticLanguage(String analyticLanguage) {
+        this.analyticLanguage = analyticLanguage;
     }
 
-    public void setArticleTitle(String articleTitle) {
-        this.articleTitle = articleTitle;
+    public void setAnalyticGeoLocation(String analyticGeoLocation) {
+        this.analyticGeoLocation = analyticGeoLocation;
     }
 
-    public void setArticleTopic(String articleTopic) {
-        this.articleTopic = articleTopic;
-    }
-
-    public void setArticleCaption(String articleCaption) {
-        this.articleCaption = articleCaption;
-    }
-
-    public Article() {
+    public Analytic() {
     }
 
 }

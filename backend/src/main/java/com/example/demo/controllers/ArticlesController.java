@@ -1,10 +1,11 @@
 package com.example.demo.controllers;
 
-import com.example.demo.interfaces.Topics;
-import com.example.demo.models.Article;
-import com.example.demo.repositories.Articles;
+import io.collectedview.backend.models.Article;
+import io.collectedview.backend.repositories.Articles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController // This means that this class is a Rest Controller
 @RequestMapping(path="/articles") // This means URL's start with /demo (after Application path)
@@ -23,7 +24,7 @@ public class ArticlesController {
     }
 
     @GetMapping(path="/topics")
-    public @ResponseBody Iterable<Topics> getAllTopics() {
+    public @ResponseBody List<Object> getAllTopics() {
 
         // This returns a JSON or XML with the topics of articles
         return articles.findAllTopics();

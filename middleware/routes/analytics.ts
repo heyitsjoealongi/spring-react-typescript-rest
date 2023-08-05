@@ -30,7 +30,7 @@ analyticsRouter.post("/add", async (ctx: Context) => {
   try {
     const auth = await authorization(ctx);
     if (auth) {
-      const analytic: Analytic = await ctx?.request?.body({ type: "json" })
+      const analytic: AnalyticFresh = await ctx?.request?.body({ type: "json" })
         ?.value;
       ctx.response.body = await saveAnalytic(analytic);
     }
