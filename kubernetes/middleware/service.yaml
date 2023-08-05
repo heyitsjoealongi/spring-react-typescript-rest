@@ -8,6 +8,6 @@ spec:
     app: middleware-application
   ports:
     - protocol: TCP
-      port: 443
+      port: 80
       targetPort: 4040
-      name: https
+      name: http

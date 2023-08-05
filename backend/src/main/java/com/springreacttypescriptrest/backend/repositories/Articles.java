@@ -1,6 +1,6 @@
-package com.example.demo.repositories;
+package com.springreacttypescriptrest.backend.repositories;
 
-import io.collectedview.backend.models.Article;
+import com.springreacttypescriptrest.backend.models.Article;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
