@@ -1,4 +1,4 @@
-package com.example.demo.models;
+package com.springreacttypescriptrest.backend.models;
 
 import jakarta.persistence.*;
 

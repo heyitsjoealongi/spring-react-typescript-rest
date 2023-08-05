@@ -1,7 +1,7 @@
-package com.example.demo.repositories;
+package com.springreacttypescriptrest.backend.repositories;
 
-import com.example.demo.interfaces.Topics;
-import com.example.demo.models.Article;
+import com.springreacttypescriptrest.backend.interfaces.Topics;
+import com.springreacttypescriptrest.backend.models.Article;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

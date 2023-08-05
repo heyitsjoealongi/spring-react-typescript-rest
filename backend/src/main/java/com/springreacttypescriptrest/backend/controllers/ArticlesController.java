@@ -1,8 +1,8 @@
-package com.example.demo.controllers;
+package com.springreacttypescriptrest.backend.controllers;
 
-import com.example.demo.interfaces.Topics;
-import com.example.demo.models.Article;
-import com.example.demo.repositories.Articles;
+import com.springreacttypescriptrest.backend.interfaces.Topics;
+import com.springreacttypescriptrest.backend.models.Article;
+import com.springreacttypescriptrest.backend.repositories.Articles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

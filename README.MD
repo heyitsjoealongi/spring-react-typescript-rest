@@ -437,7 +437,7 @@ cd backend
     <configuration default="false" name="SpringReactTypeScriptREST" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" value="development" />
       <module name="com.example.spring-react-typescript-rest.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.SpringReactTypeScriptREST" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.springreacttypescriptrest.backend.SpringReactTypeScriptREST" />
       <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
         <option name="credential" />
         <option name="region" />

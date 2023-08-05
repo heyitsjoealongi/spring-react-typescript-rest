@@ -1,4 +1,4 @@
-package com.example.demo.configurations;
+package com.springreacttypescriptrest.backend.configurations;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
